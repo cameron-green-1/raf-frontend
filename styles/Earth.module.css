@@ -1,0 +1,20 @@
+/* .Hotspot {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  background: none;
+  border: solid white 8px;
+  transition: border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.Hotspot:hover {
+  border-color: rgb(152, 178, 199);
+  transform: scale(1.2);
+} */
+
+/* .earth {
+  width: 400px !important;
+  height: 400px !important;
+  background: yellow;
+} */
