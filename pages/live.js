@@ -1,3 +1,4 @@
+import Logo from '../components/logo';
 import styles from '../styles/Live.module.css';
 
 export async function getStaticProps() {
@@ -21,7 +22,7 @@ const Live = ({ teamsLinks }) => {
       <img src='/bg1.jpg' className={styles.backgroundImage} />
       <div className={styles.container}>
         <header className={styles.header}>
-          <div></div>
+          <Logo />
           <div className={styles.live}>LIVE</div>
         </header>
         <div className={styles.item}>
@@ -30,7 +31,13 @@ const Live = ({ teamsLinks }) => {
         </div>
         <div className={styles.item}>
           <div className={styles.title}>[LATEST INFO]</div>
-          <img src='/raf2.jpg' alt='' className={styles.cover}></img>
+          <a
+            href='https://www.raf.mod.uk/recruitment/engineering'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <img src='/raf2.jpg' alt='' className={styles.cover}></img>
+          </a>
         </div>
         <div className={styles.item}>
           <div className={styles.title}>[INTERACTION]</div>

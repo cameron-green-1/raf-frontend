@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Logo from '../components/logo';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
 // import Earth from '../components/earth';
@@ -43,12 +44,15 @@ export default function Home({ launch }) {
         <meta name='description' content='RAF Access All Areas experience' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {/* <main className={styles.main}> */}
-      <div className={styles.countdown}>
-        <div className={styles.live}>GOING LIVE IN:</div>
-        {/* <div className={styles.time}>{launch}</div> */}
-        <div className={styles.time}>24:09</div>
-      </div>
+      {/* <img src='/stars.png' alt='' className={styles.bg} /> */}
+      <img src='/stars2.jpg' className={styles.bg} />
+      <header className={styles.header}>
+        <Logo />
+        <div className={styles.countdown}>
+          <div className={styles.live}>GOING LIVE IN:</div>
+          <div className={styles.time}>24:09</div>
+        </div>
+      </header>
       <div className={styles.instructions}>
         <div className={styles.line}></div>
         <div className={styles.items}>{instructionsItems}</div>

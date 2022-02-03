@@ -15,11 +15,27 @@
   color: white;
 } */
 
-.countdown {
+.header {
   display: flex;
+  justify-content: space-between;
+  padding: 40px 40px;
+  margin-bottom: 40px;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
   position: absolute;
+  opacity: 0.65;
+}
+
+.countdown {
+  align-self: center;
+  display: flex;
+  /* position: absolute;
   top: 25px;
-  right: 25px;
+  right: 25px; */
 }
 
 .live {

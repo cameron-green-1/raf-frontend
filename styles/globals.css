@@ -28,6 +28,12 @@ a {
   /* overflow-x: hidden; */
 }
 
+.logo {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+}
+
 /* modelviewer things */
 .Hotspot {
   cursor: pointer;
