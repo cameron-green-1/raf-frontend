@@ -18,15 +18,24 @@ const instructionsItems = instructionsText.map((txt, i) => (
 ));
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:1337/api/launch-time');
-  const json = await res.json();
-  console.log(json.data.attributes.launch); // returns 2022-02/18 how do i turn this into a countdown?
-  return {
-    props: {},
-  };
+  try {
+    const res = await fetch('http://localhost:1337/api/launch-time');
+    const json = await res.json();
+    const launch = json.data.attributes.launch; // returns 2022-02/18 how do i turn this into a countdown?
+    // console.log(launch);
+    return {
+      props: { launch },
+    };
+  } catch (err) {
+    // console.log(err);
+    const launch = '1970-01/01';
+    return {
+      props: { launch },
+    };
+  }
 }
 
-export default function Home() {
+export default function Home({ launch }) {
   return (
     <div className='wrapper'>
       <Head>
@@ -37,6 +46,7 @@ export default function Home() {
       {/* <main className={styles.main}> */}
       <div className={styles.countdown}>
         <div className={styles.live}>GOING LIVE IN:</div>
+        {/* <div className={styles.time}>{launch}</div> */}
         <div className={styles.time}>24:09</div>
       </div>
       <div className={styles.instructions}>
