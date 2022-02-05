@@ -17,6 +17,16 @@ export async function getStaticProps() {
 }
 
 const Live = ({ teamsLinks }) => {
+  const images = [
+    <img src='/grid1.jpg' alt='' className={styles.thumbnail} />,
+    <img src='/grid2.jpg' alt='' className={styles.thumbnail} />,
+    <img src='/grid3.jpg' alt='' className={styles.thumbnail} />,
+    <img src='/grid4.jpg' alt='' className={styles.thumbnail} />,
+    <img src='/grid5.jpg' alt='' className={styles.thumbnail} />,
+    <img src='/grid6.jpg' alt='' className={styles.thumbnail} />,
+    <img src='/grid7.jpg' alt='' className={styles.thumbnail} />,
+    <img src='/grid8.jpg' alt='' className={styles.thumbnail} />,
+  ];
   return (
     <div className='wrapper'>
       <img src='/bg1.jpg' className={styles.backgroundImage} />
@@ -48,18 +58,19 @@ const Live = ({ teamsLinks }) => {
           <p className={styles.description}>
             and find out more about a specific role
           </p>
-          <ul className={styles.grid}>
-            <a href={teamsLinks[0]} target='_blank' rel='noopener noreferrer'>
-              <img src='/grid1.jpg' alt='' className={styles.thumbnail} />
-            </a>
-            <img src='/grid2.jpg' alt='' className={styles.thumbnail} />
-            <img src='/grid3.jpg' alt='' className={styles.thumbnail} />
-            <img src='/grid4.jpg' alt='' className={styles.thumbnail} />
-            <img src='/grid5.jpg' alt='' className={styles.thumbnail} />
-            <img src='/grid6.jpg' alt='' className={styles.thumbnail} />
-            <img src='/grid7.jpg' alt='' className={styles.thumbnail} />
-            <img src='/grid8.jpg' alt='' className={styles.thumbnail} />
-          </ul>
+          <div className={styles.grid}>
+            {images.map((img) => {
+              return (
+                <a
+                  href={teamsLinks[0]}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  {img}
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

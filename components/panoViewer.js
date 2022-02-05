@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import * as dat from 'dat.gui';
+// import { GUI } from 'dat.gui';
 
 import styles from '../styles/PanoViewer.module.css';
 
@@ -21,18 +21,15 @@ const createPano = (imageSrc) => {
   webglEl.appendChild(renderer.domElement);
 
   // Material
-  const sphereMaterial = new THREE.MeshBasicMaterial();
-  sphereMaterial.map = new THREE.TextureLoader()
-    // .setCrossOrigin('anonymous')
-    .load(
-      // 'https://res.cloudinary.com/dkcygpizo/image/upload/v1491862637/codepen/1_dtotv2.jpg'
-      imageSrc
-    );
-  console.log(sphereMaterial);
+  const map = new THREE.TextureLoader().load(imageSrc);
+  const side = THREE.DoubleSide;
+  const sphereMaterial = new THREE.MeshBasicMaterial({
+    map,
+    side,
+  });
   const sphereGeometry = new THREE.SphereGeometry(500, 60, 40);
   const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
   sphere.scale.x = -1;
-  console.log(sphere);
   scene.add(sphere);
 
   // Controls
@@ -51,7 +48,7 @@ const createPano = (imageSrc) => {
   };
   render();
 
-  // Resize
+  //Resize
   let deltaCount = 0;
   const onWindowResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -93,7 +90,7 @@ const createCube = () => {
   // renderer.render(scene, camera);
 
   const animate = () => {
-    // cube.rotation.x += 0.01;
+    cube.rotation.x += 0.01;
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   };

@@ -31,6 +31,7 @@
 }
 
 .countdown {
+  position: relative;
   align-self: center;
   display: flex;
   /* position: absolute;
