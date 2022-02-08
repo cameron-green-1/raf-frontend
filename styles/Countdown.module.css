@@ -1,0 +1,20 @@
+.countdown {
+  position: relative;
+  align-self: center;
+  display: flex;
+  /* position: absolute;
+  top: 25px;
+  right: 25px; */
+}
+
+.live {
+  background-color: #ca0937;
+  padding: 10px 20px;
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 25%);
+}
+
+.time {
+  padding: 10px 20px;
+  border: solid #ca0937 1px;
+  margin-left: -1px;
+}

@@ -49,7 +49,6 @@ const createPano = (imageSrc) => {
   render();
 
   //Resize
-  let deltaCount = 0;
   const onWindowResize = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
