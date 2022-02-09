@@ -126,8 +126,11 @@ a {
   display: none;
   opacity: 0;
 }
-
 .panel--us {
+  display: none;
+  opacity: 0;
+}
+.panel--one {
   display: none;
   opacity: 0;
 }

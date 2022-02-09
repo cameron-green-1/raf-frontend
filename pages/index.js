@@ -4,7 +4,6 @@ import Logo from '../components/logo';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
 import Countdown from '../components/countdown';
-// import Earth from '../components/earth';
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = [
@@ -23,14 +22,14 @@ export async function getStaticProps() {
   try {
     const res = await fetch('http://localhost:1337/api/launch-time');
     const json = await res.json();
-    const launch = json.data.attributes.launch; // returns 2022-02/18 how do i turn this into a countdown?
+    const launch = json.data.attributes.launch;
     // console.log(launch);
     return {
       props: { launch },
     };
   } catch (err) {
     // console.log(err);
-    const launch = '1970-01/01';
+    const launch = '2023-06-08T19:00:00.000Z';
     return {
       props: { launch },
     };
@@ -48,10 +47,6 @@ export default function Home({ launch }) {
       <img src='/stars2.jpg' className={styles.bg} />
       <header className={styles.header}>
         <Logo />
-        {/* <div className={styles.countdown}>
-          <div className={styles.live}>GOING LIVE IN:</div>
-          <div className={styles.time}>24:09</div>
-        </div> */}
         <Countdown launch={launch} />
       </header>
       <div className={styles.instructions}>
