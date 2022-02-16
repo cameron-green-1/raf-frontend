@@ -1,8 +1,8 @@
 .container {
   position: relative;
   margin: 0 auto;
-  width: 1000px;
-  min-height: 110vh;
+  width: 1200px;
+  /* min-height: 110vh; */
   /* background: orange; */
   padding: 40px;
 }
@@ -18,20 +18,111 @@
   align-self: center;
   background: #ca0937;
   font-weight: 700;
-  padding: 10px 40px;
+  padding: 10px 20px;
+  /* font-size: 1.5rem; */
   /* height: 10px; */
-  clip-path: polygon(
+  /* clip-path: polygon(
     10px 0,
     100% 0,
     100% calc(100% - 10px),
     calc(100% - 10px) 100%,
     0 100%,
     0 10px
-  );
+  ); */
+}
+
+.bullet {
+  /* font-size: 2rem; */
 }
 
 .item {
   margin-bottom: 20px;
+}
+
+.flex {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto 300px auto;
+  grid-column-gap: 20px;
+}
+
+.content {
+  /* width: 200px; */
+}
+
+.chat {
+  height: 100%;
+  /* margin-left: 20px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms {
+  list-style: none;
+  margin-top: 20px;
+  overflow: auto;
+  padding-right: 10px;
+}
+
+.room {
+  position: relative;
+  background-color: #0097d1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.room:hover {
+  background-color: #0076a5;
+}
+
+.room img {
+  width: 24px;
+}
+
+.room p {
+  margin-left: 20px;
+}
+
+.room div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #c60c30;
+  font-size: 0.75rem;
+  padding: 2px;
+}
+
+.question {
+  margin-top: 20px;
+}
+
+.question button {
+  border: none;
+  color: white;
+  position: relative;
+  background-color: #0097d1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 40px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.question button:hover {
+  background-color: #0076a5;
+}
+
+.question button img {
+  width: 24px;
+  margin-right: 20px;
 }
 
 .title {
@@ -42,18 +133,24 @@
 
 .name {
   font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .backgroundImage {
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
-  opacity: 0.35;
+  object-position: top top;
+  /* background-position: bottom; */
+  /* transform: translateY(-50%); */
+  /* opacity: 0.35; */
 }
 
 .cover {
   width: 100%;
+  height: 100%;
+  /* height: 300px; */
   object-fit: cover;
   border: solid #2c95c6 1px;
   /* clip-path: polygon(

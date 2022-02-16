@@ -5,7 +5,7 @@ const PanoViewer = dynamic(() => import('../components/panoViewer'), {
   ssr: false,
 });
 
-const Scenario = () => <PanoViewer imageSrc='/demo-image.jpg' />;
+const Scenario = () => <PanoViewer imageSrc='/pano1.jpg' />;
 
 export default withTransition(Scenario);
 // export default Scenario;

@@ -213,7 +213,7 @@ const Model = () => {
             </div>
           </div>
           <div className='section section-launch'>
-            <Link href='/live'>
+            <Link href='/scenario'>
               <button className='btn btn-operation'>LAUNCH OPERATION</button>
             </Link>
           </div>

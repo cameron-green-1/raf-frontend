@@ -67,7 +67,7 @@ function Holding({ launch }) {
 
 function Home({ launch }) {
   // console.log(launch);
-  const [holding, setHolding] = useState(true);
+  const [holding, setHolding] = useState(false);
   if (holding) {
     return <Holding launch={launch} />;
   } else {

@@ -31,48 +31,81 @@ const Live = ({ teamsLinks }) => {
   ];
   return (
     <div className='wrapper'>
-      <img src='/bg1.jpg' className={styles.backgroundImage} />
+      <img src='/raf3.jpg' className={styles.backgroundImage} />
       <div className={styles.container}>
         <header className={styles.header}>
           <Logo />
-          <div className={styles.live}>LIVE</div>
+          <div className={styles.live}>
+            <span className={styles.bullet}>•</span> LIVE
+          </div>
         </header>
-        <div className={styles.item}>
-          <div className={styles.title}>[LOCATION]</div>
-          <div className={styles.name}>The Comms Tower</div>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.title}>[LATEST INFO]</div>
-          <a
-            href='https://www.raf.mod.uk/recruitment/engineering'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <img src='/raf2.jpg' alt='' className={styles.cover}></img>
-          </a>
-        </div>
-        <div className={styles.item}>
-          <div className={styles.title}>[INTERACTION]</div>
-          <div className={styles.name}>LIVE! Chat Rooms</div>
-          <p className={styles.description} style={{ marginTop: 20 }}>
-            Join a chat room to talk to team members
-          </p>
-          <p className={styles.description}>
-            and find out more about a specific role
-          </p>
-          <div className={styles.grid}>
-            {images.map((img, idx) => {
-              return (
-                <a
-                  // href={teamsLinks[0]}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  key={idx}
-                >
-                  {img}
-                </a>
-              );
-            })}
+        <div className={styles.name}>The Comms Room</div>
+        <div className={styles.flex}>
+          <div className={styles.title}>LATEST CONTENT</div>
+          <div className={styles.title}>LIVE VIDEO CHAT ROOM</div>
+          <div className={styles.content}>
+            <a
+              href='https://www.raf.mod.uk/recruitment/engineering'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <img src='/raf2.jpg' alt='' className={styles.cover}></img>
+            </a>
+          </div>
+          <div className={styles.chat}>
+            <p>
+              We’re now <span>LIVE!</span> Join a teams video chat room below to
+              speak with RAF personnel and find out more about a specific role.
+            </p>
+            <ul className={styles.rooms}>
+              <li className={styles.room}>
+                <img src='/share.png' alt='' />
+                <p>FORCE PROTECTION</p>
+                <div>LIVE</div>
+              </li>
+              <li className={styles.room}>
+                <img src='/share.png' alt='' />
+                <p>AIR OPERATIONS</p>
+                <div>LIVE</div>
+              </li>
+              <li className={styles.room}>
+                <img src='/share.png' alt='' />
+                <p>INTELLIGENCE</p>
+                <div>LIVE</div>
+              </li>
+              <li className={styles.room}>
+                <img src='/share.png' alt='' />
+                <p>LOGISTICS</p>
+                <div>LIVE</div>
+              </li>
+              <li className={styles.room}>
+                <img src='/share.png' alt='' />
+                <p>ENGINEERING</p>
+                <div>LIVE</div>
+              </li>
+              <li className={styles.room}>
+                <img src='/share.png' alt='' />
+                <p>PERSONNEL TRAINING</p>
+                <div>LIVE</div>
+              </li>
+              <li className={styles.room}>
+                <img src='/share.png' alt='' />
+                <p>FORCE PROTECTION</p>
+                <div>LIVE</div>
+              </li>
+            </ul>
+          </div>
+          <div></div>
+          <div className={styles.question}>
+            <div className={styles.title}>ASK A QUESTION</div>
+            <p>
+              If you’d prefer to ask a question via text chat, please click
+              below:
+            </p>
+            <button>
+              <img src='/bubble.png' alt='' />
+              <p>LIVE TEXT CHAT</p>
+            </button>
           </div>
         </div>
       </div>
@@ -80,5 +113,5 @@ const Live = ({ teamsLinks }) => {
   );
 };
 
-// export default withTransition(Live);
-export default Live;
+export default withTransition(Live);
+// export default Live;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { calculateDelta, convertTime } from '../utils/helpers';
 import styles from '../styles/Countdown.module.css';
 
@@ -13,17 +14,19 @@ const Countdown = ({ launch }) => {
   }, []);
 
   return (
-    <div className={styles.countdown}>
-      <div className={styles.live}>
-        {countdown === 'NOW' ? 'LIVE' : 'GOING LIVE IN'}
+    <Link href='/live'>
+      <div className={styles.countdown}>
+        <div className={styles.live}>
+          {countdown === 'NOW' ? 'LIVE' : 'GOING LIVE IN'}
+        </div>
+        <div
+          className={styles.time}
+          style={{ display: countdown === 'NOW' ? 'none' : 'block' }}
+        >
+          {countdown}
+        </div>
       </div>
-      <div
-        className={styles.time}
-        style={{ display: countdown === 'NOW' ? 'none' : 'block' }}
-      >
-        {countdown}
-      </div>
-    </div>
+    </Link>
   );
 };
 
