@@ -7,7 +7,6 @@ const withTransition = (OriginalComponent, animDelay) => {
   // console.log(OriginalComponent);
   // const { pathname } = useRouter();
   // console.log(pathname);
-  console.log(OriginalComponent);
   return () => (
     <>
       <OriginalComponent />

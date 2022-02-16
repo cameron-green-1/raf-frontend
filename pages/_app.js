@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { useState } from 'react';
+// import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 function MyApp({ Component, pageProps, router }) {

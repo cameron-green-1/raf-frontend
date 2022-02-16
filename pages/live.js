@@ -80,5 +80,5 @@ const Live = ({ teamsLinks }) => {
   );
 };
 
-export default withTransition(Live);
-// export default Live;
+// export default withTransition(Live);
+export default Live;

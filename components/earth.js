@@ -9,7 +9,7 @@ const Model = () => {
     // console.log(modelViewer);
     modelViewer.addEventListener('model-visibility', function (evt) {
       // this is when the globe is loaded and visible
-      console.log('globe and therefore index page loaded');
+      // console.log('globe and therefore index page loaded');
     });
 
     // ADD FALLBACK HERE AS SETTIMEOUT IN CASE MODEL-VISIBILITY EVENT ISN'T CALLED
