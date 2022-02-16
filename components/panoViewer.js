@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+import Logo from './logo';
+import Countdown from './countdown';
+// import withTransition from './withTransition';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -132,9 +135,23 @@ const PanoViewer = ({ imageSrc }) => {
             </div>
           </div>
         </div>
+        {/* <div className={styles.ui}>
+          <div className={styles.row}>
+          </div>
+        </div> */}
+        <div className={styles.logoContainer}>
+          <Logo />
+        </div>
+        <div className={styles.countdownContainer}>
+          <Countdown />
+        </div>
+        <div className={styles.aroundContainer}>
+          <img src='/360.png' alt='' />
+        </div>
       </div>
     </div>
   );
 };
 
 export default PanoViewer;
+// export default withTransition(PanoViewer);
