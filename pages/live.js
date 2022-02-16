@@ -1,5 +1,7 @@
+// import {useEffect} from 'react';
 import Logo from '../components/logo';
 import styles from '../styles/Live.module.css';
+import withTransition from '../components/withTransition';
 
 export async function getStaticProps() {
   let teamsLinks = [];
@@ -59,12 +61,13 @@ const Live = ({ teamsLinks }) => {
             and find out more about a specific role
           </p>
           <div className={styles.grid}>
-            {images.map((img) => {
+            {images.map((img, idx) => {
               return (
                 <a
-                  href={teamsLinks[0]}
+                  // href={teamsLinks[0]}
                   target='_blank'
                   rel='noopener noreferrer'
+                  key={idx}
                 >
                   {img}
                 </a>
@@ -77,4 +80,5 @@ const Live = ({ teamsLinks }) => {
   );
 };
 
-export default Live;
+export default withTransition(Live);
+// export default Live;

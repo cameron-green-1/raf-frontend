@@ -4,6 +4,7 @@ import Logo from '../components/logo';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
 import Countdown from '../components/countdown';
+import withTransition from '../components/withTransition';
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = [
@@ -36,7 +37,8 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ launch }) {
+// export default function Home({ launch }) {
+function Home({ launch }) {
   return (
     <div className='wrapper'>
       <Head>
@@ -44,7 +46,7 @@ export default function Home({ launch }) {
         <meta name='description' content='RAF Access All Areas experience' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <img src='/stars2.jpg' className={styles.bg} />
+      <img src='/stars.jpg' className={styles.bg} />
       <header className={styles.header}>
         <Logo />
         <Countdown launch={launch} />
@@ -57,3 +59,6 @@ export default function Home({ launch }) {
     </div>
   );
 }
+
+export default withTransition(Home); // maybe can pass duration and loaded props here?
+// export default Home;

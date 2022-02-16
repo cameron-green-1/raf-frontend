@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import withTransition from '../components/withTransition';
 
 const PanoViewer = dynamic(() => import('../components/panoViewer'), {
   ssr: false,
@@ -6,4 +7,5 @@ const PanoViewer = dynamic(() => import('../components/panoViewer'), {
 
 const Scenario = () => <PanoViewer imageSrc='/demo-image.jpg' />;
 
-export default Scenario;
+export default withTransition(Scenario);
+// export default Scenario;
