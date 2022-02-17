@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import lottie from 'lottie-web';
 import Logo from '../components/logo';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
@@ -40,7 +41,24 @@ export async function getStaticProps() {
 }
 
 function Holding({ launch }) {
-  // console.log(launch);
+  const container = useRef(null);
+
+  // console.log(lottie);
+
+  useEffect(() => {
+    // const container = document.querySelector('.lottie-logo');
+    setTimeout(() => {
+      lottie.loadAnimation({
+        container: container.current,
+        // container,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '/lottie-logo.json',
+      });
+    }, 1000);
+  }, []);
+
   return (
     <div className='wrapper'>
       <Head>
@@ -50,7 +68,9 @@ function Holding({ launch }) {
       </Head>
       <img src='/stars.jpg' className={styles.bg} />
       <main className='holding'>
-        <img src='/logo.png' className='holding-logo' alt='' />
+        {/* <img src='/logo.png' className='holding-logo' alt='' /> */}
+        <div className='holding-logo' ref={container}></div>
+        {/* <div className='lottie-logo'></div> */}
         <p>Sorry, RAF World is not currently live.</p>
         <p>
           The next event is on the <span>6th April @ 6:30pm</span>
