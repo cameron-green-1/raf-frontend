@@ -166,6 +166,13 @@ a {
   position: relative;
   width: 200px;
   cursor: pointer;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+  }
 }
 
 /* modelviewer things */
@@ -184,6 +191,65 @@ a {
   transform: scale(1.2);
 }
 
+#viewer {
+  width: 75vw;
+  height: 80vh;
+}
+
+@media (max-width: 768px) {
+  #viewer {
+    width: 90vw;
+  }
+}
+
+.glow {
+  width: 750px;
+  /* height: 735px; */
+  /* width: 40%; */
+  aspect-ratio: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgb(23, 104, 145);
+  filter: blur(35px);
+}
+
+@media (max-width: 1024px) {
+  .glow {
+    width: 600px;
+    /* height: 650px; */
+  }
+}
+
+@media (max-width: 768px) {
+  .glow {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 600px) {
+  .glow {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 450px) {
+  .glow {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+/* @media (max-width: 930px) {
+  .glow {
+    width: 75%;
+  }
+} */
+
 .panel {
   padding: 40px;
   position: absolute;
@@ -192,13 +258,23 @@ a {
   transform: translate(-50%, -50%);
   /* width: 600px;
   height: 300px; */
-  background-color: rgba(9, 19, 36, 0.9);
+  /* background-color: rgba(9, 19, 36, 0.9); */
+  background-color: rgba(0, 47, 95, 0.95);
   /* border: solid #397cab 1px; */
   color: white;
   display: flex;
   flex-direction: column;
-  clip-path: polygon(5% 0, 100% 0, 100% 95%, 95% 100%, 0 100%, 0 5%);
+  /* clip-path: polygon(5% 0, 100% 0, 100% 95%, 95% 100%, 0 100%, 0 5%); */
+  border: solid #0097d1 2px;
+  z-index: 2;
 }
+
+@media (max-width: 768px) {
+  .panel {
+    width: 90%;
+  }
+}
+
 .section {
   margin-bottom: 20px;
 }
@@ -220,22 +296,33 @@ a {
 .btn-close span {
   color: #027bb7;
 }
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 40px;
+  cursor: pointer;
+}
+
 .btn-operation {
-  background-color: #397cab;
+  background-color: #0097d1;
   color: white;
   border: none;
   transition: background-color 0.2s ease-in-out;
+  width: 100%;
 }
 .btn-operation:hover {
   background-color: #9a0a27;
 }
 .btn {
   cursor: pointer;
-  width: 500px;
+  /* width: 500px; */
   padding: 10px 0;
 }
 .title {
-  color: #027bb7;
+  color: #0097d1;
   margin-bottom: 10px;
   font-size: 0.75rem;
 }

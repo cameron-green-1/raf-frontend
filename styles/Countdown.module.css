@@ -3,6 +3,7 @@
   align-self: center;
   display: flex;
   cursor: pointer;
+  z-index: 1;
   /* width: 100px; */
   /* position: absolute;
   top: 25px;

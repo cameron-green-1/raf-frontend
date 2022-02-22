@@ -17,7 +17,8 @@ const Model = () => {
     const moveToHotspot = () => {
       const modelViewer = document.querySelector('#viewer');
       const panels = document.querySelectorAll('.panel');
-      const buttonCloseArr = document.querySelectorAll('.btn-close');
+      // const buttonCloseArr = document.querySelectorAll('.btn-close');
+      const buttonCloseArr = document.querySelectorAll('.close');
 
       function closePanel(e) {
         panels.forEach((panel) => {
@@ -71,22 +72,22 @@ const Model = () => {
       }
       <div
         className='glow'
-        style={{
-          width: 635,
-          height: 635,
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          borderRadius: '50%',
-          background: 'rgb(23, 104, 145)',
-          filter: 'blur(35px)',
-        }}
+        // style={{
+        //   width: 635,
+        //   height: 635,
+        //   position: 'absolute',
+        //   top: '50%',
+        //   left: '50%',
+        //   transform: 'translate(-50%, -50%)',
+        //   borderRadius: '50%',
+        //   background: 'rgb(23, 104, 145)',
+        //   filter: 'blur(35px)',
+        // }}
       ></div>
       <model-viewer
         style={{
-          width: '75vw',
-          height: '80vh',
+          // width: '75vw',
+          // height: '80vh',
           position: 'absolute',
           top: '50%',
           left: '50%',
@@ -94,6 +95,7 @@ const Model = () => {
           margin: 'auto',
           // backgroundColor: '#082540',
         }}
+        className='globe'
         id='viewer'
         bounds='tight'
         loading='eager'
@@ -141,23 +143,25 @@ const Model = () => {
       </model-viewer>
       <div className='panel panel--england'>
         <div className='info'>
-          <div className='section section-close'>
+          {/* <div className='section section-close'>
             <button className='btn-close'>
               close [<span>X</span>]
             </button>
-          </div>
+          </div> */}
+          <img src='/close.svg' alt='' className='close' />
           <div className='section'>
             <div className='title'>[OPERATION]</div>
-            <div className='name operation'>Blue Dragon</div>
+            <div className='name operation'>MACA SUPPORT</div>
           </div>
           <div className='section'>
             <div className='title'>[LOCATION]</div>
-            <div className='name'>England</div>
+            <div className='name'>UK</div>
           </div>
           <div className='section'>
             <div className='title'>[ROLES]</div>
             <div className='description'>
-              Flight Control, Engineer, Cyber Security
+              Medical Services, Logistics, Security & Resilience Operations,
+              People Operations, Chaplaincy, Legal, Air Crew, Engineering
             </div>
           </div>
           <div className='section section-launch'>
@@ -167,23 +171,25 @@ const Model = () => {
       </div>
       <div className='panel panel--australia'>
         <div className='info'>
-          <div className='section section-close'>
+          {/* <div className='section section-close'>
             <button className='btn-close'>
               Close [<span>X</span>]
             </button>
-          </div>
+          </div> */}
+          <img src='/close.svg' alt='' className='close' />
           <div className='section'>
             <div className='title operation'>[OPERATION]</div>
-            <div className='name operation'>Lightning Dawn</div>
+            <div className='name operation'>OPERATION BILOXI</div>
           </div>
           <div className='section'>
             <div className='title'>[LOCATION]</div>
-            <div className='name'>Australia</div>
+            <div className='name'>ROMANIA</div>
           </div>
           <div className='section'>
             <div className='title'>[ROLES]</div>
             <div className='description'>
-              Flight Control, Engineer, Cyber Security
+              Engineering, Intelligence, Air and Space Operations, Logistics,
+              Security & Resilience Operations
             </div>
           </div>
           <div className='section-launch'>
@@ -193,23 +199,26 @@ const Model = () => {
       </div>
       <div className='panel panel--us'>
         <div className='info'>
-          <div className='section section-close'>
+          {/* <div className='section section-close'>
             <button className='btn-close'>
               Close [<span>X</span>]
             </button>
-          </div>
+          </div> */}
+          <img src='/close.svg' alt='' className='close' />
+          <div class='scan' />
           <div className='section'>
             <div className='title'>[OPERATION]</div>
-            <div className='name operation'>Magic Carpet</div>
+            <div className='name operation'>OPERATION RUMAN</div>
           </div>
           <div className='section'>
             <div className='title'>[LOCATION]</div>
-            <div className='name'>United States</div>
+            <div className='name'>CARIBBEAN</div>
           </div>
           <div className='section'>
             <div className='title'>[ROLES]</div>
             <div className='description'>
-              Flight Control, Engineer, Cyber Security
+              Medical Services, Air & Space Operations, Engineering,
+              Intelligence, Logistics
             </div>
           </div>
           <div className='section section-launch'>

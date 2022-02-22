@@ -17,9 +17,16 @@
 
 .header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 40px 40px;
   margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    transform: translateY(5px);
+  }
 }
 
 .bg {
@@ -53,10 +60,21 @@
   left: 100px;
   bottom: 100px;
   display: flex;
+  z-index: 1;
+  width: 75%;
+}
+
+@media (max-width: 768px) {
+  .instructions {
+    left: 50%;
+    bottom: 50px;
+    transform: translateX(-50%);
+    /* text-align: center; */
+  }
 }
 
 .items {
-  opacity: 0.75;
+  opacity: 0.55;
 }
 
 .line {
@@ -65,4 +83,8 @@
   transform: rotate(-12.5deg);
   background: #26688f;
   margin-right: 10px;
+}
+
+.rotate {
+  margin-right: 20px;
 }

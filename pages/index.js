@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import lottie from 'lottie-web';
 import Logo from '../components/logo';
 import styles from '../styles/Home.module.css';
@@ -9,19 +10,14 @@ import Countdown from '../components/countdown';
 import withTransition from '../components/withTransition';
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
-const instructionsText = [
-  'TAP & DRAG TO',
-  'DISCOVER A VARIETY',
-  'OF RAF PROFESSIONS',
-  'AROUND THE WORLD',
-];
+const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
 const instructionsItems = instructionsText.map((txt, i) => (
-  <p style={{ textIndent: `${i / 2}em` }} key={i}>
-    {txt}
-  </p>
+  // <p style={{ textIndent: `${i / 2}em` }} key={i}>
+  <p key={i}>{txt}</p>
 ));
 
 export async function getStaticProps() {
+  // export async function getServerSideProps() {
   console.log('ayy');
   try {
     const res = await fetch('http://localhost:1337/api/launch-time');
@@ -92,26 +88,52 @@ function Home({ launch }) {
     return <Holding launch={launch} />;
   } else {
     return (
-      <div className='wrapper'>
-        <Head>
-          <title>RAF Access All Areas</title>
-          <meta name='description' content='RAF Access All Areas experience' />
-          <link rel='icon' href='/favicon.ico' />
-        </Head>
-        <img src='/stars.jpg' className={styles.bg} />
-        <header className={styles.header}>
-          <Logo />
-          <Countdown launch={launch} />
-        </header>
-        <div className={styles.instructions}>
-          <div className={styles.line}></div>
-          <div className={styles.items}>{instructionsItems}</div>
+      <>
+        <div className='wrapper'>
+          <Head>
+            <title>RAF Access All Areas</title>
+            <meta
+              name='description'
+              content='RAF Access All Areas experience'
+            />
+            <link rel='icon' href='/favicon.ico' />
+          </Head>
+          <img src='/stars.jpg' className={styles.bg} />
+          <header className={styles.header}>
+            <Logo className={styles.logo} />
+            <Countdown launch={launch} />
+          </header>
+          <div className={styles.instructions}>
+            {/* <div className={styles.line}></div> */}
+            <img src='/rotate.svg' className={styles.rotate} alt='' />
+            <div className={styles.items}>{instructionsItems}</div>
+          </div>
+          <Earth />
         </div>
-        <Earth />
-      </div>
+        <motion.div
+          className='slide-in'
+          // initial={{ scaleY: 0 }}
+          // animate={{ scaleY: 0 }}
+          // exit={{ scaleY: 1 }}
+          initial={{ y: '100%' }}
+          animate={{ y: '100%' }}
+          exit={{ y: 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className='slide-out'
+          // initial={{ scaleY: 1 }}
+          // animate={{ scaleY: 0 }}
+          // exit={{ scaleY: 0 }}
+          initial={{ y: 0 }}
+          animate={{ y: '-100%' }}
+          exit={{ y: '-100%' }}
+          transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
+        />
+      </>
     );
   }
 }
 
-export default withTransition(Home);
-// export default Home;
+// export default withTransition(Home);
+export default Home;

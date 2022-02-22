@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 // import {useEffect} from 'react'
 import { useRouter } from 'next/router';
 
-const withTransition = (OriginalComponent, animDelay) => {
+const withTransition = (OriginalComponent) => {
   // console.log('animDelay = ' + animDelay);
   // console.log(OriginalComponent);
   // const { pathname } = useRouter();

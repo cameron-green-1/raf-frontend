@@ -17,7 +17,7 @@ const Countdown = ({ launch }) => {
     <Link href='/live'>
       <div className={styles.countdown}>
         <div className={styles.live}>
-          {countdown === 'NOW' ? 'LIVE' : 'GOING LIVE IN'}
+          {countdown === 'NOW' ? 'LIVE' : 'LIVE IN'}
         </div>
         <div
           className={styles.time}
