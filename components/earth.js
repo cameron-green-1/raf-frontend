@@ -45,6 +45,7 @@ const Model = () => {
 
       const annotationClicked = (annotation) => {
         // const cameraOrbit = modelViewer.getCameraOrbit();
+        console.log(annotation.id);
         const country = annotation.id;
         const radius = '1.0975154094665978m';
         const orbits = {
@@ -52,8 +53,10 @@ const Model = () => {
           australia: `3.895574890451342rad 2.1258110289290912rad ${radius}`,
           us: `-0.15707963267948974rad 1.0053096491487334rad ${radius}`,
         };
-        modelViewer.cameraOrbit = orbits[country];
-        openPanel(country);
+        if (country !== 'live') {
+          modelViewer.cameraOrbit = orbits[country];
+          openPanel(country);
+        }
       };
 
       modelViewer.querySelectorAll('button').forEach((hotspot) => {
@@ -115,7 +118,7 @@ const Model = () => {
           data-normal='0.6592595175080062m 0.7517413028792996m 0.01618339026421587m'
           data-visibility-attribute='visible'
         >
-          <div className='HotspotAnnotation'></div>
+          <img className='hotspot-svg' src='/hotspot2.svg' alt='' />
         </button>
         <button
           className='Hotspot'
@@ -125,7 +128,7 @@ const Model = () => {
           data-normal='-0.6184666632339064m -0.44218022314338956m -0.6495965184090661m'
           data-visibility-attribute='visible'
         >
-          <div className='HotspotAnnotation'></div>
+          <img className='hotspot-svg' src='/hotspot2.svg' alt='' />
         </button>
         <button
           className='Hotspot'
@@ -135,7 +138,19 @@ const Model = () => {
           data-normal='-0.10179003090738913m 0.5554597835445058m 0.8252897784854503m'
           data-visibility-attribute='visible'
         >
-          <div className='HotspotAnnotation'></div>
+          <img className='hotspot-svg' src='/hotspot2.svg' alt='' />
+        </button>
+        <button
+          className='Hotspot'
+          slot='hotspot-4'
+          id='live'
+          data-position='0.19287068730318838m 0.3490226873894651m -0.026332454430294135m'
+          data-normal='0.43906905408502506m 0.8968197769742062m -0.05415397836555196m'
+          data-visibility-attribute='visible'
+        >
+          <Link href='/live'>
+            <img className='hotspot-svg' src='/hotspot-live-2.svg' alt='' />
+          </Link>
         </button>
         <div className='progress-bar hide' slot='progress-bar'>
           <div className='update-bar'></div>
@@ -205,7 +220,7 @@ const Model = () => {
             </button>
           </div> */}
           <img src='/close.svg' alt='' className='close' />
-          <div class='scan' />
+          <div className='scan' />
           <div className='section'>
             <div className='title'>[OPERATION]</div>
             <div className='name operation'>OPERATION RUMAN</div>

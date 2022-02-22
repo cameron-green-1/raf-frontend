@@ -85,6 +85,7 @@ a {
   background-size: fill;
   /* background-size: cover; */
   /* background-size: contain; */
+  z-index: 2;
 }
 
 .slide-out {
@@ -103,6 +104,7 @@ a {
   background-size: fill;
   /* background-size: cover; */
   /* background-size: contain; */
+  z-index: 2;
 }
 
 .transition-image {
@@ -137,9 +139,21 @@ a {
   width: 450px;
   margin-bottom: -30px;
 }
+
+@media (max-width: 768px) {
+  .holding-logo {
+    width: 250px;
+  }
+}
+
 .holding p {
   text-align: center;
   font-size: 1.5rem;
+}
+
+.holding p:first-child {
+  color: red;
+  margin-top: 60px;
 }
 
 .holding span {
@@ -178,12 +192,21 @@ a {
 /* modelviewer things */
 .Hotspot {
   cursor: pointer;
-  border-radius: 50%;
+  /* border-radius: 50%;
   width: 48px;
   height: 48px;
+  border: solid white 8px; */
+  /* width: 54px;
+  height: 54px; */
   background: none;
-  border: solid white 8px;
+  border: none;
   transition: border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.hotspot-svg {
+  /* transform: translate(-50%, -50%); */
+  width: 100%;
+  height: 100%;
 }
 
 .Hotspot:hover {
@@ -251,6 +274,7 @@ a {
 } */
 
 .panel {
+  max-width: 600px;
   padding: 40px;
   position: absolute;
   top: 75%;
@@ -272,6 +296,7 @@ a {
 @media (max-width: 768px) {
   .panel {
     width: 90%;
+    max-width: 100%;
   }
 }
 

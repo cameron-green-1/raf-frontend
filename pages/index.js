@@ -7,7 +7,7 @@ import Logo from '../components/logo';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
 import Countdown from '../components/countdown';
-import withTransition from '../components/withTransition';
+// import withTransition from '../components/withTransition';
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
@@ -67,7 +67,7 @@ function Holding({ launch }) {
         {/* <img src='/logo.png' className='holding-logo' alt='' /> */}
         <div className='holding-logo' ref={container}></div>
         {/* <div className='lottie-logo'></div> */}
-        <p>Sorry, RAF World is not currently live.</p>
+        <p style={{ marginTop: 60 }}>Sorry, RAF World is not currently live.</p>
         <p>
           The next event is on the <span>6th April @ 6:30pm</span>
         </p>
@@ -112,19 +112,13 @@ function Home({ launch }) {
         </div>
         <motion.div
           className='slide-in'
-          // initial={{ scaleY: 0 }}
-          // animate={{ scaleY: 0 }}
-          // exit={{ scaleY: 1 }}
           initial={{ y: '100%' }}
           animate={{ y: '100%' }}
           exit={{ y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
         />
         <motion.div
           className='slide-out'
-          // initial={{ scaleY: 1 }}
-          // animate={{ scaleY: 0 }}
-          // exit={{ scaleY: 0 }}
           initial={{ y: 0 }}
           animate={{ y: '-100%' }}
           exit={{ y: '-100%' }}
