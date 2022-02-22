@@ -18,18 +18,18 @@ const instructionsItems = instructionsText.map((txt, i) => (
 
 export async function getStaticProps() {
   // export async function getServerSideProps() {
-  console.log('ayy');
+  // console.log('ayy');
   try {
     const res = await fetch('http://localhost:1337/api/launch-time');
     const json = await res.json();
     const launch = json.data.attributes.launch;
-    console.log(launch);
+    // console.log(launch);
     return {
       props: { launch },
     };
   } catch (err) {
     // console.log(err);
-    const launch = '2023-06-08T19:00:00.000Z';
+    const launch = '2022-03-31T18:30:00.000Z';
     return {
       props: { launch },
     };
