@@ -1,4 +1,3 @@
-// import {useEffect} from 'react';
 import Logo from '../components/logo';
 import styles from '../styles/Live.module.css';
 import { motion } from 'framer-motion';

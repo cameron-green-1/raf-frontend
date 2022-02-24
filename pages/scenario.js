@@ -8,7 +8,7 @@ const PanoViewer = dynamic(() => import('../components/panoViewer'), {
 
 const Scenario = () => (
   <>
-    <PanoViewer imageSrc='/pano1.jpg' />{' '}
+    <PanoViewer imageSrc='/pano1min.jpg' />{' '}
     <motion.div
       className='slide-in'
       initial={{ y: '100%' }}

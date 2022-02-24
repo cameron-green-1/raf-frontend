@@ -12,23 +12,18 @@ import Countdown from '../components/countdown';
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
 const instructionsItems = instructionsText.map((txt, i) => (
-  // <p style={{ textIndent: `${i / 2}em` }} key={i}>
   <p key={i}>{txt}</p>
 ));
 
 export async function getStaticProps() {
-  // export async function getServerSideProps() {
-  // console.log('ayy');
   try {
     const res = await fetch('http://localhost:1337/api/launch-time');
     const json = await res.json();
     const launch = json.data.attributes.launch;
-    // console.log(launch);
     return {
       props: { launch },
     };
   } catch (err) {
-    // console.log(err);
     const launch = '2022-03-31T18:30:00.000Z';
     return {
       props: { launch },
@@ -39,14 +34,10 @@ export async function getStaticProps() {
 function Holding({ launch }) {
   const container = useRef(null);
 
-  // console.log(lottie);
-
   useEffect(() => {
-    // const container = document.querySelector('.lottie-logo');
     setTimeout(() => {
       lottie.loadAnimation({
         container: container.current,
-        // container,
         renderer: 'svg',
         loop: true,
         autoplay: true,
@@ -64,9 +55,7 @@ function Holding({ launch }) {
       </Head>
       <img src='/stars.jpg' className={styles.bg} />
       <main className='holding'>
-        {/* <img src='/logo.png' className='holding-logo' alt='' /> */}
         <div className='holding-logo' ref={container}></div>
-        {/* <div className='lottie-logo'></div> */}
         <p style={{ marginTop: 60 }}>Sorry, RAF World is not currently live.</p>
         <p>
           The next event is on the <span>6th April @ 6:30pm</span>
@@ -82,7 +71,6 @@ function Holding({ launch }) {
 }
 
 function Home({ launch }) {
-  // console.log(launch);
   const [holding, setHolding] = useState(false);
   if (holding) {
     return <Holding launch={launch} />;
@@ -104,7 +92,6 @@ function Home({ launch }) {
             <Countdown launch={launch} />
           </header>
           <div className={styles.instructions}>
-            {/* <div className={styles.line}></div> */}
             <img src='/rotate.svg' className={styles.rotate} alt='' />
             <div className={styles.items}>{instructionsItems}</div>
           </div>
