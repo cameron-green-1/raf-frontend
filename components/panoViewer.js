@@ -4,9 +4,9 @@ import Countdown from './countdown';
 import PanelVideo from './panelVideo';
 import PanelPdf from './panelPdf';
 import PanelLink from './panelLink';
-// import withTransition from './withTransition';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+// import withTransition from './withTransition';
 
 import styles from '../styles/PanoViewer.module.css';
 
@@ -39,10 +39,11 @@ const createPano = (imageSrc, hotspots) => {
 
   // Controls
   const controls = new OrbitControls(camera, webglEl);
+  let mouseDown = false;
   let allowControls = true;
-  controls.rotateSpeed = -1; // do they want it to be inverted?
-  controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
-  controls.dampingFactor = 0.2;
+  controls.rotateSpeed = -0.5; // do they want it to be inverted?
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.15;
   controls.enablePan = false;
   controls.enableZoom = false;
   controls.autoRotate = false;
@@ -51,11 +52,6 @@ const createPano = (imageSrc, hotspots) => {
 
   // Rendering
   const render = () => {
-    // if (allowControls) {
-    //   controls.enabled = true;
-    // } else {
-    //   controls.enabled = false;
-    // }
     controls.enabled = allowControls;
     controls.update();
     requestAnimationFrame(render);
@@ -70,37 +66,6 @@ const createPano = (imageSrc, hotspots) => {
     renderer.setSize(window.innerWidth, window.innerHeight);
   };
   window.addEventListener('resize', onWindowResize, false);
-
-  // // Placing hotspots
-  // let positions = [new THREE.Vector3(-10, 0, 5), new THREE.Vector3(5, 0, 0)];
-  // let spriteMap = new THREE.TextureLoader().load('/scenario-hotspot.png');
-  // positions.forEach((pos, i) => {
-  //   let spriteMaterial = new THREE.SpriteMaterial({
-  //     map: spriteMap,
-  //   });
-  //   let sprite = new THREE.Sprite(spriteMaterial);
-  //   sprite.position.copy(pos);
-  //   scene.add(sprite);
-  // });
-
-  // // Clicking hotspots
-  // const rayCaster = new THREE.Raycaster();
-  // const panelOne = document.querySelector('.panel--one');
-  // function onClick(e) {
-  //   let mouse = new THREE.Vector2(
-  //     (e.clientX / window.innerWidth) * 2 - 1,
-  //     -(e.clientY / window.innerHeight) * 2 + 1
-  //   );
-  //   rayCaster.setFromCamera(mouse, camera);
-  //   let intersects = rayCaster.intersectObjects(scene.children);
-  //   intersects.forEach((intersect) => {
-  //     if (intersect.object.type === 'Sprite') {
-  //       panelOne.style.display = 'block';
-  //       panelOne.style.opacity = 1;
-  //     }
-  //   });
-  // }
-  // container.addEventListener('click', onClick);
 
   // Placing hotspots
   let positions = [];
@@ -118,6 +83,7 @@ const createPano = (imageSrc, hotspots) => {
     scene.add(sprite);
   });
 
+  // Stopping video
   const stopVideo = function (element) {
     const iframe = element.querySelector('iframe');
     if (iframe) {
@@ -141,9 +107,27 @@ const createPano = (imageSrc, hotspots) => {
     btn.addEventListener('click', closePanels);
   });
 
+  //Hovering hotspots -> debounce this?
+  const onDocumentMouseMove = (e) => {
+    let mouse = new THREE.Vector2();
+    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+    rayCaster.setFromCamera(mouse, camera);
+    let intersects = rayCaster.intersectObjects(scene.children);
+    if (intersects.length > 1) {
+      container.style.cursor = 'pointer';
+    } else {
+      mouseDown
+        ? (container.style.cursor = 'grabbing')
+        : (container.style.cursor = 'grab');
+    }
+  };
+  container.addEventListener('mousemove', onDocumentMouseMove);
+
   // Clicking hotspots
   const rayCaster = new THREE.Raycaster();
-  function onClick(e) {
+  const onClick = (e) => {
+    mouseDown = true;
     let mouse = new THREE.Vector2(
       (e.clientX / window.innerWidth) * 2 - 1,
       -(e.clientY / window.innerHeight) * 2 + 1
@@ -160,8 +144,16 @@ const createPano = (imageSrc, hotspots) => {
         targetPanel.style.opacity = 1;
       }
     });
-  }
+    container.style.cursor = 'grabbing';
+  };
   container.addEventListener('mousedown', onClick);
+
+  // Handle release
+  const onRelease = (e) => {
+    mouseDown = false;
+    container.style.cursor = 'grab';
+  };
+  container.addEventListener('mouseup', onRelease);
 };
 
 const renderPanel = (hotspot, i) => {
@@ -186,44 +178,6 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
     <div className='wrapper'>
       <div className={styles.container} id='container'>
         <div className={styles.sphere} id='sphere'></div>
-        {/* <div className='panel panel--one' style={{ top: '50%' }}>
-          <div className='info'>
-            <div className='section section-close'>
-              <button className='btn-close'>
-                Close [<span>X</span>]
-              </button>
-            </div>
-            <div className='section'>
-              <div className='title operation'>[ROLE]</div>
-              <div className='name operation'>
-                Cyberspace Communication Specialist
-              </div>
-            </div>
-            <div className='section'>
-              <div className='title'>[WESBITE LINK]</div>
-              <iframe
-                className='iframe'
-                title='recruitment'
-                width='300'
-                height='200'
-                src='https://www.raf.mod.uk/recruitment/roles/roles-finder/cyberspace/cyberspace-communication-specialist'
-              ></iframe>
-            </div>
-            <div className='section'>
-              <div className='title'>[INFO]</div>
-              <div className='description'>
-                Explore this role and more by clicking on the button below
-              </div>
-            </div>
-            <div className='section-launch'>
-              <button className='btn btn-operation'>FIND OUT MORE</button>
-            </div>
-          </div>
-        </div> */}
-        {/* <div className={styles.ui}>
-          <div className={styles.row}>
-          </div>
-        </div> */}
       </div>
       <div className={styles.logoContainer}>
         <Logo />
@@ -234,13 +188,6 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
       <div className={styles.aroundContainer}>
         <img src='/360.png' alt='' />
       </div>
-      {/* <PanelVideo hotspot={hotspots[0]} /> */}
-      {/* {hotspots.map((hotspot) => {
-        switch(hotspot.type) {
-          case "video":
-            return <PanelVideo hotspot={hotspot}
-        }
-      })} */}
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
     </div>
   );
