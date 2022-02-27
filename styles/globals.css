@@ -436,7 +436,7 @@ a {
   transform: translateY(-50%);
   width: 40px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 10 !important;
 }
 
 .vimeo {
