@@ -11,20 +11,20 @@
 
 .logoContainer {
   position: absolute;
-  top: 75px;
-  left: 75px;
+  top: 40px;
+  left: 40px;
 }
 
 .countdownContainer {
   position: absolute;
-  top: 75px;
-  right: 75px;
+  top: 40px;
+  right: 40px;
 }
 
 .aroundContainer {
   position: absolute;
-  bottom: 75px;
-  right: 75px;
+  bottom: 40px;
+  right: 40px;
 }
 
 .aroundContainer img {

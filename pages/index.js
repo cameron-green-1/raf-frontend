@@ -24,7 +24,7 @@ export async function getStaticProps() {
       props: { launch },
     };
   } catch (err) {
-    const launch = '2022-03-31T18:30:00.000Z';
+    const launch = '2022-03-01T18:30:00.000Z';
     return {
       props: { launch },
     };

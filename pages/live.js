@@ -1,6 +1,7 @@
 import Logo from '../components/logo';
 import styles from '../styles/Live.module.css';
 import { motion } from 'framer-motion';
+import Countdown from '../components/countdown';
 // import withTransition from '../components/withTransition';
 
 export async function getStaticProps() {
@@ -10,6 +11,12 @@ export async function getStaticProps() {
     const json = await res.json();
     const link = json.data.attributes.link;
     teamsLinks.push(link);
+    // const launchRes = await fetch('http://localhost:1337/api/launch-time');
+    // const launchJson = await launchRes.json();
+    // const launch = launchJson.data.attributes.launch;
+    // return {
+    //   props: { launch },
+    // };
   } catch (err) {
     console.log(err);
   }
@@ -36,14 +43,14 @@ const Live = ({ teamsLinks }) => {
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
-            <div className={styles.live}>
-              <span className={styles.bullet}>•</span> LIVE
-            </div>
+            <Countdown />
           </header>
           <div className={styles.name}>The Comms Room</div>
           <div className={styles.flex}>
             <div className={styles.title}>LATEST CONTENT</div>
-            <div className={styles.title}>LIVE VIDEO CHAT ROOM</div>
+            <div className={[styles.title, styles.video].join(' ')}>
+              LIVE VIDEO CHAT ROOM
+            </div>
             <div className={styles.content}>
               <a
                 href='https://www.raf.mod.uk/recruitment/engineering'

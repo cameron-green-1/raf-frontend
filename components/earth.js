@@ -180,7 +180,9 @@ const Model = () => {
             </div>
           </div>
           <div className='section section-launch'>
-            <button className='btn btn-operation'>LAUNCH OPERATION</button>
+            <Link href='/scenario'>
+              <button className='btn btn-operation'>LAUNCH OPERATION</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -208,7 +210,9 @@ const Model = () => {
             </div>
           </div>
           <div className='section-launch'>
-            <button className='btn btn-operation'>LAUNCH OPERATION</button>
+            <Link href='/scenario'>
+              <button className='btn btn-operation'>LAUNCH OPERATION</button>
+            </Link>
           </div>
         </div>
       </div>

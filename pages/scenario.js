@@ -6,9 +6,64 @@ const PanoViewer = dynamic(() => import('../components/panoViewer'), {
   ssr: false,
 });
 
+const vimeoEmbed = (
+  <iframe
+    src='https://player.vimeo.com/video/514470296?h=a7bd2f8234'
+    // width='640'
+    // height='320'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const hotspots = [
+  {
+    type: 'video',
+    title: 'General Technician',
+    link: vimeoEmbed,
+    description:
+      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
+    img: null,
+    position: [-10, 0, 5],
+    sprite: '/scenario-hotspot.png',
+  },
+  // {
+  //   type: 'video',
+  //   title: 'General Technician',
+  //   link: vimeoEmbed,
+  //   description:
+  //     'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
+  //   img: null,
+  //   position: [5, 0, 5],
+  //   sprite: '/scenario-hotspot.png',
+  // },
+  {
+    type: 'pdf',
+    title: 'General Technician',
+    link: '/dummy.pdf',
+    description:
+      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
+    img: '/general-technician.jpg',
+    position: [10, 0, 5],
+    sprite: '/scenario-hotspot.png',
+  },
+  {
+    type: 'link',
+    title: 'General Technician',
+    link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
+    description:
+      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
+    img: '/general-technician.jpg',
+    position: [-8, 0, -8],
+    sprite: '/scenario-hotspot.png',
+  },
+];
+
 const Scenario = () => (
   <>
-    <PanoViewer imageSrc='/pano1min.jpg' />{' '}
+    <PanoViewer imageSrc='/pano1min.jpg' hotspots={hotspots} />{' '}
     <motion.div
       className='slide-in'
       initial={{ y: '100%' }}
