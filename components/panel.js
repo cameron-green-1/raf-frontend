@@ -1,6 +1,6 @@
-const Panel = ({ children }) => {
+const Panel = ({ children, padding }) => {
   return (
-    <div className='hotspot'>
+    <div className='hotspot' style={{ padding }}>
       <div className='hotspot-bg'></div>
       <img src='/close.svg' alt='' className='hotspot-close' />
       {/* <button className='hotspot-close'> */}

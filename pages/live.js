@@ -38,7 +38,7 @@ const Live = ({ teamsLinks }) => {
   ];
   return (
     <>
-      <div className='wrapper'>
+      <div className='wrapper live'>
         <img src='/raf3.jpg' className={styles.backgroundImage} />
         <div className={styles.container}>
           <header className={styles.header}>

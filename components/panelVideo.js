@@ -3,7 +3,7 @@ import styles from '../styles/PanelVideo.module.css';
 
 const PanelVideo = ({ hotspot }) => {
   return (
-    <Panel>
+    <Panel padding={30}>
       <div className={styles.grid}>
         {hotspot.link}
         <h2 className={styles.profession}>PROFESSION</h2>

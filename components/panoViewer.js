@@ -39,7 +39,10 @@ const createPano = (imageSrc, hotspots) => {
 
   // Controls
   const controls = new OrbitControls(camera, webglEl);
+  let allowControls = true;
   controls.rotateSpeed = -1; // do they want it to be inverted?
+  controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+  controls.dampingFactor = 0.2;
   controls.enablePan = false;
   controls.enableZoom = false;
   controls.autoRotate = false;
@@ -48,6 +51,12 @@ const createPano = (imageSrc, hotspots) => {
 
   // Rendering
   const render = () => {
+    // if (allowControls) {
+    //   controls.enabled = true;
+    // } else {
+    //   controls.enabled = false;
+    // }
+    controls.enabled = allowControls;
     controls.update();
     requestAnimationFrame(render);
     renderer.render(scene, camera);
@@ -126,6 +135,7 @@ const createPano = (imageSrc, hotspots) => {
       panel.style.display = 'none';
       panel.style.opacity = 0;
     });
+    allowControls = true;
   };
   buttonCloseArr.forEach((btn) => {
     btn.addEventListener('click', closePanels);
@@ -144,13 +154,14 @@ const createPano = (imageSrc, hotspots) => {
       const hit = intersect.object;
       if (hit.type === 'Sprite') {
         closePanels();
+        allowControls = false;
         const targetPanel = panels[hit.name];
         targetPanel.style.display = 'block';
         targetPanel.style.opacity = 1;
       }
     });
   }
-  container.addEventListener('click', onClick);
+  container.addEventListener('mousedown', onClick);
 };
 
 const renderPanel = (hotspot, i) => {

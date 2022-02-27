@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import lottie from 'lottie-web';
+import { handleMobileVh } from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Home.module.css';
 import dynamic from 'next/dynamic';
@@ -71,6 +72,9 @@ function Holding({ launch }) {
 }
 
 function Home({ launch }) {
+  useEffect(() => {
+    handleMobileVh();
+  }, []);
   const [holding, setHolding] = useState(false);
   if (holding) {
     return <Holding launch={launch} />;

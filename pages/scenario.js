@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
+import { handleMobileVh } from '../utils/helpers';
 // import withTransition from '../components/withTransition';
 
 const PanoViewer = dynamic(() => import('../components/panoViewer'), {
@@ -9,8 +11,6 @@ const PanoViewer = dynamic(() => import('../components/panoViewer'), {
 const vimeoEmbed = (
   <iframe
     src='https://player.vimeo.com/video/514470296?h=a7bd2f8234'
-    // width='640'
-    // height='320'
     frameBorder='0'
     allow='autoplay; fullscreen; picture-in-picture'
     allowFullScreen
@@ -61,25 +61,30 @@ const hotspots = [
   },
 ];
 
-const Scenario = () => (
-  <>
-    <PanoViewer imageSrc='/pano1min.jpg' hotspots={hotspots} />{' '}
-    <motion.div
-      className='slide-in'
-      initial={{ y: '100%' }}
-      animate={{ y: '100%' }}
-      exit={{ y: 0 }}
-      transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
-    />
-    <motion.div
-      className='slide-out'
-      initial={{ y: 0 }}
-      animate={{ y: '-100%' }}
-      exit={{ y: '-100%' }}
-      transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
-    />
-  </>
-);
+const Scenario = () => {
+  useEffect(() => {
+    handleMobileVh();
+  });
+  return (
+    <>
+      <PanoViewer imageSrc='/pano1min.jpg' hotspots={hotspots} />{' '}
+      <motion.div
+        className='slide-in'
+        initial={{ y: '100%' }}
+        animate={{ y: '100%' }}
+        exit={{ y: 0 }}
+        transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className='slide-out'
+        initial={{ y: 0 }}
+        animate={{ y: '-100%' }}
+        exit={{ y: '-100%' }}
+        transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
+      />
+    </>
+  );
+};
 
 // export default withTransition(Scenario);
 export default Scenario;

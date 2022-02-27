@@ -39,3 +39,27 @@ export const convertTime = (ms) => {
     return `${days} DAYS`;
   }
 };
+
+export const handleMobileVh = () => {
+  document.documentElement.style.setProperty(
+    '--vh',
+    `${window.innerHeight / 100}px`
+  );
+  const debounce = (callback, wait) => {
+    let timeoutId = null;
+    return (...args) => {
+      window.clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => {
+        callback.apply(null, args);
+      }, wait);
+    };
+  };
+  const handleResize = debounce((ev) => {
+    console.log('debounce');
+    document.documentElement.style.setProperty(
+      '--vh',
+      `${window.innerHeight / 100}px`
+    );
+  }, 250);
+  window.addEventListener('resize', handleResize);
+};
