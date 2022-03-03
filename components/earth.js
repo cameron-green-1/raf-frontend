@@ -44,14 +44,19 @@ const Model = () => {
       };
 
       const annotationClicked = (annotation) => {
-        // const cameraOrbit = modelViewer.getCameraOrbit();
-        console.log(annotation.id);
+        const cameraOrbit = modelViewer.getCameraOrbit();
+        console.log(cameraOrbit);
+        // const radsToDegs = (rad) => (rad * 180) / Math.PI;
+        // console.log(radsToDegs(cameraOrbit.theta), radsToDegs(cameraOrbit.phi));
+        // console.log(annotation.id);
         const country = annotation.id;
         const radius = '1.0975154094665978m';
         const orbits = {
           england: `1.5917402778188294rad 0.8482300164692436rad ${radius}`,
-          australia: `3.895574890451342rad 2.1258110289290912rad ${radius}`,
-          us: `-0.15707963267948974rad 1.0053096491487334rad ${radius}`,
+          // australia: `3.895574890451342rad 2.1258110289290912rad ${radius}`,
+          australia: `1.8682218848056886rad 1.0155939067898059rad ${radius}`,
+          // us: `-0.15707963267948974rad 1.0053096491487334rad ${radius}`,
+          us: `0.11949583324281898rad 1.3711583711000672rad ${radius}`,
         };
         if (country !== 'live') {
           modelViewer.cameraOrbit = orbits[country];
@@ -124,8 +129,10 @@ const Model = () => {
           className='Hotspot'
           id='australia'
           slot='hotspot-2'
-          data-position='-0.25085977173563767m -0.1693309138518099m -0.2601983595344651m'
-          data-normal='-0.6184666632339064m -0.44218022314338956m -0.6495965184090661m'
+          // data-position='-0.25085977173563767m -0.1693309138518099m -0.2601983595344651m'
+          // data-normal='-0.6184666632339064m -0.44218022314338956m -0.6495965184090661m'
+          data-position='0.2486346049614271m 0.2910040758779223m -0.11388295176282018m'
+          data-normal='0.6028827492498801m 0.7517413237919427m -0.26724029030152646m'
           data-visibility-attribute='visible'
         >
           <img className='hotspot-svg' src='/hotspot2.svg' alt='' />
@@ -134,8 +141,10 @@ const Model = () => {
           className='Hotspot'
           id='us'
           slot='hotspot-3'
-          data-position='-0.04240486239587407m 0.2369244427988132m 0.3188482737537706m'
-          data-normal='-0.10179003090738913m 0.5554597835445058m 0.8252897784854503m'
+          // data-position='-0.04240486239587407m 0.2369244427988132m 0.3188482737537706m'
+          // data-normal='-0.10179003090738913m 0.5554597835445058m 0.8252897784854503m'
+          data-position='0.07362272650680375m 0.1493442242897669m 0.36340560801710026m'
+          data-normal='0.20748016084064164m 0.32135404888827773m 0.9239499759839014m'
           data-visibility-attribute='visible'
         >
           <img className='hotspot-svg' src='/hotspot2.svg' alt='' />
@@ -165,15 +174,15 @@ const Model = () => {
           </div> */}
           <img src='/close.svg' alt='' className='close' />
           <div className='section'>
-            <div className='title'>[OPERATION]</div>
+            <div className='title'>OPERATION</div>
             <div className='name operation'>MACA SUPPORT</div>
           </div>
           <div className='section'>
-            <div className='title'>[LOCATION]</div>
+            <div className='title'>LOCATION</div>
             <div className='name'>UK</div>
           </div>
           <div className='section'>
-            <div className='title'>[ROLES]</div>
+            <div className='title'>ROLES</div>
             <div className='description'>
               Medical Services, Logistics, Security & Resilience Operations,
               People Operations, Chaplaincy, Legal, Air Crew, Engineering
@@ -195,15 +204,15 @@ const Model = () => {
           </div> */}
           <img src='/close.svg' alt='' className='close' />
           <div className='section'>
-            <div className='title operation'>[OPERATION]</div>
+            <div className='title operation'>OPERATION</div>
             <div className='name operation'>OPERATION BILOXI</div>
           </div>
           <div className='section'>
-            <div className='title'>[LOCATION]</div>
+            <div className='title'>LOCATION</div>
             <div className='name'>ROMANIA</div>
           </div>
           <div className='section'>
-            <div className='title'>[ROLES]</div>
+            <div className='title'>ROLES</div>
             <div className='description'>
               Engineering, Intelligence, Air and Space Operations, Logistics,
               Security & Resilience Operations
@@ -226,15 +235,15 @@ const Model = () => {
           <img src='/close.svg' alt='' className='close' />
           <div className='scan' />
           <div className='section'>
-            <div className='title'>[OPERATION]</div>
+            <div className='title'>OPERATION</div>
             <div className='name operation'>OPERATION RUMAN</div>
           </div>
           <div className='section'>
-            <div className='title'>[LOCATION]</div>
+            <div className='title'>LOCATION</div>
             <div className='name'>CARIBBEAN</div>
           </div>
           <div className='section'>
-            <div className='title'>[ROLES]</div>
+            <div className='title'>ROLES</div>
             <div className='description'>
               Medical Services, Air & Space Operations, Engineering,
               Intelligence, Logistics
