@@ -45,7 +45,7 @@ const Model = () => {
 
       const annotationClicked = (annotation) => {
         const cameraOrbit = modelViewer.getCameraOrbit();
-        console.log(cameraOrbit);
+        // console.log(cameraOrbit);
         // const radsToDegs = (rad) => (rad * 180) / Math.PI;
         // console.log(radsToDegs(cameraOrbit.theta), radsToDegs(cameraOrbit.phi));
         // console.log(annotation.id);
@@ -112,6 +112,7 @@ const Model = () => {
         camera-controls
         src='/earth.glb'
         environment-image='/aircraft_workshop_01_1k.hdr'
+        camera-orbit='1.5917402778188294rad 0.8482300164692436rad 1.0975154094665978m'
         shadow-intensity='0'
         exposure='1.25'
       >
