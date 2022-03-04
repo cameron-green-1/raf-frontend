@@ -32,6 +32,18 @@
   width: 100px;
 }
 
+.backContainer {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+}
+
+@media (max-width: 500px) {
+  .backContainer {
+    max-width: 200px;
+  }
+}
+
 /* .ui {
   position: absolute;
   width: calc(100% - 150px);

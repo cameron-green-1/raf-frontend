@@ -1,0 +1,22 @@
+.back {
+  padding: 20px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease-in-out;
+  /* max-width: 200px; */
+}
+
+.back:hover {
+  color: rgb(228, 226, 226);
+}
+
+.back span {
+  margin-right: 10px;
+}
+
+/* @media (max-width: 500px) {
+  .back {
+    max-width: 200px;
+  }
+} */

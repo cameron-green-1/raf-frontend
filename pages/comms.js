@@ -1,7 +1,8 @@
 import Logo from '../components/logo';
-import styles from '../styles/Live.module.css';
+import styles from '../styles/Comms.module.css';
 import { motion } from 'framer-motion';
 import Countdown from '../components/countdown';
+import Back from '../components/back';
 // import withTransition from '../components/withTransition';
 
 export async function getStaticProps() {
@@ -117,6 +118,9 @@ const Comms = ({ teamsLinks }) => {
               </button>
             </div>
           </div>
+        </div>
+        <div className={styles.backContainer}>
+          <Back />
         </div>
       </div>
       <motion.div

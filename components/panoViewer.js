@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Logo from './logo';
 import Countdown from './countdown';
+import Back from './back';
 import PanelVideo from './panelVideo';
 import PanelPdf from './panelPdf';
 import PanelLink from './panelLink';
@@ -187,6 +188,9 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
       </div>
       <div className={styles.aroundContainer}>
         <img src='/360.png' alt='' />
+      </div>
+      <div className={styles.backContainer}>
+        <Back />
       </div>
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
     </div>
