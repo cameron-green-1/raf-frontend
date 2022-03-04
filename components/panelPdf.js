@@ -5,7 +5,10 @@ const PanelPdf = ({ hotspot }) => {
   return (
     <Panel padding={0}>
       <div className={styles.flex}>
-        <img src={hotspot.img} className={styles.img} alt='' />
+        <div className={styles.image}>
+          <img src={hotspot.img} className={styles.img} alt='' />
+          <h1 className={styles.imgText}>{hotspot.title.toUpperCase()}</h1>
+        </div>
         <div className={styles.info}>
           <h2 className={styles.profession}>PROFESSION</h2>
           <h1 className={styles.title}>{hotspot.title}</h1>
