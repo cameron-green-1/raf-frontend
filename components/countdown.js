@@ -21,7 +21,7 @@ const Countdown = ({ launch }) => {
         </div>
         <div
           className={styles.time}
-          style={{ display: countdown === 'NOW' ? 'none' : 'block' }}
+          style={{ display: countdown === 'NOW' ? 'none' : 'flex' }}
         >
           {countdown}
         </div>

@@ -8,7 +8,7 @@ export const calculateDelta = (launch) => {
 };
 
 export const convertTime = (ms) => {
-  // if greater than 72 hours return days, i.e. "4 days"
+  // if greater than 72 hours return 72:00:00+
   // if less than 72 hours return HH:MM:SS, i.e. "25:57:12"
 
   const limitToDisplayDays = 259200000;
@@ -34,9 +34,10 @@ export const convertTime = (ms) => {
 
     return `${hoursStr}:${minutesStr}:${secondsStr}`;
   } else {
-    const days = Math.floor(ms / 86400000);
+    // const days = Math.floor(ms / 86400000);
 
-    return `${days} DAYS`;
+    // return `${days} DAYS`;
+    return '72:00:00+';
   }
 };
 

@@ -1,0 +1,54 @@
+.holding {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.holding * {
+  margin-bottom: 30px;
+}
+
+.holdingLogo {
+  width: 450px;
+  /* margin-bottom: -75px; */
+}
+
+@media (max-width: 768px) {
+  .holdingLogo {
+    width: 250px;
+  }
+}
+
+.holding p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.holding p:first-child {
+  color: red;
+  margin-top: 60px;
+}
+
+.holding span {
+  color: #0097d1;
+  font-weight: 600;
+}
+
+.holding button {
+  font-weight: 700;
+  background-color: #0097d1;
+  color: white;
+  border: none;
+  padding: 20px 80px;
+  margin-bottom: 60px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.holding button:hover {
+  background-color: #0181b4;
+}

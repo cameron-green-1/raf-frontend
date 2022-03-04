@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Logo = () => {
   return (
-    <Link href='/'>
+    <Link href='/operations'>
       <a>
         <img src='/logo.png' className='logo'></img>
       </a>

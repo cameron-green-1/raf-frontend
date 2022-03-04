@@ -25,7 +25,7 @@ export async function getStaticProps() {
   };
 }
 
-const Live = ({ teamsLinks }) => {
+const Comms = ({ teamsLinks }) => {
   const images = [
     <img src='/grid1.jpg' key={0} alt='' className={styles.thumbnail} />,
     <img src='/grid2.jpg' key={1} alt='' className={styles.thumbnail} />,
@@ -138,4 +138,4 @@ const Live = ({ teamsLinks }) => {
 };
 
 // export default withTransition(Live);
-export default Live;
+export default Comms;

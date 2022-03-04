@@ -58,7 +58,7 @@ const Model = () => {
           // us: `-0.15707963267948974rad 1.0053096491487334rad ${radius}`,
           us: `0.11949583324281898rad 1.3711583711000672rad ${radius}`,
         };
-        if (country !== 'live') {
+        if (country !== 'comms') {
           modelViewer.cameraOrbit = orbits[country];
           openPanel(country);
         }
@@ -153,12 +153,12 @@ const Model = () => {
         <button
           className='Hotspot'
           slot='hotspot-4'
-          id='live'
+          id='comms'
           data-position='0.19287068730318838m 0.3490226873894651m -0.026332454430294135m'
           data-normal='0.43906905408502506m 0.8968197769742062m -0.05415397836555196m'
           data-visibility-attribute='visible'
         >
-          <Link href='/live'>
+          <Link href='/comms'>
             <img className='hotspot-svg' src='/hotspot-live-2.svg' alt='' />
           </Link>
         </button>
