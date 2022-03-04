@@ -37,6 +37,7 @@ function Holding({ holding, launch }) {
   const container = useRef(null);
 
   useEffect(() => {
+    handleMobileVh();
     setTimeout(() => {
       lottie.loadAnimation({
         container: container.current,
