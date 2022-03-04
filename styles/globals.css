@@ -272,11 +272,13 @@ a {
   background: -moz-repeating-linear-gradient(
     top,
     transparent 0px,
-    transparent 1px,
-    rgba(0, 0, 0, 0.5) 1px,
-    rgba(0, 0, 0, 0.5) 2px
+    transparent 6px,
+    /* rgba(0, 0, 0, 0.5) 1px,
+    rgba(0, 0, 0, 0.5) 2px */ rgba(1, 38, 75, 0.5)
+      6px,
+    rgba(0, 38, 75, 0.5) 12px
   );
-  -moz-background-size: 100% 4px;
+  -moz-background-size: 100% 12px;
 }
 
 .section {
