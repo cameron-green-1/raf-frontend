@@ -167,6 +167,7 @@ const Model = () => {
         </div>
       </model-viewer>
       <div className='panel panel--england'>
+        <div className='scan-lines'></div>
         <div className='info'>
           {/* <div className='section section-close'>
             <button className='btn-close'>
@@ -197,6 +198,7 @@ const Model = () => {
         </div>
       </div>
       <div className='panel panel--australia'>
+        <div className='scan-lines'></div>
         <div className='info'>
           {/* <div className='section section-close'>
             <button className='btn-close'>
@@ -227,6 +229,7 @@ const Model = () => {
         </div>
       </div>
       <div className='panel panel--us'>
+        <div className='scan-lines'></div>
         <div className='info'>
           {/* <div className='section section-close'>
             <button className='btn-close'>
