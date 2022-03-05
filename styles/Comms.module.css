@@ -5,7 +5,7 @@
   /* min-height: 110vh; */
   /* background: orange; */
   padding: 40px 40px 0 40px;
-  min-height: 90vh;
+  min-height: 80vh;
 }
 
 @media (max-width: 1250px) {
@@ -63,6 +63,14 @@
   /* margin-left: 20px; */
   display: flex;
   flex-direction: column;
+}
+
+.chat span {
+  color: #0097d1;
+}
+
+.chatLive {
+  color: #c60c30;
 }
 
 .rooms {
@@ -154,7 +162,7 @@
 
 .title {
   font-size: 0.75rem;
-  color: #027bb7;
+  color: #0097d1;
   margin-bottom: 5px;
 }
 

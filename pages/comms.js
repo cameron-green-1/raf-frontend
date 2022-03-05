@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Link from 'next/link';
 import Logo from '../components/logo';
 import styles from '../styles/Comms.module.css';
 import { motion } from 'framer-motion';
@@ -26,7 +28,70 @@ export async function getStaticProps() {
   };
 }
 
+const Chat = () => {
+  return (
+    <>
+      <div className={styles.chat}>
+        <p>
+          We’re now <span style={{ color: '#C60C30' }}>LIVE!</span> Join a teams
+          video chat room below to speak with RAF personnel and find out more
+          about a specific role.
+        </p>
+        <ul className={styles.rooms}>
+          <li className={styles.room}>
+            <img src='/share.png' alt='' />
+            <p>FORCE PROTECTION</p>
+            <div>LIVE</div>
+          </li>
+          <li className={styles.room}>
+            <img src='/share.png' alt='' />
+            <p>AIR OPERATIONS</p>
+            <div>LIVE</div>
+          </li>
+          <li className={styles.room}>
+            <img src='/share.png' alt='' />
+            <p>INTELLIGENCE</p>
+            <div>LIVE</div>
+          </li>
+          <li className={styles.room}>
+            <img src='/share.png' alt='' />
+            <p>LOGISTICS</p>
+            <div>LIVE</div>
+          </li>
+          <li className={styles.room}>
+            <img src='/share.png' alt='' />
+            <p>ENGINEERING</p>
+            <div>LIVE</div>
+          </li>
+          <li className={styles.room}>
+            <img src='/share.png' alt='' />
+            <p>PERSONNEL TRAINING</p>
+            <div>LIVE</div>
+          </li>
+          <li className={styles.room}>
+            <img src='/share.png' alt='' />
+            <p>FORCE PROTECTION</p>
+            <div>LIVE</div>
+          </li>
+        </ul>
+      </div>
+      <div></div>
+      <div className={styles.question}>
+        <div className={styles.title}>ASK A QUESTION</div>
+        <p>
+          If you’d prefer to ask a question via text chat, please click below:
+        </p>
+        <button>
+          <img src='/bubble.png' alt='' />
+          <p>LIVE TEXT CHAT</p>
+        </button>
+      </div>
+    </>
+  );
+};
+
 const Comms = ({ teamsLinks }) => {
+  const [live, setLive] = useState(false);
   const images = [
     <img src='/grid1.jpg' key={0} alt='' className={styles.thumbnail} />,
     <img src='/grid2.jpg' key={1} alt='' className={styles.thumbnail} />,
@@ -40,7 +105,7 @@ const Comms = ({ teamsLinks }) => {
   return (
     <>
       <div className='wrapper live'>
-        <img src='/raf3.jpg' className={styles.backgroundImage} />
+        <img src='/raf4.jpg' className={styles.backgroundImage} />
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
@@ -50,73 +115,31 @@ const Comms = ({ teamsLinks }) => {
           <div className={styles.flex}>
             <div className={styles.title}>LATEST CONTENT</div>
             <div className={[styles.title, styles.video].join(' ')}>
-              LIVE VIDEO CHAT ROOM
+              {live ? 'LIVE VIDEO CHAT ROOM' : 'LIVE CHAT'}
             </div>
+
             <div className={styles.content}>
-              <a
-                href='https://www.raf.mod.uk/recruitment/engineering'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <img src='/raf2.jpg' alt='' className={styles.cover}></img>
-              </a>
+              <Link href='/comms/latest'>
+                <img
+                  src='/from-studio.jpg'
+                  alt=''
+                  className={styles.cover}
+                ></img>
+              </Link>
             </div>
-            <div className={styles.chat}>
-              <p>
-                We’re now <span>LIVE!</span> Join a teams video chat room below
-                to speak with RAF personnel and find out more about a specific
-                role.
-              </p>
-              <ul className={styles.rooms}>
-                <li className={styles.room}>
-                  <img src='/share.png' alt='' />
-                  <p>FORCE PROTECTION</p>
-                  <div>LIVE</div>
-                </li>
-                <li className={styles.room}>
-                  <img src='/share.png' alt='' />
-                  <p>AIR OPERATIONS</p>
-                  <div>LIVE</div>
-                </li>
-                <li className={styles.room}>
-                  <img src='/share.png' alt='' />
-                  <p>INTELLIGENCE</p>
-                  <div>LIVE</div>
-                </li>
-                <li className={styles.room}>
-                  <img src='/share.png' alt='' />
-                  <p>LOGISTICS</p>
-                  <div>LIVE</div>
-                </li>
-                <li className={styles.room}>
-                  <img src='/share.png' alt='' />
-                  <p>ENGINEERING</p>
-                  <div>LIVE</div>
-                </li>
-                <li className={styles.room}>
-                  <img src='/share.png' alt='' />
-                  <p>PERSONNEL TRAINING</p>
-                  <div>LIVE</div>
-                </li>
-                <li className={styles.room}>
-                  <img src='/share.png' alt='' />
-                  <p>FORCE PROTECTION</p>
-                  <div>LIVE</div>
-                </li>
-              </ul>
-            </div>
-            <div></div>
-            <div className={styles.question}>
-              <div className={styles.title}>ASK A QUESTION</div>
-              <p>
-                If you’d prefer to ask a question via text chat, please click
-                below:
-              </p>
-              <button>
-                <img src='/bubble.png' alt='' />
-                <p>LIVE TEXT CHAT</p>
-              </button>
-            </div>
+            {live ? (
+              <Chat />
+            ) : (
+              <div className={styles.chat}>
+                <p>
+                  <span>We are currently offline</span>. Live chat opens{' '}
+                  <span>@ 6.30pm</span>. Whilst you wait, watch our latest
+                  content ‘From the Studio’ or explore RAF operations and
+                  professions from the home page.
+                </p>
+              </div>
+            )}
+            {/* <Chat /> */}
           </div>
         </div>
         <div className={styles.backContainer}>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import Brief from '../components/brief';
 import { motion } from 'framer-motion';
 import { handleMobileVh } from '../utils/helpers';
 // import withTransition from '../components/withTransition';
@@ -68,6 +69,7 @@ const Scenario = () => {
   return (
     <>
       <PanoViewer imageSrc='/pano1min.jpg' hotspots={hotspots} />{' '}
+      {/* <Brief /> */}
       <motion.div
         className='slide-in'
         initial={{ y: '100%' }}
