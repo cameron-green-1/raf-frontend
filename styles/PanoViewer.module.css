@@ -9,6 +9,18 @@
   left: 0;
 }
 
+.annotation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  background: #c60c30;
+  color: white;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
 .logoContainer {
   position: absolute;
   top: 40px;

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@google/model-viewer": "^1.10.1",
+    "@seregpie/three.text-sprite": "^3.2.0",
     "@types/dat.gui": "^0.7.7",
     "framer-motion": "^6.2.7",
     "lottie-web": "^5.8.1",

@@ -7,15 +7,17 @@ import PanelPdf from './panelPdf';
 import PanelLink from './panelLink';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
 // import withTransition from './withTransition';
 
 import styles from '../styles/PanoViewer.module.css';
+// import { VectorKeyframeTrack } from 'three';
 
 const createPano = (imageSrc, hotspots) => {
   // Element variables
   const container = document.getElementById('container');
-  const webglEl = document.getElementById('sphere'),
-    width = window.innerWidth,
+  const webglEl = document.getElementById('sphere');
+  let width = window.innerWidth,
     height = window.innerHeight;
 
   // Scene
@@ -25,6 +27,7 @@ const createPano = (imageSrc, hotspots) => {
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(width, height);
   webglEl.appendChild(renderer.domElement);
+  renderer.setPixelRatio(window.devicePixelRatio);
 
   // Material
   const map = new THREE.TextureLoader().load(imageSrc);
@@ -40,6 +43,9 @@ const createPano = (imageSrc, hotspots) => {
 
   // Controls
   const controls = new OrbitControls(camera, webglEl);
+  controls.addEventListener('change', function () {
+    onCameraChange();
+  });
   let mouseDown = false;
   let allowControls = true;
   controls.rotateSpeed = -0.5; // do they want it to be inverted?
@@ -60,14 +66,6 @@ const createPano = (imageSrc, hotspots) => {
   };
   render();
 
-  //Resize
-  const onWindowResize = () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  };
-  window.addEventListener('resize', onWindowResize, false);
-
   // Placing hotspots
   let positions = [];
   hotspots.forEach((hotspot, i) => {
@@ -76,13 +74,68 @@ const createPano = (imageSrc, hotspots) => {
     const z = hotspot.position[2];
     positions.push(new THREE.Vector3(x, y, z));
     let spriteMap = new THREE.TextureLoader().load(hotspot.sprite);
-    let spriteMaterial = new THREE.SpriteMaterial({ map: spriteMap });
+    let spriteMaterial = new THREE.SpriteMaterial({
+      map: spriteMap,
+      sizeAttenuation: false,
+    });
+    spriteMaterial.magFilter = 'nearest';
     let sprite = new THREE.Sprite(spriteMaterial);
     let pos = positions[i];
     sprite.position.copy(pos);
     sprite.name = i;
+    sprite.scale.set(0.1, 0.1, 0.1);
     scene.add(sprite);
   });
+
+  // Set annotation position
+  const annotations = document.querySelectorAll('#annotation');
+  const frustrum = new THREE.Frustum();
+  console.log(frustrum);
+
+  const updateAnnotationPositions = () => {
+    frustrum.setFromProjectionMatrix(
+      new THREE.Matrix4().multiplyMatrices(
+        camera.projectionMatrix,
+        camera.matrixWorldInverse
+      )
+    );
+    annotations.forEach((annotation, i) => {
+      const x = hotspots[i].position[0];
+      const y = hotspots[i].position[1];
+      const z = hotspots[i].position[2];
+      const vector = new THREE.Vector3(x, y, z);
+      if (frustrum.containsPoint(vector)) {
+        vector.project(camera);
+        vector.x = ((vector.x + 1) * width) / 2;
+        vector.y = (-(vector.y - 1) * height) / 2;
+        vector.z = 0;
+        annotation.style.opacity = 1;
+        annotation.style.left = `${vector.x + 30}px`;
+        annotation.style.top = `${vector.y + 20}px`;
+      } else {
+        annotation.style.opacity = 0;
+      }
+    });
+  };
+
+  updateAnnotationPositions();
+
+  const onCameraChange = () => {
+    // -> debounce this?
+    // setAnnotationPosition(new THREE.Vector3(-10, 0, 5), 'General Technician');
+    updateAnnotationPositions();
+  };
+
+  // Resize
+  const onWindowResize = () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    updateAnnotationPositions();
+  };
+  window.addEventListener('resize', onWindowResize, false);
 
   // Stopping video
   const stopVideo = function (element) {
@@ -137,7 +190,9 @@ const createPano = (imageSrc, hotspots) => {
     let intersects = rayCaster.intersectObjects(scene.children);
     intersects.forEach((intersect) => {
       const hit = intersect.object;
-      if (hit.type === 'Sprite') {
+      if (hit.type === 'Sprite' && hit.name !== 'text') {
+        // if (hit.type === 'Sprite') {
+        // console.log(hit);
         closePanels();
         allowControls = false;
         const targetPanel = panels[hit.name];
@@ -170,6 +225,14 @@ const renderPanel = (hotspot, i) => {
   }
 };
 
+const renderAnnotation = (hotspot, i) => {
+  return (
+    <div className={styles.annotation} id='annotation' key={i}>
+      {hotspot.title.toUpperCase()}
+    </div>
+  );
+};
+
 const PanoViewer = ({ imageSrc, hotspots }) => {
   useEffect(() => {
     createPano(imageSrc, hotspots);
@@ -192,6 +255,9 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
       <div className={styles.backContainer}>
         <Back />
       </div>
+      {/* <div className={styles.annotation} id='annotation'></div> */}
+
+      {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i))}
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
     </div>
   );
