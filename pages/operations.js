@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { handleMobileVh } from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
 import Countdown from '../components/countdown';
+import Loader from '../components/loader';
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
@@ -52,6 +53,7 @@ function Operations({ launch }) {
           <div className={styles.items}>{instructionsItems}</div>
         </div>
         <Earth />
+        <Loader />
       </div>
       <motion.div
         className='slide-in'

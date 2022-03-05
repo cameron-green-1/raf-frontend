@@ -64,18 +64,6 @@ a {
   min-height: 100vh;
 }
 
-/* .loader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: lightblue;
-  z-index: 100 !important;
-  cursor: progress;
-  transform: translateY(100%);
-} */
-
 .slide-in {
   position: fixed;
   top: 0;
