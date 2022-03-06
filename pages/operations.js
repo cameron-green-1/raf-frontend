@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { handleMobileVh } from '../utils/helpers';
+import { handleMobileVh, debugLaunch } from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
@@ -26,7 +26,7 @@ export async function getStaticProps() {
       props: { launch },
     };
   } catch (err) {
-    const launch = '2022-03-06T13:10:00.000Z';
+    const launch = debugLaunch;
     return {
       props: { launch },
     };

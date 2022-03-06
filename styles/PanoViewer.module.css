@@ -21,6 +21,34 @@
   transition: opacity 0.2s ease-in-out;
 }
 
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.around {
+  width: 80px;
+}
+
 .logoContainer {
   position: absolute;
   top: 40px;
@@ -32,6 +60,7 @@
   top: 40px;
   right: 40px;
   z-index: 0;
+  /* transform: translateY(-50%); */
 }
 
 .aroundContainer {
