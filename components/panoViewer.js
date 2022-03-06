@@ -249,7 +249,7 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
         <Countdown launch={debugLaunch} live={debugLive} changeToIcon={true} />
       </div>
       <div className={styles.footer}>
-        <Back setWidth={100} />
+        <Back setWidth={100} noPadding={true} />
         <img className={styles.around} src='/360.png' alt='' />
       </div>
       {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i))}
