@@ -46,7 +46,7 @@ const Model = ({ live }) => {
 
       const annotationClicked = (annotation) => {
         const cameraOrbit = modelViewer.getCameraOrbit();
-        console.log(cameraOrbit);
+        // console.log(cameraOrbit);
         // const radsToDegs = (rad) => (rad * 180) / Math.PI;
         // console.log(radsToDegs(cameraOrbit.theta), radsToDegs(cameraOrbit.phi));
         // console.log(annotation.id);
@@ -142,10 +142,9 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           <Link href='/comms'>
-            <IconSatellite
-              colour={live ? '#C60C30' : '#038FD6'}
-              className='hotspot-svg-comms'
-            />
+            <div>
+              <IconSatellite colour={live ? '#C60C30' : '#038FD6'} />
+            </div>
           </Link>
         </button>
         <div className='progress-bar hide' slot='progress-bar'>

@@ -56,7 +56,7 @@ function Operations({ launch }) {
           <img src='/rotate.svg' className={styles.rotate} alt='' />
           <div className={styles.items}>{instructionsItems}</div>
         </div>
-        <Link href='/comms'>
+        <Link href='/comms' passHref>
           <div className={styles.commsLink}>
             <IconSatellite colour={live ? '#C60C30' : '#038FD6'} size={75} />
             <div className={styles.commsText}>
