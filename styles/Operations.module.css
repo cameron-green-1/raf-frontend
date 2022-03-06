@@ -22,20 +22,12 @@
 
 .instructions {
   position: absolute;
-  left: 100px;
-  bottom: 100px;
+  left: 40px;
+  bottom: 40px;
   display: flex;
   z-index: 1;
-  width: 75%;
-}
-
-@media (max-width: 768px) {
-  .instructions {
-    left: 50%;
-    bottom: 50px;
-    transform: translateX(-50%);
-    /* text-align: center; */
-  }
+  /* width: 75%; */
+  white-space: nowrap;
 }
 
 .items {
@@ -52,4 +44,53 @@
 
 .rotate {
   margin-right: 20px;
+}
+
+.commsLink {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.commsLink svg {
+  width: 75px;
+  height: 75px;
+}
+
+.commsLink:hover {
+  transform: scale(1.1);
+}
+
+.commsText {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .instructions {
+    left: 50%;
+    bottom: 120px;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    /* text-align: center; */
+  }
+  .rotate {
+    display: none;
+  }
+  .commsLink {
+    right: 50%;
+    transform: translateX(50%);
+    width: auto;
+  }
+  .commsLink svg {
+    width: 50px;
+    height: 50px;
+  }
 }

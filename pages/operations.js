@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { handleMobileVh } from '../utils/helpers';
@@ -8,6 +9,7 @@ import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
 import Countdown from '../components/countdown';
 import Loader from '../components/loader';
+import IconSatellite from '../components/svg/iconSatellite';
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
@@ -24,7 +26,7 @@ export async function getStaticProps() {
       props: { launch },
     };
   } catch (err) {
-    const launch = '2022-03-04T19:30:00.000Z';
+    const launch = '2022-03-06T13:10:00.000Z';
     return {
       props: { launch },
     };
@@ -32,6 +34,7 @@ export async function getStaticProps() {
 }
 
 function Operations({ launch }) {
+  const [live, setLive] = useState(false); // THIS STATE NEEDS TO BE UPDATED FROM CMS
   useEffect(() => {
     handleMobileVh();
   }, []);
@@ -46,13 +49,24 @@ function Operations({ launch }) {
         <img src='/stars.jpg' className={styles.bg} />
         <header className={styles.header}>
           <Logo className={styles.logo} />
-          <Countdown launch={launch} />
+          <Countdown launch={launch} live={live} />
         </header>
         <div className={styles.instructions}>
           <img src='/rotate.svg' className={styles.rotate} alt='' />
           <div className={styles.items}>{instructionsItems}</div>
         </div>
-        <Earth />
+        <Link href='/comms'>
+          <div className={styles.commsLink}>
+            <IconSatellite colour={live ? '#C60C30' : '#038FD6'} size={75} />
+            <div className={styles.commsText}>
+              <span style={{ color: live ? '#C60C30' : '#038FD6' }}>
+                {live ? "WE'RE LIVE" : 'VISIT THE'}
+              </span>
+              COMMS ROOM
+            </div>
+          </div>
+        </Link>
+        <Earth live={live} />
         <Loader />
       </div>
       <motion.div
