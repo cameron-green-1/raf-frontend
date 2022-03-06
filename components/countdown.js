@@ -25,7 +25,7 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
               <IconSatellite colour={'#C60C30'} size={75} />
               <div className={styles.commsText}>
                 <span style={{ color: '#C60C30' }}>WE'RE LIVE</span>
-                COMMS ROOM
+                CHAT NOW
               </div>
               <div className={styles.commsTextSmall}>LIVE</div>
             </div>

@@ -63,7 +63,8 @@ function Operations({ launch }) {
               <span style={{ color: live ? '#C60C30' : '#038FD6' }}>
                 {live ? "WE'RE LIVE" : 'VISIT THE'}
               </span>
-              COMMS ROOM
+              {live ? 'CHAT NOW' : 'COMMS ROOM'}
+              {/* COMMS ROOM */}
             </div>
           </div>
         </Link>
