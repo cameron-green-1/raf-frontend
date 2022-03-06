@@ -32,27 +32,29 @@ const Latest = () => {
               changeToIcon={true}
             />
           </header>
-          <div className={[styles.flex, styles.latestFlex].join(' ')}>
-            <div className={styles.title}>FROM THE STUDIO</div>
-            <div className={[styles.title, styles.video].join(' ')}>
-              DESCRIPTION
-            </div>
+          <main className={styles.main}>
+            <div className={[styles.flex, styles.latestFlex].join(' ')}>
+              <div className={styles.title}>FROM THE STUDIO</div>
+              <div className={[styles.title, styles.video].join(' ')}>
+                DESCRIPTION
+              </div>
 
-            <div className={styles.latestContent}>
-              {/* <img src='/from-studio.jpg' alt='' className={styles.cover}></img> */}
-              <div className={styles.episode}>Episode One</div>
-              {vimeoEmbed}
+              <div className={styles.latestContent}>
+                {/* <img src='/from-studio.jpg' alt='' className={styles.cover}></img> */}
+                <div className={styles.episode}>Episode One</div>
+                {vimeoEmbed}
+              </div>
+              <div className={styles.latestChat}>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
+                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                  nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                  aliquip
+                </p>
+              </div>
             </div>
-            <div className={styles.latestChat}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                aliquip
-              </p>
-            </div>
-          </div>
+          </main>
           <div className={styles.empty}></div>
           <footer className={styles.footer}>
             <Back text='BACK TO THE COMMS ROOM' />

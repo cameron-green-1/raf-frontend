@@ -1,7 +1,8 @@
 .container {
   position: relative;
   margin: 0 auto;
-  width: 1400px;
+  /* width: 1400px; */
+  width: 100%;
   padding: 40px 40px 0 40px;
   min-height: calc(100vh - 20px);
   display: flex;
@@ -53,11 +54,18 @@
   margin-bottom: 20px;
 }
 
+.main {
+  max-width: 1200px;
+  align-self: center;
+}
+
 .flex {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto 300px auto;
   grid-column-gap: 20px;
+  max-width: 1400px;
+  align-self: center;
 }
 
 .latestFlex {

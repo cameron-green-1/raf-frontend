@@ -119,36 +119,38 @@ const Comms = ({ teamsLinks }) => {
               changeToIcon={false}
             />
           </header>
-          <div className={styles.name}>The Comms Room</div>
-          <div className={styles.flex}>
-            <div className={styles.title}>LATEST CONTENT</div>
-            <div className={[styles.title, styles.video].join(' ')}>
-              {live ? 'LIVE VIDEO CHAT ROOM' : 'LIVE CHAT'}
-            </div>
-
-            <div className={styles.content}>
-              <Link href='/comms/latest'>
-                <img
-                  src='/from-studio.jpg'
-                  alt=''
-                  className={styles.cover}
-                ></img>
-              </Link>
-            </div>
-            {live ? (
-              <Chat />
-            ) : (
-              <div className={styles.chat}>
-                <p>
-                  <span>We are currently offline</span>. Live chat opens{' '}
-                  <span>@ 6.30pm</span>. Whilst you wait, watch our latest
-                  content ‘From the Studio’ or explore RAF operations and
-                  professions from the home page.
-                </p>
+          <main className={styles.main}>
+            <div className={styles.name}>The Comms Room</div>
+            <div className={styles.flex}>
+              <div className={styles.title}>LATEST CONTENT</div>
+              <div className={[styles.title, styles.video].join(' ')}>
+                {live ? 'LIVE VIDEO CHAT ROOM' : 'LIVE CHAT'}
               </div>
-            )}
-            {/* <Chat /> */}
-          </div>
+
+              <div className={styles.content}>
+                <Link href='/comms/latest'>
+                  <img
+                    src='/from-studio.jpg'
+                    alt=''
+                    className={styles.cover}
+                  ></img>
+                </Link>
+              </div>
+              {live ? (
+                <Chat />
+              ) : (
+                <div className={styles.chat}>
+                  <p>
+                    <span>We are currently offline</span>. Live chat opens{' '}
+                    <span>@ 6.30pm</span>. Whilst you wait, watch our latest
+                    content ‘From the Studio’ or explore RAF operations and
+                    professions from the home page.
+                  </p>
+                </div>
+              )}
+              {/* <Chat /> */}
+            </div>
+          </main>
           <div className={styles.empty}></div>
           <footer className={styles.footer}>
             <Back />
