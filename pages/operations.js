@@ -64,7 +64,6 @@ function Operations({ launch }) {
                 {live ? "WE'RE LIVE" : 'VISIT THE'}
               </span>
               {live ? 'CHAT NOW' : 'COMMS ROOM'}
-              {/* COMMS ROOM */}
             </div>
           </div>
         </Link>
