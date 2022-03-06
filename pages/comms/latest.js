@@ -4,6 +4,7 @@ import Logo from '../../components/logo';
 import Countdown from '../../components/countdown';
 import Back from '../../components/back';
 import { motion } from 'framer-motion';
+import { debugLaunch, debugLive } from '../../utils/helpers';
 
 const Latest = () => {
   return (
@@ -13,7 +14,11 @@ const Latest = () => {
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
-            <Countdown />
+            <Countdown
+              launch={debugLaunch}
+              live={debugLive}
+              changeToIcon={true}
+            />
           </header>
           <div className={styles.name}>Episode One</div>
           <div className={styles.flex}>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { handleMobileVh, debugLaunch } from '../utils/helpers';
+import { handleMobileVh, debugLaunch, debugLive } from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
@@ -36,6 +36,7 @@ export async function getStaticProps() {
 function Operations({ launch }) {
   const [live, setLive] = useState(false); // THIS STATE NEEDS TO BE UPDATED FROM CMS
   useEffect(() => {
+    setLive(debugLive);
     handleMobileVh();
   }, []);
   return (

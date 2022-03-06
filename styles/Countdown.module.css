@@ -124,4 +124,7 @@
   .commsTextSmall {
     display: block;
   }
+  .commsLink:hover {
+    transform: scale(1);
+  }
 }

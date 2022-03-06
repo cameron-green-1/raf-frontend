@@ -15,7 +15,7 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
   }, []);
 
   return (
-    <Link href='/live'>
+    <Link href='/comms'>
       <div className={styles.countdown}>
         {/* <div className={styles.live}> */}
         {/* {countdown === 'NOW' ? 'LIVE' : 'LIVE IN'} */}

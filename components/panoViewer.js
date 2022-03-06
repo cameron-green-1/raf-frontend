@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { debugLaunch } from '../utils/helpers';
+import { debugLaunch, debugLive } from '../utils/helpers';
 import Logo from './logo';
 import Countdown from './countdown';
 import Back from './back';
@@ -246,26 +246,12 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
       </div>
       <div className={styles.header}>
         <Logo />
-        <Countdown launch={debugLaunch} live={true} changeToIcon={true} />
+        <Countdown launch={debugLaunch} live={debugLive} changeToIcon={true} />
       </div>
       <div className={styles.footer}>
         <Back setWidth={100} />
         <img className={styles.around} src='/360.png' alt='' />
       </div>
-      {/* <div className={styles.logoContainer}>
-        <Logo />
-      </div>
-      <div className={styles.countdownContainer}>
-        <Countdown launch={debugLaunch} live={false} changeToIcon={true} />
-      </div>
-      <div className={styles.aroundContainer}>
-        <img src='/360.png' alt='' />
-      </div>
-      <div className={styles.backContainer}>
-        <Back />
-      </div> */}
-      {/* <div className={styles.annotation} id='annotation'></div> */}
-
       {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i))}
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
     </div>

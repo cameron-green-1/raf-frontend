@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { debugLaunch, debugLive } from '../utils/helpers';
 import Link from 'next/link';
 import Logo from '../components/logo';
 import styles from '../styles/Comms.module.css';
@@ -109,7 +110,11 @@ const Comms = ({ teamsLinks }) => {
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
-            <Countdown />
+            <Countdown
+              launch={debugLaunch}
+              live={debugLive}
+              changeToIcon={false}
+            />
           </header>
           <div className={styles.name}>The Comms Room</div>
           <div className={styles.flex}>

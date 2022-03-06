@@ -1,4 +1,5 @@
-export const debugLaunch = '2022-03-06T13:10:00.000Z';
+export const debugLaunch = '2022-03-07T19:30:00.000Z';
+export const debugLive = false;
 
 export const calculateDelta = (launch) => {
   const dateCurrent = new Date();
