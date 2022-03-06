@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { debugLaunch, debugLive } from '../utils/helpers';
 import Link from 'next/link';
 import Logo from '../components/logo';
@@ -103,6 +103,9 @@ const Comms = ({ teamsLinks }) => {
     <img src='/grid7.jpg' key={6} alt='' className={styles.thumbnail} />,
     <img src='/grid8.jpg' key={7} alt='' className={styles.thumbnail} />,
   ];
+  useEffect(() => {
+    setLive(debugLive);
+  }, []);
   return (
     <>
       <div className='wrapper live'>

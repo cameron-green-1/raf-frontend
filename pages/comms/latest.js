@@ -6,6 +6,18 @@ import Back from '../../components/back';
 import { motion } from 'framer-motion';
 import { debugLaunch, debugLive } from '../../utils/helpers';
 
+const debugVimeoLink = 'https://player.vimeo.com/video/514470296?h=a7bd2f8234';
+
+const vimeoEmbed = (
+  <iframe
+    src={debugVimeoLink}
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo-latest'
+  ></iframe>
+);
+
 const Latest = () => {
   return (
     <>
@@ -20,17 +32,18 @@ const Latest = () => {
               changeToIcon={true}
             />
           </header>
-          <div className={styles.name}>Episode One</div>
           <div className={styles.flex}>
             <div className={styles.title}>FROM THE STUDIO</div>
             <div className={[styles.title, styles.video].join(' ')}>
               DESCRIPTION
             </div>
 
-            <div className={styles.content}>
-              <img src='/from-studio.jpg' alt='' className={styles.cover}></img>
+            <div className={styles.latestContent}>
+              {/* <img src='/from-studio.jpg' alt='' className={styles.cover}></img> */}
+              <div className={styles.episode}>Episode One</div>
+              {vimeoEmbed}
             </div>
-            <div className={styles.chat}>
+            <div className={styles.latestChat}>
               <p>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
                 diam nonummy nibh euismod tincidunt ut laoreet dolore magna

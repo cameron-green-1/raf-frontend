@@ -453,7 +453,27 @@ a {
   margin-bottom: 40px;
 }
 
+.vimeo-latest {
+  /* width: 100%; */
+  /* height: 100%; */
+  /* height: 420px; */
+  width: 640px;
+  height: 320px;
+}
+
+/* @media (max-width: 768px) {
+  .vimeo-latest {
+    width: 100%;
+    height: 100px;
+  }
+} */
+
 @media (max-width: 1024px) {
+  .vimeo-latest {
+    width: 100%;
+    height: calc((100vw - 80px) / 2);
+  }
+
   .hotspot {
     width: 90%;
     /* padding: 20px !important; */
