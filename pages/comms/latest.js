@@ -32,7 +32,7 @@ const Latest = () => {
               changeToIcon={true}
             />
           </header>
-          <div className={styles.flex}>
+          <div className={[styles.flex, styles.latestFlex].join(' ')}>
             <div className={styles.title}>FROM THE STUDIO</div>
             <div className={[styles.title, styles.video].join(' ')}>
               DESCRIPTION
@@ -53,10 +53,14 @@ const Latest = () => {
               </p>
             </div>
           </div>
+          <div className={styles.empty}></div>
+          <footer className={styles.footer}>
+            <Back text='BACK TO THE COMMS ROOM' />
+          </footer>
         </div>
-        <div className={styles.backContainer}>
+        {/* <div className={styles.backContainer}>
           <Back text='BACK TO THE COMMS ROOM' />
-        </div>
+        </div> */}
       </div>
       <motion.div
         className='slide-in'

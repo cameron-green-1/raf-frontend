@@ -82,7 +82,7 @@ const Chat = () => {
         <p>
           If you’d prefer to ask a question via text chat, please click below:
         </p>
-        <button>
+        <button className={styles.buttonChat}>
           <img src='/bubble.png' alt='' />
           <p>LIVE TEXT CHAT</p>
         </button>
@@ -149,10 +149,14 @@ const Comms = ({ teamsLinks }) => {
             )}
             {/* <Chat /> */}
           </div>
+          <div className={styles.empty}></div>
+          <footer className={styles.footer}>
+            <Back />
+          </footer>
         </div>
-        <div className={styles.backContainer}>
+        {/* <div className={styles.backContainer}>
           <Back />
-        </div>
+        </div> */}
       </div>
       <motion.div
         className='slide-in'
