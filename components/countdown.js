@@ -15,39 +15,41 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
   }, []);
 
   return (
-    <Link href='/comms'>
-      <div className={styles.countdown}>
-        {/* <div className={styles.live}> */}
-        {/* {countdown === 'NOW' ? 'LIVE' : 'LIVE IN'} */}
-        {live ? (
-          changeToIcon ? (
-            <div className={styles.commsLink}>
-              <IconSatellite colour={'#C60C30'} size={75} />
-              <div className={styles.commsText}>
-                <span style={{ color: '#C60C30' }}>WE'RE LIVE</span>
-                CHAT NOW
+    <div style={{ pointerEvents: 'all' }}>
+      <Link href='/comms'>
+        <div className={styles.countdown}>
+          {/* <div className={styles.live}> */}
+          {/* {countdown === 'NOW' ? 'LIVE' : 'LIVE IN'} */}
+          {live ? (
+            changeToIcon ? (
+              <div className={styles.commsLink}>
+                <IconSatellite colour={'#C60C30'} size={75} />
+                <div className={styles.commsText}>
+                  <span style={{ color: '#C60C30' }}>WE'RE LIVE</span>
+                  CHAT NOW
+                </div>
+                <div className={styles.commsTextSmall}>LIVE</div>
               </div>
-              <div className={styles.commsTextSmall}>LIVE</div>
-            </div>
+            ) : (
+              <div className={styles.live}>
+                <div className={styles.dotContainer}>
+                  <div className={styles.dot}></div>LIVE
+                </div>
+              </div>
+            )
           ) : (
-            <div className={styles.live}>
-              <div className={styles.dotContainer}>
-                <div className={styles.dot}></div>LIVE
-              </div>
-            </div>
-          )
-        ) : (
-          <div className={styles.live}>LIVE IN</div>
-        )}
-        {/* </div> */}
-        <div
-          className={styles.time}
-          style={{ display: live ? 'none' : 'flex' }}
-        >
-          {countdown}
+            <div className={styles.live}>LIVE IN</div>
+          )}
+          {/* </div> */}
+          <div
+            className={styles.time}
+            style={{ display: live ? 'none' : 'flex' }}
+          >
+            {countdown}
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
 
