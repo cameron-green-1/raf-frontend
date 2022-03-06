@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { debugLaunch, debugLive } from '../utils/helpers';
+import ScenarioLoader from './scenarioLoader';
 import Logo from './logo';
 import Countdown from './countdown';
 import Back from './back';
@@ -254,6 +255,7 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
       </div>
       {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i))}
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
+      <ScenarioLoader />
     </div>
   );
 };

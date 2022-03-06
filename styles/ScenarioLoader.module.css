@@ -1,0 +1,182 @@
+.loader {
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  color: black;
+  z-index: 2;
+  /* pointer-events: none; */
+  transition: transform 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 1;
+  /* transition: opacity 0.5s ease-in-out; */
+  transition: transform 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  /* align-items: center; */
+}
+
+.loadingLogo {
+  width: 450px;
+  margin-bottom: 80px;
+  align-self: center;
+}
+
+.progress {
+  margin-bottom: 80px;
+}
+
+.progressSection {
+  margin-bottom: 40px;
+}
+
+.progressSection h1 {
+  color: #0097d1;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.briefing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow-y: auto; */
+  /* overflow-x: hidden; */
+}
+
+.briefingMain {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 800px;
+  max-height: 93%;
+  /* color: white; */
+  color: white;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* width: 700px; */
+  /* width: 700px; */
+  /* align-items: center; */
+}
+
+.details {
+  margin-right: 40px;
+  width: 40%;
+}
+
+.video {
+  width: 60%;
+}
+
+.item {
+  list-style: none;
+  margin-bottom: 40px;
+  /* width: 100%; */
+}
+
+.item h1 {
+  color: #0097d1;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.item p {
+  font-size: 1.5rem;
+}
+
+.item video {
+  border: solid #0097d1 2px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    width: 500px;
+  }
+
+  .briefingMain {
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+  .video {
+    width: auto;
+  }
+
+  .item h1 {
+    font-size: 0.75rem;
+  }
+
+  .item p {
+    font-size: 1rem;
+  }
+
+  .item video {
+    max-width: 500px;
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    width: 80%;
+  }
+
+  .briefingMain {
+    width: 80%;
+  }
+
+  .item {
+    margin-bottom: 20px;
+  }
+
+  .loadingLogo {
+    width: 250px;
+  }
+}

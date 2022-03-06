@@ -6,13 +6,13 @@ import styles from '../styles/Loader.module.css';
 const Loader = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    // if (window.sessionStorage.getItem('firstLoadDone') === null) {
-    //   setLoading(true);
-    //   window.sessionStorage.setItem('firstLoadDone', 1);
-    //   setTimeout(() => setLoading(false), 5000);
-    // } else {
-    //   setLoading(false);
-    // }
+    if (window.sessionStorage.getItem('firstLoadDone') === null) {
+      setLoading(true);
+      window.sessionStorage.setItem('firstLoadDone', 1);
+      setTimeout(() => setLoading(false), 5000);
+    } else {
+      setLoading(false);
+    }
   }, []);
   return (
     <div
@@ -23,11 +23,6 @@ const Loader = () => {
       }}
     >
       <div className='wrapper'>
-        <Head>
-          <title>RAF Access All Areas</title>
-          <meta name='description' content='RAF Access All Areas experience' />
-          <link rel='icon' href='/favicon.ico' />
-        </Head>
         <img src='/stars.jpg' className={styles.bg} />
         <main className={styles.holding}>
           <img src='/logo.png' alt='' className={styles.loadingLogo} />

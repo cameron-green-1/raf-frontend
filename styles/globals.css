@@ -403,6 +403,7 @@ a {
   width: 900px;
   /* min-height: 400px; */
   padding: 40px;
+  z-index: 2;
 }
 
 .hotspot-bg {

@@ -1,0 +1,17 @@
+.dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.dot {
+  width: 3px;
+  aspect-ratio: 1;
+  background-color: #0097d1;
+}
+
+@media (max-width: 768px) {
+  .dot {
+    width: 2px;
+  }
+}

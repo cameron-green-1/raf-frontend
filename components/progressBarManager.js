@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import styles from '../styles/Loader.module.css';
+// import styles from '../styles/Loader.module.css';
+import styles from '../styles/ProgressBarManager.module.css';
 
 const ProgressBar = ({ currentStep, maxSteps }) => {
   let dots = [];
