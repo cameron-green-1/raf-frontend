@@ -1,5 +1,33 @@
+import { motion } from 'framer-motion';
+
 export const debugLaunch = '2022-03-07T19:30:00.000Z';
 export const debugLive = false;
+
+export const slideIn = (
+  <motion.div
+    className='slide'
+    initial={{ y: '100%' }}
+    animate={{ y: '100%' }}
+    exit={{ y: 0 }}
+    transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
+  >
+    <div></div>
+    <img src='/transition.jpg' alt='' />
+  </motion.div>
+);
+
+export const slideOut = (
+  <motion.div
+    className='slide'
+    initial={{ y: 0 }}
+    animate={{ y: '-100%' }}
+    exit={{ y: '-100%' }}
+    transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
+  >
+    <div></div>
+    <img src='/transition.jpg' alt='' />
+  </motion.div>
+);
 
 export const calculateDelta = (launch) => {
   const dateCurrent = new Date();

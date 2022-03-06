@@ -92,6 +92,7 @@ a {
   /* background: #066bb8; */
   /* transform-origin: top; */
   /* background-image: url('/transition.jpg'); */
+  background-color: white;
   background-image: url('/transition.jpg');
   background-color: #066bb8;
   background-position: center;
@@ -100,6 +101,52 @@ a {
   /* background-size: cover; */
   /* background-size: contain; */
   z-index: 2;
+}
+
+.slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  /* background: #066bb8; */
+  /* transform-origin: top; */
+  /* background-image: url('/transition.jpg'); */
+  background-color: white;
+  /* background-image: url('/transition.jpg'); */
+  /* background-color: #066bb8; */
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill;
+  /* background-size: cover; */
+  /* background-size: contain; */
+  z-index: 2;
+}
+
+.slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  clip-path: polygon(0 5%, 100% 25%, 100% 95%, 0 75%);
+}
+
+.slide div {
+  position: absolute;
+  background-color: #066bb8;
+  /* top: 0;
+  left: 0; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 2%, 100% 10%, 100% 98%, 0 90%);
 }
 
 .transition-image {

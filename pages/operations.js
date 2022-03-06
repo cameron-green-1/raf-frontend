@@ -3,7 +3,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { handleMobileVh, debugLaunch, debugLive } from '../utils/helpers';
+import {
+  handleMobileVh,
+  debugLaunch,
+  debugLive,
+  slideIn,
+  slideOut,
+} from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
@@ -70,20 +76,28 @@ function Operations({ launch }) {
         <Earth live={live} />
         <Loader />
       </div>
-      <motion.div
-        className='slide-in'
+      {slideIn}
+      {slideOut}
+      {/* <motion.div
+        className='slide'
         initial={{ y: '100%' }}
         animate={{ y: '100%' }}
         exit={{ y: 0 }}
         transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
-      />
+      >
+        <div></div>
+        <img src='/transition.jpg' alt='' />
+      </motion.div>
       <motion.div
-        className='slide-out'
+        className='slide'
         initial={{ y: 0 }}
         animate={{ y: '-100%' }}
         exit={{ y: '-100%' }}
         transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
-      />
+      >
+        <div></div>
+        <img src='/transition.jpg' alt='' />
+      </motion.div> */}
     </>
   );
 }

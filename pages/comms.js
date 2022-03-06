@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { debugLaunch, debugLive } from '../utils/helpers';
+import { debugLaunch, debugLive, slideIn, slideOut } from '../utils/helpers';
 import Link from 'next/link';
 import Logo from '../components/logo';
 import styles from '../styles/Comms.module.css';
@@ -160,20 +160,22 @@ const Comms = ({ teamsLinks }) => {
           <Back />
         </div> */}
       </div>
-      <motion.div
-        className='slide-in'
+      {slideIn}
+      {slideOut}
+      {/* <motion.div
+        className='slide'
         initial={{ y: '100%' }}
         animate={{ y: '100%' }}
         exit={{ y: 0 }}
         transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
       />
       <motion.div
-        className='slide-out'
+        className='slide'
         initial={{ y: 0 }}
         animate={{ y: '-100%' }}
         exit={{ y: '-100%' }}
         transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
-      />
+      /> */}
     </>
   );
 };

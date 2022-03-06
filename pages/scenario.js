@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Brief from '../components/brief';
 import { motion } from 'framer-motion';
-import { handleMobileVh } from '../utils/helpers';
+import { handleMobileVh, slideIn, slideOut } from '../utils/helpers';
 // import withTransition from '../components/withTransition';
 
 const PanoViewer = dynamic(() => import('../components/panoViewer'), {
@@ -70,20 +70,22 @@ const Scenario = () => {
     <>
       <PanoViewer imageSrc='/pano1min.jpg' hotspots={hotspots} />{' '}
       {/* <Brief /> */}
-      <motion.div
-        className='slide-in'
+      {slideIn}
+      {slideOut}
+      {/* <motion.div
+        className='slide'
         initial={{ y: '100%' }}
         animate={{ y: '100%' }}
         exit={{ y: 0 }}
         transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
       />
       <motion.div
-        className='slide-out'
+        className='slide'
         initial={{ y: 0 }}
         animate={{ y: '-100%' }}
         exit={{ y: '-100%' }}
         transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
-      />
+      /> */}
     </>
   );
 };

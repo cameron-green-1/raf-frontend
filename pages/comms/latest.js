@@ -4,7 +4,7 @@ import Logo from '../../components/logo';
 import Countdown from '../../components/countdown';
 import Back from '../../components/back';
 import { motion } from 'framer-motion';
-import { debugLaunch, debugLive } from '../../utils/helpers';
+import { debugLaunch, debugLive, slideIn, slideOut } from '../../utils/helpers';
 
 const debugVimeoLink = 'https://player.vimeo.com/video/514470296?h=a7bd2f8234';
 
@@ -64,20 +64,22 @@ const Latest = () => {
           <Back text='BACK TO THE COMMS ROOM' />
         </div> */}
       </div>
-      <motion.div
-        className='slide-in'
+      {slideIn}
+      {slideOut}
+      {/* <motion.div
+        className='slide'
         initial={{ y: '100%' }}
         animate={{ y: '100%' }}
         exit={{ y: 0 }}
         transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
       />
       <motion.div
-        className='slide-out'
+        className='slide'
         initial={{ y: 0 }}
         animate={{ y: '-100%' }}
         exit={{ y: '-100%' }}
         transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
-      />
+      /> */}
     </>
   );
 };
