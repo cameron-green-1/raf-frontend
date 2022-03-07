@@ -381,6 +381,15 @@ a {
   cursor: pointer;
 }
 
+.close circle {
+  fill: #0097d1;
+  transition: fill 0.2s ease-in-out;
+}
+
+.close:hover circle {
+  fill: #9a0a27;
+}
+
 .btn-operation {
   position: relative;
   background-color: #0097d1;
@@ -494,6 +503,15 @@ a {
   width: 40px;
   cursor: pointer;
   z-index: 10 !important;
+}
+
+.hotspot-close circle {
+  fill: #0097d1;
+  transition: fill 0.2s ease-in-out;
+}
+
+.hotspot-close:hover circle {
+  fill: #9a0a27;
 }
 
 .vimeo {

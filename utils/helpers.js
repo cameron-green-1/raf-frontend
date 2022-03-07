@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const debugLaunch = '2022-03-07T19:30:00.000Z';
+export const debugLaunch = '2022-03-07T15:55:00.000Z';
 export const debugLive = false;
 // export const easeInOut = (val) => {
 //   return 0.5 * (Math.sin((val - 0.5) * Math.PI) + 1);

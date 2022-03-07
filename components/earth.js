@@ -3,6 +3,7 @@ import Link from 'next/link';
 import '@google/model-viewer/dist/model-viewer';
 import styles from '../styles/Earth.module.css';
 import IconSatellite from './svg/iconSatellite';
+import Close from './svg/close';
 
 const Model = ({ live }) => {
   useEffect(() => {
@@ -159,7 +160,8 @@ const Model = ({ live }) => {
               close [<span>X</span>]
             </button>
           </div> */}
-          <img src='/close.svg' alt='' className='close' />
+          {/* <img src='/close.svg' alt='' className='close' /> */}
+          <Close />
           <div className='section'>
             <div className='title'>OPERATION</div>
             <div className='name operation'>MACA SUPPORT</div>
@@ -190,7 +192,8 @@ const Model = ({ live }) => {
               Close [<span>X</span>]
             </button>
           </div> */}
-          <img src='/close.svg' alt='' className='close' />
+          {/* <img src='/close.svg' alt='' className='close' /> */}
+          <Close />
           <div className='section'>
             <div className='title operation'>OPERATION</div>
             <div className='name operation'>OPERATION BILOXI</div>
@@ -221,7 +224,8 @@ const Model = ({ live }) => {
               Close [<span>X</span>]
             </button>
           </div> */}
-          <img src='/close.svg' alt='' className='close' />
+          {/* <img src='/close.svg' alt='' className='close' /> */}
+          <Close />
           <div className='scan' />
           <div className='section'>
             <div className='title'>OPERATION</div>
