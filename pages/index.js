@@ -39,13 +39,14 @@ function Holding({ holding, launch }) {
   useEffect(() => {
     handleMobileVh();
     setTimeout(() => {
-      lottie.loadAnimation({
+      const animate = lottie.loadAnimation({
         container: container.current,
         renderer: 'svg',
-        loop: true,
+        loop: false,
         autoplay: true,
-        path: '/lottie-logo.json',
+        path: '/lottie-logo-2.json',
       });
+      animate.setSpeed(1.5);
     }, 1000);
   }, []);
   return (
@@ -58,11 +59,25 @@ function Holding({ holding, launch }) {
       <img src='/stars.jpg' className={styles.bg} />
       <main className={styles.holding}>
         <div className={styles.holdingLogo} ref={container}></div>
-        <p style={{ marginTop: 60, display: holding ? 'block' : 'none' }}>
-          Sorry, RAF World is not currently live.
+        {/* <p style={{ marginTop: 60, display: holding ? 'block' : 'none' }}> */}
+        {/* <p style={{ display: holding ? 'block' : 'none' }}> */}
+        <p>
+          {holding
+            ? 'Sorry, RAF World is not currently live.'
+            : 'Explore RAF World.'}
+          {/* Sorry, RAF World is not currently live. */}
         </p>
         <p>
-          The next event is on the <span>6th April @ 6:30pm</span>
+          {/* The next event is on the <span>6th April @ 6:30pm</span> */}
+          {holding ? (
+            <>
+              The next event is on the <span>6th April @ 6:30pm</span>.
+            </>
+          ) : (
+            <>
+              The event starts at <span>@ 6:30pm</span>.
+            </>
+          )}
         </p>
         <Link
           href={
@@ -109,6 +124,14 @@ function Home({ launch }) {
       >
         <div></div>
         <img src='/transition.jpg' alt='' />
+        {/* <motion.img
+          key='/transition.jpg'
+          src='/transition.jpg'
+          initial={{ y: 0 }}
+          animate={{ y: '100%' }}
+          exit={{ y: '100%' }}
+          transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
+        /> */}
       </motion.div>
       {/* <motion.div
         className='slide'
