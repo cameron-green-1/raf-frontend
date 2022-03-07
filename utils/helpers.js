@@ -1,7 +1,22 @@
 import { motion } from 'framer-motion';
 
 export const debugLaunch = '2022-03-07T19:30:00.000Z';
-export const debugLive = false;
+export const debugLive = live;
+
+// export const easeInOut = (val) => {
+//   return 0.5 * (Math.sin((val - 0.5) * Math.PI) + 1);
+// };
+
+export const easeInOut = (t, b, c, d) => {
+  // t is current time
+  // b is start value
+  // c is change in value
+  // d is duration
+  t /= d / 2;
+  if (t < 1) return (c / 2) * t * t + b;
+  t--;
+  return (-c / 2) * (t * (t - 2) - 1) + b;
+};
 
 export const slideIn = (
   <motion.div

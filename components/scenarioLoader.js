@@ -82,8 +82,8 @@ const Briefing = () => {
 };
 
 const ScenarioLoader = () => {
-  const [firstLoading, setFirstLoading] = useState(true);
-  const [secondLoading, setSecondLoading] = useState(true);
+  const [firstLoading, setFirstLoading] = useState(false);
+  const [secondLoading, setSecondLoading] = useState(false);
   // let vid;
   useEffect(() => {
     setTimeout(() => {

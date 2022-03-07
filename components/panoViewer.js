@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { debugLaunch, debugLive } from '../utils/helpers';
+import { debugLaunch, debugLive, easeInOut } from '../utils/helpers';
 import ScenarioLoader from './scenarioLoader';
 import Logo from './logo';
 import Countdown from './countdown';
@@ -164,6 +164,9 @@ const createPano = (imageSrc, hotspots) => {
   });
 
   //Hovering hotspots -> debounce this?
+  const children = scene.children;
+  const sprites = children.filter((child) => child.type === 'Sprite');
+  console.log('sprites = ', sprites);
   const onDocumentMouseMove = (e) => {
     let mouse = new THREE.Vector2();
     mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -172,7 +175,28 @@ const createPano = (imageSrc, hotspots) => {
     let intersects = rayCaster.intersectObjects(scene.children);
     if (intersects.length > 1) {
       container.style.cursor = 'pointer';
+      // const spr = intersects[0].object;
+      // // spr && spr.scale.set(0.15, 0.15, 0.15);
+      // let time = 0;
+      // const start = 0.1;
+      // const increment = 0.005;
+      // let position = start;
+      // const finish = 0.15;
+      // const move = () => {
+      //   position += increment;
+      //   if (position >= finish) {
+      //     clearInterval(handler);
+      //     return;
+      //   }
+      // };
+      // const handler = setInterval(move, 1000 / 60);
+      // spr && spr.scale.set(position, position, position);
+      // spr && console.log(spr);
+      // console.log(spr);
     } else {
+      // sprites.forEach((spr) => {
+      //   spr && spr.scale.set(0.1, 0.1, 0.1);
+      // });
       mouseDown
         ? (container.style.cursor = 'grabbing')
         : (container.style.cursor = 'grab');
