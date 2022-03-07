@@ -4,7 +4,7 @@ import Logo from '../../components/logo';
 import Countdown from '../../components/countdown';
 import Back from '../../components/back';
 import { motion } from 'framer-motion';
-import { debugLaunch, debugLive, slideIn, slideOut } from '../../utils/helpers';
+import { debugLaunch, debugLive } from '../../utils/helpers';
 
 const debugVimeoLink = 'https://player.vimeo.com/video/514470296?h=a7bd2f8234';
 

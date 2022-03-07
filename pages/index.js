@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import lottie from 'lottie-web';
-import { handleMobileVh, slideIn, slideOut } from '../utils/helpers';
+import { handleMobileVh } from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Holding.module.css';
 import dynamic from 'next/dynamic';

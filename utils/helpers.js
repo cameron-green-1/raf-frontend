@@ -1,48 +1,48 @@
 import { motion } from 'framer-motion';
 
 export const debugLaunch = '2022-03-07T19:30:00.000Z';
-export const debugLive = live;
+export const debugLive = true;
 
 // export const easeInOut = (val) => {
 //   return 0.5 * (Math.sin((val - 0.5) * Math.PI) + 1);
 // };
 
-export const easeInOut = (t, b, c, d) => {
-  // t is current time
-  // b is start value
-  // c is change in value
-  // d is duration
-  t /= d / 2;
-  if (t < 1) return (c / 2) * t * t + b;
-  t--;
-  return (-c / 2) * (t * (t - 2) - 1) + b;
-};
+// export const easeInOut = (t, b, c, d) => {
+//   // t is current time
+//   // b is start value
+//   // c is change in value
+//   // d is duration
+//   t /= d / 2;
+//   if (t < 1) return (c / 2) * t * t + b;
+//   t--;
+//   return (-c / 2) * (t * (t - 2) - 1) + b;
+// };
 
-export const slideIn = (
-  <motion.div
-    className='slide'
-    initial={{ y: '100%' }}
-    animate={{ y: '100%' }}
-    exit={{ y: 0 }}
-    transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
-  >
-    <div></div>
-    <img src='/transition.jpg' alt='' />
-  </motion.div>
-);
+// export const slideIn = (
+//   <motion.div
+//     className='slide'
+//     initial={{ y: '100%' }}
+//     animate={{ y: '100%' }}
+//     exit={{ y: 0 }}
+//     transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
+//   >
+//     <div></div>
+//     <img src='/transition.jpg' alt='' />
+//   </motion.div>
+// );
 
-export const slideOut = (
-  <motion.div
-    className='slide'
-    initial={{ y: 0 }}
-    animate={{ y: '-100%' }}
-    exit={{ y: '-100%' }}
-    transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
-  >
-    <div></div>
-    <img src='/transition.jpg' alt='' />
-  </motion.div>
-);
+// export const slideOut = (
+//   <motion.div
+//     className='slide'
+//     initial={{ y: 0 }}
+//     animate={{ y: '-100%' }}
+//     exit={{ y: '-100%' }}
+//     transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
+//   >
+//     <div></div>
+//     <img src='/transition.jpg' alt='' />
+//   </motion.div>
+// );
 
 export const calculateDelta = (launch) => {
   const dateCurrent = new Date();

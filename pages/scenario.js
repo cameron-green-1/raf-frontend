@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Brief from '../components/brief';
 import { motion } from 'framer-motion';
-import { handleMobileVh, slideIn, slideOut } from '../utils/helpers';
+import { handleMobileVh } from '../utils/helpers';
 // import withTransition from '../components/withTransition';
 
 const PanoViewer = dynamic(() => import('../components/panoViewer'), {
