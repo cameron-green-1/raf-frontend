@@ -28,8 +28,8 @@ const Close = ({ colour = '#0097d1' }) => {
           transform='translate(314.5 348.5)'
           fill='none'
           stroke='#fff'
-          stroke-linecap='round'
-          stroke-width='2'
+          strokeLinecap='round'
+          strokeWidth='2'
         />
         <line
           id='Line_3'
@@ -39,8 +39,8 @@ const Close = ({ colour = '#0097d1' }) => {
           transform='translate(323.5 348.5) rotate(90)'
           fill='none'
           stroke='#fff'
-          stroke-linecap='round'
-          stroke-width='2'
+          strokeLinecap='round'
+          strokeWidth='2'
         />
       </g>
     </svg>
