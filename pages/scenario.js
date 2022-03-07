@@ -70,8 +70,26 @@ const Scenario = () => {
     <>
       <PanoViewer imageSrc='/pano1min.jpg' hotspots={hotspots} />{' '}
       {/* <Brief /> */}
-      {slideIn}
-      {slideOut}
+      <motion.div
+        className='slide'
+        initial={{ y: '100%' }}
+        animate={{ y: '100%' }}
+        exit={{ y: 0 }}
+        transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
+      >
+        <div></div>
+        <img src='/transition.jpg' alt='' />
+      </motion.div>
+      <motion.div
+        className='slide'
+        initial={{ y: 0 }}
+        animate={{ y: '-100%' }}
+        exit={{ y: '-100%' }}
+        transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
+      >
+        <div></div>
+        <img src='/transition.jpg' alt='' />
+      </motion.div>
       {/* <motion.div
         className='slide'
         initial={{ y: '100%' }}
