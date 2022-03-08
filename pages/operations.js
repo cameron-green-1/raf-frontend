@@ -11,6 +11,8 @@ import Countdown from '../components/countdown';
 import Loader from '../components/loader';
 import IconSatellite from '../components/svg/iconSatellite';
 
+const URL = process.env.STRAPIBASEURL;
+
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
 const instructionsItems = instructionsText.map((txt, i) => (
@@ -19,24 +21,28 @@ const instructionsItems = instructionsText.map((txt, i) => (
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('http://localhost:1337/api/launch-time');
-    const json = await res.json();
-    const launch = json.data.attributes.launch;
+    const resLaunch = await fetch(`${URL}/api/launch-time`);
+    const resLive = await fetch(`${URL}/api/live`);
+    const jsonLaunch = await resLaunch.json();
+    const jsonLive = await resLive.json();
+    const launch = jsonLaunch.data.attributes.launch;
+    const live = jsonLive.data.attributes.live;
     return {
-      props: { launch },
+      props: { launch, live },
     };
   } catch (err) {
     const launch = debugLaunch;
+    const live = debugLive;
     return {
-      props: { launch },
+      props: { launch, live },
     };
   }
 }
 
-function Operations({ launch }) {
-  const [live, setLive] = useState(false); // THIS STATE NEEDS TO BE UPDATED FROM CMS
+function Operations({ launch, live }) {
+  // const [live, setLive] = useState(false); // THIS STATE NEEDS TO BE UPDATED FROM CMS
   useEffect(() => {
-    setLive(debugLive);
+    // setLive(debugLive);
     handleMobileVh();
   }, []);
   return (
