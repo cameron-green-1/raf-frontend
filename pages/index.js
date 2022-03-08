@@ -38,8 +38,10 @@ export async function getStaticProps() {
       props: { holding, launch },
     };
   } catch (err) {
-    const holding = defaultHolding;
-    const launch = defaultLaunch;
+    // const holding = defaultHolding;
+    // const launch = defaultLaunch;
+    const holding = debugHolding;
+    const launch = debugLaunch;
     return {
       props: { holding, launch },
     };
