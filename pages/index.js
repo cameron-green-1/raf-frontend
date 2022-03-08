@@ -4,12 +4,20 @@ import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import lottie from 'lottie-web';
-import { handleMobileVh } from '../utils/helpers';
+import {
+  handleMobileVh,
+  defaultHolding,
+  defaultLaunch,
+  getDate,
+  getTime,
+} from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Holding.module.css';
 import dynamic from 'next/dynamic';
 import Countdown from '../components/countdown';
 // import withTransition from '../components/withTransition';
+
+const URL = process.env.STRAPIBASEURL;
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
@@ -19,23 +27,30 @@ const instructionsItems = instructionsText.map((txt, i) => (
 
 export async function getStaticProps() {
   try {
-    const res = await fetch('http://localhost:1337/api/launch-time');
-    const json = await res.json();
-    const launch = json.data.attributes.launch;
+    console.log('url = ' + URL);
+    const resHolding = await fetch(`${URL}/api/holding`);
+    const resLaunch = await fetch(`http://localhost:1337/api/launch-time`);
+    const jsonHolding = await resHolding.json();
+    const jsonLaunch = await resLaunch.json();
+    const holding = jsonHolding.data.attributes.holding;
+    const launch = jsonLaunch.data.attributes.launch;
     return {
-      props: { launch },
+      props: { holding, launch },
     };
   } catch (err) {
-    const launch = '2022-03-04T19:30:00.000Z';
+    const holding = defaultHolding;
+    const launch = defaultLaunch;
     return {
-      props: { launch },
+      props: { holding, launch },
     };
   }
 }
 
-function Holding({ holding, launch }) {
+const Holding = ({ isHolding, launchTime }) => {
   const container = useRef(null);
-
+  const date = getDate(launchTime);
+  const time = getTime(launchTime);
+  const dateTime = `${date} @ ${time}`;
   useEffect(() => {
     handleMobileVh();
     setTimeout(() => {
@@ -59,34 +74,30 @@ function Holding({ holding, launch }) {
       <img src='/stars.jpg' className={styles.bg} />
       <main className={styles.holding}>
         <div className={styles.holdingLogo} ref={container}></div>
-        {/* <p style={{ marginTop: 60, display: holding ? 'block' : 'none' }}> */}
-        {/* <p style={{ display: holding ? 'block' : 'none' }}> */}
         <p>
-          {holding
+          {isHolding
             ? 'Sorry, RAF World is not currently live.'
             : 'Explore RAF World.'}
-          {/* Sorry, RAF World is not currently live. */}
         </p>
         <p>
-          {/* The next event is on the <span>6th April @ 6:30pm</span> */}
-          {holding ? (
+          {isHolding ? (
             <>
-              The next event is on the <span>6th April @ 6:30pm</span>.
+              The next event is on <span>{dateTime}</span>.
             </>
           ) : (
             <>
-              The event starts at <span>@ 6:30pm</span>.
+              The event starts at <span>{`@ ${time}`}</span>.
             </>
           )}
         </p>
         <Link
           href={
-            holding
+            isHolding
               ? 'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds'
               : '/operations'
           }
         >
-          <button>{holding ? 'REGISTER NOW' : 'VISIT NOW'}</button>
+          <button>{isHolding ? 'REGISTER NOW' : 'VISIT NOW'}</button>
         </Link>
         <img
           src='/holding-logos.png'
@@ -95,16 +106,19 @@ function Holding({ holding, launch }) {
       </main>
     </div>
   );
-}
+};
 
-function Home({ launch }) {
+const Home = ({ holding, launch }) => {
+  // const [isHolding, setIsHolding] = useState(true);
   useEffect(() => {
+    // setIsHolding(holding);
     handleMobileVh();
   }, []);
-  const [holding, setHolding] = useState(false);
   return (
     <>
-      <Holding holding={holding} launch={launch} />
+      {/* <Holding holding={holding} launch={launch} /> */}
+      {/* <Holding isHolding={isHolding} /> */}
+      <Holding isHolding={holding} launchTime={launch} />
       <motion.div
         className='slide'
         initial={{ y: '100%' }}
@@ -149,7 +163,7 @@ function Home({ launch }) {
       /> */}
     </>
   );
-}
+};
 
 // export default withTransition(Home);
 export default Home;

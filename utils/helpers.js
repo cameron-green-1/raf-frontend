@@ -1,7 +1,12 @@
 import { motion } from 'framer-motion';
 
-export const debugLaunch = '2022-03-07T15:55:00.000Z';
+export const defaultHolding = true;
+export const defaultLive = false;
+export const defaultLaunch = '2022-03-08T18:30:00.000Z';
+
+export const debugHolding = true;
 export const debugLive = false;
+export const debugLaunch = '2022-03-08T18:30:00.000Z';
 // export const easeInOut = (val) => {
 //   return 0.5 * (Math.sin((val - 0.5) * Math.PI) + 1);
 // };
@@ -42,6 +47,68 @@ export const debugLive = false;
 //     <img src='/transition.jpg' alt='' />
 //   </motion.div>
 // );
+
+export const getDate = (launchTime) => {
+  const convertedLaunchTime = new Date(launchTime).toLocaleDateString('en-gb'); // 18/02/2019
+  const day = getDay(convertedLaunchTime.slice(0, 2));
+  const month = getMonth(convertedLaunchTime.slice(3, 5));
+  return `${day} ${month}`;
+};
+
+export const getDay = (n) => {
+  n = parseInt(n);
+  return (
+    n +
+    (n > 0
+      ? ['th', 'st', 'nd', 'rd'][(n > 3 && n < 21) || n % 10 > 3 ? 0 : n % 10]
+      : '')
+  );
+};
+
+export const getMonth = (i) => {
+  i = parseInt(i);
+  switch (i) {
+    case 1:
+      return 'January';
+    case 2:
+      return 'February';
+    case 3:
+      return 'March';
+    case 4:
+      return 'April';
+    case 5:
+      return 'May';
+    case 6:
+      return 'June';
+    case 7:
+      return 'July';
+    case 8:
+      return 'August';
+    case 9:
+      return 'September';
+    case 10:
+      return 'October';
+    case 11:
+      return 'November';
+    case 12:
+      return 'December';
+    default:
+      console.error('Month not found');
+      break;
+  }
+};
+
+export const getTime = (launchTime) => {
+  let time = new Date(launchTime).toLocaleTimeString('en-gb', {
+    hour12: true,
+    hour: 'numeric',
+    minute: 'numeric',
+  });
+  const regex = /0....pm/;
+  const midday = regex.test(time);
+  time = midday ? time.replace(/^.{2}/g, '12:') : time;
+  return time;
+};
 
 export const calculateDelta = (launch) => {
   const dateCurrent = new Date();
