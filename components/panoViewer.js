@@ -259,7 +259,7 @@ const renderAnnotation = (hotspot, i) => {
   );
 };
 
-const PanoViewer = ({ imageSrc, hotspots }) => {
+const PanoViewer = ({ imageSrc, hotspots, launch, live }) => {
   useEffect(() => {
     createPano(imageSrc, hotspots);
   }, []);
@@ -271,7 +271,8 @@ const PanoViewer = ({ imageSrc, hotspots }) => {
       </div>
       <div className={styles.header}>
         <Logo />
-        <Countdown launch={debugLaunch} live={debugLive} changeToIcon={true} />
+        {/* <Countdown launch={debugLaunch} live={debugLive} changeToIcon={true} /> */}
+        <Countdown launch={launch} live={live} changeToIcon={true} />
       </div>
       <div className={styles.footer}>
         <Back setWidth={100} noPadding={true} />

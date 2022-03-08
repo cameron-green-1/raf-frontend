@@ -2,8 +2,10 @@ import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Brief from '../components/brief';
 import { motion } from 'framer-motion';
-import { handleMobileVh } from '../utils/helpers';
+import { handleMobileVh, debugLaunch, debugLive } from '../utils/helpers';
 // import withTransition from '../components/withTransition';
+
+const URL = process.env.STRAPIBASEURL;
 
 const PanoViewer = dynamic(() => import('../components/panoViewer'), {
   ssr: false,
@@ -62,13 +64,38 @@ const hotspots = [
   },
 ];
 
-const Scenario = () => {
+export async function getStaticProps() {
+  try {
+    const resLaunch = await fetch(`${URL}/api/launch-time`);
+    const resLive = await fetch(`${URL}/api/live`);
+    const jsonLaunch = await resLaunch.json();
+    const jsonLive = await resLive.json();
+    const launch = jsonLaunch.data.attributes.launch;
+    const live = jsonLive.data.attributes.live;
+    return {
+      props: { launch, live },
+    };
+  } catch (err) {
+    const launch = debugLaunch;
+    const live = debugLive;
+    return {
+      props: { launch, live },
+    };
+  }
+}
+
+const Scenario = ({ launch, live }) => {
   useEffect(() => {
     handleMobileVh();
   });
   return (
     <>
-      <PanoViewer imageSrc='/pano1min.jpg' hotspots={hotspots} />{' '}
+      <PanoViewer
+        imageSrc='/pano1min.jpg'
+        hotspots={hotspots}
+        launch={launch}
+        live={live}
+      />{' '}
       {/* <Brief /> */}
       <motion.div
         className='slide'
