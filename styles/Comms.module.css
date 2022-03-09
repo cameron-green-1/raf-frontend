@@ -55,22 +55,36 @@
 }
 
 .main {
+  position: relative;
   max-width: 1200px;
   align-self: center;
+  /* min-width: 100%; */
 }
 
 .flex {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto 300px auto;
   grid-column-gap: 20px;
   max-width: 1400px;
+  /* min-width: 100%; */
   align-self: center;
 }
 
 .latestFlex {
   grid-template-rows: auto;
 }
+
+/* .latestChat {
+  min-width: calc(((100vw - 20px - 80px) / 2));
+} */
+
+/* @media (max-width: 1450px) {
+  .latestChat {
+    min-width: calc(((100vw - 20px - 80px) / 2));
+  }
+} */
 
 .content {
   /* width: 200px; */

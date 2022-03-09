@@ -1,24 +1,67 @@
+import { useEffect } from 'react';
 import styles from '../../styles/Comms.module.css';
 import Link from 'next/link';
 import Logo from '../../components/logo';
 import Countdown from '../../components/countdown';
 import Back from '../../components/back';
 import { motion } from 'framer-motion';
-import { debugLaunch, debugLive } from '../../utils/helpers';
+import { debugLaunch, debugLive, debugLatest } from '../../utils/helpers';
 
-const debugVimeoLink = 'https://player.vimeo.com/video/514470296?h=a7bd2f8234';
+const URL = process.env.STRAPIBASEURL;
 
-const vimeoEmbed = (
-  <iframe
-    src={debugVimeoLink}
-    frameBorder='0'
-    allow='autoplay; fullscreen; picture-in-picture'
-    allowFullScreen
-    className='vimeo-latest'
-  ></iframe>
-);
+export async function getStaticProps() {
+  try {
+    const resLaunch = await fetch(`${URL}/api/launch-time`);
+    const jsonLaunch = await resLaunch.json();
+    const launch = jsonLaunch.data.attributes.launch;
 
-const Latest = () => {
+    const resLive = await fetch(`${URL}/api/live`);
+    const jsonLive = await resLive.json();
+    const live = jsonLive.data.attributes.live;
+
+    const resLatest = await fetch(`${URL}/api/latest-contents`);
+    const jsonLatest = await resLatest.json();
+    const arrayLatest = jsonLatest.data;
+    const index = arrayLatest.length - 1;
+    const latest = JSON.parse(JSON.stringify(arrayLatest[index].attributes));
+
+    return {
+      props: { launch, live, latest },
+    };
+  } catch (err) {
+    const launch = debugLaunch;
+    const live = debugLive;
+    const latest = JSON.parse(JSON.stringify(debugLatest));
+    return {
+      props: { launch, live, latest },
+    };
+  }
+}
+
+// const debugVimeoLink = 'https://player.vimeo.com/video/514470296?h=a7bd2f8234';
+
+// const vimeoEmbed = (
+//   <iframe
+//     src={debugVimeoLink}
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo-latest'
+//   ></iframe>
+// );
+
+const Latest = ({ launch, live, latest }) => {
+  const arr = latest.video.split('/');
+  const id = arr[arr.length - 1];
+  const vimeoEmbed = (
+    <iframe
+      src={`https://player.vimeo.com/video/${id}?h=a7bd2f8234`}
+      frameBorder='0'
+      allow='autoplay; fullscreen; picture-in-picture'
+      allowFullScreen
+      className='vimeo-latest'
+    ></iframe>
+  );
   return (
     <>
       <div className='wrapper live'>
@@ -26,11 +69,7 @@ const Latest = () => {
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
-            <Countdown
-              launch={debugLaunch}
-              live={debugLive}
-              changeToIcon={true}
-            />
+            <Countdown launch={launch} live={live} changeToIcon={true} />
           </header>
           <main className={styles.main}>
             <div className={[styles.flex, styles.latestFlex].join(' ')}>
@@ -41,17 +80,11 @@ const Latest = () => {
 
               <div className={styles.latestContent}>
                 {/* <img src='/from-studio.jpg' alt='' className={styles.cover}></img> */}
-                <div className={styles.episode}>Episode One</div>
+                <div className={styles.episode}>{latest.title}</div>
                 {vimeoEmbed}
               </div>
               <div className={styles.latestChat}>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                  diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                  aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
-                  nostrud exerci tation ullamcorper suscipit lobortis nisl ut
-                  aliquip
-                </p>
+                <p>{latest.description}</p>
               </div>
             </div>
           </main>

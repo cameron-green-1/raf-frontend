@@ -7,6 +7,90 @@ export const defaultLaunch = '2022-03-30T18:30:00.000Z';
 export const debugHolding = false;
 export const debugLive = false;
 export const debugLaunch = '2022-03-30T18:30:00.000Z';
+export const debugLatest = {
+  title: 'Episode One',
+  // image: 'https://i.imgur.com/OSR02G8.jpg',
+  image: 'https://i.imgur.com/DwTR24j.png',
+  video: 'https://vimeo.com/514470296',
+  description:
+    'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip. ',
+  createdAt: '2022-03-08T21:46:38.421Z',
+  updatedAt: '2022-03-08T21:46:40.302Z',
+  publishedAt: '2022-03-08T21:46:40.300Z',
+};
+
+export const debugRooms = [
+  {
+    id: 1,
+    attributes: {
+      name: 'FORCE PROTECTION',
+      link: 'https://teams.microsoft.com/l/meetup-join/19:meeting_MjM2NzczMmEtMmRiNi00MGNhLWI1ZTYtMjI0ODQxMjI4NGNk@thread.skype/0?context={“Tid”:”d0880d3f-e6d1-4a41-9e81-b8fbcddf7b6c”,”Oid”:”803e81b2-4fa5-4a82-8d7a-ff38aa202977',
+      createdAt: '2022-03-08T15:13:03.617Z',
+      updatedAt: '2022-03-08T15:13:05.283Z',
+      publishedAt: '2022-03-08T15:13:05.281Z',
+    },
+  },
+  {
+    id: 2,
+    attributes: {
+      name: 'AIR OPERATIONS',
+      link: 'https://teams.microsoft.com/l/meetup-join/19:meeting_MjqfeNzczMmEtMmRiNi00MGNhLWI1ZTYtMjI0ODQxMjI4NGNk@thread.skype/0?context={“Tid”:”d0880d3f-e6d1-4a41-9e81-b8fbcddf7b6c”,”Oid”:”803e81b2-4fa5-4a82-8d7a-ff38aa202977',
+      createdAt: '2022-03-08T22:14:57.830Z',
+      updatedAt: '2022-03-08T22:15:06.826Z',
+      publishedAt: '2022-03-08T22:15:06.824Z',
+    },
+  },
+  {
+    id: 3,
+    attributes: {
+      name: 'INTELLIGENCE',
+      link: 'https://teams.microsoft.com/l/meetup-join/19:meeting_MjqfeNzczMmEtMmRiNi00MGNhLWI1ZTYtMjI0ODQxMjI4NGNk@thread.skype/0?context={“Tid”:”d0880d3f-e6d1-4a41-9e81-b8fbcddf7b6c”,”Oid”:”803e81b2-4fa5-4a82-8d7a-ff38aa202977',
+      createdAt: '2022-03-08T22:14:57.830Z',
+      updatedAt: '2022-03-08T22:15:06.826Z',
+      publishedAt: '2022-03-08T22:15:06.824Z',
+    },
+  },
+  {
+    id: 4,
+    attributes: {
+      name: 'LOGISTICS',
+      link: 'https://teams.microsoft.com/l/meetup-join/19:meeting_MjqfeNzczMmEtMmRiNi00MGNhLWI1ZTYtMjI0ODQxMjI4NGNk@thread.skype/0?context={“Tid”:”d0880d3f-e6d1-4a41-9e81-b8fbcddf7b6c”,”Oid”:”803e81b2-4fa5-4a82-8d7a-ff38aa202977',
+      createdAt: '2022-03-08T22:14:57.830Z',
+      updatedAt: '2022-03-08T22:15:06.826Z',
+      publishedAt: '2022-03-08T22:15:06.824Z',
+    },
+  },
+  {
+    id: 5,
+    attributes: {
+      name: 'ENGINEERING',
+      link: 'https://teams.microsoft.com/l/meetup-join/19:meeting_MjqfeNzczMmEtMmRiNi00MGNhLWI1ZTYtMjI0ODQxMjI4NGNk@thread.skype/0?context={“Tid”:”d0880d3f-e6d1-4a41-9e81-b8fbcddf7b6c”,”Oid”:”803e81b2-4fa5-4a82-8d7a-ff38aa202977',
+      createdAt: '2022-03-08T22:14:57.830Z',
+      updatedAt: '2022-03-08T22:15:06.826Z',
+      publishedAt: '2022-03-08T22:15:06.824Z',
+    },
+  },
+  {
+    id: 6,
+    attributes: {
+      name: 'PERSONNEL TRAINING',
+      link: 'https://teams.microsoft.com/l/meetup-join/19:meeting_MjqfeNzczMmEtMmRiNi00MGNhLWI1ZTYtMjI0ODQxMjI4NGNk@thread.skype/0?context={“Tid”:”d0880d3f-e6d1-4a41-9e81-b8fbcddf7b6c”,”Oid”:”803e81b2-4fa5-4a82-8d7a-ff38aa202977',
+      createdAt: '2022-03-08T22:14:57.830Z',
+      updatedAt: '2022-03-08T22:15:06.826Z',
+      publishedAt: '2022-03-08T22:15:06.824Z',
+    },
+  },
+  {
+    id: 7,
+    attributes: {
+      name: 'MEDICAL',
+      link: 'https://teams.microsoft.com/l/meetup-join/19:meeting_MjqfeNzczMmEtMmRiNi00MGNhLWI1ZTYtMjI0ODQxMjI4NGNk@thread.skype/0?context={“Tid”:”d0880d3f-e6d1-4a41-9e81-b8fbcddf7b6c”,”Oid”:”803e81b2-4fa5-4a82-8d7a-ff38aa202977',
+      createdAt: '2022-03-08T22:14:57.830Z',
+      updatedAt: '2022-03-08T22:15:06.826Z',
+      publishedAt: '2022-03-08T22:15:06.824Z',
+    },
+  },
+];
 
 // export const easeInOut = (val) => {
 //   return 0.5 * (Math.sin((val - 0.5) * Math.PI) + 1);

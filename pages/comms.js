@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
-import { debugLaunch, debugLive } from '../utils/helpers';
+import {
+  debugLaunch,
+  debugLive,
+  debugLatest,
+  debugRooms,
+  getTime,
+} from '../utils/helpers';
 import Link from 'next/link';
 import Logo from '../components/logo';
 import styles from '../styles/Comms.module.css';
@@ -8,28 +14,44 @@ import Countdown from '../components/countdown';
 import Back from '../components/back';
 // import withTransition from '../components/withTransition';
 
+const URL = process.env.STRAPIBASEURL;
+
 export async function getStaticProps() {
-  let teamsLinks = [];
   try {
-    const res = await fetch('http://localhost:1337/api/teams-links/1');
-    const json = await res.json();
-    const link = json.data.attributes.link;
-    teamsLinks.push(link);
-    // const launchRes = await fetch('http://localhost:1337/api/launch-time');
-    // const launchJson = await launchRes.json();
-    // const launch = launchJson.data.attributes.launch;
-    // return {
-    //   props: { launch },
-    // };
+    const resLaunch = await fetch(`${URL}/api/launch-time`);
+    const jsonLaunch = await resLaunch.json();
+    const launch = jsonLaunch.data.attributes.launch;
+
+    const resLive = await fetch(`${URL}/api/live`);
+    const jsonLive = await resLive.json();
+    const live = jsonLive.data.attributes.live;
+
+    const resLatest = await fetch(`${URL}/api/latest-contents`);
+    const jsonLatest = await resLatest.json();
+    const arrayLatest = jsonLatest.data;
+    const index = arrayLatest.length - 1;
+    const latest = JSON.parse(JSON.stringify(arrayLatest[index].attributes));
+
+    const resRooms = await fetch(`${URL}/api/chat-rooms`);
+    const jsonRooms = await resRooms.json();
+    const rooms = [...jsonRooms.data];
+    return {
+      props: { launch, live, latest, rooms },
+    };
   } catch (err) {
     console.log(err);
+    const launch = debugLaunch;
+    const live = debugLive;
+    const latest = JSON.parse(JSON.stringify(debugLatest));
+    const rooms = [...debugRooms];
+    return {
+      props: { launch, live, latest, rooms },
+    };
   }
-  return {
-    props: { teamsLinks },
-  };
 }
 
-const Chat = () => {
+const Chat = ({ rooms }) => {
+  // rooms = [];
   return (
     <>
       <div className={styles.chat}>
@@ -39,41 +61,31 @@ const Chat = () => {
           about a specific role.
         </p>
         <ul className={styles.rooms}>
-          <li className={styles.room}>
-            <img src='/share.png' alt='' />
-            <p>FORCE PROTECTION</p>
-            <div>LIVE</div>
-          </li>
-          <li className={styles.room}>
-            <img src='/share.png' alt='' />
-            <p>AIR OPERATIONS</p>
-            <div>LIVE</div>
-          </li>
-          <li className={styles.room}>
-            <img src='/share.png' alt='' />
-            <p>INTELLIGENCE</p>
-            <div>LIVE</div>
-          </li>
-          <li className={styles.room}>
-            <img src='/share.png' alt='' />
-            <p>LOGISTICS</p>
-            <div>LIVE</div>
-          </li>
-          <li className={styles.room}>
-            <img src='/share.png' alt='' />
-            <p>ENGINEERING</p>
-            <div>LIVE</div>
-          </li>
-          <li className={styles.room}>
-            <img src='/share.png' alt='' />
-            <p>PERSONNEL TRAINING</p>
-            <div>LIVE</div>
-          </li>
-          <li className={styles.room}>
-            <img src='/share.png' alt='' />
-            <p>FORCE PROTECTION</p>
-            <div>LIVE</div>
-          </li>
+          {rooms.length > 0 ? (
+            rooms.map((room, i) => {
+              return (
+                <a
+                  href={room.attributes.link}
+                  key={i}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <li className={styles.room}>
+                    <img src='./share.png' alt='' />
+                    <p>{room.attributes.name}</p>
+                    <div>LIVE</div>
+                  </li>
+                </a>
+              );
+            })
+          ) : (
+            <p>
+              <span style={{ color: '#C60C30' }}>
+                No rooms are currently available
+              </span>
+              . Please check back later.
+            </p>
+          )}
         </ul>
       </div>
       <div></div>
@@ -91,8 +103,9 @@ const Chat = () => {
   );
 };
 
-const Comms = ({ teamsLinks }) => {
-  const [live, setLive] = useState(false);
+const Comms = ({ launch, live, latest, rooms }) => {
+  // const [live, setLive] = useState(false);
+  const time = getTime(launch);
   const images = [
     <img src='/grid1.jpg' key={0} alt='' className={styles.thumbnail} />,
     <img src='/grid2.jpg' key={1} alt='' className={styles.thumbnail} />,
@@ -104,7 +117,7 @@ const Comms = ({ teamsLinks }) => {
     <img src='/grid8.jpg' key={7} alt='' className={styles.thumbnail} />,
   ];
   useEffect(() => {
-    setLive(debugLive);
+    // setLive(debugLive);
   }, []);
   return (
     <>
@@ -113,11 +126,7 @@ const Comms = ({ teamsLinks }) => {
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
-            <Countdown
-              launch={debugLaunch}
-              live={debugLive}
-              changeToIcon={false}
-            />
+            <Countdown launch={launch} live={live} changeToIcon={false} />
           </header>
           <main className={styles.main}>
             <div className={styles.name}>The Comms Room</div>
@@ -130,21 +139,22 @@ const Comms = ({ teamsLinks }) => {
               <div className={styles.content}>
                 <Link href='/comms/latest'>
                   <img
-                    src='/from-studio.jpg'
+                    // src='/from-studio.jpg'
+                    src={latest && latest.image}
                     alt=''
                     className={styles.cover}
                   ></img>
                 </Link>
               </div>
               {live ? (
-                <Chat />
+                <Chat rooms={rooms} />
               ) : (
                 <div className={styles.chat}>
                   <p>
                     <span>We are currently offline</span>. Live chat opens{' '}
-                    <span>@ 6.30pm</span>. Whilst you wait, watch our latest
-                    content ‘From the Studio’ or explore RAF operations and
-                    professions from the home page.
+                    <span>{`@ ${time}`}</span>. Whilst you wait, watch our
+                    latest content ‘From the Studio’ or explore RAF operations
+                    and professions from the home page.
                   </p>
                 </div>
               )}
