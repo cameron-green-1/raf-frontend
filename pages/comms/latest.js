@@ -108,7 +108,7 @@ const Latest = ({ launch, live, latest }) => {
         initial={{ y: '120%' }}
         animate={{ y: '120%' }}
         exit={{ y: '0%' }}
-        transition={{ delay: 0, duration: 1, ease: 'easeInOut' }}
+        transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
       >
         <div className='blue'></div>
         <img src='/transition-bg.jpg' className='transition-bg' alt='' />
@@ -119,7 +119,7 @@ const Latest = ({ launch, live, latest }) => {
         initial={{ y: '0%' }}
         animate={{ y: '-120%' }}
         exit={{ y: '-120%' }}
-        transition={{ delay: 0.5, duration: 1, ease: 'easeInOut' }}
+        transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
       >
         <div className='blue'></div>
         <img src='/transition-bg.jpg' className='transition-bg' alt='' />
