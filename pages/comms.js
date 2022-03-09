@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import {
   debugLaunch,
@@ -121,6 +122,11 @@ const Comms = ({ launch, live, latest, rooms }) => {
   }, []);
   return (
     <>
+      <Head>
+        <title>RAF World | Comms Room</title>
+        <meta name='description' content='RAF Access All Areas experience' />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <div className='wrapper live'>
         <img src='/raf4.jpg' className={styles.backgroundImage} />
         <div className={styles.container}>
@@ -172,38 +178,26 @@ const Comms = ({ launch, live, latest, rooms }) => {
       </div>
       <motion.div
         className='slide'
-        initial={{ y: '100%' }}
-        animate={{ y: '100%' }}
-        exit={{ y: 0 }}
-        transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
+        initial={{ y: '120%' }}
+        animate={{ y: '120%' }}
+        exit={{ y: '0%' }}
+        transition={{ delay: 0, duration: 1, ease: 'easeInOut' }}
       >
-        <div></div>
-        <img src='/transition.jpg' alt='' />
+        <div className='blue'></div>
+        <img src='/transition-bg.jpg' className='transition-bg' alt='' />
+        <img src='/transition.jpg' className='transition-main' alt='' />
       </motion.div>
       <motion.div
         className='slide'
-        initial={{ y: 0 }}
-        animate={{ y: '-100%' }}
-        exit={{ y: '-100%' }}
-        transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
+        initial={{ y: '0%' }}
+        animate={{ y: '-120%' }}
+        exit={{ y: '-120%' }}
+        transition={{ delay: 0.5, duration: 1, ease: 'easeInOut' }}
       >
-        <div></div>
-        <img src='/transition.jpg' alt='' />
+        <div className='blue'></div>
+        <img src='/transition-bg.jpg' className='transition-bg' alt='' />
+        <img src='/transition.jpg' className='transition-main' alt='' />
       </motion.div>
-      {/* <motion.div
-        className='slide'
-        initial={{ y: '100%' }}
-        animate={{ y: '100%' }}
-        exit={{ y: 0 }}
-        transition={{ delay: 0, duration: 0.5, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className='slide'
-        initial={{ y: 0 }}
-        animate={{ y: '-100%' }}
-        exit={{ y: '-100%' }}
-        transition={{ delay: 1, duration: 0.5, ease: 'easeInOut' }}
-      /> */}
     </>
   );
 };

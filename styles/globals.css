@@ -105,52 +105,65 @@ a {
 
 .slide {
   position: fixed;
-  top: 0;
+  /* top: 0;
   left: 0;
   height: 100vh;
+  width: 100%; */
+  top: -20vh;
+  left: 0;
   width: 100%;
-  /* background: #066bb8; */
-  /* transform-origin: top; */
-  /* background-image: url('/transition.jpg'); */
-  background-color: white;
-  /* background-image: url('/transition.jpg'); */
-  /* background-color: #066bb8; */
-  background-color: white;
+  height: 140vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: fill;
-  /* background-size: cover; */
-  /* background-size: contain; */
   z-index: 2;
-  /* overflow: hidden; */
+  background-color: white;
+  clip-path: polygon(0 1.25%, 100% 2.5%, 100% 98.75%, 0 97.5%);
 }
 
-.slide img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  width: 100%;
-  height: 100%;
-  /* height: 100%; */
-  object-fit: cover;
-  clip-path: polygon(0 5%, 100% 25%, 100% 95%, 0 75%);
-}
-
-.slide div {
+.slide .white {
   position: absolute;
-  background-color: #066bb8;
+  background-color: white;
+}
+
+.slide .transition-bg {
+  position: fixed;
   /* top: 0;
-  left: 0; */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
   width: 100%;
-  height: 100%;
-  clip-path: polygon(0 2%, 100% 10%, 100% 98%, 0 90%);
+  height: 100%; */
+  top: 7.5%;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  object-fit: cover;
+  clip-path: polygon(0 5%, 100% 10%, 100% 95%, 0 90%);
+}
+
+.slide .transition-main {
+  position: fixed;
+  /* top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; */
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+  clip-path: polygon(0 5%, 100% 10%, 100% 95%, 0 90%);
+}
+
+.slide .blue {
+  position: absolute;
+  /* width: 100%;
+  height: 100%; */
+  top: 2.5%;
+  left: 0;
+  width: 100%;
+  height: 95%;
+  background-color: #0097d1;
+  clip-path: polygon(0 2.5%, 100% 5%, 100% 97.5%, 0 95%);
 }
 
 .transition-image {
@@ -159,12 +172,8 @@ a {
   left: 0;
   height: 100vh;
   width: 100%;
-  /* transform-origin: top; */
   background-image: url('/transition.jpg');
   background-color: #066bb8;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 .logo {
