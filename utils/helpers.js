@@ -11,7 +11,8 @@ export const debugLatest = {
   title: 'Episode One',
   image: 'https://i.imgur.com/OSR02G8.jpg',
   // image: 'https://i.imgur.com/DwTR24j.png',
-  video: 'https://vimeo.com/514470296',
+  // video: 'https://vimeo.com/514470296',
+  video: 'https://vimeo.com/684564506',
   description:
     'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip. ',
   createdAt: '2022-03-08T21:46:38.421Z',

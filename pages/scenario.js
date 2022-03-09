@@ -15,7 +15,8 @@ const PanoViewer = dynamic(() => import('../components/panoViewer'), {
 const vimeoEmbed = (
   <iframe
     // src='https://player.vimeo.com/video/514470296?h=a7bd2f8234'
-    src='https://player.vimeo.com/video/684641383?h=a7bd2f8234'
+    // src='https://player.vimeo.com/video/684641383?h=a7bd2f8234'
+    src='https://player.vimeo.com/video/684564506?h=a7bd2f8234'
     frameBorder='0'
     allow='autoplay; fullscreen; picture-in-picture'
     allowFullScreen
