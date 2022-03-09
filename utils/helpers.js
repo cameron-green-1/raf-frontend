@@ -9,8 +9,8 @@ export const debugLive = false;
 export const debugLaunch = '2022-03-30T18:30:00.000Z';
 export const debugLatest = {
   title: 'Episode One',
-  // image: 'https://i.imgur.com/OSR02G8.jpg',
-  image: 'https://i.imgur.com/DwTR24j.png',
+  image: 'https://i.imgur.com/OSR02G8.jpg',
+  // image: 'https://i.imgur.com/DwTR24j.png',
   video: 'https://vimeo.com/514470296',
   description:
     'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip. ',
