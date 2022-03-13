@@ -19,7 +19,8 @@ import Back from '../components/back';
 // const URL = process.env.STRAPIBASEURL;
 const URL = url;
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const resLaunch = await fetch(`${URL}/api/launch-time`);
     const jsonLaunch = await resLaunch.json();

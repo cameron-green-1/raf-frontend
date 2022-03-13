@@ -68,7 +68,8 @@ const hotspots = [
   },
 ];
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const resLaunch = await fetch(`${URL}/api/launch-time`);
     const resLive = await fetch(`${URL}/api/live`);

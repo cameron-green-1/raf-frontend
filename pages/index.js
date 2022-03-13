@@ -29,7 +29,8 @@ const instructionsItems = instructionsText.map((txt, i) => (
   <p key={i}>{txt}</p>
 ));
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const resHolding = await fetch(`${URL}/api/holding`);
     const resLaunch = await fetch(`http://localhost:1337/api/launch-time`);
