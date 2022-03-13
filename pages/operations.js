@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { handleMobileVh, debugLaunch, debugLive } from '../utils/helpers';
+import { handleMobileVh, debugLaunch, debugLive, url } from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
@@ -11,7 +11,8 @@ import Countdown from '../components/countdown';
 import Loader from '../components/loader';
 import IconSatellite from '../components/svg/iconSatellite';
 
-const URL = process.env.STRAPIBASEURL;
+// const URL = process.env.STRAPIBASEURL;
+const URL = url;
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];

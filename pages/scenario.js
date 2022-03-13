@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Brief from '../components/brief';
 import { motion } from 'framer-motion';
-import { handleMobileVh, debugLaunch, debugLive } from '../utils/helpers';
+import { handleMobileVh, debugLaunch, debugLive, url } from '../utils/helpers';
 // import withTransition from '../components/withTransition';
 
-const URL = process.env.STRAPIBASEURL;
+// const URL = process.env.STRAPIBASEURL;
+const URL = url;
 
 const PanoViewer = dynamic(() => import('../components/panoViewer'), {
   ssr: false,

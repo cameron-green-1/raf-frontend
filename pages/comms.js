@@ -6,6 +6,7 @@ import {
   debugLatest,
   debugRooms,
   getTime,
+  url,
 } from '../utils/helpers';
 import Link from 'next/link';
 import Logo from '../components/logo';
@@ -15,7 +16,8 @@ import Countdown from '../components/countdown';
 import Back from '../components/back';
 // import withTransition from '../components/withTransition';
 
-const URL = process.env.STRAPIBASEURL;
+// const URL = process.env.STRAPIBASEURL;
+const URL = url;
 
 export async function getStaticProps() {
   try {

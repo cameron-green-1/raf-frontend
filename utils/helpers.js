@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 
+export const url = 'https://still-beach-67772.herokuapp.com';
+
 export const defaultHolding = true;
 export const defaultLive = false;
 export const defaultLaunch = '2022-03-30T18:30:00.000Z';

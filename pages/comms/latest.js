@@ -6,9 +6,10 @@ import Logo from '../../components/logo';
 import Countdown from '../../components/countdown';
 import Back from '../../components/back';
 import { motion } from 'framer-motion';
-import { debugLaunch, debugLive, debugLatest } from '../../utils/helpers';
+import { debugLaunch, debugLive, debugLatest, url } from '../../utils/helpers';
 
-const URL = process.env.STRAPIBASEURL;
+// const URL = process.env.STRAPIBASEURL;
+const URL = url;
 
 export async function getStaticProps() {
   try {

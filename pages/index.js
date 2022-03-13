@@ -12,6 +12,7 @@ import {
   debugLaunch,
   getDate,
   getTime,
+  url,
 } from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Holding.module.css';
@@ -19,7 +20,8 @@ import dynamic from 'next/dynamic';
 import Countdown from '../components/countdown';
 // import withTransition from '../components/withTransition';
 
-const URL = process.env.STRAPIBASEURL;
+// const URL = process.env.STRAPIBASEURL;
+const URL = url;
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
 const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
