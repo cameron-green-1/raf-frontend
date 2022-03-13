@@ -33,11 +33,12 @@ const instructionsItems = instructionsText.map((txt, i) => (
 export async function getServerSideProps() {
   try {
     const resHolding = await fetch(`${URL}/api/holding`);
-    const resLaunch = await fetch(`http://localhost:1337/api/launch-time`);
+    const resLaunch = await fetch(`${URL}/api/launch-time`);
     const jsonHolding = await resHolding.json();
     const jsonLaunch = await resLaunch.json();
     const holding = jsonHolding.data.attributes.holding;
     const launch = jsonLaunch.data.attributes.launch;
+    console.log(holding);
     return {
       props: { holding, launch },
     };
@@ -115,16 +116,16 @@ const Holding = ({ isHolding, launchTime }) => {
 };
 
 const Home = ({ holding, launch }) => {
-  // const [isHolding, setIsHolding] = useState(true);
+  const [isHolding, setIsHolding] = useState(true);
   useEffect(() => {
-    // setIsHolding(holding);
+    setIsHolding(holding);
     handleMobileVh();
   }, []);
   return (
     <>
       {/* <Holding holding={holding} launch={launch} /> */}
       {/* <Holding isHolding={isHolding} /> */}
-      <Holding isHolding={holding} launchTime={launch} />
+      <Holding isHolding={isHolding} launchTime={launch} />
       <motion.div
         className='slide'
         initial={{ y: '120%' }}
