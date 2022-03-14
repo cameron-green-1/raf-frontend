@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import useSWR from 'swr';
 import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -29,8 +30,8 @@ const instructionsItems = instructionsText.map((txt, i) => (
   <p key={i}>{txt}</p>
 ));
 
-// export async function getStaticProps() {
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  // export async function getServerSideProps() {
   try {
     const resHolding = await fetch(`${URL}/api/holding`);
     const resLaunch = await fetch(`${URL}/api/launch-time`);
@@ -41,6 +42,7 @@ export async function getServerSideProps() {
     console.log(holding);
     return {
       props: { holding, launch },
+      revalidate: 10,
     };
   } catch (err) {
     // const holding = defaultHolding;
@@ -115,17 +117,31 @@ const Holding = ({ isHolding, launchTime }) => {
   );
 };
 
+const fetcher = async (url) => {
+  console.log('fetch called');
+  const res = await fetch(url);
+  const json = await res.json();
+  const data = json.data.attributes.holding;
+  console.log(data);
+  return data;
+  // return res.json();
+};
+
 const Home = ({ holding, launch }) => {
+  const { data, error } = useSWR(`${URL}/api/holding`, fetcher, {
+    fallbackData: holding,
+  });
+  if (error) console.log(err);
+  if (!data) console.log('loading...');
   const [isHolding, setIsHolding] = useState(true);
   useEffect(() => {
-    setIsHolding(holding);
+    // setIsHolding(holding);
     handleMobileVh();
   }, []);
   return (
     <>
-      {/* <Holding holding={holding} launch={launch} /> */}
-      {/* <Holding isHolding={isHolding} /> */}
-      <Holding isHolding={isHolding} launchTime={launch} />
+      {/* <Holding isHolding={isHolding} launchTime={launch} /> */}
+      <Holding isHolding={data} launchTime={launch} />
       <motion.div
         className='slide'
         initial={{ y: '120%' }}
