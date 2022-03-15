@@ -86,9 +86,11 @@ function Operations({ launch, live }) {
             <div className={styles.commsText}>
               {/* <span style={{ color: live ? '#C60C30' : '#038FD6' }}> */}
               <span style={{ color: data ? '#C60C30' : '#038FD6' }}>
-                {live ? "WE'RE LIVE" : 'VISIT THE'}
+                {/* {live ? "WE'RE LIVE" : 'VISIT THE'} */}
+                {data ? "WE'RE LIVE" : 'VISIT THE'}
               </span>
-              {live ? 'CHAT NOW' : 'COMMS ROOM'}
+              {/* {live ? 'CHAT NOW' : 'COMMS ROOM'} */}
+              {data ? 'CHAT NOW' : 'COMMS ROOM'}
             </div>
           </div>
         </Link>
