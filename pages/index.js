@@ -95,7 +95,7 @@ const Holding = ({ isHolding, launchTime }) => {
             </>
           ) : (
             <>
-              The event starts at <span>{`@ ${time}`}</span>.
+              The event starts at <span>{`@ ${time}`}</span>
             </>
           )}
         </p>
