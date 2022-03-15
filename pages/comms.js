@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
+import useSWR from 'swr';
 import {
   debugLaunch,
   debugLive,
@@ -55,7 +56,6 @@ export async function getServerSideProps() {
 }
 
 const Chat = ({ rooms }) => {
-  // rooms = [];
   return (
     <>
       <div className={styles.chat}>
@@ -107,8 +107,22 @@ const Chat = ({ rooms }) => {
   );
 };
 
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const json = await res.json();
+  // console.log(json);
+  const data = json.data.attributes.live;
+  // console.log('data from fetcher is ', data);
+  return data;
+};
+
 const Comms = ({ launch, live, latest, rooms }) => {
   // const [live, setLive] = useState(false);
+  const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
+    fallbackData: live,
+  });
+  // if (error) console.log(error);
+  if (!data) console.log('loading...');
   const time = getTime(launch);
   const images = [
     <img src='/grid1.jpg' key={0} alt='' className={styles.thumbnail} />,
@@ -135,7 +149,8 @@ const Comms = ({ launch, live, latest, rooms }) => {
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
-            <Countdown launch={launch} live={live} changeToIcon={false} />
+            {/* <Countdown launch={launch} live={live} changeToIcon={false} /> */}
+            <Countdown launch={launch} live={data} changeToIcon={false} />
           </header>
           <main className={styles.main}>
             <div className={styles.name}>The Comms Room</div>
@@ -155,7 +170,8 @@ const Comms = ({ launch, live, latest, rooms }) => {
                   ></img>
                 </Link>
               </div>
-              {live ? (
+              {/* {live ? ( */}
+              {data ? (
                 <Chat rooms={rooms} />
               ) : (
                 <div className={styles.chat}>

@@ -118,21 +118,18 @@ const Holding = ({ isHolding, launchTime }) => {
 };
 
 const fetcher = async (url) => {
-  console.log('fetch called');
   const res = await fetch(url);
   const json = await res.json();
   const data = json.data.attributes.holding;
-  console.log(data);
   return data;
-  // return res.json();
 };
 
 const Home = ({ holding, launch }) => {
   const { data, error } = useSWR(`${URL}/api/holding`, fetcher, {
     fallbackData: holding,
   });
-  if (error) console.log(err);
-  if (!data) console.log('loading...');
+  // if (error) console.log(err);
+  // if (!data) console.log('loading...');
   const [isHolding, setIsHolding] = useState(true);
   useEffect(() => {
     // setIsHolding(holding);

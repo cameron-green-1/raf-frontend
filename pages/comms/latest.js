@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
+import useSWR from 'swr';
 import styles from '../../styles/Comms.module.css';
 import Link from 'next/link';
 import Logo from '../../components/logo';
@@ -53,7 +54,21 @@ export async function getServerSideProps() {
 //   ></iframe>
 // );
 
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const json = await res.json();
+  // console.log(json);
+  const data = json.data.attributes.live;
+  // console.log('data from fetcher is ', data);
+  return data;
+};
+
 const Latest = ({ launch, live, latest }) => {
+  const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
+    fallbackData: live,
+  });
+  // if (error) console.log(error);
+  if (!data) console.log('loading...');
   const arr = latest.video.split('/');
   const id = arr[arr.length - 1];
   const vimeoEmbed = (
@@ -77,7 +92,8 @@ const Latest = ({ launch, live, latest }) => {
         <div className={styles.container}>
           <header className={styles.header}>
             <Logo />
-            <Countdown launch={launch} live={live} changeToIcon={true} />
+            {/* <Countdown launch={launch} live={live} changeToIcon={true} /> */}
+            <Countdown launch={launch} live={data} changeToIcon={true} />
           </header>
           <main className={styles.main}>
             <div className={[styles.flex, styles.latestFlex].join(' ')}>

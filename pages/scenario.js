@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import useSWR from 'swr';
 import Brief from '../components/brief';
 import { motion } from 'framer-motion';
 import { handleMobileVh, debugLaunch, debugLive, url } from '../utils/helpers';
@@ -89,7 +90,21 @@ export async function getServerSideProps() {
   }
 }
 
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const json = await res.json();
+  // console.log(json);
+  const data = json.data.attributes.live;
+  // console.log('data from fetcher is ', data);
+  return data;
+};
+
 const Scenario = ({ launch, live }) => {
+  const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
+    fallbackData: live,
+  });
+  // if (error) console.log(error);
+  if (!data) console.log('loading...');
   useEffect(() => {
     handleMobileVh();
   });
@@ -104,7 +119,8 @@ const Scenario = ({ launch, live }) => {
         imageSrc='/pano1min.jpg'
         hotspots={hotspots}
         launch={launch}
-        live={live}
+        // live={live}
+        live={data}
       />{' '}
       <motion.div
         className='slide'

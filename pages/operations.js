@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import useSWR from 'swr';
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { handleMobileVh, debugLaunch, debugLive, url } from '../utils/helpers';
@@ -41,8 +42,21 @@ export async function getServerSideProps() {
   }
 }
 
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const json = await res.json();
+  // console.log(json);
+  const data = json.data.attributes.live;
+  // console.log('data from fetcher is ', data);
+  return data;
+};
+
 function Operations({ launch, live }) {
-  // const [live, setLive] = useState(false); // THIS STATE NEEDS TO BE UPDATED FROM CMS
+  const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
+    fallbackData: live,
+  });
+  // if (error) console.log(error);
+  if (!data) console.log('loading...');
   useEffect(() => {
     // setLive(debugLive);
     handleMobileVh();
@@ -58,7 +72,8 @@ function Operations({ launch, live }) {
         <img src='/stars.jpg' className={styles.bg} />
         <header className={styles.header}>
           <Logo className={styles.logo} />
-          <Countdown launch={launch} live={live} />
+          {/* <Countdown launch={launch} live={live} /> */}
+          <Countdown launch={launch} live={data} />
         </header>
         <div className={styles.instructions}>
           <img src='/rotate.svg' className={styles.rotate} alt='' />
@@ -66,16 +81,19 @@ function Operations({ launch, live }) {
         </div>
         <Link href='/comms' passHref>
           <div className={styles.commsLink}>
-            <IconSatellite colour={live ? '#C60C30' : '#038FD6'} size={75} />
+            {/* <IconSatellite colour={live ? '#C60C30' : '#038FD6'} size={75} /> */}
+            <IconSatellite colour={data ? '#C60C30' : '#038FD6'} size={75} />
             <div className={styles.commsText}>
-              <span style={{ color: live ? '#C60C30' : '#038FD6' }}>
+              {/* <span style={{ color: live ? '#C60C30' : '#038FD6' }}> */}
+              <span style={{ color: data ? '#C60C30' : '#038FD6' }}>
                 {live ? "WE'RE LIVE" : 'VISIT THE'}
               </span>
               {live ? 'CHAT NOW' : 'COMMS ROOM'}
             </div>
           </div>
         </Link>
-        <Earth live={live} />
+        {/* <Earth live={live} /> */}
+        <Earth live={data} />
         <Loader />
       </div>
       <motion.div
