@@ -106,7 +106,12 @@ const Holding = ({ isHolding, launchTime }) => {
               : '/operations'
           }
         >
-          <button>{isHolding ? 'REGISTER NOW' : 'VISIT NOW'}</button>
+          {/* <button style={styles.holdingButton}> */}
+          <button>
+            <span style={{ fontSize: '1.25rem', color: 'white' }}>
+              {isHolding ? 'REGISTER NOW' : 'VISIT NOW'}
+            </span>
+          </button>
         </Link>
         <img
           src='/holding-logos.png'

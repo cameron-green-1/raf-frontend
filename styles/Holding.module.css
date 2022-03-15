@@ -60,6 +60,10 @@
   transition: background-color 0.2s ease-in-out;
 }
 
+.holdingButton {
+  font-size: 2rem !important;
+}
+
 .holding button:hover {
   background-color: #9a0a27;
 }
