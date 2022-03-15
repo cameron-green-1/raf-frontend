@@ -108,7 +108,8 @@ const Holding = ({ isHolding, launchTime }) => {
         >
           {/* <button style={styles.holdingButton}> */}
           <button>
-            <span style={{ fontSize: '1.25rem', color: 'white' }}>
+            {/* <span style={{ fontSize: '1.25rem', color: 'white' }}> */}
+            <span className={styles.buttonText}>
               {isHolding ? 'REGISTER NOW' : 'VISIT NOW'}
             </span>
           </button>

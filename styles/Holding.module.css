@@ -61,8 +61,9 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-.holdingButton {
-  font-size: 2rem !important;
+.buttonText {
+  font-size: 1.25rem;
+  color: white !important;
 }
 
 .holding button:hover {
@@ -80,6 +81,9 @@
   }
   .holding button {
     margin-bottom: 40px;
-    padding: 20px 100px;
+    padding: 15px 100px;
+  }
+  .buttonText {
+    font-size: 0.8rem;
   }
 }
