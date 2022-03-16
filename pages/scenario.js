@@ -69,8 +69,8 @@ const hotspots = [
   },
 ];
 
-// export async function getStaticProps() {
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  // export async function getServerSideProps() {
   try {
     const resLaunch = await fetch(`${URL}/api/launch-time`);
     const resLive = await fetch(`${URL}/api/live`);
@@ -80,6 +80,7 @@ export async function getServerSideProps() {
     const live = jsonLive.data.attributes.live;
     return {
       props: { launch, live },
+      revalidate: 10,
     };
   } catch (err) {
     const launch = debugLaunch;

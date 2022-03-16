@@ -20,8 +20,8 @@ import Back from '../components/back';
 // const URL = process.env.STRAPIBASEURL;
 const URL = url;
 
-// export async function getStaticProps() {
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  // export async function getServerSideProps() {
   try {
     const resLaunch = await fetch(`${URL}/api/launch-time`);
     const jsonLaunch = await resLaunch.json();
@@ -51,6 +51,7 @@ export async function getServerSideProps() {
     const rooms = [...debugRooms];
     return {
       props: { launch, live, latest, rooms },
+      revalidate: 10,
     };
   }
 }
