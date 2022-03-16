@@ -72,6 +72,7 @@
   white-space: nowrap;
   font-weight: bold;
   font-size: 1.25rem;
+  line-height: 1;
 }
 
 @media (max-width: 1024px) {
