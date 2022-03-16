@@ -57,8 +57,8 @@
 }
 
 .commsLink svg {
-  width: 100px;
-  height: 100px;
+  width: 67px;
+  height: 67px;
 }
 
 .commsLink:hover {
@@ -71,14 +71,14 @@
   margin-left: 10px;
   white-space: nowrap;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 @media (max-width: 1024px) {
-  .commsLink svg {
+  /* .commsLink svg {
     width: 75px;
     height: 75px;
-  }
+  } */
   .commsText {
     font-size: 1rem;
   }
