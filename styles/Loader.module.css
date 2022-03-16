@@ -43,7 +43,9 @@
 }
 
 .loadingLogo {
-  width: 450px;
+  /* width: 450px; */
+  width: 525px;
+  aspect-ratio: 3 / 1;
   margin-bottom: 80px;
   /* margin-bottom: -75px; */
   align-self: center;
