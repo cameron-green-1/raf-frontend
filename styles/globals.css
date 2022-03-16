@@ -428,21 +428,39 @@ a {
   transition: background-color 0.2s ease-in-out;
   width: 100%;
 }
+/* .btn-operation span {
+  font-size: 1.5rem;
+} */
+
 .btn-operation:hover {
-  background-color: #9a0a27;
+  /* background-color: #9a0a27; */
+  background-color: white;
 }
+
+.operation-text {
+  font-size: 1.25rem;
+  color: white;
+  transition: color 0.2s ease-in-out;
+}
+
+.btn-operation:hover .operation-text {
+  color: #0097d1;
+}
+
 .btn {
   position: relative;
   cursor: pointer;
   /* width: 500px; */
   padding: 10px 0;
 }
+
 .title {
   position: relative;
   color: #0097d1;
   margin-bottom: 10px;
   font-size: 0.75rem;
 }
+
 .name,
 .description {
   position: relative;

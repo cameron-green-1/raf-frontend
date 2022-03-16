@@ -179,7 +179,9 @@ const Model = ({ live }) => {
           </div>
           <div className='section section-launch'>
             <Link href='/scenario'>
-              <button className='btn btn-operation'>LAUNCH OPERATION</button>
+              <button className='btn btn-operation'>
+                <span className='operation-text'>LAUNCH OPERATION</span>
+              </button>
             </Link>
           </div>
         </div>
@@ -211,7 +213,9 @@ const Model = ({ live }) => {
           </div>
           <div className='section-launch'>
             <Link href='/scenario'>
-              <button className='btn btn-operation'>LAUNCH OPERATION</button>
+              <button className='btn btn-operation'>
+                <span className='operation-text'>LAUNCH OPERATION</span>
+              </button>
             </Link>
           </div>
         </div>
@@ -244,7 +248,9 @@ const Model = ({ live }) => {
           </div>
           <div className='section section-launch'>
             <Link href='/scenario'>
-              <button className='btn btn-operation'>LAUNCH OPERATION</button>
+              <button className='btn btn-operation'>
+                <span className='operation-text'>LAUNCH OPERATION</span>
+              </button>
             </Link>
           </div>
         </div>

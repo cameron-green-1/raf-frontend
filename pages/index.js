@@ -91,7 +91,7 @@ const Holding = ({ isHolding, launchTime }) => {
         <p>
           {isHolding ? (
             <>
-              The next event is on <span>{dateTime}</span>.
+              The next event is on <span>{dateTime}</span>
             </>
           ) : (
             <>
