@@ -10,8 +10,9 @@ function MyApp({ Component, pageProps, router }) {
       <Head>
         <title>RAF World | Access All Areas</title>
         <meta name='description' content='RAF Access All Areas experience' />
-        <link rel='icon' href='/favicon.ico' />
+        {/* <link rel='icon' href='/favicon.ico' /> */}
         {/* <link rel='icon' href='/favicon.png' /> */}
+        <link rel='icon' href='/favicon3.png' />
         {/* <link
           rel='preload'
           href='/fonts/GothamSSm-Medium_Web.woff'

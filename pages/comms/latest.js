@@ -86,7 +86,8 @@ const Latest = ({ launch, live, latest }) => {
       <Head>
         <title>RAF World | Latest Content</title>
         <meta name='description' content='RAF Access All Areas experience' />
-        <link rel='icon' href='/favicon.ico' />
+        {/* <link rel='icon' href='/favicon.ico' /> */}
+        <link rel='icon' href='/favicon3.png' />
       </Head>
       <div className='wrapper live'>
         <img src='/raf4.jpg' className={styles.backgroundImage} />

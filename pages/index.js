@@ -78,8 +78,9 @@ const Holding = ({ isHolding, launchTime }) => {
       <Head>
         <title>RAF World | Access All Areas</title>
         <meta name='description' content='RAF Access All Areas experience' />
-        <link rel='icon' href='/favicon.ico' />
+        {/* <link rel='icon' href='/favicon.ico' /> */}
         {/* <link rel='icon' href='/favicon.png' /> */}
+        <link rel='icon' href='/favicon3.png' />
       </Head>
       <img src='/stars.jpg' className={styles.bg} />
       <main className={styles.holding}>

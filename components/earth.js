@@ -73,6 +73,8 @@ const Model = ({ live }) => {
     };
 
     setTimeout(moveToHotspot, 200);
+
+    // handle glow size
   }, []);
   return (
     <div className='model'>

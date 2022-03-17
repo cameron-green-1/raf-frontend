@@ -114,7 +114,8 @@ const Scenario = ({ launch, live }) => {
       <Head>
         <title>RAF World | Scenario</title>
         <meta name='description' content='RAF Access All Areas experience' />
-        <link rel='icon' href='/favicon.ico' />
+        {/* <link rel='icon' href='/favicon.ico' /> */}
+        <link rel='icon' href='/favicon3.png' />
       </Head>
       <PanoViewer
         imageSrc='/pano1min.jpg'
