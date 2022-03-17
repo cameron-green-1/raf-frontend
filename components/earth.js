@@ -98,6 +98,7 @@ const Model = ({ live }) => {
         loading='eager'
         // poster='/poster.jpg'
         disable-zoom
+        data-js-focus-visible
         camera-controls
         src='/earth.glb'
         environment-image='/aircraft_workshop_01_1k.hdr'
