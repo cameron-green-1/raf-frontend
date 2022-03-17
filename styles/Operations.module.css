@@ -54,6 +54,7 @@
   align-items: center;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  z-index: 2;
 }
 
 .commsLink svg {
@@ -124,5 +125,11 @@
   .commsLink svg {
     width: 50px;
     height: 50px;
+  }
+}
+
+@media (max-height: 550px) {
+  .instructions {
+    display: none;
   }
 }

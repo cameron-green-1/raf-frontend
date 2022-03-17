@@ -30,6 +30,9 @@
   /* margin-bottom: -75px; */
 }
 
+.holdingLogos {
+}
+
 .holding p {
   text-align: center;
   font-size: 1.5rem;
@@ -74,9 +77,13 @@
 
 @media (max-width: 768px) {
   .holdingLogo {
-    width: 250px;
+    width: 350px;
     margin-bottom: -20px;
+    transform: translateY(-25%);
     /* margin-bottom: 20px; */
+  }
+  .holdingLogos {
+    width: 200px;
   }
   .holding p {
     font-size: 1rem;

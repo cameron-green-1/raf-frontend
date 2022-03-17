@@ -79,6 +79,7 @@ const Holding = ({ isHolding, launchTime }) => {
         <title>RAF World | Access All Areas</title>
         <meta name='description' content='RAF Access All Areas experience' />
         <link rel='icon' href='/favicon.ico' />
+        {/* <link rel='icon' href='/favicon.png' /> */}
       </Head>
       <img src='/stars.jpg' className={styles.bg} />
       <main className={styles.holding}>
@@ -115,6 +116,7 @@ const Holding = ({ isHolding, launchTime }) => {
           </button>
         </Link>
         <img
+          className={styles.holdingLogos}
           src='/holding-logos.png'
           alt='RAF Regular & Reserve | No Ordinary Job'
         />
