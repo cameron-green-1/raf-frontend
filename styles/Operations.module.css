@@ -128,7 +128,7 @@
   }
 }
 
-@media (max-height: 550px) {
+@media (max-height: 600px) {
   .instructions {
     display: none;
   }
