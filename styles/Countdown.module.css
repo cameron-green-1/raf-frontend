@@ -145,7 +145,7 @@
   .commsTextSmall {
     display: block;
   }
-  .commsLink:hover {
+  /* .commsLink:hover {
     transform: scale(1);
-  }
+  } */
 }
