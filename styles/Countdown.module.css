@@ -60,9 +60,9 @@
   height: 75px;
 }
 
-.commsLink:hover {
+/* .commsLink:hover {
   transform: scale(1.1);
-}
+} */
 
 .commsText {
   display: flex;
@@ -70,6 +70,7 @@
   margin-left: 10px;
   white-space: nowrap;
   font-weight: bold;
+  line-height: 1;
 }
 
 .commsTextSmall {
@@ -78,6 +79,26 @@
   margin-left: 10px;
   white-space: nowrap;
   font-weight: bold;
+}
+
+.commsText span {
+  transition: color 0.2s ease-in-out;
+}
+
+.commsLink svg path {
+  transition: fill 0.2s ease-in-out;
+}
+
+.commsLink:hover svg path:first-of-type {
+  fill: white;
+}
+
+.commsLink:hover svg path:last-of-type {
+  fill: #038fd6;
+}
+
+.commsLink:hover .commsText span {
+  color: white !important;
 }
 
 @media (max-width: 768px) {
