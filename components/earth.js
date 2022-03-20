@@ -155,6 +155,7 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
+          <div className='pulse' />
           <GlobeHotspot classProp='england' selected={selectedEngland} />
           {/* <GlobeHotspot /> */}
         </button>
@@ -167,6 +168,7 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
+          <div className='pulse' />
           <GlobeHotspot classProp='australia' selected={selectedAustralia} />
         </button>
         <button
@@ -178,6 +180,7 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
+          <div className='pulse' />
           <GlobeHotspot classProp='us' selected={selectedUs} />
         </button>
         <button
@@ -188,6 +191,7 @@ const Model = ({ live }) => {
           data-normal='0.43906905408502506m 0.8968197769742062m -0.05415397836555196m'
           data-visibility-attribute='visible'
         >
+          <div className='pulse' />
           <Link href='/comms'>
             <div>
               <IconSatellite colour={live ? '#C60C30' : '#038FD6'} />
