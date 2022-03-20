@@ -112,6 +112,7 @@
     bottom: 120px;
     transform: translateX(-50%);
     font-size: 0.9rem;
+    /* display: none; */
     /* text-align: center; */
   }
   .rotate {
@@ -128,7 +129,7 @@
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 670px) {
   .instructions {
     display: none;
   }

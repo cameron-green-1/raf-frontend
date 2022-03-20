@@ -4,9 +4,18 @@ import '@google/model-viewer/dist/model-viewer';
 import styles from '../styles/Earth.module.css';
 import IconSatellite from './svg/iconSatellite';
 import Close from './svg/close';
+import GlobeHotspot from './svg/globeHotspot';
 
 const Model = ({ live }) => {
   useEffect(() => {
+    // Prevents window from moving on touch on older browsers.
+    window.addEventListener(
+      'touchmove',
+      function (event) {
+        event.preventDefault();
+      },
+      false
+    );
     const modelViewer = document.getElementById('viewer');
     // console.log(modelViewer);
     modelViewer.addEventListener('model-visibility', function (evt) {
@@ -115,7 +124,8 @@ const Model = ({ live }) => {
           data-normal='0.6592595175080062m 0.7517413028792996m 0.01618339026421587m'
           data-visibility-attribute='visible'
         >
-          <img className='hotspot-svg' src='/hotspot.svg' alt='' />
+          {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
+          <GlobeHotspot />
         </button>
         <button
           className='Hotspot'
@@ -125,7 +135,8 @@ const Model = ({ live }) => {
           data-normal='0.6028827492498801m 0.7517413237919427m -0.26724029030152646m'
           data-visibility-attribute='visible'
         >
-          <img className='hotspot-svg' src='/hotspot.svg' alt='' />
+          {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
+          <GlobeHotspot />
         </button>
         <button
           className='Hotspot'
@@ -135,7 +146,8 @@ const Model = ({ live }) => {
           data-normal='0.20748016084064164m 0.32135404888827773m 0.9239499759839014m'
           data-visibility-attribute='visible'
         >
-          <img className='hotspot-svg' src='/hotspot.svg' alt='' />
+          {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
+          <GlobeHotspot />
         </button>
         <button
           className='Hotspot'

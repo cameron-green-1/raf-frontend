@@ -44,6 +44,7 @@ body {
   font-weight: normal;
   /* overflow: hidden; */
   overflow-x: hidden;
+  overscroll-behavior: contain;
 }
 
 /* *::-webkit-scrollbar {
@@ -232,29 +233,18 @@ a {
   transition: border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-.hotspot-svg {
-  /* transform: translate(-50%, -50%); */
-  /* width: 100%;
-  height: 100%; */
+/* .hotspot-svg {
   width: 50px;
   aspect-ratio: 1;
-  /* height: 40px; */
   background-color: rgba(255, 255, 255, 0.4);
-  /* -moz-box-shadow: 0 0 10px #fff;
-  -webkit-box-shadow: 0 0 10px #fff; */
-  /* box-shadow: 0px 0px 10px #fff; */
-  /* -moz-box-shadow: 0 0 5px #fff;
-  -webkit-box-shadow: 0 0 5px #fff;
-  box-shadow: 0px 0px 5px #fff; */
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  /* padding: 20px; */
-}
+} */
 
 @media (max-width: 768px) {
-  .hotspot-svg {
+  /* .hotspot-svg {
     width: 35px;
-  }
+  } */
   .hotspot-svg-comms {
     width: 35px;
     height: 35px;
@@ -263,7 +253,8 @@ a {
 
 .Hotspot:hover {
   border-color: rgb(152, 178, 199);
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
+  transform: scale(1.1);
 }
 
 /* .container {
@@ -294,7 +285,7 @@ a {
 
 @media (max-width: 768px) {
   #viewer {
-    max-height: 50vh;
+    max-height: 59vh;
     /* width: 100vw; */
     /* height: 60vh !important; */
     /* overflow-x: visible !important; */
@@ -317,6 +308,7 @@ a {
   border-radius: 50%;
   background: rgb(23, 104, 145);
   filter: blur(35px);
+  overflow: visible;
 }
 
 @media (max-width: 768px) {
