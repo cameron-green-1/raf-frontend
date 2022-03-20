@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import '@google/model-viewer/dist/model-viewer';
 import styles from '../styles/Earth.module.css';
@@ -7,6 +7,9 @@ import Close from './svg/close';
 import GlobeHotspot from './svg/globeHotspot';
 
 const Model = ({ live }) => {
+  const [selectedEngland, setSelectedEngland] = useState(false);
+  const [selectedAustralia, setSelectedAustralia] = useState(false);
+  const [selectedUs, setSelectedUs] = useState(false);
   useEffect(() => {
     // Prevents window from moving on touch on older browsers.
     window.addEventListener(
@@ -28,10 +31,14 @@ const Model = ({ live }) => {
     const moveToHotspot = () => {
       const modelViewer = document.querySelector('#viewer');
       const panels = document.querySelectorAll('.panel');
+      const globeHotspots = document.querySelectorAll('.hotspotGlobe');
       // const buttonCloseArr = document.querySelectorAll('.btn-close');
       const buttonCloseArr = document.querySelectorAll('.close');
 
       function closePanel(e) {
+        setSelectedEngland(false);
+        setSelectedAustralia(false);
+        setSelectedUs(false);
         panels.forEach((panel) => {
           panel.style.display = 'none';
           panel.style.opacity = 0;
@@ -43,7 +50,24 @@ const Model = ({ live }) => {
       });
 
       const openPanel = (country) => {
-        panels.forEach((panel) => {
+        setSelectedEngland(false);
+        setSelectedAustralia(false);
+        setSelectedUs(false);
+        switch (country) {
+          case 'england':
+            setSelectedEngland(true);
+            break;
+          case 'australia':
+            setSelectedAustralia(true);
+            break;
+          case 'us':
+            setSelectedUs(true);
+            break;
+          default:
+            break;
+        }
+
+        panels.forEach((panel, idx) => {
           panel.style.display = 'none';
           panel.style.opacity = 0;
 
@@ -51,6 +75,12 @@ const Model = ({ live }) => {
             panel.style.display = 'block';
             panel.style.opacity = 1;
           }
+
+          // if (globeHotspots[idx].classList[1] === `hotspot--${country}`) {
+          //   globeHotspots[idx].
+          // }
+
+          // if
         });
       };
 
@@ -125,7 +155,8 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
-          <GlobeHotspot />
+          <GlobeHotspot classProp='england' selected={selectedEngland} />
+          {/* <GlobeHotspot /> */}
         </button>
         <button
           className='Hotspot'
@@ -136,7 +167,7 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
-          <GlobeHotspot />
+          <GlobeHotspot classProp='australia' selected={selectedAustralia} />
         </button>
         <button
           className='Hotspot'
@@ -147,7 +178,7 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           {/* <img className='hotspot-svg' src='/hotspot.svg' alt='' /> */}
-          <GlobeHotspot />
+          <GlobeHotspot classProp='us' selected={selectedUs} />
         </button>
         <button
           className='Hotspot'
