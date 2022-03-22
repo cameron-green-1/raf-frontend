@@ -192,7 +192,7 @@ const Model = ({ live }) => {
           data-visibility-attribute='visible'
         >
           <div className='pulse' />
-          <Link href='/comms'>
+          <Link href='/comms' passHref>
             <div>
               <IconSatellite colour={live ? '#C60C30' : '#038FD6'} />
             </div>
@@ -205,12 +205,6 @@ const Model = ({ live }) => {
       <div className='panel panel--england'>
         <div className='scan-lines'></div>
         <div className='info'>
-          {/* <div className='section section-close'>
-            <button className='btn-close'>
-              close [<span>X</span>]
-            </button>
-          </div> */}
-          {/* <img src='/close.svg' alt='' className='close' /> */}
           <Close />
           <div className='section'>
             <div className='title'>OPERATION</div>
