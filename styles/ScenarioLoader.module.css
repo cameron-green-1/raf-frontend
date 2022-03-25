@@ -249,7 +249,38 @@
 .item video {
   border: solid #0097d1 2px;
   width: 100%;
+  margin-bottom: 20px;
 }
+
+.item button {
+  cursor: pointer;
+  /* position: relative; */
+  background-color: #0097d1;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px 0;
+  transition: background-color 0.2s ease-in-out;
+  /* max-width: 350px; */
+  pointer-events: none;
+}
+
+.item button:hover {
+  background-color: white;
+}
+
+.continue {
+  color: white;
+  transition: color 0.2s ease-in-out;
+}
+
+.item button:hover .continue {
+  color: #0097d1;
+}
+
+/* .continue:hover {
+  color: #0097d1;
+} */
 
 @media (max-width: 1024px) {
   .main {

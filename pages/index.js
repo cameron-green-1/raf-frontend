@@ -68,7 +68,7 @@ const Holding = ({ isHolding, launchTime }) => {
         renderer: 'svg',
         loop: false,
         autoplay: true,
-        path: '/lottie-logo-2.json',
+        path: '/lottie-logo-3.json',
       });
       animate.setSpeed(1.5);
     }, 1000);

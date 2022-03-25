@@ -31,7 +31,7 @@ const Loading = ({ firstLoading }) => {
   );
 };
 
-const Briefing = () => {
+const Briefing = ({ setSecondLoading }) => {
   useEffect(() => {
     let vid = document.getElementById('briefing-video');
     vid.muted = true;
@@ -77,6 +77,9 @@ const Briefing = () => {
                 <a href='/briefing1.webm'>link to the video</a> instead.
               </p>
             </video>
+            <button id='btn-continue' onClick={() => setSecondLoading(false)}>
+              <span className={styles.continue}>CONTINUE</span>
+            </button>
           </div>
         </div>
       </div>
@@ -93,47 +96,14 @@ const ScenarioLoader = () => {
   // const [firstLoading, setFirstLoading] = useState(false);
   const [firstLoading, setFirstLoading] = useState(true);
   const [secondLoading, setSecondLoading] = useState(true);
-  // const [firstLoading, setFirstLoading] = useState(false);
-  // const [secondLoading, setSecondLoading] = useState(false);
-  // let vid;
+
   useEffect(() => {
     const bg = document.getElementById('bg');
     const bgCover = document.getElementById('bgCover');
     const crosshair = document.getElementById('crosshair');
-    // const vertical = document.getElementById('vertical');
-    // const horizontal = document.getElementById('horizontal');
     const target = document.getElementById('target');
-    let vid = document.getElementById('briefing-video');
-
-    // setTimeout(() => {
-    //   setFirstLoading(false);
-    //   if (secondLoading) {
-    //     vid.play();
-    //     vid.muted = false;
-    //     setTimeout(() => {
-    //       vid.muted = true;
-    //       vid.pause();
-    //       setSecondLoading(false);
-    //     }, 5000);
-    //     setTimeout(() => setSecondLoading(false), (vid.duration + 1) * 1000);
-    //   }
-    // }, 3000);
-    // setTimeout(() => setSecondLoading(false), 7000);
-
-    // setTimeout(() => {
-    //   setFirstLoading(false);
-    // if (secondLoading) {
-    //   vid.play();
-    //   vid.muted = false;
-    //   setTimeout(() => {
-    //     vid.muted = true;
-    //     vid.pause();
-    //     setSecondLoading(false);
-    //   }, 5000);
-    //   setTimeout(() => setSecondLoading(false), (vid.duration + 1) * 1000);
-    // }
-    // }, 3000);
-    // setTimeout(() => setSecondLoading(false), 7000);
+    const vid = document.getElementById('briefing-video');
+    const btnContinue = document.getElementById('btn-continue');
 
     setTimeout(() => {
       setFirstLoading(false);
@@ -159,12 +129,12 @@ const ScenarioLoader = () => {
           target.style.visibility = 'hidden';
         }, 750);
       }, 1250);
-      // setFirstLoading(false);
     }, 6000);
     setTimeout(() => {
       bg.style.transform = 'translate(17.5%, 17.5%) scale(2)';
     }, 7250);
     setTimeout(() => {
+      btnContinue.style.pointerEvents = 'all';
       const briefingMain = document.getElementById('briefing-main');
       crosshair.style.opacity = 0;
       bgCover.style.transform = 'translateX(120%)';
@@ -175,12 +145,18 @@ const ScenarioLoader = () => {
         setTimeout(() => {
           vid.muted = true;
           vid.pause();
-          setSecondLoading(false);
+          // setSecondLoading(false);
         }, 5000);
-        setTimeout(() => setSecondLoading(false), (vid.duration + 1) * 1000);
+        // setTimeout(() => setSecondLoading(false), (vid.duration + 1) * 1000);
       }
     }, 8500);
   }, []);
+  useEffect(() => {
+    console.log('setSecondLoading state changed');
+    const vid = document.getElementById('briefing-video');
+    vid.muted = true;
+    vid.pause();
+  }, [secondLoading]);
   return (
     <div
       className={styles.loader}
@@ -190,7 +166,7 @@ const ScenarioLoader = () => {
         pointerEvents: secondLoading ? 'all' : 'none',
       }}
     >
-      <Briefing />
+      <Briefing setSecondLoading={setSecondLoading} />
       <Loading firstLoading={firstLoading} />
     </div>
   );
