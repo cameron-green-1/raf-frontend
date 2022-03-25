@@ -26,6 +26,23 @@
   pointer-events: none;
 }
 
+.bgContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
 .bg {
   position: absolute;
   top: 0;
@@ -33,6 +50,87 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform-origin: center;
+  /* filter: brightness(200%) hue-rotate(-10deg); */
+  transition: transform 1s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.bgCover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7aa6ce;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  transition: transform 0.75s ease-in-out;
+}
+
+.crosshair {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* width: 200%;
+  height: 200%;
+  transform: translate(-50%, -50%); */
+  overflow: visible;
+  pointer-events: none;
+  transition: transform 1s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.vertical {
+  position: absolute;
+  width: 1px;
+  /* height: 100%; */
+  height: 200%;
+  /* top: 0; */
+  top: -50%;
+  left: calc(50% - 1px);
+  background-color: white;
+  /* transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out; */
+}
+
+.horizontal {
+  position: absolute;
+  /* width: 100%; */
+  width: 200%;
+  height: 1px;
+  top: calc(50% - 1px);
+  /* left: 0; */
+  left: -50%;
+  background-color: white;
+  /* transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out; */
+}
+
+.target {
+  position: absolute;
+  width: 25px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: solid white 2px;
+  visibility: hidden;
+  animation: flashing linear 0.2s infinite;
+  /* transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out; */
+}
+
+@keyframes flashing {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+  }
 }
 
 .main {
@@ -83,23 +181,17 @@
 }
 
 .briefingMain {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   position: relative;
   display: flex;
   flex-direction: row;
   width: 80%;
   max-width: 800px;
   max-height: 93%;
-  /* color: white; */
   color: white;
   overflow-y: auto;
   overflow-x: hidden;
-  /* width: 700px; */
-  /* width: 700px; */
-  /* align-items: center; */
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .briefingMain::-webkit-scrollbar {
