@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import useSWR from 'swr';
@@ -10,49 +9,6 @@ const URL = url;
 const PanoViewer = dynamic(() => import('../components/panoViewer'), {
   ssr: false,
 });
-
-const vimeoEmbed = (
-  <iframe
-    src='https://player.vimeo.com/video/684564506?h=a7bd2f8234'
-    frameBorder='0'
-    allow='autoplay; fullscreen; picture-in-picture'
-    allowFullScreen
-    className='vimeo'
-  ></iframe>
-);
-
-const hotspots = [
-  {
-    type: 'video',
-    title: 'General Technician',
-    link: vimeoEmbed,
-    description:
-      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
-    img: null,
-    position: [-10, 0, 5],
-    sprite: '/scenario-hotspot.png',
-  },
-  {
-    type: 'pdf',
-    title: 'General Technician',
-    link: '/dummy.pdf',
-    description:
-      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
-    img: '/general-technician.jpg',
-    position: [10, 0, 5],
-    sprite: '/scenario-hotspot.png',
-  },
-  {
-    type: 'link',
-    title: 'General Technician',
-    link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
-    description:
-      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
-    img: '/general-technician.jpg',
-    position: [-8, 0, -8],
-    sprite: '/scenario-hotspot.png',
-  },
-];
 
 export async function getStaticProps() {
   try {
@@ -82,23 +38,21 @@ const fetcher = async (url) => {
   return data;
 };
 
-const Scenario = ({ launch, live }) => {
+const ScenarioTemplate = ({ launch, live, hotspots, imageSrc, scenario }) => {
   const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
     fallbackData: live,
   });
   useEffect(() => {
     handleMobileVh();
+    console.log(scenario);
   });
   return (
     <>
-      <Head>
-        <title>RAF World | Scenario</title>
-        <meta name='description' content='RAF Access All Areas experience' />
-        <link rel='icon' href='/favicon3.png' />
-      </Head>
       <PanoViewer
-        imageSrc='/pano1min.jpg'
+        // imageSrc='/pano1min.jpg'
+        imageSrc={imageSrc}
         hotspots={hotspots}
+        scenario={scenario}
         launch={launch}
         // live={live}
         live={data}
@@ -129,4 +83,4 @@ const Scenario = ({ launch, live }) => {
   );
 };
 
-export default Scenario;
+export default ScenarioTemplate;

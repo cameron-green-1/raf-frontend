@@ -31,35 +31,41 @@ const Loading = ({ firstLoading }) => {
   );
 };
 
-const Briefing = ({ setSecondLoading }) => {
+const Briefing = ({ setSecondLoading, scenario }) => {
   useEffect(() => {
     let vid = document.getElementById('briefing-video');
     vid.muted = true;
     vid.pause();
+    console.log(scenario);
   }, []);
   return (
     <div className={styles.briefing}>
       <div className={styles.bgContainer}>
-        <img src='/briefing-bg.jpg' className={styles.bg} id='bg' />
+        {/* <img src='/briefing-bg.jpg' className={styles.bg} id='bg' /> */}
+        <img src={scenario.satelliteImage} className={styles.bg} id='bg' />
         <div className={styles.bgCover} id='bgCover' />
       </div>
       <div className={styles.briefingMain} id='briefing-main'>
         <ul className={styles.details}>
           <li className={styles.item}>
             <h1>OPERATION</h1>
-            <p>Blue Dragon</p>
+            {/* <p>Blue Dragon</p> */}
+            <p>{scenario.operation}</p>
           </li>
           <li className={styles.item}>
             <h1>LOCATION</h1>
-            <p>Undisclosed</p>
+            {/* <p>Undisclosed</p> */}
+            <p>{scenario.location}</p>
           </li>
           <li className={styles.item}>
             <h1>DETAILS</h1>
-            <p>83 Expeditionary Force Forward Operating Base. 4 Typhoons</p>
+            {/* <p>83 Expeditionary Force Forward Operating Base. 4 Typhoons</p> */}
+            <p>{scenario.details}</p>
           </li>
           <li className={styles.item}>
             <h1>DETAILS</h1>
-            <p>Flight Control, Engineer, Cyber Security</p>
+            {/* <p>Flight Control, Engineer, Cyber Security</p> */}
+            <p>{scenario.professions}</p>
           </li>
         </ul>
         <div className={styles.video}>
@@ -68,7 +74,8 @@ const Briefing = ({ setSecondLoading }) => {
             <video id='briefing-video'>
               {/* <source src='/briefing1.webm' type='video/webm' muted={true} /> */}
               <source
-                src='/briefing-demo.webm'
+                // src='/briefing-demo.webm'
+                src={scenario.video}
                 type='video/webm'
                 muted={true}
               />
@@ -92,7 +99,7 @@ const Briefing = ({ setSecondLoading }) => {
   );
 };
 
-const ScenarioLoader = () => {
+const ScenarioLoader = ({ scenario }) => {
   // const [firstLoading, setFirstLoading] = useState(false);
   const [firstLoading, setFirstLoading] = useState(true);
   const [secondLoading, setSecondLoading] = useState(true);
@@ -166,7 +173,7 @@ const ScenarioLoader = () => {
         pointerEvents: secondLoading ? 'all' : 'none',
       }}
     >
-      <Briefing setSecondLoading={setSecondLoading} />
+      <Briefing setSecondLoading={setSecondLoading} scenario={scenario} />
       <Loading firstLoading={firstLoading} />
     </div>
   );

@@ -259,7 +259,7 @@ const renderAnnotation = (hotspot, i) => {
   );
 };
 
-const PanoViewer = ({ imageSrc, hotspots, launch, live }) => {
+const PanoViewer = ({ imageSrc, hotspots, launch, live, scenario }) => {
   useEffect(() => {
     createPano(imageSrc, hotspots);
   }, []);
@@ -280,7 +280,7 @@ const PanoViewer = ({ imageSrc, hotspots, launch, live }) => {
       </div>
       {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i))}
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
-      <ScenarioLoader />
+      <ScenarioLoader scenario={scenario} />
     </div>
   );
 };
