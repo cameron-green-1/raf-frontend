@@ -21,6 +21,16 @@ const vimeoEmbed = (
 );
 
 const hotspots = [
+  // {
+  //   type: 'video',
+  //   title: 'Adult Registered Nurse',
+  //   link: vimeoEmbed,
+  //   description:
+  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+  //   img: null,
+  //   // position: [-10, 0, 5],
+  //   position: [19, 1, 2.5],
+  // },
   {
     type: 'video',
     title: 'Adult Registered Nurse',
@@ -28,7 +38,6 @@ const hotspots = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: null,
-    // position: [-10, 0, 5],
     position: [19, 1, 2.5],
   },
   {

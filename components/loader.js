@@ -6,13 +6,14 @@ import styles from '../styles/Loader.module.css';
 const Loader = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (window.sessionStorage.getItem('firstLoadDone') === null) {
-      setLoading(true);
-      window.sessionStorage.setItem('firstLoadDone', 1);
-      setTimeout(() => setLoading(false), 5000);
-    } else {
-      setLoading(false);
-    }
+    // if (window.sessionStorage.getItem('firstLoadDone') === null) {
+    //   setLoading(true);
+    //   window.sessionStorage.setItem('firstLoadDone', 1);
+    // setTimeout(() => setLoading(false), 5000);
+    // } else {
+    //   setLoading(false);
+    // }
+    setTimeout(() => setLoading(false), 5000);
   }, []);
   return (
     <div

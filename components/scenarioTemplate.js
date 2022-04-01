@@ -44,7 +44,6 @@ const ScenarioTemplate = ({ launch, live, hotspots, imageSrc, scenario }) => {
   });
   useEffect(() => {
     handleMobileVh();
-    console.log(scenario);
   });
   return (
     <>
