@@ -23,33 +23,139 @@ const vimeoEmbed = (
 const hotspots = [
   {
     type: 'video',
-    title: 'General Technician',
+    title: 'Adult Registered Nurse',
     link: vimeoEmbed,
     description:
-      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: null,
-    position: [-10, 0, 5],
-    sprite: '/scenario-hotspot.png',
+    // position: [-10, 0, 5],
+    position: [19, 1, 2.5],
   },
   {
     type: 'pdf',
-    title: 'General Technician',
+    title: 'Medical Officer',
     link: '/dummy.pdf',
     description:
-      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: '/general-technician.jpg',
-    position: [10, 0, 5],
-    sprite: '/scenario-hotspot.png',
+    position: [9.27, -0.5, 17],
   },
   {
     type: 'link',
-    title: 'General Technician',
+    title: 'Nursing Officer',
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
-      'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: '/general-technician.jpg',
-    position: [-8, 0, -8],
-    sprite: '/scenario-hotspot.png',
+    position: [18, -2.1, 1.5],
+  },
+  {
+    type: 'pdf',
+    title: 'Supplier',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/logistics-supplier.jpg',
+    position: [18.07, -1.8, -7],
+  },
+  {
+    type: 'pdf',
+    title: 'Driver',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/driver.jpg',
+    position: [5.82, -1.8, -18],
+  },
+  {
+    type: 'pdf',
+    title: 'Intelligence Analyst',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/driver.jpg',
+    position: [-3.8, 2.3, 12],
+  },
+  {
+    type: 'pdf',
+    title: 'Intelligence Analyst (Linguist)',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/driver.jpg',
+    position: [12.5, 3.5, 6.2],
+  },
+  {
+    type: 'pdf',
+    title: 'RAF Regiment Gunner',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/raf-regiment-gunner.jpg',
+    position: [-16, -0.5, 5.819120914630715],
+  },
+  {
+    type: 'pdf',
+    title: 'Personnel Support',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/raf-regiment-gunner.jpg',
+    position: [13, 2, 10],
+  },
+  {
+    type: 'pdf',
+    title: 'Chaplaincy',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/chaplaincy.jpg',
+    position: [13, -2.3, 13.9],
+  },
+  {
+    type: 'pdf',
+    title: 'Legal',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/raf-regiment-gunner.jpg',
+    position: [16.2, 0, 10],
+  },
+  {
+    type: 'pdf',
+    title: 'Pilot',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/pilot.jpg',
+    position: [-14, -0.5, -9.12],
+  },
+  {
+    type: 'pdf',
+    title: 'Weapon Systems Operator',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/pilot.jpg',
+    position: [-17, 2, -2.5],
+  },
+  {
+    type: 'pdf',
+    title: 'Aircraft Technician Mechanical',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/pilot.jpg',
+    position: [-14, 1, -13.5],
+  },
+  {
+    type: 'pdf',
+    title: 'Aircraft Technician Avionics',
+    link: '/dummy.pdf',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/pilot.jpg',
+    position: [-16.5, 10, 0],
   },
 ];
 

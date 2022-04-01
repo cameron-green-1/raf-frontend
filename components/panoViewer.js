@@ -38,7 +38,8 @@ const createPano = (imageSrc, hotspots) => {
     map,
     side,
   });
-  const sphereGeometry = new THREE.SphereGeometry(500, 60, 40);
+  // const sphereGeometry = new THREE.SphereGeometry(500, 60, 40);
+  const sphereGeometry = new THREE.SphereGeometry(20, 60, 40);
   const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
   sphere.scale.x = -1;
   scene.add(sphere);
@@ -75,7 +76,8 @@ const createPano = (imageSrc, hotspots) => {
     const y = hotspot.position[1];
     const z = hotspot.position[2];
     positions.push(new THREE.Vector3(x, y, z));
-    let spriteMap = new THREE.TextureLoader().load(hotspot.sprite);
+    // let spriteMap = new THREE.TextureLoader().load(hotspot.sprite);
+    let spriteMap = new THREE.TextureLoader().load('/scenario-hotspot.png');
     let spriteMaterial = new THREE.SpriteMaterial({
       map: spriteMap,
       sizeAttenuation: false,
@@ -214,6 +216,12 @@ const createPano = (imageSrc, hotspots) => {
     );
     rayCaster.setFromCamera(mouse, camera);
     let intersects = rayCaster.intersectObjects(scene.children);
+    const intersectVector = intersects[0].point.normalize().multiplyScalar(18);
+    console.log(
+      `${Math.round(intersectVector.x * 10) / 10}, ${
+        Math.round(intersectVector.y * 10) / 10
+      }, ${Math.round(intersectVector.z * 10) / 10}`
+    );
     intersects.forEach((intersect) => {
       const hit = intersect.object;
       if (hit.type === 'Sprite' && hit.name !== 'text') {

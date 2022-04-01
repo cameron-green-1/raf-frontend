@@ -29,7 +29,6 @@ const hotspots = [
       'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
     img: null,
     position: [-10, 0, 5],
-    sprite: '/scenario-hotspot.png',
   },
   {
     type: 'pdf',
@@ -39,7 +38,6 @@ const hotspots = [
       'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
     img: '/general-technician.jpg',
     position: [10, 0, 5],
-    sprite: '/scenario-hotspot.png',
   },
   {
     type: 'link',
@@ -49,7 +47,6 @@ const hotspots = [
       'As a General Technician (Workshops) you will manufacture and repair parts for aircraft, vehicles and specialist equipment. You will be working in specially equipped workshops and aircraft maintenance hangars.',
     img: '/general-technician.jpg',
     position: [-8, 0, -8],
-    sprite: '/scenario-hotspot.png',
   },
 ];
 
