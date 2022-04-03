@@ -140,6 +140,10 @@
 }
 
 @media (max-width: 700px) {
+  .item h1 {
+    width: 90%;
+  }
+
   .item button {
     width: 90%;
   }
