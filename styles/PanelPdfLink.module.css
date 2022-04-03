@@ -29,6 +29,7 @@
   /* letter-spacing: -0.125rem; */
   font-weight: 900;
   font-style: italic;
+  min-width: 300px;
 }
 
 .info {
@@ -48,6 +49,16 @@
 
 .description {
   margin-bottom: 40px;
+}
+
+.link {
+  text-decoration: underline;
+  color: white;
+  transition: color 0.2s ease-in-out;
+}
+
+.link:hover {
+  color: rgb(187, 187, 187);
 }
 
 .button {
@@ -74,15 +85,63 @@
   background-color: #0188bd;
 }
 
+.list {
+  list-style: none;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.list::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+
+.list::-webkit-scrollbar-button {
+  display: none;
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: #ffffff40;
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-track-piece {
+  background-color: #00000000;
+  width: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: white;
+  width: 10px;
+  border-radius: 8px;
+}
+
+.item h1 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.item button {
+  margin-bottom: 20px;
+}
+
 @media (max-width: 1024px) {
   .img {
     width: 250px;
   }
   .imgText {
     font-size: 2.5rem !important;
+    min-width: auto;
   }
   .button {
     min-width: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .item button {
+    width: 90%;
   }
 }
 
@@ -117,5 +176,13 @@
   .button {
     min-width: auto;
     width: 100%;
+  }
+
+  .list {
+    max-height: 150px;
+  }
+
+  .item button {
+    width: 90%;
   }
 }

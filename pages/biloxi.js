@@ -174,6 +174,47 @@ const hotspots = [
     img: '/general-technician.jpg',
     position: [17.7, -2.5, 3.3],
   },
+  {
+    type: 'find',
+    title: 'Find your fit',
+    link: null,
+    links: [
+      {
+        title: 'Engineering - Weapon Technician',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Logistics - Supplier',
+        type: 'link',
+        link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
+      },
+      {
+        title: 'Logistics - Musician',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Logistics - Logistics Officer',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Engineering - General Technician',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Logistics - Driver',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+    ],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/general-technician.jpg',
+    position: [-12.7, -0.3, 12.8],
+  },
 ];
 
 const Biloxi = () => {

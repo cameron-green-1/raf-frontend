@@ -7,6 +7,7 @@ import Back from './back';
 import PanelVideo from './panelVideo';
 import PanelPdf from './panelPdf';
 import PanelLink from './panelLink';
+import PanelFind from './panelFind';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
@@ -254,6 +255,8 @@ const renderPanel = (hotspot, i) => {
       return <PanelPdf hotspot={hotspot} key={i} />;
     case 'link':
       return <PanelLink hotspot={hotspot} key={i} />;
+    case 'find':
+      return <PanelFind hotspot={hotspot} key={i} />;
     default:
       return null;
   }
@@ -261,7 +264,12 @@ const renderPanel = (hotspot, i) => {
 
 const renderAnnotation = (hotspot, i) => {
   return (
-    <div className={styles.annotation} id='annotation' key={i}>
+    <div
+      className={styles.annotation}
+      id='annotation'
+      key={i}
+      style={{ backgroundColor: hotspot.links ? '#1F2E54' : '#c60c30' }}
+    >
       {hotspot.title.toUpperCase()}
     </div>
   );

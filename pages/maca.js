@@ -166,6 +166,47 @@ const hotspots = [
     img: '/pilot.jpg',
     position: [-16.5, 10, 0],
   },
+  {
+    type: 'find',
+    title: 'Find your fit',
+    link: null,
+    links: [
+      {
+        title: 'Engineering - Weapon Technician',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Logistics - Supplier',
+        type: 'link',
+        link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
+      },
+      {
+        title: 'Logistics - Musician',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Logistics - Logistics Officer',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Engineering - General Technician',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+      {
+        title: 'Logistics - Driver',
+        type: 'pdf',
+        link: '/dummy.pdf',
+      },
+    ],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+    img: '/general-technician.jpg',
+    position: [-12.2, -0.4, 13.2],
+  },
 ];
 
 const Maca = () => {
