@@ -7,7 +7,9 @@ const PanelFind = ({ hotspot }) => {
       <div className={styles.flex}>
         <div className={styles.image}>
           <img src={hotspot.img} className={styles.img} alt='' />
-          <h1 className={styles.imgText}>FIND YOUR ROLE</h1>
+          <h1 className={styles.imgText} lang='de'>
+            FIND YOUR ROLE
+          </h1>
         </div>
         <div className={styles.info}>
           <h2 className={styles.profession}>FIND YOUR ROLE</h2>

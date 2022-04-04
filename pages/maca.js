@@ -150,7 +150,7 @@ const hotspots = [
   },
   {
     type: 'pdf',
-    title: 'Aircraft Technician Mechanical',
+    title: 'Aircraft Technician (Mechanical)',
     link: '/dummy.pdf',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
@@ -165,6 +165,15 @@ const hotspots = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: '/pilot.jpg',
     position: [-16.5, 10, 0],
+  },
+  {
+    type: 'text',
+    title: 'General Technician',
+    link: null,
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada mauris augue, sed pretium neque cursus et. Nulla facilisi. Sed dictum laoreet velit porta sagittis. Phasellus volutpat urna at libero ultricies, ut dictum nibh tempus. Praesent metus mauris, accumsan eu nunc eget, interdum lacinia risus. Vivamus ut iaculis leo. Proin volutpat urna at placerat fringilla. Sed placerat, ipsum non dictum ultricies, risus erat porta justo, quis laoreet sapien dolor quis arcu.',
+    img: '/general-technician.jpg',
+    position: [-4.5, -0.9, -19],
   },
   {
     type: 'find',

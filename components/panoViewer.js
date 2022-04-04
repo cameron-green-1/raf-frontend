@@ -8,6 +8,7 @@ import PanelVideo from './panelVideo';
 import PanelPdf from './panelPdf';
 import PanelLink from './panelLink';
 import PanelFind from './panelFind';
+import PanelText from './panelText';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
@@ -15,6 +16,16 @@ import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader.js';
 
 import styles from '../styles/PanoViewer.module.css';
 // import { VectorKeyframeTrack } from 'three';
+
+let allowControls = true;
+
+const stopVideo = function (element) {
+  const iframe = element.querySelector('iframe');
+  if (iframe) {
+    const iframeSrc = iframe.src;
+    iframe.src = iframeSrc;
+  }
+};
 
 const createPano = (imageSrc, hotspots) => {
   // Element variables
@@ -51,7 +62,7 @@ const createPano = (imageSrc, hotspots) => {
     onCameraChange();
   });
   let mouseDown = false;
-  let allowControls = true;
+  // let allowControls = true;
   controls.rotateSpeed = -0.5; // do they want it to be inverted?
   controls.enableDamping = true;
   controls.dampingFactor = 0.15;
@@ -143,13 +154,13 @@ const createPano = (imageSrc, hotspots) => {
   window.addEventListener('resize', onWindowResize, false);
 
   // Stopping video
-  const stopVideo = function (element) {
-    const iframe = element.querySelector('iframe');
-    if (iframe) {
-      const iframeSrc = iframe.src;
-      iframe.src = iframeSrc;
-    }
-  };
+  // const stopVideo = function (element) {
+  //   const iframe = element.querySelector('iframe');
+  //   if (iframe) {
+  //     const iframeSrc = iframe.src;
+  //     iframe.src = iframeSrc;
+  //   }
+  // };
 
   // Closing panels
   const panels = document.querySelectorAll('.hotspot');
@@ -257,6 +268,8 @@ const renderPanel = (hotspot, i) => {
       return <PanelLink hotspot={hotspot} key={i} />;
     case 'find':
       return <PanelFind hotspot={hotspot} key={i} />;
+    case 'text':
+      return <PanelText hotspot={hotspot} key={i} />;
     default:
       return null;
   }
@@ -269,6 +282,25 @@ const renderAnnotation = (hotspot, i) => {
       id='annotation'
       key={i}
       style={{ backgroundColor: hotspot.links ? '#1F2E54' : '#c60c30' }}
+      onClick={(e) => {
+        // closePanels();
+        // allowControls = false;
+        // const panels = document.querySelectorAll('.hotspot');
+        // const targetPanel = panels[hit.name];
+        // targetPanel.style.display = 'block';
+        // targetPanel.style.opacity = 1;
+        // console.log(e);
+        const panels = document.querySelectorAll('.hotspot');
+        panels.forEach((panel) => {
+          stopVideo(panel);
+          panel.style.display = 'none';
+          panel.style.opacity = 0;
+        });
+        allowControls = false;
+        const targetPanel = panels[i];
+        targetPanel.style.display = 'block';
+        targetPanel.style.opacity = 1;
+      }}
     >
       {hotspot.title.toUpperCase()}
     </div>
@@ -278,6 +310,7 @@ const renderAnnotation = (hotspot, i) => {
 const PanoViewer = ({ imageSrc, hotspots, launch, live, scenario }) => {
   useEffect(() => {
     createPano(imageSrc, hotspots);
+    const panels = document.querySelectorAll('.hotspot');
   }, []);
 
   return (
