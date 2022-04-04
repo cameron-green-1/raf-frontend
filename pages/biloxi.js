@@ -36,7 +36,7 @@ const hotspots = [
     link: '/dummy.pdf',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/aircraft-tech-avionics.jpg',
     position: [-17.9, 0.39, -1.99],
   },
   {
@@ -54,7 +54,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/survival-equipment-specialist.jpg',
     position: [-7.4, -2, 16.1],
   },
   {
@@ -63,7 +63,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/air-space-ops-spec.jpg',
     position: [15.5, -0.6, 9.2],
   },
   {
@@ -72,7 +72,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/air-operations-officer.jpg',
     position: [16.3, 2.3, 7.2],
   },
   {
@@ -81,7 +81,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/air-operations-sgt.jpg',
     position: [15.1, 4.4, 8.7],
   },
   {
@@ -90,7 +90,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/intelligence-officer.jpg',
     position: [-15.2, 0.9, -9.5],
   },
   {
@@ -99,7 +99,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/intelligence-officer.jpg',
     position: [-8.2, 3, -15.9],
   },
   {
@@ -108,7 +108,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/intelligence-analyst-linguist.jpg',
     position: [-10.8, -0.8, -14.4],
   },
   {
@@ -117,7 +117,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/ccs.jpg',
     position: [3.1, 8.7, -15.5],
   },
   {
@@ -126,7 +126,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/comms-infra-tech.jpg',
     position: [3.1, 4.1, -15.5],
   },
   {
@@ -144,7 +144,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/air-ground-steward.jpg',
     position: [11.2, -3.7, 14],
   },
   {
@@ -171,12 +171,12 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/raf-regiment-gunner.jpg',
     position: [17.7, -2.5, 3.3],
   },
   {
     type: 'find',
-    title: 'Find your fit',
+    title: 'Find your role',
     link: null,
     links: [
       {

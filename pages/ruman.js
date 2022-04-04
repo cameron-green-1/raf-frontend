@@ -22,12 +22,12 @@ const vimeoEmbed = (
 
 const hotspots = [
   {
-    type: 'video',
+    type: 'pdf',
     title: 'Adult Registered Nurse',
-    link: vimeoEmbed,
+    link: '/dummy.pdf',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: null,
+    img: '/registered-nurse.jpg',
     position: [-17.3, -2.2, 2.2],
   },
   {
@@ -45,7 +45,7 @@ const hotspots = [
     link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/nursing-officer.jpg',
     position: [-17, -1.6, -5.8],
   },
   {
@@ -54,7 +54,7 @@ const hotspots = [
     link: '/dummy.pdf',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/air-operations-sgt.jpg',
     position: [-15.8, 2.5, 8.3],
   },
   {
@@ -63,7 +63,7 @@ const hotspots = [
     link: '/dummy.pdf',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/air-operations-officer.jpg',
     position: [-15.2, 0, 9.6],
   },
   {
@@ -72,8 +72,8 @@ const hotspots = [
     link: '/dummy.pdf',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
-    position: [-7.1, 0.8, 15.5],
+    img: '/aircraft-tech-avionics.jpg',
+    position: [-7, -1, 15.5],
   },
   {
     type: 'pdf',
@@ -90,7 +90,7 @@ const hotspots = [
     link: '/dummy.pdf',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/weapon-systems-operator.jpg',
     position: [0.2, 8.3, 16],
   },
   {
@@ -131,7 +131,7 @@ const hotspots = [
   },
   {
     type: 'find',
-    title: 'Find your fit',
+    title: 'Find your role',
     link: null,
     links: [
       {
