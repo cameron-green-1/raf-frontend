@@ -15,6 +15,7 @@ import styles from '../styles/Comms.module.css';
 import { motion } from 'framer-motion';
 import Countdown from '../components/countdown';
 import Back from '../components/back';
+import Loader from '../components/loader';
 // import withTransition from '../components/withTransition';
 
 // const URL = process.env.STRAPIBASEURL;
@@ -196,6 +197,7 @@ const Comms = ({ launch, live, latest, rooms }) => {
         {/* <div className={styles.backContainer}>
           <Back />
         </div> */}
+        <Loader />
       </div>
       <motion.div
         className='slide'
