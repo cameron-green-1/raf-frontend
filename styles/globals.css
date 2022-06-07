@@ -344,11 +344,8 @@ a {
 }
 
 .glow {
-  /* width: 75vw; */
-  /* height: 80vh; */
-  width: 750px;
-  /* height: 735px; */
-  /* width: 40%; */
+  /* width: 750px; */
+  width: 1150px;
   aspect-ratio: 1;
   position: absolute;
   top: 50%;
@@ -360,10 +357,33 @@ a {
   overflow: visible;
 }
 
+@media (max-width: 2000px) {
+  .glow {
+    width: 800px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .glow {
+    width: 650px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .glow {
+    width: 600px;
+  }
+}
+
 @media (max-width: 768px) {
   .glow {
+    /* width: 90vw; */
+  }
+}
+
+@media (max-width: 600px) {
+  .glow {
     width: 90vw;
-    /* max-width: 100px; */
   }
 }
 
