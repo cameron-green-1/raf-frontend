@@ -9,6 +9,7 @@ const scenario = {
   professions: 'Flight Control, Engineer, Cyber Security',
   // video: '/briefing-demo.webm',
   video: '/intro-ruman.webm',
+  safariVideo: '/intro-ruman.mov',
 };
 
 const vimeoEmbed = (

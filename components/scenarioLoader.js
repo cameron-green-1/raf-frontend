@@ -31,6 +31,19 @@ const Loading = ({ firstLoading }) => {
   );
 };
 
+function supportsHEVCAlpha() {
+  const navigator = window.navigator;
+  const ua = navigator.userAgent.toLowerCase();
+  const hasMediaCapabilities = !!(
+    navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo
+  );
+  const isSafari =
+    ua.indexOf('safari') != -1 &&
+    !(ua.indexOf('chrome') != -1) &&
+    ua.indexOf('version/') != -1;
+  return isSafari && hasMediaCapabilities;
+}
+
 const Briefing = ({ setSecondLoading, scenario }) => {
   useEffect(() => {
     let vid = document.getElementById('briefing-video');
@@ -71,16 +84,20 @@ const Briefing = ({ setSecondLoading, scenario }) => {
         <div className={styles.video}>
           <div className={styles.item}>
             <h1>VIDEO BRIEFING</h1>
-            <video id='briefing-video' controls muted>
+            <video id='briefing-video' controls playsInline>
               {/* <source src='/briefing1.webm' type='video/webm' muted={true} /> */}
-              <source
+              {/* <source
+                src={scenario.safariVideo}
+                type='video/mp4; codecs="hvc1"'
+              /> */}
+              {/* <source
                 // src='/briefing-demo.webm'
                 src={scenario.video}
                 type='video/webm'
                 // muted={false}
                 // muted={true}
-                muted='muted'
-              />
+                // muted='muted'
+              /> */}
               <p>
                 Your browser doesn't support HTML5 video. Here is a
                 <a href={scenario.video}>link to the video</a> instead.
@@ -116,6 +133,8 @@ const ScenarioLoader = ({ scenario, duration }) => {
     const btnContinue = document.getElementById('btn-continue');
     const fakeClick = document.getElementById('fakeClick');
 
+    vid.src = supportsHEVCAlpha() ? scenario.safariVideo : scenario.video;
+
     setTimeout(() => {
       setFirstLoading(false);
     }, 3000);
@@ -143,7 +162,7 @@ const ScenarioLoader = ({ scenario, duration }) => {
     }, 6000);
     setTimeout(() => {
       bg.style.transform = 'translate(17.5%, 17.5%) scale(2)';
-      fakeClick.click();
+      // fakeClick.click();
     }, 7250);
     setTimeout(() => {
       btnContinue.style.pointerEvents = 'all';
@@ -151,6 +170,7 @@ const ScenarioLoader = ({ scenario, duration }) => {
       crosshair.style.opacity = 0;
       bgCover.style.transform = 'translateX(120%)';
       briefingMain.style.opacity = 1;
+      // console.log('safari');
       // console.log(vid);
       // vid.muted = true;
       // vid.play();
