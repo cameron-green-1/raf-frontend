@@ -66,7 +66,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Adult Registered Nurse',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/Ahad',
     description:
       "Nurses play a vital part in looking after the RAF Personnel's health. Weather deployed in an Medical Air Evacuation role in an area of conflict, or working alongside the NHS in a hospital in the UK, the nurses' roles are wide and varied.",
     img: '/registered-nurse.jpg',
@@ -83,10 +83,10 @@ const hotspots = [
   },
   {
     type: 'link',
-    title: 'Nursing Officer',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    title: 'Medical Officer',
+    link: 'https://joom.ag/0had',
     description:
-      'Nursing officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line.',
+      'Medical officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line.',
     img: '/nursing-officer.jpg',
     position: [-17, -1.6, -5.8],
   },
@@ -138,7 +138,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Intelligence Analyst',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/Nhad',
     description:
       'As an RAF Intelligence Analyst, you will use state-of-the-art technologies to collect and interpret information, providing vital intelligence, which makes a direct and timely impact to operations around the world.',
     img: '/ccs.jpg',
@@ -147,7 +147,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Driver',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/qhad',
     description:
       'Being a driver in the RAF is far more exciting than a driver in the civilian world. You get to deploy all around the world and drive some of the most exciting vehicles. In addition to this, the RAF pays for any training you might need to get your licenses.',
     img: '/driver.jpg',
@@ -156,7 +156,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Mover',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/Jhad',
     description:
       'Movers are the legwork of the Logistics Profession. They allow for equipment, supplies, weapons and other kits to go from A to B. They take equipment from the Logistics Suppliers, and load it in aircraft, which are then signed-off by Weapon Systems Operators, who take on the responsibility of this kit on board.',
     img: '/mover.jpg',

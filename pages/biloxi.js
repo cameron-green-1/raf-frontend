@@ -174,7 +174,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Aircraft Technician (Mechanical)',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/Phad',
     description:
       'As an Aircraft Technician (Mechanical) your job is to carry out maintenance and repair work on the airframe and propulsion systems on RAF aircraft.',
     img: '/aircraft-technician-mech.jpg',
@@ -183,7 +183,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Survival Equipment Specialist',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/khad',
     description:
       'Survival Equipment Specialists look after the safety and survival equipment that aircrew depend on when they fly. They specialise in either Survival Equipment – fitted to aircraft – or individual Aircrew Equipment.',
     img: '/survival-equipment-specialist.jpg',
@@ -201,7 +201,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Air Operations (Control) Officer',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/6had',
     description:
       'Air Operations (Control) Officer manage all professions within Air Operations, which gather a diverse, exciting and complex employment area and directs and supports operations both in the UK and around the world. The three key employment areas are Terminal Air Traffic Control, Area Control, and finally as a Weapons Controller.',
     img: '/air-operations-officer.jpg',
@@ -219,7 +219,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Intelligence Officer',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/Thad',
     description:
       'Intelligence Officers obtain, analyse and present defence intelligence from a variety of sources and manage a team of Intelligence Analysts and Linguists. The information and intelligence they collect and analyse is critical to the success of RAF operations, and can save countless lives.',
     img: '/intelligence-officer.jpg',

@@ -179,9 +179,9 @@ const hotspots = [
     // type: 'pdf',
     type: 'link',
     title: 'Medical Officer',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/0had',
     description:
-      'Medical Officers keeps the RAF Personnel fit and medically prepared for opertions. They delivery high standard of care, sometimes under callenging conditions.',
+      'Medical Officers keeps the RAF Personnel fit and medically prepared for operations. They delivery high standard of care, sometimes under callenging conditions.',
     img: '/medical-officer.jpg',
     position: [5.3, -0.5, 17],
   },
@@ -224,7 +224,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Intelligence Analyst (Linguist)',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/Nhad',
     description:
       'Being a linguist in the RAF is one of the most rewarding jobs in the Force. Not only you are the eyes and ears that keeps everyone safe, but you also put your skills to the test, and learn languages whilst being paid by the Air Force.',
     img: '/intelligence-analyst-linguist.jpg',
@@ -233,7 +233,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'RAF Regiment Gunner',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/uhad',
     description:
       'Specialising in combat tactics, weaponry, fieldcraft and force protection, the RAF Regiment is the Force that protects the Force. They ensure the protection on the ground, whilst the RAF operates in the air.',
     img: '/raf-regiment-gunner.jpg',
@@ -278,7 +278,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Weapon Systems Operator',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/thad',
     description:
       'Weapon Systems Operators are the aircrew that allow the aircraft to fly, but are not in the cockpit. They are in the back of a helicopter or plane, and manage the navigation, and the load, whether passengers or kit handed over from the Movers.',
     img: '/weapon-systems-operator.jpg',
@@ -296,7 +296,7 @@ const hotspots = [
   {
     type: 'link',
     title: 'Aircraft Technician Avionics',
-    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
+    link: 'https://joom.ag/8had',
     description:
       'As an Aircraft Technician (Avionics) look after all electrical systems on an aircraft, like coms, radio systems and navigation.',
     img: '/aircraft-tech-avionics.jpg',
