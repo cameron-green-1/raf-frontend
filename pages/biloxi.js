@@ -7,7 +7,8 @@ const scenario = {
   location: 'Undisclosed',
   details: '83 Expeditionary Force Forward Operating Base. 4 Typhoons',
   professions: 'Flight Control, Engineer, Cyber Security',
-  video: '/briefing-demo.webm',
+  // video: '/briefing-demo.webm',
+  video: '/intro-biloxi.webm',
 };
 
 const vimeoEmbed = (
@@ -369,6 +370,7 @@ const Biloxi = () => {
         imageSrc='/pano-biloxi.jpg'
         scenario={scenario}
         hotspots={hotspots}
+        duration={89000}
       />
     </>
   );

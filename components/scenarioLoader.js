@@ -71,17 +71,19 @@ const Briefing = ({ setSecondLoading, scenario }) => {
         <div className={styles.video}>
           <div className={styles.item}>
             <h1>VIDEO BRIEFING</h1>
-            <video id='briefing-video'>
+            <video id='briefing-video' controls muted>
               {/* <source src='/briefing1.webm' type='video/webm' muted={true} /> */}
               <source
                 // src='/briefing-demo.webm'
                 src={scenario.video}
                 type='video/webm'
-                muted={true}
+                // muted={false}
+                // muted={true}
+                muted='muted'
               />
               <p>
                 Your browser doesn't support HTML5 video. Here is a
-                <a href='/briefing1.webm'>link to the video</a> instead.
+                <a href={scenario.video}>link to the video</a> instead.
               </p>
             </video>
             <button id='btn-continue' onClick={() => setSecondLoading(false)}>
@@ -99,7 +101,7 @@ const Briefing = ({ setSecondLoading, scenario }) => {
   );
 };
 
-const ScenarioLoader = ({ scenario }) => {
+const ScenarioLoader = ({ scenario, duration }) => {
   // const [firstLoading, setFirstLoading] = useState(false);
   // const [secondLoading, setSecondLoading] = useState(false);
   const [firstLoading, setFirstLoading] = useState(true);
@@ -112,6 +114,7 @@ const ScenarioLoader = ({ scenario }) => {
     const target = document.getElementById('target');
     const vid = document.getElementById('briefing-video');
     const btnContinue = document.getElementById('btn-continue');
+    const fakeClick = document.getElementById('fakeClick');
 
     setTimeout(() => {
       setFirstLoading(false);
@@ -140,6 +143,7 @@ const ScenarioLoader = ({ scenario }) => {
     }, 6000);
     setTimeout(() => {
       bg.style.transform = 'translate(17.5%, 17.5%) scale(2)';
+      fakeClick.click();
     }, 7250);
     setTimeout(() => {
       btnContinue.style.pointerEvents = 'all';
@@ -147,14 +151,20 @@ const ScenarioLoader = ({ scenario }) => {
       crosshair.style.opacity = 0;
       bgCover.style.transform = 'translateX(120%)';
       briefingMain.style.opacity = 1;
+      // console.log(vid);
+      // vid.muted = true;
+      // vid.play();
+      vid.muted = false;
+      // vid.play();
       if (secondLoading) {
-        vid.play();
-        vid.muted = false;
+        // vid.play();
+        // vid.muted = false;
         setTimeout(() => {
-          vid.muted = true;
-          vid.pause();
-          // setSecondLoading(false);
-        }, 5000);
+          // vid.muted = true;
+          // vid.pause();
+        }, duration);
+        // }, 5000);
+        // }, vid.duration + 1);
         // setTimeout(() => setSecondLoading(false), (vid.duration + 1) * 1000);
       }
     }, 8500);
@@ -174,8 +184,16 @@ const ScenarioLoader = ({ scenario }) => {
         pointerEvents: secondLoading ? 'all' : 'none',
       }}
     >
-      <Briefing setSecondLoading={setSecondLoading} scenario={scenario} />
+      <Briefing
+        setSecondLoading={setSecondLoading}
+        scenario={scenario}
+        duration={duration}
+      />
       <Loading firstLoading={firstLoading} />
+      <div
+        id='fakeClick'
+        style={{ position: 'fixed', top: 20, left: 20, width: 20, height: 20 }}
+      ></div>
     </div>
   );
 };

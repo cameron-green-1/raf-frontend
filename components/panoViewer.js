@@ -307,7 +307,14 @@ const renderAnnotation = (hotspot, i) => {
   );
 };
 
-const PanoViewer = ({ imageSrc, hotspots, launch, live, scenario }) => {
+const PanoViewer = ({
+  imageSrc,
+  hotspots,
+  launch,
+  live,
+  scenario,
+  duration,
+}) => {
   useEffect(() => {
     createPano(imageSrc, hotspots);
     const panels = document.querySelectorAll('.hotspot');
@@ -329,7 +336,7 @@ const PanoViewer = ({ imageSrc, hotspots, launch, live, scenario }) => {
       </div>
       {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i))}
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
-      <ScenarioLoader scenario={scenario} />
+      <ScenarioLoader scenario={scenario} duration={duration} />
     </div>
   );
 };
