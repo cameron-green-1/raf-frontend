@@ -70,6 +70,86 @@ const vimeoChaplaincy = (
   ></iframe>
 );
 
+// const vimeoSuppFAR = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
+// const vimeoSuppBAL = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
+// const vimeoSuppLGBT = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
+// const vimeoSuppWomen = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
+// const vimeoSuppRoles = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
+// const vimeoSuppFAR = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
+// const vimeoSuppFAR = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
+// const vimeoSuppFAR = (
+//   <iframe
+//     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+//     frameBorder='0'
+//     allow='autoplay; fullscreen; picture-in-picture'
+//     allowFullScreen
+//     className='vimeo'
+//   ></iframe>
+// );
+
 const hotspots = [
   // {
   //   type: 'video',
@@ -235,34 +315,44 @@ const hotspots = [
     link: null,
     links: [
       {
-        title: 'Engineering - Weapon Technician',
-        type: 'pdf',
-        link: '/dummy.pdf',
-      },
-      {
-        title: 'Logistics - Supplier',
+        title: 'Faith and Religion',
         type: 'link',
-        link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
+        link: 'https://vimeo.com/715942022/2208ca34cb',
       },
       {
-        title: 'Logistics - Musician',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'Benefits and Lifestyle',
+        type: 'link',
+        link: 'https://vimeo.com/715941929/2679020c86',
       },
       {
-        title: 'Logistics - Logistics Officer',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'LGBTQ+',
+        type: 'link',
+        link: 'https://vimeo.com/715941469/9b4cb30a9e',
       },
       {
-        title: 'Engineering - General Technician',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'Women in the RAF',
+        type: 'link',
+        link: 'https://vimeo.com/715941868/21170e86b6',
       },
       {
-        title: 'Logistics - Driver',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'Roles in the RAF',
+        type: 'link',
+        link: 'https://vimeo.com/715941757/e6f2fd8c43',
+      },
+      {
+        title: 'Inspiration',
+        type: 'link',
+        link: 'https://vimeo.com/715941715/d618193375',
+      },
+      {
+        title: 'Apprenticeships',
+        type: 'link',
+        link: 'https://vimeo.com/715941196/84e13f6423',
+      },
+      {
+        title: 'Phase 1 Training Meet Jessica',
+        type: 'link',
+        link: 'https://vimeo.com/715940901/3dcb5f7ae5',
       },
     ],
     description:

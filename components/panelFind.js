@@ -32,19 +32,21 @@ const PanelFind = ({ hotspot }) => {
               return (
                 <li className={styles.item} key={i}>
                   <h1>{link.title}</h1>
-                  <button className={styles.button}>
-                    <img
-                      src={
-                        link.type === 'pdf' ? '/download.svg' : '/export.svg'
-                      }
-                      alt=''
-                    />
-                    <span>
-                      {link.type === 'pdf'
-                        ? 'DOWNLOAD ROLE SPEC PDF'
-                        : 'LEARN MORE'}
-                    </span>
-                  </button>
+                  <a href={link.link} target='_blank' rel='noopener noreferrer'>
+                    <button className={styles.button}>
+                      <img
+                        src={
+                          link.type === 'pdf' ? '/download.svg' : '/export.svg'
+                        }
+                        alt=''
+                      />
+                      <span>
+                        {link.type === 'pdf'
+                          ? 'DOWNLOAD ROLE SPEC PDF'
+                          : 'LEARN MORE'}
+                      </span>
+                    </button>
+                  </a>
                 </li>
               );
             })}

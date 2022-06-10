@@ -175,40 +175,50 @@ const hotspots = [
     link: null,
     links: [
       {
-        title: 'Engineering - Weapon Technician',
-        type: 'pdf',
-        link: '/dummy.pdf',
-      },
-      {
-        title: 'Logistics - Supplier',
+        title: 'Faith and Religion',
         type: 'link',
-        link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
+        link: 'https://vimeo.com/715942022/2208ca34cb',
       },
       {
-        title: 'Logistics - Musician',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'Benefits and Lifestyle',
+        type: 'link',
+        link: 'https://vimeo.com/715941929/2679020c86',
       },
       {
-        title: 'Logistics - Logistics Officer',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'LGBTQ+',
+        type: 'link',
+        link: 'https://vimeo.com/715941469/9b4cb30a9e',
       },
       {
-        title: 'Engineering - General Technician',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'Women in the RAF',
+        type: 'link',
+        link: 'https://vimeo.com/715941868/21170e86b6',
       },
       {
-        title: 'Logistics - Driver',
-        type: 'pdf',
-        link: '/dummy.pdf',
+        title: 'Roles in the RAF',
+        type: 'link',
+        link: 'https://vimeo.com/715941757/e6f2fd8c43',
+      },
+      {
+        title: 'Inspiration',
+        type: 'link',
+        link: 'https://vimeo.com/715941715/d618193375',
+      },
+      {
+        title: 'Apprenticeships',
+        type: 'link',
+        link: 'https://vimeo.com/715941196/84e13f6423',
+      },
+      {
+        title: 'Phase 1 Training Meet Jessica',
+        type: 'link',
+        link: 'https://vimeo.com/715940901/3dcb5f7ae5',
       },
     ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: '/general-technician.jpg',
-    position: [-17.6, 2.2, -3.8],
+    position: [-12.2, -0.4, 13.2],
   },
 ];
 
