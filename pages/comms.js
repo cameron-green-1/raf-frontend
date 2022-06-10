@@ -62,9 +62,11 @@ const Chat = ({ rooms }) => {
     <>
       <div className={styles.chat}>
         <p>
-          We’re now <span style={{ color: '#C60C30' }}>LIVE!</span> Join a teams
+          {/* We’re now <span style={{ color: '#C60C30' }}>LIVE!</span> Join a teams
           video chat room below to speak with RAF personnel and find out more
-          about a specific role.
+          about a specific role. */}
+          We’re <span style={{ color: '#C60C30' }}>live!</span> Discover a world
+          of opportunities within the RAF.
         </p>
         <ul className={styles.rooms}>
           {rooms.length > 0 ? (

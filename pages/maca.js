@@ -20,6 +20,56 @@ const vimeoEmbed = (
   ></iframe>
 );
 
+const vimeoMental = (
+  <iframe
+    src='https://player.vimeo.com/video/715575997?h=9062b319a9'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoNursingOfficer = (
+  <iframe
+    src='https://player.vimeo.com/video/715531088?h=5c263cb2a2'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoIntelAnalyst = (
+  <iframe
+    src='https://player.vimeo.com/video/715607525?h=0390dc266b'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoPersonnel = (
+  <iframe
+    src='https://player.vimeo.com/video/715552085?h=f2751e5256'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoChaplaincy = (
+  <iframe
+    src='https://player.vimeo.com/video/718246101?h=aa281fa1a6'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
 const hotspots = [
   // {
   //   type: 'video',
@@ -32,149 +82,153 @@ const hotspots = [
   //   position: [19, 1, 2.5],
   // },
   {
-    type: 'pdf',
-    title: 'Adult Registered Nurse',
-    link: '/dummy.pdf',
+    type: 'video',
+    title: 'Registered Nurse (Mental Health)',
+    // link: '/dummy.pdf',
+    link: vimeoMental,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/registered-nurse.jpg',
+      // 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'As an RAF Mental Health Nurse, you will operate in multi-disciplinary teams to deliver a safe and effective community mental health service-to-service personnel, in order to enhance and sustain the operational effectiveness of the UK Armed Forces. Sergeant Susie Ferguson explains what Mental Health Nurses do in the RAF and how they support RAF personnel. She has had various roles and is proud to have completed a post-graduate diploma in Cognitive Behavioral Therapy.',
+    // img: '/registered-nurse.jpg',
+    img: null,
     position: [19, 1, 2.5],
   },
   {
-    type: 'pdf',
+    // type: 'pdf',
+    type: 'link',
     title: 'Medical Officer',
-    link: '/dummy.pdf',
+    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Medical Officers keeps the RAF Personnel fit and medically prepared for opertions. They delivery high standard of care, sometimes under callenging conditions.',
     img: '/medical-officer.jpg',
     position: [5.3, -0.5, 17],
   },
   {
-    type: 'link',
+    type: 'video',
     title: 'Nursing Officer',
-    link: 'https://www.raf.mod.uk/recruitment/roles/roles-finder/technical-and-engineering/general-technician-workshop',
+    link: vimeoNursingOfficer,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Nursing officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line. Sqn Ldr Amy talks about her role as a Nursing Officer.',
     img: '/nursing-officer.jpg',
     position: [18, -2.1, 1.5],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Supplier',
-    link: '/dummy.pdf',
+    link: 'https://recruitment.raf.mod.uk/roles/roles-finder/logistics/supplier',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      "The Logistics Suppliers look after the storage and the deployment of all RAF Assets. This could be equipment, vehicles, humanitarian goods, weapons and explosives. Without them, the RAF wouldn't run.",
     img: '/logistics-supplier.jpg',
     position: [18.07, -1.8, -7],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Driver',
-    link: '/dummy.pdf',
+    link: 'https://recruitment.raf.mod.uk/roles/roles-finder/logistics/driver',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'As an RAF Driver, you will operate many vehicle types, from cars and minibuses to cranes, articulated trucks, coaches and specialist vehicles (such as aircraft refuellers) to ensure RAF personnel, equipment and commodities are in the right place at the right time.',
     img: '/driver.jpg',
     position: [5.82, -1.8, -18],
   },
   {
-    type: 'pdf',
+    type: 'video',
     title: 'Intelligence Analyst',
-    link: '/dummy.pdf',
+    link: vimeoIntelAnalyst,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Intelligence Analysts are the eyes and ears that keep the country and the RAF safe. They intercept transmissions for analysis, in order to make the best strategic decisions.',
     img: '/intelligence-officer.jpg',
     position: [-3.8, 2.3, 12],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Intelligence Analyst (Linguist)',
-    link: '/dummy.pdf',
+    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Being a linguist in the RAF is one of the most rewarding jobs in the Force. Not only you are the eyes and ears that keeps everyone safe, but you also put your skills to the test, and learn languages whilst being paid by the Air Force.',
     img: '/intelligence-analyst-linguist.jpg',
     position: [15, 2.2, 9.8],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'RAF Regiment Gunner',
-    link: '/dummy.pdf',
+    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Specialising in combat tactics, weaponry, fieldcraft and force protection, the RAF Regiment is the Force that protects the Force. They ensure the protection on the ground, whilst the RAF operates in the air.',
     img: '/raf-regiment-gunner.jpg',
     position: [-16, -0.5, 5.819120914630715],
   },
   {
-    type: 'pdf',
+    type: 'video',
     title: 'Personnel Support',
-    link: '/dummy.pdf',
+    link: vimeoPersonnel,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'The role of Personnel Support Officer is diverse and covers a wide range of specialisations such as HR, Accounts & Personnel management. You could be working from a UK airbase, or posted in the Falkland or Cyprus whilst undertaking your duty.',
     img: '/personnel-support.jpg',
     position: [11, -0.5, 14.3],
   },
   {
-    type: 'pdf',
+    type: 'video',
     title: 'Chaplaincy',
-    link: '/dummy.pdf',
+    link: vimeoChaplaincy,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Our Chaplains benefit from an exciting career, serving in all our UK and overseas bases. They are there to listen, and help personnel of all faiths, and none.',
     img: '/chaplaincy.jpg',
     position: [13, -2.3, 13.9],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Legal',
-    link: '/dummy.pdf',
+    link: 'https://recruitment.raf.mod.uk/roles/roles-finder/personnel-support/legal-officer',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Law in the RAF addresses the rules and regulations of the organisation, society at large and the international community. As an RAF Legal Officer, you will have a wide variety of legal challenges linked to the force and will play a central role in ensuring that we function smoothly.',
     img: '/legal-officer.jpg',
     position: [16.2, 0, 10],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Pilot',
-    link: '/dummy.pdf',
+    link: 'https://recruitment.raf.mod.uk/roles/roles-finder/aircrew/pilot',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'RAF Pilots allow the RAF to control the skies. They enjoy a variety of aircraft. They can be on fixed wing and transport crew in the C-17 or A400M Atlas, or fast jets like the Typhoon or the F-35. They can also be on rotary wing, like the Puma or the Chinook helicopters.',
     img: '/pilot.jpg',
     position: [-14, -0.5, -9.12],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Weapon Systems Operator',
-    link: '/dummy.pdf',
+    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'Weapon Systems Operators are the aircrew that allow the aircraft to fly, but are not in the cockpit. They are in the back of a helicopter or plane, and manage the navigation, and the load, whether passengers or kit handed over from the Movers.',
     img: '/weapon-systems-operator.jpg',
     position: [-17, 2, -2.5],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Aircraft Technician (Mechanical)',
-    link: '/dummy.pdf',
+    link: 'https://recruitment.raf.mod.uk/roles/roles-finder/technical-and-engineering/aircraft-technician-mechanical',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'As an Aircraft Technician (Mechanical) your job is to carry out maintenance and repair work on the airframe and propulsion systems on RAF aircraft.',
     img: '/aircraft-technician-mech.jpg',
     position: [-14, 1, -13.5],
   },
   {
-    type: 'pdf',
+    type: 'link',
     title: 'Aircraft Technician Avionics',
-    link: '/dummy.pdf',
+    link: 'https://viewer.joomag.com/intelligence-analyst-linguist/0385672001648676883?short&',
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
+      'As an Aircraft Technician (Avionics) look after all electrical systems on an aircraft, like coms, radio systems and navigation.',
     img: '/aircraft-tech-avionics.jpg',
     position: [-16.5, 10, 0],
   },
-  {
-    type: 'text',
-    title: 'General Technician',
-    link: null,
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada mauris augue, sed pretium neque cursus et. Nulla facilisi. Sed dictum laoreet velit porta sagittis. Phasellus volutpat urna at libero ultricies, ut dictum nibh tempus. Praesent metus mauris, accumsan eu nunc eget, interdum lacinia risus. Vivamus ut iaculis leo. Proin volutpat urna at placerat fringilla. Sed placerat, ipsum non dictum ultricies, risus erat porta justo, quis laoreet sapien dolor quis arcu.',
-    img: '/general-technician.jpg',
-    position: [-4.5, -0.9, -19],
-  },
+  // {
+  //   type: 'text',
+  //   title: 'General Technician',
+  //   link: null,
+  //   description:
+  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum malesuada mauris augue, sed pretium neque cursus et. Nulla facilisi. Sed dictum laoreet velit porta sagittis. Phasellus volutpat urna at libero ultricies, ut dictum nibh tempus. Praesent metus mauris, accumsan eu nunc eget, interdum lacinia risus. Vivamus ut iaculis leo. Proin volutpat urna at placerat fringilla. Sed placerat, ipsum non dictum ultricies, risus erat porta justo, quis laoreet sapien dolor quis arcu.',
+  //   img: '/general-technician.jpg',
+  //   position: [-4.5, -0.9, -19],
+  // },
   {
     type: 'find',
     title: 'Find your role',

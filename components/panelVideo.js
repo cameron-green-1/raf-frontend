@@ -6,8 +6,10 @@ const PanelVideo = ({ hotspot }) => {
     <Panel padding={30}>
       <div className={styles.grid}>
         {hotspot.link}
-        <h2 className={styles.profession}>PROFESSION</h2>
-        <h1 className={styles.title}>{hotspot.title}</h1>
+        <div>
+          <h2 className={styles.profession}>PROFESSION</h2>
+          <h1 className={styles.title}>{hotspot.title}</h1>
+        </div>
         <p className={styles.description}>{hotspot.description}</p>
       </div>
     </Panel>

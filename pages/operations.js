@@ -16,7 +16,11 @@ import IconSatellite from '../components/svg/iconSatellite';
 const URL = url;
 
 const Earth = dynamic(() => import('../components/earth'), { ssr: false });
-const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
+// const instructionsText = ['TAP & DRAG THE GLOBE', 'TO VISIT RAF OPERATIONS'];
+const instructionsText = [
+  'TAP & DRAG TO DISCOVER A VARIETY OF',
+  'RAF PROFESSIONALS AROUND THE WORLD',
+];
 const instructionsItems = instructionsText.map((txt, i) => (
   <p key={i}>{txt}</p>
 ));

@@ -16,10 +16,12 @@ const PanelLink = ({ hotspot }) => {
           <h2 className={styles.profession}>PROFESSION</h2>
           <h1 className={styles.title}>{hotspot.title}</h1>
           <p className={styles.description}>{hotspot.description}</p>
-          <button className={styles.button}>
-            <img src='/export.svg' alt='' />
-            <span>LEARN MORE</span>
-          </button>
+          <a href={hotspot.link} target='_blank' rel='noopener noreferrer'>
+            <button className={styles.button}>
+              <img src='/export.svg' alt='' />
+              <span>LEARN MORE</span>
+            </button>
+          </a>
         </div>
       </div>
     </Panel>
