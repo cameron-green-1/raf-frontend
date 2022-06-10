@@ -118,7 +118,8 @@ const Holding = ({ isHolding, launchTime }) => {
         </Link>
         <img
           className={styles.holdingLogos}
-          src='/holding-logos.png'
+          // src='/holding-logos.png'
+          src='/holding-logos-2.png'
           alt='RAF Regular & Reserve | No Ordinary Job'
         />
       </main>
