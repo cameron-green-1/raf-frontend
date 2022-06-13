@@ -13,7 +13,7 @@ const Loader = () => {
     // } else {
     //   setLoading(false);
     // }
-    // setTimeout(() => setLoading(false), 5000);
+    setTimeout(() => setLoading(false), 5000);
   }, []);
   return (
     <div
