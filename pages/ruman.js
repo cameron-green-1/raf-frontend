@@ -106,7 +106,8 @@ const hotspots = [
     description:
       'Air Operations (Control) Officer manage all professions within Air Operations, which gather a diverse, exciting and complex employment area and directs and supports operations both in the UK and around the world. The three key employment areas are Terminal Air Traffic Control, Area Control, and finally as a Weapons Controller.',
     img: '/air-operations-officer.jpg',
-    position: [-15.2, 0, 9.6],
+    // position: [-15.2, 0, 9.6],
+    position: [-15, 1, 10],
   },
   {
     type: 'video',
@@ -115,7 +116,8 @@ const hotspots = [
     description:
       'RAF Technicians look after all the moving parts of an aircraft, and are both indespensable to the RAF family,  Mechanical Technicians focus on all moving parts of an aircraft, whilst Avionics Technicians focus on all electronics and computer systems for navigation.',
     img: '/aircraft-tech-avionics.jpg',
-    position: [-7, -1, 15.5],
+    // position: [-7, -1, 15.5],
+    position: [-7.5, -2, 16.5],
   },
   {
     type: 'link',

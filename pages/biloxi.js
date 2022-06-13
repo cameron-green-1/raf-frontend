@@ -169,7 +169,8 @@ const hotspots = [
     description:
       'As an Aircraft Technician (Avionics) you will keep our aircraft airborne by carrying out maintenance and repair work on all electrical systems on an aircraft, like coms, radio systems and navigation.',
     img: '/aircraft-tech-avionics.jpg',
-    position: [-17.9, 0.39, -1.99],
+    // position: [-17.9, 0.39, -1.99],
+    position: [-18, 0.5, 0.8],
   },
   {
     type: 'link',

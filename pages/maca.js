@@ -173,7 +173,8 @@ const hotspots = [
       'As an RAF Mental Health Nurse, you will operate in multi-disciplinary teams to deliver a safe and effective community mental health service-to-service personnel, in order to enhance and sustain the operational effectiveness of the UK Armed Forces. Sergeant Susie Ferguson explains what Mental Health Nurses do in the RAF and how they support RAF personnel. She has had various roles and is proud to have completed a post-graduate diploma in Cognitive Behavioral Therapy.',
     // img: '/registered-nurse.jpg',
     img: null,
-    position: [19, 1, 2.5],
+    // position: [19, 1, 2.5],
+    position: [17.9, 1.5, -1],
   },
   {
     // type: 'pdf',
