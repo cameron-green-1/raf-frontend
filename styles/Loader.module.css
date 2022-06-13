@@ -32,6 +32,15 @@
   /* align-items: center; */
 }
 
+.loadingLogo {
+  width: 525px;
+  aspect-ratio: 3 / 1;
+  /* transform: translateY(-12.5%); */
+  /* height: 260px; */
+  margin-bottom: 120px;
+  align-self: center;
+}
+
 .footerLogos {
   align-self: center;
 }
