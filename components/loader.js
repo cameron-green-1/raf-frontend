@@ -42,7 +42,9 @@ const Loader = () => {
             </div>
           </div>
           <img
-            src='/holding-logos.png'
+            // className={styles.holdingLogos}
+            // src='/holding-logos.png'
+            src='/holding-logos-2.png'
             alt='RAF Regular & Reserve | No Ordinary Job'
             className={styles.footerLogos}
           />
