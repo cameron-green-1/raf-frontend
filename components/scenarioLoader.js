@@ -119,10 +119,10 @@ const Briefing = ({ setSecondLoading, scenario }) => {
 };
 
 const ScenarioLoader = ({ scenario, duration }) => {
-  const [firstLoading, setFirstLoading] = useState(false);
-  const [secondLoading, setSecondLoading] = useState(false);
-  // const [firstLoading, setFirstLoading] = useState(true);
-  // const [secondLoading, setSecondLoading] = useState(true);
+  // const [firstLoading, setFirstLoading] = useState(false);
+  // const [secondLoading, setSecondLoading] = useState(false);
+  const [firstLoading, setFirstLoading] = useState(true);
+  const [secondLoading, setSecondLoading] = useState(true);
 
   useEffect(() => {
     const bg = document.getElementById('bg');
