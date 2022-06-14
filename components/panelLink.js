@@ -13,7 +13,7 @@ const PanelLink = ({ hotspot }) => {
           </h1>
         </div>
         <div className={styles.info}>
-          <h2 className={styles.profession}>PROFESSION</h2>
+          {/* <h2 className={styles.profession}>PROFESSION</h2> */}
           <h1 className={styles.title}>{hotspot.title}</h1>
           <p className={styles.description}>{hotspot.description}</p>
           <a href={hotspot.link} target='_blank' rel='noopener noreferrer'>
