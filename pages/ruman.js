@@ -74,6 +74,76 @@ const vimeoARN = (
   ></iframe>
 );
 
+const vimeoRAFP = (
+  <iframe
+    src='https://player.vimeo.com/video/715658116?h=0128cd8404'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoRAFF = (
+  <iframe
+    src='https://player.vimeo.com/video/715648382?h=ff6ffd11c6'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoEOC = (
+  <iframe
+    src='https://player.vimeo.com/video/718624428?h=0cddeb5142'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoASOS = (
+  <iframe
+    src='https://player.vimeo.com/video/715934634?h=6d1e22faae'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoLO = (
+  <iframe
+    src='https://player.vimeo.com/video/718641947?h=fc77d4c9a5'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoIA = (
+  <iframe
+    src='https://player.vimeo.com/video/715909344?h=02c8479e35'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoWSO2 = (
+  <iframe
+    src='https://player.vimeo.com/video/718641106?h=7f4360c879'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
 const hotspots = [
   {
     type: 'link',
@@ -194,6 +264,69 @@ const hotspots = [
     img: null,
     // position: [-17.8, 1.7, -1.7],
     position: [-17.2, 2.5, -6.1],
+  },
+  {
+    type: 'video',
+    title: 'RAF Police',
+    link: vimeoRAFP,
+    description:
+      'As a member of the RAF Police, you will conduct criminal and security investigations. As specialists in Aviation Security, Counter Intelligence, Protective Security, Law Enforcement, Military Working Dogs, Information and Cyber Security, the RAF Police plays a critical role enabling airpower operations globally. Cpl Vicky Bloor specialised in Military Working Dogs, from explosive detection to patrolling.',
+    img: null,
+    position: [16.2, -2.2, 7.5],
+  },
+  {
+    type: 'video',
+    title: 'RAF Firefighter',
+    link: vimeoRAFF,
+    description:
+      'As an RAF Firefighter you will provide 24/7 fire and crash rescue protection. You will be organised and trained to respond to any emergency with highly specialised equipment like powerful cutting tools.',
+    img: null,
+    position: [17.8, 1.2, 2.7],
+  },
+  {
+    type: 'video',
+    title: 'Engineering Officer (Comms Electronics)',
+    link: vimeoEOC,
+    description:
+      'As an Engineer Officer (Communications Electronics) you are responsible for leading the engineering activity that supports the RAF’s vast array of information technology, strategic communications services, satellite communications, air defence RADARs and the latest generation aircraft engineering and mission support systems.',
+    img: null,
+    position: [12.5, -2.6, 11.4],
+  },
+  {
+    type: 'video',
+    title: 'Air and Space Ops Specialist',
+    link: vimeoASOS,
+    description:
+      'As an RAF Air & Space Operations Specialist (Flight Operations) you will support aircrew, Air Operations Controllers and Air Operations (Systems) Officers to facilitate the successful planning and execution of flights and missions, both in the UK and on worldwide operations.',
+    img: null,
+    position: [-7.5, 4, 16.5],
+  },
+  {
+    type: 'video',
+    title: 'Logistics Officer',
+    link: vimeoLO,
+    description:
+      'The Logistics Officer manages all the trades within the Logistics Profession, Chefs, Air & Ground Stewards, Movers, Drivers and Suppliers. They enable these teams to get the RAF functionning properly. Flt Lt John Ormsby talks about his role, and his experience on deployment on Op Ruman.',
+    img: null,
+    position: [4, -3, -17.3],
+  },
+  {
+    type: 'video',
+    title: 'Intelligence Analyst (Linguist)',
+    link: vimeoIA,
+    description:
+      'Being a WSOp Linguist in the RAF is one of the most rewarding jobs in the RAF. Not only you are the eyes and ears that keeps everyone safe, but you also get to fly in reconnaissance aircraft to catch foreign transmissions, and learn languages whilst being paid.',
+    img: null,
+    position: [4, 0.5, -17.5],
+  },
+  {
+    type: 'video',
+    title: 'Weapon Systems Operator',
+    link: vimeoWSO2,
+    description:
+      'As a Weapon Systems Operator you will manage the sensors and weapons of a particular aircraft during operational missions, whilst at the same time gathering intelligence and supporting forces on the ground.',
+    img: null,
+    position: [17.5, 4, -1.2],
   },
   {
     type: 'find',

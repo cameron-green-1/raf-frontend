@@ -73,6 +73,56 @@ const vimeoChaplaincy = (
   ></iframe>
 );
 
+const vimeoEOA = (
+  <iframe
+    src='https://player.vimeo.com/video/715575374?h=6ee27abdd5'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoEOC = (
+  <iframe
+    src='https://player.vimeo.com/video/715597002?h=f9df78b727'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoASOS = (
+  <iframe
+    src='https://player.vimeo.com/video/715607600?h=22f48634cc'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoRAFP = (
+  <iframe
+    src='https://player.vimeo.com/video/715654106?h=6f0252e8fa'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoMACA = (
+  <iframe
+    src='https://player.vimeo.com/video/718640621?h=0f8d99ba08'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
 // const vimeoSuppFAR = (
 //   <iframe
 //     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
@@ -303,6 +353,51 @@ const hotspots = [
       'As an Aircraft Technician (Avionics) look after all electrical systems on an aircraft, like coms, radio systems and navigation.',
     img: '/aircraft-tech-avionics.jpg',
     position: [-16.5, 10, 0],
+  },
+  {
+    type: 'video',
+    title: 'Engineering Officer (Aerosystems)',
+    link: vimeoEOA,
+    description:
+      "As an Aerosystems Engineer Officer you will manage the maintenance and operation of the RAF's cutting-edge aircraft and supporting technology. Wing Commander Gemma Lonsdale shares highlights from her exciting and varied career as a female engineer. From being awarded an RAF sponsorship, to adventure training and flying in the back of a Typhoon.",
+    img: '/aircraft-tech-avionics.jpg',
+    position: [-15.8, 3, 8.4],
+  },
+  {
+    type: 'video',
+    title: 'Engineering Officer (Comms Electronics)',
+    link: vimeoEOC,
+    description:
+      'As an Engineer Officer (Communications Electronics) you are responsible for leading the engineering activity that supports the RAF’s vast array of information technology, strategic communications services, satellite communications, air defence RADARs and the latest generation aircraft engineering and mission support systems.',
+    img: '/aircraft-tech-avionics.jpg',
+    position: [-6.8, -2.5, 16.5],
+  },
+  {
+    type: 'video',
+    title: 'Air and Space Ops Specialist',
+    link: vimeoASOS,
+    description:
+      'As an RAF Air & Space Operations Specialist (Flight Operations) you will support aircrew, Air Operations (Control) Officers and Air Operations (Systems) Officers to facilitate the successful planning and execution of flights and missions, as well as deployment of the Quick Reaction Alert team, both in the UK and on worldwide operations.',
+    img: '/aircraft-tech-avionics.jpg',
+    position: [-8.8, 6.7, 14.2],
+  },
+  {
+    type: 'video',
+    title: 'RAF Police',
+    link: vimeoRAFP,
+    description:
+      'RAF Police have a critical role to enable airpower opreations globally. They conduct criminal and security investigations. They either specialise in Aviation Security, Counter Intelligence, Protective Security, Law Enforcement, Military Working Dogs, Information or Cyber Security. Cpl Callum Hales specialises in Cyber Security, and talks about his experience training RAF Personnel and foreign forces on deployements, about cyber security and its importance.',
+    img: '/aircraft-tech-avionics.jpg',
+    position: [-3.2, 0.4, -17.7],
+  },
+  {
+    type: 'video',
+    title: 'MACA Explained',
+    link: vimeoMACA,
+    description:
+      'MACA explained by RAF Regional Liason Officer (East Midlands).',
+    img: '/aircraft-tech-avionics.jpg',
+    position: [12.5, -2, -12.5],
   },
   // {
   //   type: 'text',

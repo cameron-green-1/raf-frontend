@@ -154,6 +154,46 @@ const vimeoATech = (
   ></iframe>
 );
 
+const vimeoEOC = (
+  <iframe
+    src='https://player.vimeo.com/video/718621655?h=33cde8c588'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoNO = (
+  <iframe
+    src='https://player.vimeo.com/video/718714878?h=26c87b0368'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoATA = (
+  <iframe
+    src='https://player.vimeo.com/video/718641576?h=b88a0f9a3e'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoATM = (
+  <iframe
+    src='https://player.vimeo.com/video/718642657?h=35fd3a50eb'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
 const hotspots = [
   {
     type: 'video',
@@ -308,6 +348,42 @@ const hotspots = [
       'As an RAF Regiment Gunner, you will specialise in combat tactics, weaponry, fieldcraft and force protection. You will be part of a highly trained team carrying out a range of crucial duties to defend RAF bases and overseas air operations.',
     img: '/raf-regiment-gunner.jpg',
     position: [17.7, -2.5, 3.3],
+  },
+  {
+    type: 'video',
+    title: 'Engineering Officer (Comms Electronics)',
+    link: vimeoEOC,
+    description:
+      'As an Engineer Officer (Communications Electronics) you are responsible for leading the engineering activity that supports the RAF’s vast array of information technology, strategic communications services, satellite communications, air defence RADARs and the latest generation aircraft engineering and mission support systems.',
+    img: '/driver.jpg',
+    position: [6, -0.5, 17],
+  },
+  {
+    type: 'video',
+    title: 'Nursing Officer',
+    link: vimeoNO,
+    description:
+      'Nursing officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line. Flt Lt Sara Drivers talks about her role, and experience on deployments around the world.',
+    img: '/driver.jpg',
+    position: [7, 0, -16.5],
+  },
+  {
+    type: 'video',
+    title: 'Aircraft Technician (Avionics)',
+    link: vimeoATA,
+    description:
+      'As an Aircraft Technician (Avionics) you will keep our aircraft airborne by carrying out maintenance and repair work on the sophisticated electronic and on board avionics.',
+    img: '/driver.jpg',
+    position: [14.4, 4.4, -10],
+  },
+  {
+    type: 'video',
+    title: 'Aircraft Technician (Mechanical)',
+    link: vimeoATM,
+    description:
+      'As an Aircraft Technician your job is to carry out maintenance and repair work on the airframe and propulsion systems on RAF aircraft.',
+    img: '/driver.jpg',
+    position: [12.5, 1, -12.8],
   },
   {
     type: 'find',
