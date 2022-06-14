@@ -64,6 +64,16 @@ const vimeoGunner = (
   ></iframe>
 );
 
+const vimeoARN = (
+  <iframe
+    src='https://player.vimeo.com/video/718714878?h=26c87b0368'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
 const hotspots = [
   {
     type: 'link',
@@ -83,15 +93,15 @@ const hotspots = [
     img: '/medical-officer.jpg',
     position: [-15.1, -0.7, -9.7],
   },
-  {
-    type: 'link',
-    title: 'Medical Officer',
-    link: 'https://joom.ag/0had',
-    description:
-      'Medical officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line.',
-    img: '/nursing-officer.jpg',
-    position: [-17, -1.6, -5.8],
-  },
+  // {
+  //   type: 'link',
+  //   title: 'Medical Officer',
+  //   link: 'https://joom.ag/0had',
+  //   description:
+  //     'Medical officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line.',
+  //   img: '/nursing-officer.jpg',
+  //   position: [-17, -1.6, -5.8],
+  // },
   {
     type: 'link',
     title: 'Air Operations (Control) Sergeant',
@@ -111,16 +121,16 @@ const hotspots = [
     // position: [-15.2, 0, 9.6],
     position: [-15, 1, 10],
   },
-  {
-    type: 'video',
-    title: 'Aircraft Tech (Mechanical & Avionics)',
-    link: vimeoAircraftTech,
-    description:
-      'RAF Technicians look after all the moving parts of an aircraft, and are both indespensable to the RAF family,  Mechanical Technicians focus on all moving parts of an aircraft, whilst Avionics Technicians focus on all electronics and computer systems for navigation.',
-    img: '/aircraft-tech-avionics.jpg',
-    // position: [-7, -1, 15.5],
-    position: [-7.5, -2, 16.5],
-  },
+  // {
+  //   type: 'video',
+  //   title: 'Aircraft Tech (Mechanical & Avionics)',
+  //   link: vimeoAircraftTech,
+  //   description:
+  //     'RAF Technicians look after all the moving parts of an aircraft, and are both indespensable to the RAF family,  Mechanical Technicians focus on all moving parts of an aircraft, whilst Avionics Technicians focus on all electronics and computer systems for navigation.',
+  //   img: '/aircraft-tech-avionics.jpg',
+  //   // position: [-7, -1, 15.5],
+  //   position: [-7.5, -2, 16.5],
+  // },
   {
     type: 'link',
     title: 'Pilot',
@@ -174,6 +184,16 @@ const hotspots = [
       'Specialising in combat tactics, weaponry, fieldcraft and force protection, the RAF Regiment is the Force that protects the Force. They ensure the protection on the ground, whilst the RAF operates in the air.',
     img: '/raf-regiment-gunner.jpg',
     position: [11.3, 0.9, 14],
+  },
+  {
+    type: 'video',
+    title: 'Adult Registered Nurse',
+    link: vimeoARN,
+    description:
+      'Nursing officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line. Flt Lt Sara Drivers talks about her role, and experience on deployments around the world.',
+    img: null,
+    // position: [-17.8, 1.7, -1.7],
+    position: [-17.2, 4.5, 1.8],
   },
   {
     type: 'find',
