@@ -296,7 +296,7 @@ const hotspots = [
   },
   {
     type: 'link',
-    title: 'Aircraft Technician Avionics',
+    title: 'Aircraft Technician (Avionics)',
     link: 'https://joom.ag/8had',
     description:
       'As an Aircraft Technician (Avionics) look after all electrical systems on an aircraft, like coms, radio systems and navigation.',
