@@ -215,7 +215,7 @@ const Model = ({ live }) => {
             <div className='name'>UK</div>
           </div>
           <div className='section'>
-            <div className='title'>ROLES</div>
+            <div className='title'>PROFESSIONS</div>
             <div className='description'>
               Medical Services, Logistics, Security & Resilience Operations,
               People Operations, Chaplaincy, Legal, Air Crew, Engineering
@@ -249,7 +249,7 @@ const Model = ({ live }) => {
             <div className='name'>ROMANIA</div>
           </div>
           <div className='section'>
-            <div className='title'>ROLES</div>
+            <div className='title'>PROFESSIONS</div>
             <div className='description'>
               Engineering, Intelligence, Air and Space Operations, Logistics,
               Security & Resilience Operations
@@ -284,7 +284,7 @@ const Model = ({ live }) => {
             <div className='name'>CARIBBEAN</div>
           </div>
           <div className='section'>
-            <div className='title'>ROLES</div>
+            <div className='title'>PROFESSIONS</div>
             <div className='description'>
               Medical Services, Air & Space Operations, Engineering,
               Intelligence, Logistics

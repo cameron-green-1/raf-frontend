@@ -3,7 +3,8 @@ import ScenarioTemplate from '../components/scenarioTemplate';
 
 const scenario = {
   satelliteImage: '/loader-ruman.jpg',
-  operation: 'Ruman',
+  // operation: 'Ruman',
+  operation: 'RUMAN',
   location: 'Undisclosed',
   details: '83 Expeditionary Force Forward Operating Base. 4 Typhoons',
   professions: 'Flight Control, Engineer, Cyber Security',

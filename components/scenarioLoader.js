@@ -76,7 +76,7 @@ const Briefing = ({ setSecondLoading, scenario }) => {
             <p>{scenario.details}</p>
           </li>
           <li className={styles.item}>
-            <h1>DETAILS</h1>
+            <h1>PROFESSIONS</h1>
             {/* <p>Flight Control, Engineer, Cyber Security</p> */}
             <p>{scenario.professions}</p>
           </li>

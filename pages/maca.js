@@ -3,10 +3,11 @@ import ScenarioTemplate from '../components/scenarioTemplate';
 
 const scenario = {
   satelliteImage: '/loader-maca.jpg',
-  operation: 'Maca Support',
-  location: 'Undisclosed',
-  details: '83 Expeditionary Force Forward Operating Base. 4 Typhoons',
-  professions: 'Flight Control, Engineer, Cyber Security',
+  // operation: 'Maca Support',
+  operation: 'MACA',
+  location: 'UK',
+  details: 'Military and civil cooperation, RAF bases, air assets',
+  professions: 'Engineering, Medical Services, Logistics',
   // video: '/briefing-demo.webm',
   video: '/intro-maca.webm',
   safariVideo: '/intro-maca.mov',

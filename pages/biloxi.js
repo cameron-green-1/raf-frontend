@@ -3,10 +3,12 @@ import ScenarioTemplate from '../components/scenarioTemplate';
 
 const scenario = {
   satelliteImage: '/loader-biloxi.jpg',
-  operation: 'Biloxi',
-  location: 'Undisclosed',
-  details: '83 Expeditionary Force Forward Operating Base. 4 Typhoons',
-  professions: 'Flight Control, Engineer, Cyber Security',
+  // operation: 'Biloxi',
+  operation: 'BILOXI',
+  location: 'Caribbean',
+  details:
+    'Joint service operation, forward operating base, multi engine and rotary air assets',
+  professions: 'Medical Services, Logistics, Security and Resilience',
   // video: '/briefing-demo.webm',
   video: '/intro-biloxi.webm',
   safariVideo: '/intro-biloxi.mov',
