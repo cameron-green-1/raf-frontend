@@ -40,6 +40,7 @@
 }
 
 .holdingLogos {
+  width: 300px;
 }
 
 .holding p {
@@ -92,14 +93,14 @@
 
 @media (max-width: 768px) {
   .holdingLogo {
-    width: 350px;
+    width: 300px;
     margin-bottom: 40px;
     /* margin-bottom: -20px; */
     /* transform: translateY(-25%); */
     /* margin-bottom: 20px; */
   }
   .holdingLogos {
-    width: 300px;
+    width: 200px;
   }
   .holding p {
     font-size: 1rem;
