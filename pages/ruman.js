@@ -193,7 +193,7 @@ const hotspots = [
       'Nursing officers manage the teams of Registered Nurses in the RAF, while still delivering a high standard care, in hospitals at home, or on postings and deployments abroad, near the front line. Flt Lt Sara Drivers talks about her role, and experience on deployments around the world.',
     img: null,
     // position: [-17.8, 1.7, -1.7],
-    position: [-17.2, 1, -6.1],
+    position: [-17.2, 2.5, -6.1],
   },
   {
     type: 'find',
