@@ -13,6 +13,7 @@ import {
   debugHolding,
   debugLaunch,
   debugPassword,
+  debugHoldingLink,
   getDate,
   getTime,
   url,
@@ -60,8 +61,9 @@ export async function getStaticProps() {
 const evaluatePassword = (e, router, isHolding, setIncorrectPass) => {
   e.preventDefault();
   if (isHolding) {
-    window.location.href =
-      'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds';
+    // window.location.href =
+    //   'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds';
+    window.location.href = debugHoldingLink;
   } else {
     // const setPassword = 'RAF_W0rld@1';
     const input = document.getElementById('input-password');

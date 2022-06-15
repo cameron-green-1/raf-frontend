@@ -123,6 +123,86 @@ const vimeoMACA = (
   ></iframe>
 );
 
+const vimeoReligion = (
+  <iframe
+    src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoBenefits = (
+  <iframe
+    src='https://player.vimeo.com/video/715941929?h=2679020c86'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoLGBT = (
+  <iframe
+    src='https://player.vimeo.com/video/715941469?h=9b4cb30a9e'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoWomen = (
+  <iframe
+    src='https://player.vimeo.com/video/715941868?h=21170e86b6'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoRoles = (
+  <iframe
+    src='https://player.vimeo.com/video/715941757?h=e6f2fd8c43'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoInspiration = (
+  <iframe
+    src='https://player.vimeo.com/video/715941715?h=d618193375'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoApprenticeships = (
+  <iframe
+    src='https://player.vimeo.com/video/715941196?h=84e13f6423'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
+const vimeoPhase1 = (
+  <iframe
+    src='https://player.vimeo.com/video/715940901?h=3dcb5f7ae5'
+    frameBorder='0'
+    allow='autoplay; fullscreen; picture-in-picture'
+    allowFullScreen
+    className='vimeo'
+  ></iframe>
+);
+
 // const vimeoSuppFAR = (
 //   <iframe
 //     src='https://player.vimeo.com/video/715942022?h=2208ca34cb'
@@ -410,48 +490,65 @@ const hotspots = [
   // },
   {
     type: 'find',
-    title: 'Find your role',
+    title: 'Life in the RAF',
     link: null,
     links: [
       {
         title: 'Faith and Religion',
         type: 'link',
-        link: 'https://vimeo.com/715942022/2208ca34cb',
+        // link: 'https://vimeo.com/715942022/2208ca34cb',
+        link: vimeoReligion,
+        description:
+          'Amir Khan is a Medical Officer and comes from a background of Pashtun Muslim. He talks about how the RAF has grown into a diverse organisation; different religions bring languages and culture which makes for a stronger RAF.',
       },
       {
         title: 'Benefits and Lifestyle',
         type: 'link',
-        link: 'https://vimeo.com/715941929/2679020c86',
+        link: vimeoBenefits,
+        description:
+          'The RAF has countless benefits to offer, from subsidised accommodation to travels and sports competing in your paid time, no two days are the same. You might not know it, but the RAF also offers very competitive salaries. Find out more on the RAF website.',
       },
       {
         title: 'LGBTQ+',
         type: 'link',
-        link: 'https://vimeo.com/715941469/9b4cb30a9e',
+        link: vimeoLGBT,
+        description:
+          'The RAF counts many members of the LGBTQ+ community in its ranks, and as such, created a network dedicated to educating the workforce, and making sure everyone is treated fairly.',
       },
       {
         title: 'Women in the RAF',
         type: 'link',
-        link: 'https://vimeo.com/715941868/21170e86b6',
+        link: vimeoWomen,
+        description:
+          'The RAF is proud to count over 5,000 women in its ranks. All roles are open to everyone in the RAF, and we thrive to empower everyone, no matter their gender or ethnicity.',
       },
       {
         title: 'Roles in the RAF',
         type: 'link',
-        link: 'https://vimeo.com/715941757/e6f2fd8c43',
+        link: vimeoRoles,
+        description:
+          'The RAF offer a wide variety of roles, which are vital to keep the Air Force operating every day. From Logistics to Military Working Dogs and RAF Firefighters, no day is the same, and no role is the same either.',
       },
       {
         title: 'Inspiration',
         type: 'link',
-        link: 'https://vimeo.com/715941715/d618193375',
+        link: vimeoInspiration,
+        description:
+          'Everyone in the RAF had their interest sparked somewhere in their lives. Whether it is to follow the footsteps of a family member, or to fulfil their duty to their country, there are so many goals that keep our personnel going.',
       },
       {
         title: 'Apprenticeships',
         type: 'link',
-        link: 'https://vimeo.com/715941196/84e13f6423',
+        link: vimeoApprenticeships,
+        description:
+          'Every ground role offers an Apprenticeship in the RAF. When leaving school at 16, you can follow an NVQ in order to get qualified for your role.',
       },
       {
         title: 'Phase 1 Training Meet Jessica',
         type: 'link',
-        link: 'https://vimeo.com/715940901/3dcb5f7ae5',
+        link: vimeoPhase1,
+        description:
+          'Phase 1 Training can seem scary at first, every personnel in the RAF has gone through that training, and most have felt nervous about the first day. This training is a great way to meet RAF personel, and learn about the forces. From marching to weapon handling, you will learn everything there is to learn about the military life.',
       },
     ],
     description:

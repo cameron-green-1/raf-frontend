@@ -7,6 +7,81 @@
   height: 100%;
 }
 
+.gridVideo {
+  display: grid;
+  position: relative;
+}
+
+/* 
+  Vimeo in globals
+*/
+
+.gridVideo div {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.titleVideo {
+  /* grid-row: 3 / 4; */
+  /* grid-column: 1 / 2; */
+  /* transform: translateY(-75px); */
+  max-width: 250px;
+}
+
+.descriptionVideo {
+  grid-row: 2 / 4;
+  grid-column: 2 / 3;
+  margin-left: 40px;
+}
+
+.goBack {
+  position: fixed;
+  top: 0px;
+  left: 40px;
+  width: 40px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10 !important;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.goBack svg {
+  width: 100%;
+  height: 100%;
+}
+
+.goBack svg path:first-of-type {
+  transition: fill 0.2s ease-in-out;
+}
+
+.goBack svg:hover path:first-of-type {
+  fill: #9a0a27;
+}
+
+@media (max-width: 1024px) {
+  .goBack {
+      left: 20px;
+      width: 30px;
+  }
+
+  .titleVideo {
+    transform: translateY(0px);
+    max-width: auto;
+  }
+  .descriptionVideo {
+    /* grid-row: 4 / 5; */
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    margin-left: 0;
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+
 .image {
   position: relative;
 }
@@ -128,27 +203,38 @@
   max-height: 300px;
 }
 
-.list::-webkit-scrollbar {
+.listFind {
+  list-style: none;
+  overflow-y: auto;
+  max-height: 375px;
+}
+
+.listFind .button {
+  min-width: 375px;
+  margin-right: 20px;
+}
+
+.list::-webkit-scrollbar, .listFind::-webkit-scrollbar {
   display: block;
   width: 10px;
 }
 
-.list::-webkit-scrollbar-button {
+.list::-webkit-scrollbar-button, .listFind::-webkit-scrollbar-button {
   display: none;
   width: 8px;
 }
 
-.list::-webkit-scrollbar-track {
+.list::-webkit-scrollbar-track, .listFind::-webkit-scrollbar-track {
   background-color: #ffffff40;
   width: 8px;
 }
 
-.list::-webkit-scrollbar-track-piece {
+.list::-webkit-scrollbar-track-piece, .listFind::-webkit-scrollbar-track-piece {
   background-color: #00000000;
   width: 8px;
 }
 
-.list::-webkit-scrollbar-thumb {
+.list::-webkit-scrollbar-thumb, .listFind::-webkit-scrollbar-thumb {
   background-color: white;
   width: 10px;
   border-radius: 8px;
@@ -208,8 +294,13 @@
     width: 100%;
   }
 
-  .list {
+  .list, .listFind {
     max-height: 150px;
+  }
+
+  .listFind .button {
+    min-width: 90%;
+    margin-right:  0;
   }
 
   .item button {
