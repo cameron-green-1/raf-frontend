@@ -48,20 +48,20 @@ const PanelFind = ({ hotspot }) => {
             <path
               d='M6.99947 11.5459L11.5449 7.00044'
               stroke='white'
-              stroke-width='2'
-              stroke-linecap='round'
+              strokeWidth='2'
+              strokeLinecap='round'
             />
             <path
               d='M8.60766 11.6077H17.3923'
               stroke='white'
-              stroke-width='2'
-              stroke-linecap='round'
+              strokeWidth='2'
+              strokeLinecap='round'
             />
             <path
               d='M7 11.5455L11.5455 17'
               stroke='white'
-              stroke-width='2'
-              stroke-linecap='round'
+              strokeWidth='2'
+              strokeLinecap='round'
             />
           </svg>
         </button>
