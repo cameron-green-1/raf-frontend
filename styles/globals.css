@@ -437,6 +437,30 @@ a {
   fill: white;
 } */
 
+#input-password {
+  outline: none;
+  /* border: solid #0097d1 1px; */
+  border: solid lightgrey 1px;
+  width: 100%;
+  /* width: calc(100% - 100px); */
+  margin-bottom: 20px;
+  padding: 10px 0 10px 20px;
+  background: none;
+  color: white;
+  transition: border-color 0.2s ease-in-out;
+}
+
+#error-msg {
+  color: #ca0937;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+#input-password:focus {
+  border-color: #0097d1;
+}
+
 @media (max-width: 768px) {
   .hotspotGlobe {
     /* width: 35px; */

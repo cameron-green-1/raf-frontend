@@ -5,10 +5,10 @@ const scenario = {
   satelliteImage: '/loader-biloxi.jpg',
   // operation: 'Biloxi',
   operation: 'BILOXI',
-  location: 'Caribbean',
-  details:
-    'Joint service operation, forward operating base, multi engine and rotary air assets',
-  professions: 'Medical Services, Logistics, Security and Resilience',
+  location: 'Undisclosed',
+  details: 'Expeditionary Force Forward Operating Base. 4 Typhoons',
+  professions:
+    'Weapons Technician, Aircraft Technician (Avionics), Logistics Supplier',
   // video: '/briefing-demo.webm',
   video: '/intro-biloxi.webm',
   safariVideo: '/intro-biloxi.mov',
@@ -442,7 +442,7 @@ const Biloxi = () => {
   return (
     <>
       <Head>
-        <title>RAF World | Operation Biloxi</title>
+        <title>RAF World | BILOXI</title>
         <meta name='description' content='RAF Access All Areas experience' />
         <link rel='icon' href='/favicon3.png' />
       </Head>

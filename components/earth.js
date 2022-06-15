@@ -208,7 +208,7 @@ const Model = ({ live }) => {
           <Close />
           <div className='section'>
             <div className='title'>OPERATION</div>
-            <div className='name operation'>MACA SUPPORT</div>
+            <div className='name operation'>OPERATION MACA</div>
           </div>
           <div className='section'>
             <div className='title'>LOCATION</div>
@@ -217,8 +217,7 @@ const Model = ({ live }) => {
           <div className='section'>
             <div className='title'>PROFESSIONS</div>
             <div className='description'>
-              Medical Services, Logistics, Security & Resilience Operations,
-              People Operations, Chaplaincy, Legal, Air Crew, Engineering
+              Engineering, Medical Services, Logistics
             </div>
           </div>
           <div className='section section-launch'>
@@ -246,13 +245,13 @@ const Model = ({ live }) => {
           </div>
           <div className='section'>
             <div className='title'>LOCATION</div>
-            <div className='name'>ROMANIA</div>
+            <div className='name'>UNDISCLOSED</div>
           </div>
           <div className='section'>
             <div className='title'>PROFESSIONS</div>
             <div className='description'>
-              Engineering, Intelligence, Air and Space Operations, Logistics,
-              Security & Resilience Operations
+              Weapons Technician, Aircraft Technician (Avionics), Logistics
+              Supplier
             </div>
           </div>
           <div className='section-launch'>
@@ -286,8 +285,7 @@ const Model = ({ live }) => {
           <div className='section'>
             <div className='title'>PROFESSIONS</div>
             <div className='description'>
-              Medical Services, Air & Space Operations, Engineering,
-              Intelligence, Logistics
+              Medical Services, Logistics, Security and Resilience
             </div>
           </div>
           <div className='section section-launch'>

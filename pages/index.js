@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import useSWR from 'swr';
 import { useEffect, useState, useRef } from 'react';
@@ -11,6 +12,7 @@ import {
   defaultLaunch,
   debugHolding,
   debugLaunch,
+  debugPassword,
   getDate,
   getTime,
   url,
@@ -55,11 +57,34 @@ export async function getStaticProps() {
   }
 }
 
+const evaluatePassword = (e, router, isHolding, setIncorrectPass) => {
+  e.preventDefault();
+  if (isHolding) {
+    window.location.href =
+      'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds';
+  } else {
+    // const setPassword = 'RAF_W0rld@1';
+    const input = document.getElementById('input-password');
+    const inputPassword = input.value;
+    // if (setPassword === inputPassword) {
+    if (inputPassword === debugPassword) {
+      setIncorrectPass(false);
+      router.push('/operations');
+    } else {
+      setIncorrectPass(true);
+      input.value = '';
+      // alert('nice try bish');
+    }
+  }
+};
+
 const Holding = ({ isHolding, launchTime }) => {
+  const router = useRouter();
   const container = useRef(null);
   const date = getDate(launchTime);
   const time = getTime(launchTime);
   const dateTime = `${date} @ ${time}`;
+  const [incorrectPass, setIncorrectPass] = useState(false);
   useEffect(() => {
     handleMobileVh();
     setTimeout(() => {
@@ -101,26 +126,45 @@ const Holding = ({ isHolding, launchTime }) => {
             </>
           )}
         </p>
-        <Link
+        {
+          // WILL NEED TO GET THIS FROM THE CMS. THIS IS JUST TESTING FOR NOW
+        }
+        <form
+          onSubmit={(e) =>
+            evaluatePassword(e, router, isHolding, setIncorrectPass)
+          }
+        >
+          <input
+            type='password'
+            id='input-password'
+            style={{ display: isHolding ? 'none' : 'block' }}
+          />
+          {/* <Link
           href={
             isHolding
               ? 'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds'
               : '/operations'
           }
-        >
-          {/* <button style={styles.holdingButton}> */}
-          <button>
-            {/* <span style={{ fontSize: '1.25rem', color: 'white' }}> */}
+        > */}
+          {/* <button onClick={() => evaluatePassword(router)}> */}
+          <button style={{ marginBottom: incorrectPass ? 0 : 80 }}>
             <span className={styles.buttonText}>
               {isHolding ? 'REGISTER NOW' : 'VISIT NOW'}
             </span>
           </button>
-        </Link>
+          {/* </Link> */}
+        </form>
+        <p
+          id='error-msg'
+          style={{
+            display: incorrectPass ? 'block' : 'none',
+            marginBottom: incorrectPass ? 80 : 0,
+          }}
+        >
+          Incorrect password
+        </p>
         <img
           className={styles.holdingLogos}
-          // src='/holding-logos.png'
-          // src='/holding-logos-2.png'
-          // src='/holding-logos-3.png'
           src='/holding-logos-4.png'
           alt='RAF Regular & Reserve | No Ordinary Job'
         />

@@ -5,9 +5,10 @@ const scenario = {
   satelliteImage: '/loader-ruman.jpg',
   // operation: 'Ruman',
   operation: 'RUMAN',
-  location: 'Undisclosed',
-  details: '83 Expeditionary Force Forward Operating Base. 4 Typhoons',
-  professions: 'Flight Control, Engineer, Cyber Security',
+  location: 'Caribbean',
+  details:
+    'Joint service operation, forward operating base, multi engine and rotary air assets',
+  professions: 'Medical Services, Logistics, Security and Resilience',
   // video: '/briefing-demo.webm',
   video: '/intro-ruman.webm',
   safariVideo: '/intro-ruman.mov',
@@ -385,7 +386,7 @@ const Ruman = () => {
   return (
     <>
       <Head>
-        <title>RAF World | Operation Ruman</title>
+        <title>RAF World | RUMAN</title>
         <meta name='description' content='RAF Access All Areas experience' />
         <link rel='icon' href='/favicon3.png' />
       </Head>

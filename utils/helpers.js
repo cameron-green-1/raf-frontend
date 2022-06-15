@@ -9,6 +9,7 @@ export const defaultLaunch = '2022-03-30T18:30:00.000Z';
 export const debugHolding = false;
 export const debugLive = false;
 export const debugLaunch = '2022-03-30T18:30:00.000Z';
+export const debugPassword = 'RAF_W0rld@1';
 export const debugLatest = {
   title: 'Episode One',
   image: 'https://i.imgur.com/OSR02G8.jpg',
