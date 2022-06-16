@@ -267,7 +267,7 @@ const hotspots = [
     link: 'https://recruitment.raf.mod.uk/roles/roles-finder/air-operations-support/air-operations-control-sergeant',
     description:
       'As an RAF Air Operations (Control) Sergeant, you could be providing an air traffic control service at an airfield, working alongside civilian air traffic controllers at the UK’s Air Traffic Control Centre at Swanwick or as a Weapons Controller directing fast jet aircraft to intercept potentially hostile aircraft.',
-    img: '/air-operations-sgt.jpg',
+    img: '/air-operations-sgt-2.jpg',
     position: [-15.8, 2.5, 8.3],
   },
   {
