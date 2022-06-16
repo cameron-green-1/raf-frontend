@@ -303,15 +303,31 @@ const renderAnnotation = (hotspot, i) => {
         // targetPanel.style.opacity = 1;
         // console.log(e);
         const panels = document.querySelectorAll('.hotspot');
+
+        // closePanels();
+        // if (hit.name === 0) {
+        //   // console.log('find your role');
+        //   window.open(debugHoldingLink, '_blank');
+        // } else {
+        //   allowControls = false;
+        //   const targetPanel = panels[hit.name];
+        //   targetPanel.style.display = 'block';
+        //   targetPanel.style.opacity = 1;
+        // }
+
         panels.forEach((panel) => {
           stopVideo(panel);
           panel.style.display = 'none';
           panel.style.opacity = 0;
         });
-        allowControls = false;
-        const targetPanel = panels[i];
-        targetPanel.style.display = 'block';
-        targetPanel.style.opacity = 1;
+        if (i !== 0) {
+          allowControls = false;
+          const targetPanel = panels[i];
+          targetPanel.style.display = 'block';
+          targetPanel.style.opacity = 1;
+        } else {
+          window.open(debugHoldingLink, '_blank');
+        }
       }}
     >
       {hotspot.title.toUpperCase()}
