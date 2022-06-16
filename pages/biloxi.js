@@ -435,7 +435,7 @@ const hotspots = [
     link: 'https://recruitment.raf.mod.uk/roles/roles-finder/force-protection/raf-regiment-gunner',
     description:
       'As an RAF Regiment Gunner, you will specialise in combat tactics, weaponry, fieldcraft and force protection. You will be part of a highly trained team carrying out a range of crucial duties to defend RAF bases and overseas air operations.',
-    img: '/raf-regiment-gunner.jpg',
+    img: '/raf-regiment-gunner-2.jpg',
     position: [17.7, -2.5, 3.3],
   },
   {

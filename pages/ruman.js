@@ -341,7 +341,7 @@ const hotspots = [
     link: vimeoGunner,
     description:
       'Specialising in combat tactics, weaponry, fieldcraft and force protection, the RAF Regiment is the Force that protects the Force. They ensure the protection on the ground, whilst the RAF operates in the air.',
-    img: '/raf-regiment-gunner.jpg',
+    img: '/raf-regiment-gunner-2.jpg',
     position: [11.3, 0.9, 14],
   },
   {

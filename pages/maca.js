@@ -376,7 +376,7 @@ const hotspots = [
     link: 'https://joom.ag/uhad',
     description:
       'Specialising in combat tactics, weaponry, fieldcraft and force protection, the RAF Regiment is the Force that protects the Force. They ensure the protection on the ground, whilst the RAF operates in the air.',
-    img: '/raf-regiment-gunner.jpg',
+    img: '/raf-regiment-gunner-2.jpg',
     position: [-16, -0.5, 5.819120914630715],
   },
   {
