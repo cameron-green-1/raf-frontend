@@ -117,7 +117,7 @@ const Holding = ({ isHolding, launchTime }) => {
           {isHolding
             ? 'Sorry, RAF World is not currently live.'
             : // : 'Explore RAF World.'}
-              'Explore RAF World - Archwiliwch RAF '}
+              'Explore RAF World - Archwiliwch RAF World'}
         </p>
         <p>
           {isHolding ? (

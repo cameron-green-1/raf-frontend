@@ -539,7 +539,7 @@ const hotspots = [
     ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/life-in-the-raf.jpg',
+    img: '/life-in-the-raf-3.jpg',
     position: [-12.2, 2.5, 13.2],
     colour: 'blue',
   },
