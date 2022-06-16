@@ -206,13 +206,18 @@ const Model = ({ live }) => {
         <div className='scan-lines'></div>
         <div className='info'>
           <Close />
-          <div className='section'>
-            <div className='title'>OPERATION</div>
-            <div className='name operation'>OPERATION MACA</div>
-          </div>
-          <div className='section'>
-            <div className='title'>LOCATION</div>
-            <div className='name'>UK</div>
+          <div>
+            <div>
+              <div className='section'>
+                <div className='title'>OPERATION</div>
+                <div className='name operation'>OPERATION MACA</div>
+              </div>
+              <div className='section'>
+                <div className='title'>LOCATION</div>
+                <div className='name'>UK</div>
+              </div>
+            </div>
+            <img src='/maca-general.jpg' alt='MACA' />
           </div>
           <div className='section'>
             <div className='title'>PROFESSIONS</div>
@@ -239,14 +244,27 @@ const Model = ({ live }) => {
           </div> */}
           {/* <img src='/close.svg' alt='' className='close' /> */}
           <Close />
-          <div className='section'>
+          <div>
+            <div>
+              <div className='section'>
+                <div className='title'>OPERATION</div>
+                <div className='name operation'>OPERATION BILOXI</div>
+              </div>
+              <div className='section'>
+                <div className='title'>LOCATION</div>
+                <div className='name'>UNDISCLOSED</div>
+              </div>
+            </div>
+            <img src='/biloxi-general.jpg' alt='Biloxi' />
+          </div>
+          {/* <div className='section'>
             <div className='title operation'>OPERATION</div>
             <div className='name operation'>OPERATION BILOXI</div>
           </div>
           <div className='section'>
             <div className='title'>LOCATION</div>
             <div className='name'>UNDISCLOSED</div>
-          </div>
+          </div> */}
           <div className='section'>
             <div className='title'>PROFESSIONS</div>
             <div className='description'>
@@ -273,15 +291,28 @@ const Model = ({ live }) => {
           </div> */}
           {/* <img src='/close.svg' alt='' className='close' /> */}
           <Close />
-          <div className='scan' />
-          <div className='section'>
+          <div>
+            <div>
+              <div className='section'>
+                <div className='title'>OPERATION</div>
+                <div className='name operation'>OPERATION RUMAN</div>
+              </div>
+              <div className='section'>
+                <div className='title'>LOCATION</div>
+                <div className='name'>CARIBBEAN</div>
+              </div>
+            </div>
+            <img src='/ruman-general.jpg' alt='Biloxi' />
+          </div>
+          {/* <div className='scan' /> */}
+          {/* <div className='section'>
             <div className='title'>OPERATION</div>
             <div className='name operation'>OPERATION RUMAN</div>
           </div>
           <div className='section'>
             <div className='title'>LOCATION</div>
             <div className='name'>CARIBBEAN</div>
-          </div>
+          </div> */}
           <div className='section'>
             <div className='title'>PROFESSIONS</div>
             <div className='description'>

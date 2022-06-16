@@ -489,6 +489,29 @@ a {
   z-index: 2;
 }
 
+.info div {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.info div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info div img {
+  width: 50%;
+  z-index: 2;
+}
+
+@media (max-width: 1024px) {
+  .info div img {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .panel {
     width: 90%;
@@ -525,6 +548,8 @@ a {
 .section {
   position: relative;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* This will need attention when making responsive */
