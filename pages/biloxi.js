@@ -276,6 +276,15 @@ const vimeoPhase1 = (
 
 const hotspots = [
   {
+    // type: 'new',
+    type: 'link',
+    title: 'Find your role',
+    link: 'https://www.raf.mod.uk/recruitment/find-your-role',
+    position: [-16.1, 2.6, 7.6],
+    // position: [-12.2, -0.4, 13.2],
+    colour: 'blue',
+  },
+  {
     type: 'video',
     title: 'Weapons Technician',
     link: vimeoWeaponsTech,
@@ -532,6 +541,7 @@ const hotspots = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: '/general-technician.jpg',
     position: [-12.2, 2.5, 13.2],
+    colour: 'blue',
   },
 ];
 

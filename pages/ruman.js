@@ -228,6 +228,14 @@ const vimeoPhase1 = (
 const hotspots = [
   {
     type: 'link',
+    title: 'Find your role',
+    link: 'https://www.raf.mod.uk/recruitment/find-your-role',
+    position: [-5.8, 1, 17],
+    // position: [-12.2, -0.4, 13.2],
+    colour: 'blue',
+  },
+  {
+    type: 'link',
     title: 'Adult Registered Nurse',
     link: 'https://joom.ag/Ahad',
     description:
@@ -476,6 +484,7 @@ const hotspots = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: '/general-technician.jpg',
     position: [-12.2, -0.4, 13.2],
+    colour: 'blue',
   },
 ];
 

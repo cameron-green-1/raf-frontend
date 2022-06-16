@@ -295,6 +295,14 @@ const hotspots = [
   //   position: [19, 1, 2.5],
   // },
   {
+    // type: 'new',
+    type: 'link',
+    title: 'Find your role',
+    link: 'https://www.raf.mod.uk/recruitment/find-your-role',
+    position: [-12.2, 2, 13.2],
+    colour: 'blue',
+  },
+  {
     type: 'video',
     title: 'Registered Nurse (Mental Health)',
     // link: '/dummy.pdf',
@@ -555,7 +563,15 @@ const hotspots = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
     img: '/general-technician.jpg',
     position: [-12.2, -0.4, 13.2],
+    colour: 'blue',
   },
+  // {
+  //   type: 'new',
+  //   title: 'Find your role',
+  //   link: 'https://www.raf.mod.uk/recruitment/find-your-role',
+  //   position: [-12.2, 2, 13.2],
+  //   colour: 'blue',
+  // },
 ];
 
 const Maca = () => {

@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
-import { debugLaunch, debugLive, easeInOut } from '../utils/helpers';
+import {
+  debugLaunch,
+  debugLive,
+  easeInOut,
+  debugHoldingLink,
+} from '../utils/helpers';
 import ScenarioLoader from './scenarioLoader';
 import Logo from './logo';
 import Countdown from './countdown';
@@ -164,6 +169,7 @@ const createPano = (imageSrc, hotspots) => {
 
   // Closing panels
   const panels = document.querySelectorAll('.hotspot');
+  console.log(panels);
   const buttonCloseArr = document.querySelectorAll('.hotspot-close');
   const closePanels = () => {
     panels.forEach((panel) => {
@@ -237,13 +243,16 @@ const createPano = (imageSrc, hotspots) => {
     intersects.forEach((intersect) => {
       const hit = intersect.object;
       if (hit.type === 'Sprite' && hit.name !== 'text') {
-        // if (hit.type === 'Sprite') {
-        // console.log(hit);
         closePanels();
-        allowControls = false;
-        const targetPanel = panels[hit.name];
-        targetPanel.style.display = 'block';
-        targetPanel.style.opacity = 1;
+        if (hit.name === 0) {
+          // console.log('find your role');
+          window.open(debugHoldingLink, '_blank');
+        } else {
+          allowControls = false;
+          const targetPanel = panels[hit.name];
+          targetPanel.style.display = 'block';
+          targetPanel.style.opacity = 1;
+        }
       }
     });
     container.style.cursor = 'grabbing';
@@ -270,6 +279,9 @@ const renderPanel = (hotspot, i) => {
       return <PanelFind hotspot={hotspot} key={i} />;
     case 'text':
       return <PanelText hotspot={hotspot} key={i} />;
+    case 'new':
+      window.open(hotspot.link, '_blank');
+      return null;
     default:
       return null;
   }
@@ -281,7 +293,7 @@ const renderAnnotation = (hotspot, i) => {
       className={styles.annotation}
       id='annotation'
       key={i}
-      style={{ backgroundColor: hotspot.links ? '#1F2E54' : '#c60c30' }}
+      style={{ backgroundColor: hotspot.colour ? '#1F2E54' : '#c60c30' }}
       onClick={(e) => {
         // closePanels();
         // allowControls = false;

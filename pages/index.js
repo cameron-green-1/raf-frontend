@@ -63,7 +63,8 @@ const evaluatePassword = (e, router, isHolding, setIncorrectPass) => {
   if (isHolding) {
     // window.location.href =
     //   'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds';
-    window.location.href = debugHoldingLink;
+    // window.location.href = debugHoldingLink;
+    window.open(debugHoldingLink, '_blank');
   } else {
     // const setPassword = 'RAF_W0rld@1';
     const input = document.getElementById('input-password');
