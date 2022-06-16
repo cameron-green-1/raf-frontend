@@ -561,7 +561,7 @@ const hotspots = [
     ],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec ligula enim. Sed et egestas leo, quis volutpat enim. Praesent sed pellentesque ipsum, eget pretium erat. Aliquam at eleifend sapien, vitae tempor ante.',
-    img: '/general-technician.jpg',
+    img: '/life-in-the-raf.jpg',
     position: [-12.2, -0.4, 13.2],
     colour: 'blue',
   },
