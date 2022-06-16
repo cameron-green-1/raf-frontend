@@ -322,8 +322,8 @@ const hotspots = [
     link: 'https://joom.ag/0had',
     description:
       'Medical Officers keeps the RAF Personnel fit and medically prepared for operations. They delivery high standard of care, sometimes under callenging conditions.',
-    img: '/medical-officer.jpg',
-    position: [5.3, -0.5, 17],
+    img: '/maca-medical-officer-2.jpg',
+    position: [5.3, 0.5, 17],
   },
   {
     type: 'video',
