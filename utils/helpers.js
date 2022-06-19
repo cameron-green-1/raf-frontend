@@ -11,6 +11,13 @@ export const debugLive = false;
 export const debugLaunch = '2022-03-30T18:30:00.000Z';
 export const debugPassword = 'RAF_W0rld@1';
 export const debugHoldingLink = 'https://recruitment.raf.mod.uk/find-your-role';
+export const debugConfig = {
+  accessWord: 'RAF_W0rld@1',
+  holding: false,
+  holdingLink: 'https://recruitment.raf.mod.uk/find-your-role',
+  lauchTime: '2022-06-21T21:00+01:00',
+  live: false,
+};
 export const debugLatest = {
   title: 'Episode One',
   image: 'https://i.imgur.com/OSR02G8.jpg',

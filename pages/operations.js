@@ -36,7 +36,7 @@ export async function getStaticProps() {
     const live = jsonLive.data.attributes.live;
     return {
       props: { launch, live },
-      revalidate: 10,
+      // revalidate: 10,
     };
   } catch (err) {
     const launch = debugLaunch;

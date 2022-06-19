@@ -52,7 +52,7 @@ export async function getStaticProps() {
     const rooms = [...debugRooms];
     return {
       props: { launch, live, latest, rooms },
-      revalidate: 10,
+      // revalidate: 10,
     };
   }
 }

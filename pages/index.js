@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import useContentful from '../utils/useContentful';
 import Image from 'next/image';
 import useSWR from 'swr';
 import { useEffect, useState, useRef } from 'react';
@@ -14,6 +15,7 @@ import {
   debugLaunch,
   debugPassword,
   debugHoldingLink,
+  debugConfig,
   getDate,
   getTime,
   url,
@@ -33,61 +35,67 @@ const instructionsItems = instructionsText.map((txt, i) => (
   <p key={i}>{txt}</p>
 ));
 
-export async function getStaticProps() {
-  // export async function getServerSideProps() {
-  try {
-    const resHolding = await fetch(`${URL}/api/holding`);
-    const resLaunch = await fetch(`${URL}/api/launch-time`);
-    const jsonHolding = await resHolding.json();
-    const jsonLaunch = await resLaunch.json();
-    const holding = jsonHolding.data.attributes.holding;
-    const launch = jsonLaunch.data.attributes.launch;
-    console.log(holding);
-    return {
-      props: { holding, launch },
-      revalidate: 10,
-    };
-  } catch (err) {
-    // const holding = defaultHolding;
-    // const launch = defaultLaunch;
-    const holding = debugHolding;
-    const launch = debugLaunch;
-    return {
-      props: { holding, launch },
-    };
-  }
-}
+// export async function getStaticProps() {
+//   // export async function getInitialProps() {
+//   // export async function getServerSideProps() {
+//   try {
+//     const resHolding = await fetch(`${URL}/api/holding`);
+//     const resLaunch = await fetch(`${URL}/api/launch-time`);
+//     const jsonHolding = await resHolding.json();
+//     const jsonLaunch = await resLaunch.json();
+//     const holding = jsonHolding.data.attributes.holding;
+//     const launch = jsonLaunch.data.attributes.launch;
+//     // const contentfulDemo = await fetch(
+//     //   'https://cdn.contentful.com/spaces/yjnrxugnhvwu/environments/master/entries/74KRAy3QXQblm1croVqgSu?access_token=qIcENWNQUi9tOlz1kI5073aBeNDnvJPcT9wCOkvn7OQ'
+//     // );
+//     // const jsonContentfulDemo = await contentfulDemo.json();
+//     // const fields = jsonContentfulDemo.fields;
+//     // console.log(fields);
+//     console.log(holding);
+//     return {
+//       props: { holding, launch },
+//       // revalidate: 10,
+//     };
+//   } catch (err) {
+//     // const holding = defaultHolding;
+//     // const launch = defaultLaunch;
+//     const holding = debugHolding;
+//     const launch = debugLaunch;
+//     return {
+//       props: { holding, launch },
+//     };
+//   }
+// }
 
-const evaluatePassword = (e, router, isHolding, setIncorrectPass) => {
+const evaluatePassword = (e, router, isHolding, setIncorrectPass, password) => {
   e.preventDefault();
   if (isHolding) {
-    // window.location.href =
-    //   'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds';
-    // window.location.href = debugHoldingLink;
     window.open(debugHoldingLink, '_blank');
   } else {
-    // const setPassword = 'RAF_W0rld@1';
     const input = document.getElementById('input-password');
     const inputPassword = input.value;
-    // if (setPassword === inputPassword) {
-    if (inputPassword === debugPassword) {
+    if (inputPassword === password) {
       setIncorrectPass(false);
       router.push('/operations');
     } else {
       setIncorrectPass(true);
       input.value = '';
-      // alert('nice try bish');
     }
   }
 };
 
-const Holding = ({ isHolding, launchTime }) => {
+// const Holding = ({ isHolding, launchTime }) => {
+const Holding = ({ isHolding, config }) => {
   const router = useRouter();
   const container = useRef(null);
-  const date = getDate(launchTime);
-  const time = getTime(launchTime);
-  const dateTime = `${date} @ ${time}`;
+  // const date = getDate(launchTime);
+  // const time = getTime(launchTime);
+  // const dateTime = `${date} @ ${time}`;
   const [incorrectPass, setIncorrectPass] = useState(false);
+  const [holding, setHolding] = useState(true);
+  const [password, setPassword] = useState(null);
+  const [time, setTime] = useState(null);
+  let date;
   useEffect(() => {
     handleMobileVh();
     setTimeout(() => {
@@ -101,26 +109,46 @@ const Holding = ({ isHolding, launchTime }) => {
       animate.setSpeed(1.5);
     }, 1000);
   }, []);
+  useEffect(() => {
+    console.log(config.launchTime);
+    if (config.launchTime) {
+      // Holding
+      setHolding(config.holding);
+      // Password
+      setPassword(config.accessWord);
+      // Launch time
+      date = new Date(config.launchTime);
+      console.log(date);
+      const dateArr = date.toString().split(' ');
+      console.log(dateArr);
+      const time = dateArr[4];
+      console.log(typeof time);
+      const displayedTime = time.slice(0, -3);
+      console.log(displayedTime);
+      setTime(displayedTime);
+    }
+  }, [config]);
   return (
     <div className='wrapper'>
       <Head>
         <title>RAF World | Access All Areas</title>
         <meta name='description' content='RAF Access All Areas experience' />
-        {/* <link rel='icon' href='/favicon.ico' /> */}
-        {/* <link rel='icon' href='/favicon.png' /> */}
         <link rel='icon' href='/favicon3.png' />
       </Head>
       <img src='/stars.jpg' className={styles.bg} />
       <main className={styles.holding}>
         <div className={styles.holdingLogo} ref={container}></div>
         <p>
-          {isHolding
-            ? 'Sorry, RAF World is not currently live.'
-            : // : 'Explore RAF World.'}
-              'Explore RAF World - Archwiliwch RAF World'}
+          {
+            // isHolding
+            holding
+              ? 'Sorry, RAF World is not currently live.'
+              : // : 'Explore RAF World.'}
+                'Explore RAF World - Archwiliwch RAF World'
+          }
         </p>
         <p>
-          {isHolding ? (
+          {/* {isHolding ? (
             <>
               The next event is on <span>{dateTime}</span>
             </>
@@ -128,14 +156,14 @@ const Holding = ({ isHolding, launchTime }) => {
             <>
               The event starts at <span>{`@ ${time}`}</span>
             </>
-          )}
+          )} */}
+          <>
+            The event starts at <span>{`@ ${time}`}</span>
+          </>
         </p>
-        {
-          // WILL NEED TO GET THIS FROM THE CMS. THIS IS JUST TESTING FOR NOW
-        }
         <form
           onSubmit={(e) =>
-            evaluatePassword(e, router, isHolding, setIncorrectPass)
+            evaluatePassword(e, router, isHolding, setIncorrectPass, password)
           }
         >
           <input
@@ -143,20 +171,11 @@ const Holding = ({ isHolding, launchTime }) => {
             id='input-password'
             style={{ display: isHolding ? 'none' : 'block' }}
           />
-          {/* <Link
-          href={
-            isHolding
-              ? 'https://www.raf.mod.uk/recruitment/find-your-role?gclid=CjwKCAiAjoeRBhAJEiwAYY3nDMXctPPv8gXRKpG53HH6kys5YSiBfrt3IUmShmy6ekuR0cyCILRQjxoCfqUQAvD_BwE&gclsrc=aw.ds'
-              : '/operations'
-          }
-        > */}
-          {/* <button onClick={() => evaluatePassword(router)}> */}
           <button style={{ marginBottom: incorrectPass ? 0 : 80 }}>
             <span className={styles.buttonText}>
               {isHolding ? 'REGISTER NOW' : 'VISIT NOW'}
             </span>
           </button>
-          {/* </Link> */}
         </form>
         <p
           id='error-msg'
@@ -177,28 +196,41 @@ const Holding = ({ isHolding, launchTime }) => {
   );
 };
 
-const fetcher = async (url) => {
-  const res = await fetch(url);
-  const json = await res.json();
-  const data = json.data.attributes.holding;
-  return data;
-};
+// const fetcher = async (url) => {
+//   const res = await fetch(url);
+//   const json = await res.json();
+//   const data = json.data.attributes.holding;
+//   return data;
+// };
 
 const Home = ({ holding, launch }) => {
-  const { data, error } = useSWR(`${URL}/api/holding`, fetcher, {
-    fallbackData: holding,
-  });
-  // if (error) console.log(err);
-  // if (!data) console.log('loading...');
-  const [isHolding, setIsHolding] = useState(true);
-  useEffect(() => {
+  // const { data, error } = useSWR(`${URL}/api/holding`, fetcher, {
+  //   fallbackData: holding,
+  // });
+  // const [isHolding, setIsHolding] = useState(true);
+  const { getChatRooms, getConfig, getLatestContent } = useContentful();
+  const [config, setConfig] = useState(JSON.parse(JSON.stringify(debugConfig)));
+  useEffect(async () => {
     // setIsHolding(holding);
     handleMobileVh();
+    // getChatRooms().then((res) => console.log(res));
+    // getLatestContent().then((res) => console.log(res));
+    const configRetrieved = await getConfig();
+    if (configRetrieved) {
+      console.log('config retrieved');
+      setConfig(JSON.parse(JSON.stringify(configRetrieved)));
+      // setDate(config.launchTime);
+      const dateTime = config.launchTime;
+      const dated = new Date(dateTime);
+      // const newDate = new Date(config.launchTime).toISOString();
+      // console.log(dated);
+    }
   }, []);
   return (
     <>
       {/* <Holding isHolding={isHolding} launchTime={launch} /> */}
-      <Holding isHolding={data} launchTime={launch} />
+      {/* <Holding isHolding={data} launchTime={launch} /> */}
+      <Holding config={config} />
       <motion.div
         className='slide'
         initial={{ y: '120%' }}
