@@ -81,8 +81,8 @@ const Latest = ({ launch, live, latest }) => {
   const [latestContent, setLatestContent] = useState(null);
   const [vimeoId, setVimeoId] = useState(null);
   let latestContentRetrieved;
+  const { getConfig, getLatestContent } = useContentful();
   useEffect(async () => {
-    const { getConfig, getLatestContent } = useContentful();
     setConfig(debugConfig);
     getConfig().then((res) => setConfig(res));
     getLatestContent().then((res) => setLatestContent(res));

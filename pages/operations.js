@@ -70,10 +70,10 @@ function Operations({ launch, live }) {
   // // if (error) console.log(error);
   // if (!data) console.log('loading...');
   const [config, setConfig] = useState(debugConfig);
+  const { getConfig } = useContentful();
   useEffect(async () => {
     // setLive(debugLive);
     handleMobileVh();
-    const { getConfig } = useContentful();
     setConfig(debugConfig);
     getConfig().then((res) => setConfig(res));
     // const configRetrieved = await getConfig();
