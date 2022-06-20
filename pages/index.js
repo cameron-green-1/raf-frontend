@@ -196,35 +196,19 @@ const Holding = ({ isHolding, config }) => {
   );
 };
 
-// const fetcher = async (url) => {
-//   const res = await fetch(url);
-//   const json = await res.json();
-//   const data = json.data.attributes.holding;
-//   return data;
-// };
-
 const Home = ({ holding, launch }) => {
-  // const { data, error } = useSWR(`${URL}/api/holding`, fetcher, {
-  //   fallbackData: holding,
-  // });
-  // const [isHolding, setIsHolding] = useState(true);
   const { getChatRooms, getConfig, getLatestContent } = useContentful();
   const [config, setConfig] = useState(JSON.parse(JSON.stringify(debugConfig)));
   useEffect(async () => {
-    // setIsHolding(holding);
     handleMobileVh();
+    // let configRetrieved;
+    getConfig().then((res) => setConfig(res));
     // getChatRooms().then((res) => console.log(res));
     // getLatestContent().then((res) => console.log(res));
-    const configRetrieved = await getConfig();
-    if (configRetrieved) {
-      console.log('config retrieved');
-      setConfig(JSON.parse(JSON.stringify(configRetrieved)));
-      // setDate(config.launchTime);
-      const dateTime = config.launchTime;
-      const dated = new Date(dateTime);
-      // const newDate = new Date(config.launchTime).toISOString();
-      // console.log(dated);
-    }
+    // const configRetrieved = await getConfig();
+    // if (configRetrieved) {
+    //   setConfig(JSON.parse(JSON.stringify(configRetrieved)));
+    // }
   }, []);
   return (
     <>
