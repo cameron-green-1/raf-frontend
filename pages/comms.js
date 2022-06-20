@@ -155,8 +155,8 @@ const Comms = ({ launch, live, latest, rooms }) => {
   const [chatRooms, setChatRooms] = useState(null);
   const [latestContent, setLatestContent] = useState(null);
   const [time, setTime] = useState(null);
+  const { getConfig, getChatRooms, getLatestContent } = useContentful();
   useEffect(() => {
-    const { getConfig, getChatRooms, getLatestContent } = useContentful();
     setConfig(debugConfig);
     getConfig().then((res) => setConfig(res));
     // setChatRooms(debugRooms);
