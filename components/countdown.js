@@ -97,7 +97,25 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
             router.pathname === '/operations' && !live ? 'block' : 'none',
         }}
       >
-        Join us from 18:00 to 18:30.
+        Join us now
+      </p>
+      <p
+        className={styles.extraInfo}
+        style={{
+          display:
+            router.pathname === '/operations' && !live ? 'block' : 'none',
+        }}
+      >
+        Live From The RAF Panel
+      </p>
+      <p
+        className={styles.extraInfo}
+        style={{
+          display:
+            router.pathname === '/operations' && !live ? 'block' : 'none',
+        }}
+      >
+        From 18:00 to 18:30.
       </p>
     </div>
   );
