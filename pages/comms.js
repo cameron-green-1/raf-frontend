@@ -155,30 +155,51 @@ const Comms = ({ launch, live, latest, rooms }) => {
   const [chatRooms, setChatRooms] = useState(null);
   const [latestContent, setLatestContent] = useState(null);
   const [time, setTime] = useState(null);
+
+  const { getConfig, getChatRooms, getLatestContent } = useContentful();
+  const configRetrieved = await getConfig();
+  const roomsRetrieved = await getChatRooms();
+  const latestContentRetrieved = await getLatestContent();
+  if (configRetrieved) {
+    console.log('config retrieved');
+    setConfig(configRetrieved);
+  }
+  if (roomsRetrieved) {
+    console.log('rooms retrieved');
+    setChatRooms(roomsRetrieved);
+    console.log(roomsRetrieved);
+    console.log(chatRooms);
+  }
+  if (latestContentRetrieved) {
+    console.log('latest content retrieved');
+    setLatestContent(latestContentRetrieved);
+    console.log(latestContentRetrieved);
+    console.log(latestContent);
+  }
   useEffect(() => {
-    async function getData() {
-      const { getConfig, getChatRooms, getLatestContent } = useContentful();
-      const configRetrieved = await getConfig();
-      const roomsRetrieved = await getChatRooms();
-      const latestContentRetrieved = await getLatestContent();
-      if (configRetrieved) {
-        console.log('config retrieved');
-        setConfig(configRetrieved);
-      }
-      if (roomsRetrieved) {
-        console.log('rooms retrieved');
-        setChatRooms(roomsRetrieved);
-        console.log(roomsRetrieved);
-        console.log(chatRooms);
-      }
-      if (latestContentRetrieved) {
-        console.log('latest content retrieved');
-        setLatestContent(latestContentRetrieved);
-        console.log(latestContentRetrieved);
-        console.log(latestContent);
-      }
-    }
-    getData();
+    // async function getData() {
+    //   const { getConfig, getChatRooms, getLatestContent } = useContentful();
+    //   const configRetrieved = await getConfig();
+    //   const roomsRetrieved = await getChatRooms();
+    //   const latestContentRetrieved = await getLatestContent();
+    //   if (configRetrieved) {
+    //     console.log('config retrieved');
+    //     setConfig(configRetrieved);
+    //   }
+    //   if (roomsRetrieved) {
+    //     console.log('rooms retrieved');
+    //     setChatRooms(roomsRetrieved);
+    //     console.log(roomsRetrieved);
+    //     console.log(chatRooms);
+    //   }
+    //   if (latestContentRetrieved) {
+    //     console.log('latest content retrieved');
+    //     setLatestContent(latestContentRetrieved);
+    //     console.log(latestContentRetrieved);
+    //     console.log(latestContent);
+    //   }
+    // }
+    // getData();
     // const { getConfig, getChatRooms, getLatestContent } = useContentful();
     // const configRetrieved = await getConfig();
     // const roomsRetrieved = await getChatRooms();
