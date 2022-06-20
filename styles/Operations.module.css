@@ -31,7 +31,8 @@
 }
 
 .items {
-  opacity: 0.55;
+  /* opacity: 0.55; */
+  opacity: 0.85;
 }
 
 .line {
@@ -96,11 +97,21 @@
   color: white !important;
 }
 
+.liveAt {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
 @media (max-width: 1024px) {
   /* .commsLink svg {
     width: 75px;
     height: 75px;
   } */
+  .liveAt {
+    display: none;
+  }
   .commsText {
     font-size: 1rem;
   }

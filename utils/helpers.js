@@ -15,7 +15,7 @@ export const debugConfig = {
   accessWord: 'RAF_W0rld@1',
   holding: false,
   holdingLink: 'https://recruitment.raf.mod.uk/find-your-role',
-  lauchTime: '2022-06-21T21:00+01:00',
+  launchTime: '2022-06-20T15:00+01:00',
   live: false,
 };
 export const debugLatest = {

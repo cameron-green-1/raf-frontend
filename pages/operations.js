@@ -3,8 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 import { useEffect, useState, useRef } from 'react';
+import useContentful from '../utils/useContentful';
 import { motion } from 'framer-motion';
-import { handleMobileVh, debugLaunch, debugLive, url } from '../utils/helpers';
+import {
+  handleMobileVh,
+  debugLaunch,
+  debugLive,
+  url,
+  debugConfig,
+} from '../utils/helpers';
 import Logo from '../components/logo';
 import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
@@ -25,46 +32,53 @@ const instructionsItems = instructionsText.map((txt, i) => (
   <p key={i}>{txt}</p>
 ));
 
-export async function getStaticProps() {
-  // export async function getServerSideProps() {
-  try {
-    const resLaunch = await fetch(`${URL}/api/launch-time`);
-    const resLive = await fetch(`${URL}/api/live`);
-    const jsonLaunch = await resLaunch.json();
-    const jsonLive = await resLive.json();
-    const launch = jsonLaunch.data.attributes.launch;
-    const live = jsonLive.data.attributes.live;
-    return {
-      props: { launch, live },
-      // revalidate: 10,
-    };
-  } catch (err) {
-    const launch = debugLaunch;
-    const live = debugLive;
-    return {
-      props: { launch, live },
-    };
-  }
-}
+// export async function getStaticProps() {
+//   // export async function getServerSideProps() {
+//   try {
+//     const resLaunch = await fetch(`${URL}/api/launch-time`);
+//     const resLive = await fetch(`${URL}/api/live`);
+//     const jsonLaunch = await resLaunch.json();
+//     const jsonLive = await resLive.json();
+//     const launch = jsonLaunch.data.attributes.launch;
+//     const live = jsonLive.data.attributes.live;
+//     return {
+//       props: { launch, live },
+//       // revalidate: 10,
+//     };
+//   } catch (err) {
+//     const launch = debugLaunch;
+//     const live = debugLive;
+//     return {
+//       props: { launch, live },
+//     };
+//   }
+// }
 
-const fetcher = async (url) => {
-  const res = await fetch(url);
-  const json = await res.json();
-  // console.log(json);
-  const data = json.data.attributes.live;
-  // console.log('data from fetcher is ', data);
-  return data;
-};
+// const fetcher = async (url) => {
+//   const res = await fetch(url);
+//   const json = await res.json();
+//   // console.log(json);
+//   const data = json.data.attributes.live;
+//   // console.log('data from fetcher is ', data);
+//   return data;
+// };
 
 function Operations({ launch, live }) {
-  const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
-    fallbackData: live,
-  });
-  // if (error) console.log(error);
-  if (!data) console.log('loading...');
-  useEffect(() => {
+  // const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
+  //   fallbackData: live,
+  // });
+  // // if (error) console.log(error);
+  // if (!data) console.log('loading...');
+  const [config, setConfig] = useState(debugConfig);
+  useEffect(async () => {
     // setLive(debugLive);
     handleMobileVh();
+    const { getConfig } = useContentful();
+    const configRetrieved = await getConfig();
+    if (configRetrieved) {
+      console.log('config retrieved');
+      setConfig(configRetrieved);
+    }
   }, []);
   return (
     <>
@@ -80,7 +94,8 @@ function Operations({ launch, live }) {
         <header className={styles.header}>
           <Logo className={styles.logo} />
           {/* <Countdown launch={launch} live={live} /> */}
-          <Countdown launch={launch} live={data} />
+          {/* <Countdown launch={launch} live={data} /> */}
+          <Countdown launch={config.launchTime} live={config.live} />
         </header>
         <div className={styles.instructions}>
           <img src='/rotate.svg' className={styles.rotate} alt='' />
@@ -89,20 +104,34 @@ function Operations({ launch, live }) {
         <Link href='/comms' passHref>
           <div className={styles.commsLink}>
             {/* <IconSatellite colour={live ? '#C60C30' : '#038FD6'} size={75} /> */}
-            <IconSatellite colour={data ? '#C60C30' : '#038FD6'} size={75} />
+            {/* <IconSatellite colour={data ? '#C60C30' : '#038FD6'} size={75} /> */}
+            <IconSatellite
+              colour={config.live ? '#C60C30' : '#038FD6'}
+              size={75}
+            />
             <div className={styles.commsText}>
               {/* <span style={{ color: live ? '#C60C30' : '#038FD6' }}> */}
-              <span style={{ color: data ? '#C60C30' : '#038FD6' }}>
+              {/* <span style={{ color: data ? '#C60C30' : '#038FD6' }}> */}
+              <span style={{ color: config.live ? '#C60C30' : '#038FD6' }}>
                 {/* {live ? "WE'RE LIVE" : 'VISIT THE'} */}
-                {data ? "WE'RE LIVE" : 'VISIT THE'}
+                {/* {data ? "WE'RE LIVE" : 'VISIT THE'} */}
+                {config.live ? "WE'RE LIVE" : 'VISIT THE'}
               </span>
               {/* {live ? 'CHAT NOW' : 'COMMS ROOM'} */}
-              {data ? 'CHAT NOW' : 'COMMS ROOM'}
+              {/* {data ? 'CHAT NOW' : 'COMMS ROOM'} */}
+              {config.live ? 'CHAT NOW' : 'COMMS ROOM'}
+              <span
+                className={styles.liveAt}
+                style={{ display: config.live ? 'none' : 'block' }}
+              >
+                Live at 18:00.
+              </span>
             </div>
           </div>
         </Link>
         {/* <Earth live={live} /> */}
-        <Earth live={data} />
+        {/* <Earth live={data} /> */}
+        <Earth live={config.live} />
         <Loader />
       </div>
       <motion.div

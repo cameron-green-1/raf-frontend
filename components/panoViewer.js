@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   debugLaunch,
   debugLive,
   easeInOut,
   debugHoldingLink,
+  debugConfig,
 } from '../utils/helpers';
+import useContentful from '../utils/useContentful';
 import ScenarioLoader from './scenarioLoader';
 import Logo from './logo';
 import Countdown from './countdown';
@@ -290,7 +292,8 @@ const renderPanel = (hotspot, i) => {
 const renderAnnotation = (hotspot, i) => {
   return (
     <div
-      className={styles.annotation}
+      // className={styles.annotation}
+      className={`${styles.annotation} noselect`}
       id='annotation'
       key={i}
       style={{ backgroundColor: hotspot.colour ? '#1F2E54' : '#c60c30' }}
@@ -343,9 +346,15 @@ const PanoViewer = ({
   scenario,
   duration,
 }) => {
-  useEffect(() => {
+  const [config, setConfig] = useState(debugConfig);
+  useEffect(async () => {
     createPano(imageSrc, hotspots);
-    const panels = document.querySelectorAll('.hotspot');
+    const { getConfig } = useContentful();
+    const configRetrieved = await getConfig();
+    if (configRetrieved) {
+      console.log('config retrieved');
+      setConfig(configRetrieved);
+    }
   }, []);
 
   return (
@@ -353,12 +362,19 @@ const PanoViewer = ({
       <div className={styles.container} id='container'>
         <div className={styles.sphere} id='sphere'></div>
       </div>
-      <div className={styles.header}>
+      {/* <div className={styles.header}> */}
+      <div className={`${styles.header} ${'noselect'}`}>
         <Logo />
         {/* <Countdown launch={debugLaunch} live={debugLive} changeToIcon={true} /> */}
-        <Countdown launch={launch} live={live} changeToIcon={true} />
+        {/* <Countdown launch={launch} live={live} changeToIcon={true} /> */}
+        <Countdown
+          launch={config.launchTime}
+          live={config.live}
+          changeToIcon={true}
+        />
       </div>
-      <div className={styles.footer}>
+      {/* <div className={styles.footer}> */}
+      <div className={`${styles.footer} ${'noselect'}`}>
         <Back setWidth={100} noPadding={true} />
         <img className={styles.around} src='/360.png' alt='' />
       </div>

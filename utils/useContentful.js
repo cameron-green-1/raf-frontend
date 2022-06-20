@@ -4,6 +4,8 @@ const useContentful = () => {
   const client = createClient({
     space: 'yjnrxugnhvwu',
     accessToken: 'qIcENWNQUi9tOlz1kI5073aBeNDnvJPcT9wCOkvn7OQ',
+    // space: process.env.SPACE,
+    // accessToken: process.env.ACCESSTOKEN,
   });
 
   const getConfig = async () => {

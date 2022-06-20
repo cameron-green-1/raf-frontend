@@ -10,38 +10,7 @@ const PanoViewer = dynamic(() => import('../components/panoViewer'), {
   ssr: false,
 });
 
-export async function getStaticProps() {
-  try {
-    const resLaunch = await fetch(`${URL}/api/launch-time`);
-    const resLive = await fetch(`${URL}/api/live`);
-    const jsonLaunch = await resLaunch.json();
-    const jsonLive = await resLive.json();
-    const launch = jsonLaunch.data.attributes.launch;
-    const live = jsonLive.data.attributes.live;
-    return {
-      props: { launch, live },
-      revalidate: 10,
-    };
-  } catch (err) {
-    const launch = debugLaunch;
-    const live = debugLive;
-    return {
-      props: { launch, live },
-    };
-  }
-}
-
-const fetcher = async (url) => {
-  const res = await fetch(url);
-  const json = await res.json();
-  const data = json.data.attributes.live;
-  return data;
-};
-
 const ScenarioTemplate = ({ launch, live, hotspots, imageSrc, scenario }) => {
-  const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
-    fallbackData: live,
-  });
   useEffect(() => {
     handleMobileVh();
   });
@@ -52,9 +21,9 @@ const ScenarioTemplate = ({ launch, live, hotspots, imageSrc, scenario }) => {
         imageSrc={imageSrc}
         hotspots={hotspots}
         scenario={scenario}
-        launch={launch}
+        // launch={launch}
         // live={live}
-        live={data}
+        // live={data}
       />{' '}
       <motion.div
         className='slide'

@@ -1,18 +1,35 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { calculateDelta, convertTime } from '../utils/helpers';
+import { calculateDelta, convertTime, debugConfig } from '../utils/helpers';
 import styles from '../styles/Countdown.module.css';
 import IconSatellite from './svg/iconSatellite';
 
 const Countdown = ({ launch, live = false, changeToIcon = false }) => {
-  const [countdown, setCountdown] = useState('');
+  // const [countdown, setCountdown] = useState('');
+  const router = useRouter();
+  const [countdown, setCountdown] = useState('00:00:00');
+  const [allowTimer, setAllowTimer] = useState(true);
   useEffect(() => {
-    setInterval(() => {
-      const delta = calculateDelta(launch);
-      const countdown = delta > 0 ? convertTime(delta) : '00:00:00';
-      setCountdown(countdown);
-    }, 1000);
+    // setInterval(() => {
+    //   const delta = calculateDelta(launch);
+    //   const countdown = delta > 0 ? convertTime(delta) : '00:00:00';
+    //   setCountdown(countdown);
+    // }, 1000);
   }, []);
+  useEffect(() => {
+    if (launch !== debugConfig.launchTime) {
+      if (allowTimer) {
+        console.log('setting timer');
+        setInterval(() => {
+          const delta = calculateDelta(launch);
+          const countdown = delta > 0 ? convertTime(delta) : '00:00:00';
+          setCountdown(countdown);
+        }, 1000);
+      }
+      setAllowTimer(false);
+    }
+  }, [launch]);
 
   return (
     <div style={{ pointerEvents: 'all' }}>
@@ -49,6 +66,39 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
           </div>
         </div>
       </Link>
+      {/* <p
+        className={styles.extraInfo}
+        style={{
+          display: router.pathname === '/operations' ? 'block' : 'none',
+        }}
+      >
+        Join us now
+      </p>
+      <p
+        className={styles.extraInfo}
+        style={{
+          display: router.pathname === '/operations' ? 'block' : 'none',
+        }}
+      >
+        Live From The RAF Panel
+      </p>
+      <p
+        className={styles.extraInfo}
+        style={{
+          display: router.pathname === '/operations' ? 'block' : 'none',
+        }}
+      >
+        From 18:00 to 18:30
+      </p> */}
+      <p
+        className={styles.extraInfo}
+        style={{
+          display:
+            router.pathname === '/operations' && !live ? 'block' : 'none',
+        }}
+      >
+        Join us from 18:00 to 18:30.
+      </p>
     </div>
   );
 };
