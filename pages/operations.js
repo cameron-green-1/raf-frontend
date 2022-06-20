@@ -74,12 +74,13 @@ function Operations({ launch, live }) {
     // setLive(debugLive);
     handleMobileVh();
     const { getConfig } = useContentful();
-    // const useContentfulRef = useRef(getConfig);
-    const configRetrieved = await getConfig();
-    if (configRetrieved) {
-      console.log('config retrieved');
-      setConfig(configRetrieved);
-    }
+    setConfig(debugConfig);
+    getConfig().then((res) => setConfig(res));
+    // const configRetrieved = await getConfig();
+    // if (configRetrieved) {
+    //   console.log('config retrieved');
+    //   setConfig(configRetrieved);
+    // }
   }, []);
   return (
     <>

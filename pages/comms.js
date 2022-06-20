@@ -155,31 +155,33 @@ const Comms = ({ launch, live, latest, rooms }) => {
   const [chatRooms, setChatRooms] = useState(null);
   const [latestContent, setLatestContent] = useState(null);
   const [time, setTime] = useState(null);
-  useEffect(async () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
     const { getConfig, getChatRooms, getLatestContent } = useContentful();
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const configRetrieved = await getConfig();
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const roomsRetrieved = await getChatRooms();
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const latestContentRetrieved = await getLatestContent();
-    if (configRetrieved) {
-      console.log('config retrieved');
-      setConfig(configRetrieved);
-    }
-    if (roomsRetrieved) {
-      console.log('rooms retrieved');
-      setChatRooms(roomsRetrieved);
-      console.log(roomsRetrieved);
-      console.log(chatRooms);
-    }
-    if (latestContentRetrieved) {
-      console.log('latest content retrieved');
-      setLatestContent(latestContentRetrieved);
-      console.log(latestContentRetrieved);
-      console.log(latestContent);
-    }
+    setConfig(debugConfig);
+    getConfig().then((res) => setConfig(res));
+    // setChatRooms(debugRooms);
+    getChatRooms().then((res) => setChatRooms(res));
+    // setLatestContent(debugLatest);
+    getLatestContent().then((res) => setLatestContent(res));
+    // const configRetrieved = await getConfig();
+    // const roomsRetrieved = await getChatRooms();
+    // const latestContentRetrieved = await getLatestContent();
+    // if (configRetrieved) {
+    //   console.log('config retrieved');
+    //   setConfig(configRetrieved);
+    // }
+    // if (roomsRetrieved) {
+    //   console.log('rooms retrieved');
+    //   setChatRooms(roomsRetrieved);
+    //   console.log(roomsRetrieved);
+    //   console.log(chatRooms);
+    // }
+    // if (latestContentRetrieved) {
+    //   console.log('latest content retrieved');
+    //   setLatestContent(latestContentRetrieved);
+    //   console.log(latestContentRetrieved);
+    //   console.log(latestContent);
+    // }
   }, []);
   useEffect(() => {
     const date = new Date(config.launchTime);

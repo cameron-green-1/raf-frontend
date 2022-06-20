@@ -350,11 +350,13 @@ const PanoViewer = ({
   useEffect(async () => {
     createPano(imageSrc, hotspots);
     const { getConfig } = useContentful();
-    const configRetrieved = await getConfig();
-    if (configRetrieved) {
-      console.log('config retrieved');
-      setConfig(configRetrieved);
-    }
+    setConfig(debugConfig);
+    getConfig().then((res) => setConfig(res));
+    // const configRetrieved = await getConfig();
+    // if (configRetrieved) {
+    //   console.log('config retrieved');
+    //   setConfig(configRetrieved);
+    // }
   }, []);
 
   return (

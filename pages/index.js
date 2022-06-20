@@ -201,7 +201,7 @@ const Home = ({ holding, launch }) => {
   const [config, setConfig] = useState(JSON.parse(JSON.stringify(debugConfig)));
   useEffect(async () => {
     handleMobileVh();
-    // let configRetrieved;
+    setConfig(debugConfig);
     getConfig().then((res) => setConfig(res));
     // getChatRooms().then((res) => console.log(res));
     // getLatestContent().then((res) => console.log(res));

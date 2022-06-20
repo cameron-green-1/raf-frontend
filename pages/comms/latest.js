@@ -83,18 +83,21 @@ const Latest = ({ launch, live, latest }) => {
   let latestContentRetrieved;
   useEffect(async () => {
     const { getConfig, getLatestContent } = useContentful();
-    const configRetrieved = await getConfig();
-    latestContentRetrieved = await getLatestContent();
-    if (configRetrieved) {
-      console.log('config retrieved');
-      setConfig(configRetrieved);
-    }
-    if (latestContentRetrieved) {
-      console.log('latest content retrieved');
-      setLatestContent(latestContentRetrieved);
-      console.log(latestContentRetrieved);
-      console.log(latestContent);
-    }
+    setConfig(debugConfig);
+    getConfig().then((res) => setConfig(res));
+    getLatestContent().then((res) => setLatestContent(res));
+    // const configRetrieved = await getConfig();
+    // latestContentRetrieved = await getLatestContent();
+    // if (configRetrieved) {
+    //   console.log('config retrieved');
+    //   setConfig(configRetrieved);
+    // }
+    // if (latestContentRetrieved) {
+    //   console.log('latest content retrieved');
+    //   setLatestContent(latestContentRetrieved);
+    //   console.log(latestContentRetrieved);
+    //   console.log(latestContent);
+    // }
   }, []);
   let id = '719458580';
   useEffect(() => {
