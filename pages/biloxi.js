@@ -2,7 +2,7 @@ import Head from 'next/head';
 import ScenarioTemplate from '../components/scenarioTemplate';
 
 const scenario = {
-  satelliteImage: '/loader-biloxi.jpg',
+  satelliteImage: '/loader-biloxi-2.jpg',
   // operation: 'Biloxi',
   operation: 'BILOXI',
   location: 'Undisclosed',

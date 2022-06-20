@@ -2,7 +2,7 @@ import Head from 'next/head';
 import ScenarioTemplate from '../components/scenarioTemplate';
 
 const scenario = {
-  satelliteImage: '/loader-maca.jpg',
+  satelliteImage: '/loader-maca-2.jpg',
   // operation: 'Maca Support',
   operation: 'MACA',
   location: 'UK',
