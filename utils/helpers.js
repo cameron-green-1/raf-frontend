@@ -20,7 +20,8 @@ export const debugConfig = {
 };
 export const debugLatest = {
   title: 'Episode One',
-  image: 'https://i.imgur.com/OSR02G8.jpg',
+  // image: 'https://i.imgur.com/OSR02G8.jpg',
+  image: '/episode1.jpeg',
   // image: 'https://i.imgur.com/DwTR24j.png',
   // video: 'https://vimeo.com/514470296',
   video: 'https://vimeo.com/684564506',

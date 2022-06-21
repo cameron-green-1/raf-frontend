@@ -9,7 +9,7 @@ const Back = ({ text, setWidth, noPadding = false, commsExtra = false }) => {
           className={styles.back}
           style={{
             width: setWidth ? setWidth : 'auto',
-            maxWidth: 350,
+            maxWidth: 450,
             padding: noPadding ? 0 : '20px 0',
           }}
         >
@@ -17,7 +17,8 @@ const Back = ({ text, setWidth, noPadding = false, commsExtra = false }) => {
           {text
             ? text
             : commsExtra
-            ? 'Back to Operations to discover a variety of RAF professions around the world'
+            ? // ? 'Back to Operations to discover a variety of RAF professions around the world'
+              'BACK TO OPERATIONS TO DISCOVER A VARIETY OF RAF PROFESSIONS AROUND THE WORLD'
             : // 'Back to Operations to discover a variety of RAF professions'
               'BACK TO OPERATIONS'}
         </div>

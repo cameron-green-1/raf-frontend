@@ -15,8 +15,8 @@
   margin-right: 10px;
 }
 
-/* @media (max-width: 500px) {
+@media (max-width: 768px) {
   .back {
-    max-width: 200px;
+    font-size: 0.65rem;
   }
-} */
+}

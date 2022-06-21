@@ -217,7 +217,7 @@ const Model = ({ live }) => {
                 <div className='name'>UK</div>
               </div>
             </div>
-            <img src='/maca-general.jpg' alt='MACA' />
+            <img src='/maca-general.jpeg' alt='MACA' />
           </div>
           <div className='section'>
             <div className='title'>PROFESSIONS</div>
