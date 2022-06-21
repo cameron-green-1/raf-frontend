@@ -23,6 +23,24 @@ function MyApp({ Component, pageProps, router }) {
         });
     `}
         </Script>
+        <Script strategy='lazyOnload' id='my-script-3'>
+          {`
+          var _iub = _iub || [];
+          _iub.csConfiguration = {"ccpaAcknowledgeOnDisplay":true,"ccpaApplies":true,"consentOnContinuedBrowsing":false,"enableCcpa":true,"floatingPreferencesButtonDisplay":"bottom-right","invalidateConsentWithoutLog":true,"lang":"en","perPurposeConsent":true,"siteId":2704432,"whitelabel":false,"cookiePolicyId":35580205, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"bottom","rejectButtonDisplay":true }};
+        `}
+        </Script>
+        <Script
+          src='//cdn.iubenda.com/cs/ccpa/stub.js'
+          strategy='lazyOnload'
+          id='my-script-4'
+        ></Script>
+        <Script
+          src='//cdn.iubenda.com/cs/iubenda_cs.js'
+          charset='UTF-8'
+          async
+          strategy='lazyOnload'
+          id='my-script-5'
+        ></Script>
       </head>
       <AnimatePresence exitBeforeEnter>
         <Head>
