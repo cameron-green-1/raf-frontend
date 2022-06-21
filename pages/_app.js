@@ -12,10 +12,9 @@ function MyApp({ Component, pageProps, router }) {
         <Script
           strategy='lazyOnload'
           src={`https://www.googletagmanager.com/gtag/js?id=G-2DG7N9Y9P8`}
-          // id='my-script-1'
+          id='my-script-1'
         />
-        {/* <Script strategy='lazyOnload' id='my-script-2'> */}
-        <Script strategy='lazyOnload'>
+        <Script strategy='lazyOnload' id='my-script-2'>
           {`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
