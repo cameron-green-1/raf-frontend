@@ -305,6 +305,7 @@ const Comms = ({ launch, live, latest, rooms }) => {
                 // <Chat rooms={rooms} />
                 <Chat chatRooms={chatRooms} />
               ) : (
+                // <div className={styles.chat} style={{ maxWidth: 500 }}>
                 <div className={styles.chat}>
                   {/* <p>
                     <span>We are currently offline</span>. Live chat opens{' '}
@@ -312,11 +313,19 @@ const Comms = ({ launch, live, latest, rooms }) => {
                     latest content ‘From the Studio’ or explore RAF operations
                     and professions from the home page.
                   </p> */}
-                  <p>
+                  {/* <p>
                     <span>We are currently offline</span>. Live chat opens{' '}
                     <span>{`@ ${time}`}</span>. Whilst you wait, watch our
                     latest content ‘From the Studio’ or explore RAF operations
                     and professions from the home page.
+                  </p> */}
+                  <p style={{ marginBottom: 20 }}>
+                    Our main event starts at <span>18:30</span>, where you will
+                    be able to chat to our RAF personnel, right here.
+                  </p>
+                  <p>
+                    While you wait, please watch our ‘Live from the RAF Panel’
+                    or explore our 360° RAF operations from the home page.
                   </p>
                 </div>
               )}
