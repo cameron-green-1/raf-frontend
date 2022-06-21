@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+// import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 import '../styles/globals.css';
 import Script from 'next/script';
 // import '../public/fonts/fonts.css';
@@ -6,6 +8,16 @@ import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps, router }) {
+  // useEffect(() => {
+  //   if (window.Tawk_API) {
+  //     window.Tawk_API.hideWidget();
+  //   }
+  //   return () => {
+  //     if (window.Tawk_API) {
+  //       window.Tawk_API.showWidget();
+  //     }
+  //   };
+  // });
   return (
     <>
       <head>
@@ -41,6 +53,35 @@ function MyApp({ Component, pageProps, router }) {
           strategy='lazyOnload'
           id='my-script-5'
         ></Script>
+        {/* <Script
+          strategy='lazyOnload'
+          id='my-script-6'
+          > */}
+        {/* <script type='text/javascript'>
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/5f16a9eda45e787d128bd52b/default';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script> */}
+        {/* </Script> */}
+        {/* <Script strategy='lazyOnload' id='my-script-7'>
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/62b1de2ab0d10b6f3e789849/1g63cnm62';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+            `}
+        </Script> */}
       </head>
       <AnimatePresence exitBeforeEnter>
         <Head>

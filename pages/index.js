@@ -67,9 +67,9 @@ const instructionsItems = instructionsText.map((txt, i) => (
 //   }
 // }
 
-const evaluatePassword = (e, router, isHolding, setIncorrectPass, password) => {
+const evaluatePassword = (e, router, holding, setIncorrectPass, password) => {
   e.preventDefault();
-  if (isHolding) {
+  if (holding) {
     window.open(debugHoldingLink, '_blank');
   } else {
     const input = document.getElementById('input-password');
@@ -163,17 +163,17 @@ const Holding = ({ isHolding, config }) => {
         </p>
         <form
           onSubmit={(e) =>
-            evaluatePassword(e, router, isHolding, setIncorrectPass, password)
+            evaluatePassword(e, router, holding, setIncorrectPass, password)
           }
         >
           <input
             type='password'
             id='input-password'
-            style={{ display: isHolding ? 'none' : 'block' }}
+            style={{ display: holding ? 'none' : 'block' }}
           />
           <button style={{ marginBottom: incorrectPass ? 0 : 80 }}>
             <span className={styles.buttonText}>
-              {isHolding ? 'REGISTER NOW' : 'VISIT NOW'}
+              {holding ? 'REGISTER NOW' : 'VISIT NOW'}
             </span>
           </button>
         </form>

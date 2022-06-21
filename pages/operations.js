@@ -63,6 +63,20 @@ const instructionsItems = instructionsText.map((txt, i) => (
 //   return data;
 // };
 
+// setTimeout(() => {
+//   // if (window.Tawk_API) {
+//   // window.Tawk_API.hideWidget();
+//   // }
+//   // console.log(window.Tawk_API);
+//   window.Tawk_API.hideWidget();
+// }, 100);
+
+// window.onload = function () {
+//   if (window.Tawk_API) {
+//     window.Tawk_API.hideWidget();
+//   }
+// };
+
 function Operations({ launch, live }) {
   // const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
   //   fallbackData: live,
@@ -71,7 +85,7 @@ function Operations({ launch, live }) {
   // if (!data) console.log('loading...');
   const [config, setConfig] = useState(debugConfig);
   const { getConfig } = useContentful();
-  useEffect(async () => {
+  useEffect(() => {
     // setLive(debugLive);
     handleMobileVh();
     setConfig(debugConfig);
@@ -81,7 +95,39 @@ function Operations({ launch, live }) {
     //   console.log('config retrieved');
     //   setConfig(configRetrieved);
     // }
+
+    // if (window.Tawk_API) {
+    //   window.Tawk_API.hideWidget();
+    // }
+    // return () => {
+    //   if (window.Tawk_API) {
+    //     window.Tawk_API.showWidget();
+    //   }
+    // };
+
+    // window.onload = function () {
+    // console.log(window.Tawk_API);
+    // if (window.Tawk_API) {
+    //   window.Tawk_API.hideWidget();
+    // }
+    // };
+
+    // document.addEventListener(
+    //   'DOMContentLoaded',
+    //   () => {
+    //     console.log(window.Tawk_API);
+    //     if (window.Tawk_API) {
+    //       window.Tawk_API.hideWidget();
+    //     }
+    //   },
+    //   false
+    // );
+
+    // const tawk = document.querySelector('.font-lato');
+    // tawk.style.display = 'none';
   }, []);
+
+  // useEffect();
   return (
     <>
       <div className='wrapper'>

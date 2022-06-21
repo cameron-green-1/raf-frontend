@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import useSWR from 'swr';
 import useContentful from '../utils/useContentful';
+import Script from 'next/script';
 import {
   debugLaunch,
   debugLive,
@@ -112,13 +113,17 @@ const Chat = ({ chatRooms }) => {
       <div></div>
       <div className={styles.question}>
         <div className={styles.title}>ASK A QUESTION</div>
-        <p>
+        {/* <p>
           If you’d prefer to ask a question via text chat, please click below:
+        </p> */}
+        <p>
+          If you’d prefer to ask a question via text chat, please click the
+          green speech bubble below.
         </p>
-        <button className={styles.buttonChat}>
+        {/* <button className={styles.buttonChat}>
           <img src='/bubble.png' alt='' />
           <p>LIVE TEXT CHAT</p>
-        </button>
+        </button> */}
       </div>
     </>
   );
@@ -182,6 +187,18 @@ const Comms = ({ launch, live, latest, rooms }) => {
     //   console.log(latestContentRetrieved);
     //   console.log(latestContent);
     // }
+
+    // var Tawk_API = Tawk_API || {},
+    //   Tawk_LoadStart = new Date();
+    // (function () {
+    //   var s1 = document.createElement('script'),
+    //     s0 = document.getElementsByTagName('script')[0];
+    //   s1.async = true;
+    //   s1.src = 'https://embed.tawk.to/5f16a9eda45e787d128bd52b/default';
+    //   s1.charset = 'UTF-8';
+    //   s1.setAttribute('crossorigin', '*');
+    //   s0.parentNode.insertBefore(s1, s0);
+    // })();
   }, []);
   useEffect(() => {
     const date = new Date(config.launchTime);
@@ -196,6 +213,41 @@ const Comms = ({ launch, live, latest, rooms }) => {
   }, [config]);
   return (
     <>
+      {/* <head> */}
+      {/* <Script
+            strategy='lazyOnload'
+            id='my-script-6'
+          >
+      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+      (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5f16a9eda45e787d128bd52b/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+      })();
+    </Script> */}
+      {/* <Script
+        strategy='lazyOnload'
+        src='https://embed.tawk.to/5f16a9eda45e787d128bd52b/default'
+      /> */}
+      {/* </head> */}
+      <head>
+        <Script strategy='lazyOnload' id='my-script-7'>
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/62b1de2ab0d10b6f3e789849/1g63cnm62';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+            `}
+        </Script>
+      </head>
       <Head>
         <title>RAF World | Comms Room</title>
         <meta name='description' content='RAF Access All Areas experience' />
