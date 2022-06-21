@@ -199,6 +199,15 @@ const Comms = ({ launch, live, latest, rooms }) => {
     //   s1.setAttribute('crossorigin', '*');
     //   s0.parentNode.insertBefore(s1, s0);
     // })();
+
+    // const script = document.createElement('script');
+    // script.id = 'tawkId';
+    // script.async = true;
+    // script.src =
+    //   'https://embed.tawk.to/' + '5f16a9eda45e787d128bd52b' + '/default';
+    // script.charset = 'UTF-8';
+    // script.setAttribute('crossorigin', '*');
+    // document.body.appendChild(script);
   }, []);
   useEffect(() => {
     const date = new Date(config.launchTime);
@@ -233,7 +242,7 @@ const Comms = ({ launch, live, latest, rooms }) => {
         src='https://embed.tawk.to/5f16a9eda45e787d128bd52b/default'
       /> */}
       {/* </head> */}
-      <head>
+      {/* <head>
         <Script strategy='lazyOnload' id='my-script-7'>
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -247,7 +256,7 @@ const Comms = ({ launch, live, latest, rooms }) => {
             })();
             `}
         </Script>
-      </head>
+      </head> */}
       <Head>
         <title>RAF World | Comms Room</title>
         <meta name='description' content='RAF Access All Areas experience' />

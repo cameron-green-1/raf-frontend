@@ -132,10 +132,12 @@ const createPano = (imageSrc, hotspots) => {
         vector.x = ((vector.x + 1) * width) / 2;
         vector.y = (-(vector.y - 1) * height) / 2;
         vector.z = 0;
+        annotation.style.pointerEvents = 'all';
         annotation.style.opacity = 1;
         annotation.style.left = `${vector.x + 30}px`;
         annotation.style.top = `${vector.y + 20}px`;
       } else {
+        annotation.style.pointerEvents = 'none';
         annotation.style.opacity = 0;
       }
     });

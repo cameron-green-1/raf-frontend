@@ -18,6 +18,16 @@ function MyApp({ Component, pageProps, router }) {
   //     }
   //   };
   // });
+  useEffect(() => {
+    // const script = document.createElement('script');
+    // script.id = 'tawkId';
+    // script.async = true;
+    // script.src =
+    //   'https://embed.tawk.to/' + '5f16a9eda45e787d128bd52b' + '/default';
+    // script.charset = 'UTF-8';
+    // script.setAttribute('crossorigin', '*');
+    // document.body.appendChild(script);
+  }, []);
   return (
     <>
       <head>
@@ -69,7 +79,7 @@ function MyApp({ Component, pageProps, router }) {
             })();
         </script> */}
         {/* </Script> */}
-        {/* <Script strategy='lazyOnload' id='my-script-7'>
+        {/* <Script strategy='lazyOnload' id='tawk'>
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
@@ -90,6 +100,19 @@ function MyApp({ Component, pageProps, router }) {
           <link rel='icon' href='/favicon3.png' />
         </Head>
         <Component {...pageProps} key={router.route} />
+        {/* <Script id='tawk' strategy='lazyOnload'>
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/[]/[]';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+        `}
+        </Script> */}
       </AnimatePresence>
     </>
   );

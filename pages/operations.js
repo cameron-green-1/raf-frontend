@@ -77,6 +77,20 @@ const instructionsItems = instructionsText.map((txt, i) => (
 //   }
 // };
 
+// if (typeof window !== 'undefined') {
+//   window.addEventListener('load', () => {
+//     // console.log('page is loaded');
+//     console.log(document);
+//     setTimeout(() => {
+//       // console.log(window.Tawk_API);
+//       if (window.Tawk_API) {
+//         window.Tawk_API.hideWidget();
+//       }
+//     }, 1000);
+//     // console.log(window.Tawk_API);
+//   });
+// }
+
 function Operations({ launch, live }) {
   // const { data, error } = useSWR(`${URL}/api/live`, fetcher, {
   //   fallbackData: live,
@@ -117,17 +131,24 @@ function Operations({ launch, live }) {
     //   () => {
     //     console.log(window.Tawk_API);
     //     if (window.Tawk_API) {
-    //       window.Tawk_API.hideWidget();
+    // window.Tawk_API.hideWidget();
     //     }
     //   },
     //   false
     // );
 
+    // setTimeout(() => window.Tawk_API.hideWidget(), 2000);
+    // window.Tawk_API.hideWidget();
+
     // const tawk = document.querySelector('.font-lato');
     // tawk.style.display = 'none';
+
+    // document.getElementById('tawk').remove();
   }, []);
 
-  // useEffect();
+  // useEffect(() => {
+  //   console.log(document.getElementById('tawk'));
+  // });
   return (
     <>
       <div className='wrapper'>
