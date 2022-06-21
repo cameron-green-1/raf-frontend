@@ -99,7 +99,9 @@ const Latest = ({ launch, live, latest }) => {
     //   console.log(latestContent);
     // }
   }, []);
-  let id = '719458580';
+  // let id = '719458580';
+  let id =
+    'https://player.vimeo.com/video/722584439?h=9cc8a417e6&title=0&byline=0&portrait=0';
   useEffect(() => {
     // latestContentRetrieved = await getLatestContent();
     // setLatestContent(latest)
@@ -107,22 +109,38 @@ const Latest = ({ launch, live, latest }) => {
     // id = arr[arr.length - 1];
     // if (latestContent) {
     if (latestContent !== null) {
-      const arr = latestContent.vimeoLink.split('/');
-      id = arr[arr.length - 1];
-      console.log(id);
+      // const arr = latestContent.vimeoLink.split('/');
+      // id = arr[arr.length - 2];
+      const arr = latestContent.vimeoEmbed.split('src="');
+      id = arr[1];
+      // console.log(id);
     }
     setVimeoId(id);
   }, [latestContent]);
   // const arr = latest.video.split('/');
   // const id = arr[arr.length - 1];
-  const vimeoEmbed = (
+  // const vimeoEmbed = (
+  //   <iframe
+  //     // src={`https://player.vimeo.com/video/${id}?h=a7bd2f8234`}
+  //     // src={`https://player.vimeo.com/video/719458580?h=a7bd2f8234`}
+  //     src={`https://player.vimeo.com/video/${vimeoId}?h=a7bd2f8234`}
+  //     frameBorder='0'
+  //     allow='autoplay; fullscreen; picture-in-picture'
+  //     allowFullScreen
+  //     className='vimeo-latest'
+  //   ></iframe>
+  // );
+  const vimeoLive = (
     <iframe
-      // src={`https://player.vimeo.com/video/${id}?h=a7bd2f8234`}
-      // src={`https://player.vimeo.com/video/719458580?h=a7bd2f8234`}
-      src={`https://player.vimeo.com/video/${vimeoId}?h=a7bd2f8234`}
-      frameBorder='0'
+      // src='https://player.vimeo.com/video/722584439?h=9cc8a417e6&title=0&byline=0&portrait=0'
+      // src={`https://player.vimeo.com/video/${vimeoId}?h=9cc8a417e6&title=0&byline=0&portrait=0`}
+      // src='https://vimeo.com/event/2227105/'
+      src={vimeoId}
+      // width='640'
+      // height='360'
+      frameborder='0'
       allow='autoplay; fullscreen; picture-in-picture'
-      allowFullScreen
+      allowfullscreen
       className='vimeo-latest'
     ></iframe>
   );
@@ -164,7 +182,8 @@ const Latest = ({ launch, live, latest }) => {
                       ></img> */}
                     <div className={styles.episode}>{latestContent.title}</div>
                     <div className={styles.episode}></div>
-                    {vimeoEmbed}
+                    {/* {vimeoEmbed} */}
+                    {vimeoLive}
                   </>
                 </div>
                 <div className={styles.latestChat}>
@@ -188,7 +207,7 @@ const Latest = ({ launch, live, latest }) => {
                       ></img> */}
                       <div className={styles.episode}>{debugLatest.title}</div>
                       <div className={styles.episode}></div>
-                      {vimeoEmbed}
+                      {vimeoLive}
                     </>
                   </div>
                   <div className={styles.latestChat}>
