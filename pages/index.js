@@ -158,7 +158,7 @@ const Holding = ({ isHolding, config }) => {
             </>
           )} */}
           <>
-            The event starts at <span>{`@ ${time}`}</span>
+            The event starts at <span>{`@ ${time}`}</span> on 22nd June.
           </>
         </p>
         <form
