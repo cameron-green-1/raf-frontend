@@ -7,6 +7,8 @@ import Script from 'next/script';
 import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 
+const GA_TRACKING_ID = 'G-Y0CMT322J1';
+
 function MyApp({ Component, pageProps, router }) {
   // useEffect(() => {
   //   if (window.Tawk_API) {
@@ -108,6 +110,23 @@ function MyApp({ Component, pageProps, router }) {
         });
     `}
           </Script> */}
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          {/* <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-Y0CMT322J1`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y0CMT322J1', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          /> */}
         </Head>
         <Component {...pageProps} key={router.route} />
         {/* <Script id='tawk' strategy='lazyOnload'>
@@ -123,7 +142,7 @@ function MyApp({ Component, pageProps, router }) {
             })();
         `}
         </Script> */}
-        <script
+        {/* <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-Y0CMT322J1'
         ></script>
@@ -133,7 +152,37 @@ function MyApp({ Component, pageProps, router }) {
   gtag('js', new Date());
 
   gtag('config', 'G-Y0CMT322J1');`}
-        </script>
+        </script> */}
+        {/* <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-Y0CMT322J1'
+        ></script>
+        <script>
+          {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0CMT322J1');`}
+        </script> */}
+        <Script
+          strategy='afterInteractive'
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <Script
+          id='gtag-init'
+          strategy='afterInteractive'
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+          }}
+        />
       </AnimatePresence>
     </>
   );
