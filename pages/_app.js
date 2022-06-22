@@ -8,6 +8,7 @@ import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 
 const GA_TRACKING_ID = 'G-Y0CMT322J1';
+// G-2DG7N9Y9P8
 
 function MyApp({ Component, pageProps, router }) {
   // useEffect(() => {
@@ -46,11 +47,11 @@ function MyApp({ Component, pageProps, router }) {
         gtag('config', 'G-2DG7N9Y9P8', {
         });
     `}
-        </Script> */}
-        {/* <Script strategy='lazyOnload' id='my-script-3'>
+        // </Script> */}
+        <Script strategy='lazyOnload' id='my-script-3'>
           {`
-          var _iub = _iub || [];
-          _iub.csConfiguration = {"ccpaAcknowledgeOnDisplay":true,"ccpaApplies":true,"consentOnContinuedBrowsing":false,"enableCcpa":true,"floatingPreferencesButtonDisplay":"bottom-right","invalidateConsentWithoutLog":true,"lang":"en","perPurposeConsent":true,"siteId":2704432,"whitelabel":false,"cookiePolicyId":35580205, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"bottom","rejectButtonDisplay":true }};
+            var _iub = _iub || [];
+            _iub.csConfiguration = {"ccpaAcknowledgeOnDisplay":true,"ccpaApplies":true,"consentOnContinuedBrowsing":false,"enableCcpa":true,"floatingPreferencesButtonDisplay":"bottom-right","invalidateConsentWithoutLog":true,"lang":"en","perPurposeConsent":true,"siteId":2704432,"whitelabel":false,"cookiePolicyId":35580205, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"position":"bottom","rejectButtonDisplay":true }};
         `}
         </Script>
         <Script
@@ -64,7 +65,7 @@ function MyApp({ Component, pageProps, router }) {
           async
           strategy='lazyOnload'
           id='my-script-5'
-        ></Script> */}
+        ></Script>
         {/* <script type='text/javascript'>
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
