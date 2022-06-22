@@ -110,23 +110,26 @@ const Holding = ({ isHolding, config }) => {
     }, 1000);
   }, []);
   useEffect(() => {
-    console.log(config.launchTime);
-    if (config.launchTime) {
-      // Holding
-      setHolding(config.holding);
-      // Password
-      setPassword(config.accessWord);
-      // Launch time
-      date = new Date(config.launchTime);
-      console.log(date);
-      const dateArr = date.toString().split(' ');
-      console.log(dateArr);
-      const time = dateArr[4];
-      console.log(typeof time);
-      const displayedTime = time.slice(0, -3);
-      console.log(displayedTime);
-      setTime(displayedTime);
-    }
+    // console.log(config.launchTime);
+    // if (config.launchTime) {
+    //   console.log(config.holdingTime);
+    //   // Holding
+    //   setHolding(config.holding);
+    //   // Password
+    //   setPassword(config.accessWord);
+    //   // Launch time
+    //   // date = new Date(config.launchTime);
+    //   date = new Date(config.holdingTime);
+    //   console.log(date);
+    //   const dateArr = date.toString().split(' ');
+    //   console.log(dateArr);
+    //   const time = dateArr[4];
+    //   console.log(typeof time);
+    //   const displayedTime = time.slice(0, -3);
+    //   console.log(displayedTime);
+    //   setTime(displayedTime);
+    // }
+    setTime(config.holdingTime);
   }, [config]);
   return (
     <div className='wrapper'>

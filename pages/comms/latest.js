@@ -168,7 +168,8 @@ const Latest = ({ launch, live, latest }) => {
           <main className={styles.main}>
             {latestContent ? (
               <div className={[styles.flex, styles.latestFlex].join(' ')}>
-                <div className={styles.title}>FROM THE STUDIO</div>
+                {/* <div className={styles.title}>FROM THE STUDIO</div> */}
+                <div className={styles.title}>LIVE FROM THE RAF PANEL</div>
                 <div className={[styles.title, styles.video].join(' ')}>
                   DESCRIPTION
                 </div>
@@ -180,7 +181,7 @@ const Latest = ({ launch, live, latest }) => {
                         alt=''
                         className={styles.cover}
                       ></img> */}
-                    <div className={styles.episode}>{latestContent.title}</div>
+                    {/* <div className={styles.episode}>{latestContent.title}</div> */}
                     <div className={styles.episode}></div>
                     {/* {vimeoEmbed} */}
                     {vimeoLive}
