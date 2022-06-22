@@ -37,7 +37,8 @@
   aspect-ratio: 3 / 1;
   /* transform: translateY(-12.5%); */
   /* height: 260px; */
-  margin-bottom: 120px;
+  /* margin-bottom: 120px; */
+  margin-bottom: 80px;
   align-self: center;
 }
 
@@ -47,11 +48,13 @@
 }
 
 .progress {
-  margin-bottom: 80px;
+  /* margin-bottom: 80px; */
+  margin-bottom: 40px;
 }
 
 .progressSection {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
+  margin-bottom: 30px;
 }
 
 .progressSection h1 {
