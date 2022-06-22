@@ -272,7 +272,9 @@ const Comms = ({ launch, live, latest, rooms }) => {
             <div>
               <Logo />
               <a
-                href='https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334'
+                // href='https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334'
+                // href={config.applyNowLink}
+                href={config.applyNowLink || debugConfig.applyNowLink}
                 target='_blank'
                 rel='noopener noreferrer'
               >

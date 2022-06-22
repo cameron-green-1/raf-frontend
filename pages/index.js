@@ -67,10 +67,23 @@ const instructionsItems = instructionsText.map((txt, i) => (
 //   }
 // }
 
-const evaluatePassword = (e, router, holding, setIncorrectPass, password) => {
+const evaluatePassword = (
+  e,
+  router,
+  holding,
+  setIncorrectPass,
+  password,
+  config
+) => {
   e.preventDefault();
   if (holding) {
-    window.open(debugHoldingLink, '_blank');
+    // window.open(debugHoldingLink, '_blank');
+    // window.open(debugConfig.findYourRole, '_blank');
+    // window.open(config.findYourRoleLink, '_blank');
+    window.open(
+      config.findYourRoleLink || debugConfig.findYourRoleLink,
+      '_blank'
+    );
   } else {
     const input = document.getElementById('input-password');
     const inputPassword = input.value;
@@ -130,6 +143,8 @@ const Holding = ({ isHolding, config }) => {
     //   setTime(displayedTime);
     // }
     setTime(config.holdingTime);
+    // setLink(config.findYourRoleLink);
+    // console.log(link);
   }, [config]);
   return (
     <div className='wrapper'>
@@ -166,7 +181,14 @@ const Holding = ({ isHolding, config }) => {
         </p>
         <form
           onSubmit={(e) =>
-            evaluatePassword(e, router, holding, setIncorrectPass, password)
+            evaluatePassword(
+              e,
+              router,
+              holding,
+              setIncorrectPass,
+              password,
+              config
+            )
           }
         >
           <input

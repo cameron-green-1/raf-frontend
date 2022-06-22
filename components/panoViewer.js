@@ -34,7 +34,7 @@ const stopVideo = function (element) {
   }
 };
 
-const createPano = (imageSrc, hotspots) => {
+const createPano = (imageSrc, hotspots, config) => {
   // Element variables
   const container = document.getElementById('container');
   const webglEl = document.getElementById('sphere');
@@ -250,11 +250,18 @@ const createPano = (imageSrc, hotspots) => {
         closePanels();
         if (hit.name === 0) {
           // console.log('find your role');
-          console.log(debugConfig.holdingLink);
-          window.open(debugConfig.holdingLink, '_blank');
+          // console.log(debugConfig.holdingLink);
+          // window.open(debugConfig.holdingLink, '_blank');
+          // window.open(config.findYourRole, '_blank');
+          // window.open(debugConfig.findYourRoleLink, '_blank');
+          // window.open(config.findYourRoleLink, '_blank');
+          window.open(debugConfig.findYourRoleLink, '_blank');
         } else if (hit.name === 1) {
           window.open(
-            'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+            // 'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+            // debugConfig.applyNowLink,
+            // config.applyNowLink,
+            debugConfig.applyNowLink,
             '_blank'
           );
         } else {
@@ -297,7 +304,7 @@ const renderPanel = (hotspot, i) => {
   }
 };
 
-const renderAnnotation = (hotspot, i) => {
+const renderAnnotation = (hotspot, i, config) => {
   return (
     <div
       // className={styles.annotation}
@@ -345,10 +352,16 @@ const renderAnnotation = (hotspot, i) => {
         // );
         // }
         if (i === 0) {
-          window.open(debugConfig.holdingLink, '_blank');
+          // window.open(debugConfig.holdingLink, '_blank');
+          // window.open(debugConfig.findYourRole, '_blank');
+          window.open(debugConfig.findYourRoleLink, '_blank');
+          // window.open(config.findYourRoleLink, '_blank');
         } else if (i === 1) {
           window.open(
-            'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+            // 'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+            // debugConfig.applyNow,
+            // config.applyNowLink,
+            debugConfig.applyNowLink,
             '_blank'
           );
         } else {
@@ -375,9 +388,22 @@ const PanoViewer = ({
   const [config, setConfig] = useState(debugConfig);
   const { getConfig } = useContentful();
   useEffect(async () => {
-    createPano(imageSrc, hotspots);
+    createPano(imageSrc, hotspots, debugConfig);
     setConfig(debugConfig);
     getConfig().then((res) => setConfig(res));
+    // getConfig().then((res) => {
+    //   // console.log('call succeeded');
+    //   console.log(res);
+    //   setConfig(res);
+    //   if (!res.findYourRoleLink || !res.applyNowLink) {
+    //     console.log('resource not found, falling back to defaults');
+    //     createPano(imageSrc, hotspots, debugConfig);
+    //   } else {
+    //     createPano(imageSrc, hotspots, res);
+    //   }
+    //   // createPano(imageSrc, hotspots, config);
+    // });
+    // createPano(imageSrc, hotspots, config);
     // const configRetrieved = await getConfig();
     // if (configRetrieved) {
     //   console.log('config retrieved');
@@ -406,7 +432,7 @@ const PanoViewer = ({
         <Back setWidth={100} noPadding={true} />
         <img className={styles.around} src='/360.png' alt='' />
       </div>
-      {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i))}
+      {hotspots.map((hotspot, i) => renderAnnotation(hotspot, i, config))}
       {hotspots.map((hotspot, i) => renderPanel(hotspot, i))}
       <ScenarioLoader scenario={scenario} duration={duration} />
     </div>
