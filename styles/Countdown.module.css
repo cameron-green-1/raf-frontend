@@ -52,6 +52,10 @@
   opacity: 0.85;
 }
 
+.extraInfo:first-of-type {
+  margin-top: 10px;
+}
+
 @media (max-width: 1024px) {
   .extraInfo {
     display: none !important;

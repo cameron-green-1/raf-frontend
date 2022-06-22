@@ -28,7 +28,11 @@ const instructionsText = [
   'TAP & DRAG TO DISCOVER A VARIETY OF',
   'RAF PROFESSIONALS AROUND THE WORLD',
 ];
+const instructionsTextSmall = ['TAP & DRAG', 'THE GLOBE'];
 const instructionsItems = instructionsText.map((txt, i) => (
+  <p key={i}>{txt}</p>
+));
+const instructionsItemsSmall = instructionsTextSmall.map((txt, i) => (
   <p key={i}>{txt}</p>
 ));
 
@@ -161,7 +165,17 @@ function Operations({ launch, live }) {
         </Head>
         <img src='/stars.jpg' className={styles.bg} />
         <header className={styles.header}>
-          <Logo className={styles.logo} />
+          {/* <div style={{ transform: 'translateY(40%)' }}> */}
+          <div>
+            <Logo className={styles.logo} />
+            <a
+              href='https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <button className='apply-now'>APPLY NOW</button>
+            </a>
+          </div>
           {/* <Countdown launch={launch} live={live} /> */}
           {/* <Countdown launch={launch} live={data} /> */}
           <Countdown launch={config.launchTime} live={config.live} />
@@ -169,6 +183,7 @@ function Operations({ launch, live }) {
         <div className={styles.instructions}>
           <img src='/rotate.svg' className={styles.rotate} alt='' />
           <div className={styles.items}>{instructionsItems}</div>
+          <div className={styles.itemsSmall}>{instructionsItemsSmall}</div>
         </div>
         <Link href='/comms' passHref>
           <div className={styles.commsLink}>
@@ -198,6 +213,13 @@ function Operations({ launch, live }) {
             </div>
           </div>
         </Link>
+        {/* <a
+          href='https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <button className='apply-now'>APPLY NOW</button>
+        </a> */}
         {/* <Earth live={live} /> */}
         {/* <Earth live={data} /> */}
         <Earth live={config.live} />

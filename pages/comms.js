@@ -85,7 +85,8 @@ const Chat = ({ chatRooms }) => {
               return (
                 <a
                   // href={room.attributes.link}
-                  href={room.link}
+                  // href={room.link}
+                  href={room.teamsLink}
                   key={i}
                   target='_blank'
                   rel='noopener noreferrer'
@@ -267,7 +268,16 @@ const Comms = ({ launch, live, latest, rooms }) => {
         <img src='/raf4.jpg' className={styles.backgroundImage} />
         <div className={styles.container}>
           <header className={styles.header}>
-            <Logo />
+            <div>
+              <Logo />
+              <a
+                href='https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <button className='apply-now'>APPLY NOW</button>
+              </a>
+            </div>
             {/* <Countdown launch={launch} live={live} changeToIcon={false} /> */}
             {/* <Countdown launch={launch} live={data} changeToIcon={false} /> */}
             <Countdown

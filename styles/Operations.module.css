@@ -1,6 +1,7 @@
 .header {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  align-items: flex-start;
   justify-content: space-between;
   padding: 40px 40px;
   margin-bottom: 40px;
@@ -26,6 +27,7 @@
   bottom: 40px;
   display: flex;
   z-index: 1;
+  transform: translateY(-25%);
   /* width: 75%; */
   white-space: nowrap;
 }
@@ -33,6 +35,21 @@
 .items {
   /* opacity: 0.55; */
   opacity: 0.85;
+}
+
+.itemsSmall {
+  opacity: 0.85;
+  display: none;
+}
+
+@media (max-width: 1300px) {
+  .items {
+    display: none !important;
+  }
+
+  .itemsSmall {
+    display: block !important;
+  }
 }
 
 .line {
@@ -123,7 +140,7 @@
     bottom: 120px;
     transform: translateX(-50%);
     font-size: 0.9rem;
-    /* display: none; */
+    display: none;
     /* text-align: center; */
   }
   .rotate {
