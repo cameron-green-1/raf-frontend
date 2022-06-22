@@ -141,6 +141,7 @@ const Holding = ({ isHolding, config }) => {
     //   setTime(displayedTime);
     // }
     if (config) {
+      console.log(config);
       setPassword(config.accessWord);
       setHolding(config.holding);
       setTime(config.holdingTime);

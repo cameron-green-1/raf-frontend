@@ -20,7 +20,8 @@ export const debugConfig = {
     'https://recruitment.raf.mod.uk/find-your-role?utm_source=virtualevent&utm_medium=referral&utm_campaign=RAF&utm_content=rafworld_event_fyr_87129',
   applyNowLink:
     'https://recruitment.raf.mod.uk/apply?utm_source=virtualevent&utm_medium=referral&utm_campaign=RAF&utm_content=rafworld_event_application_87129',
-  launchTime: '2022-06-20T15:00+01:00',
+  launchTime: '2022-06-20T18:30+01:00',
+  holdingTime: '2022-06-20T18:00+01:00',
   live: false,
 };
 export const debugLatest = {
