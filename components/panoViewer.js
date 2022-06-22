@@ -250,7 +250,13 @@ const createPano = (imageSrc, hotspots) => {
         closePanels();
         if (hit.name === 0) {
           // console.log('find your role');
-          window.open(debugHoldingLink, '_blank');
+          console.log(debugConfig.holdingLink);
+          window.open(debugConfig.holdingLink, '_blank');
+        } else if (hit.name === 1) {
+          window.open(
+            'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+            '_blank'
+          );
         } else {
           allowControls = false;
           const targetPanel = panels[hit.name];

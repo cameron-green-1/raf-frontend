@@ -235,6 +235,15 @@ const hotspots = [
     colour: 'blue',
   },
   {
+    // type: 'new',
+    type: 'link',
+    title: 'Apply now',
+    // link: 'https://www.raf.mod.uk/recruitment/find-your-role',
+    link: 'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+    position: [0.8, 3, 18],
+    colour: 'blue',
+  },
+  {
     type: 'link',
     title: 'Adult Registered Nurse',
     link: 'https://joom.ag/Ahad',

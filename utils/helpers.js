@@ -14,7 +14,8 @@ export const debugHoldingLink = 'https://recruitment.raf.mod.uk/find-your-role';
 export const debugConfig = {
   accessWord: 'RAF_W0rld@1',
   holding: false,
-  holdingLink: 'https://recruitment.raf.mod.uk/find-your-role',
+  holdingLink:
+    'https://www.raf.mod.uk/recruitment/find-your-role?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-FindYourRole-84334',
   launchTime: '2022-06-20T15:00+01:00',
   live: false,
 };

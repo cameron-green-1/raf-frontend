@@ -303,6 +303,15 @@ const hotspots = [
     colour: 'blue',
   },
   {
+    // type: 'new',
+    type: 'link',
+    title: 'Apply now',
+    // link: 'https://www.raf.mod.uk/recruitment/find-your-role',
+    link: 'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+    position: [-8.2, 0, 16],
+    colour: 'blue',
+  },
+  {
     type: 'video',
     title: 'Registered Nurse (Mental Health)',
     // link: '/dummy.pdf',
