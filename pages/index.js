@@ -127,9 +127,7 @@ const Holding = ({ isHolding, config }) => {
     // if (config.launchTime) {
     //   console.log(config.holdingTime);
     //   // Holding
-    //   setHolding(config.holding);
     //   // Password
-    //   setPassword(config.accessWord);
     //   // Launch time
     //   // date = new Date(config.launchTime);
     //   date = new Date(config.holdingTime);
@@ -142,7 +140,11 @@ const Holding = ({ isHolding, config }) => {
     //   console.log(displayedTime);
     //   setTime(displayedTime);
     // }
-    setTime(config.holdingTime);
+    if (config) {
+      setPassword(config.accessWord);
+      setHolding(config.holding);
+      setTime(config.holdingTime);
+    }
     // setLink(config.findYourRoleLink);
     // console.log(link);
   }, [config]);
