@@ -287,7 +287,8 @@ const Comms = ({ launch, live, latest, rooms }) => {
             />
           </header>
           <main className={styles.main}>
-            <div className={styles.name}>The Comms Room</div>
+            {/* <div className={styles.name}>The Comms Room</div> */}
+            <div className={styles.name}>THE COMMS ROOM</div>
             <div className={styles.flex}>
               <div className={styles.title}>LATEST CONTENT</div>
               <div className={[styles.title, styles.video].join(' ')}>

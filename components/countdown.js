@@ -97,7 +97,8 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
             router.pathname === '/operations' && !live ? 'block' : 'none',
         }}
       >
-        Join us now
+        {/* Join us now */}
+        JOIN US NOW
       </p>
       <p
         className={styles.extraInfo}
@@ -106,7 +107,8 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
             router.pathname === '/operations' && !live ? 'block' : 'none',
         }}
       >
-        Live From The RAF Panel
+        {/* Live From The RAF Panel */}
+        LIVE FROM THE RAF PANEL
       </p>
       <p
         className={styles.extraInfo}
@@ -115,7 +117,8 @@ const Countdown = ({ launch, live = false, changeToIcon = false }) => {
             router.pathname === '/operations' && !live ? 'block' : 'none',
         }}
       >
-        From 18:00 to 18:30.
+        {/* From 18:00 to 18:30. */}
+        FROM 18:00 TO 18:30
       </p>
     </div>
   );

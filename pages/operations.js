@@ -208,7 +208,8 @@ function Operations({ launch, live }) {
                 className={styles.liveAt}
                 style={{ display: config.live ? 'none' : 'block' }}
               >
-                Live at 18:00.
+                {/* Live at 18:00. */}
+                LIVE AT 18:00
               </span>
             </div>
           </div>
