@@ -331,13 +331,31 @@ const renderAnnotation = (hotspot, i) => {
           panel.style.display = 'none';
           panel.style.opacity = 0;
         });
-        if (i !== 0) {
+        // if (i !== 0 || i !== 1) {
+        // allowControls = false;
+        // const targetPanel = panels[i];
+        // targetPanel.style.display = 'block';
+        // targetPanel.style.opacity = 1;
+        // } else if (i === 0) {
+        //   window.open(debugConfig.holdingLink, '_blank');
+        // } else if (i === 1) {
+        // window.open(
+        //   'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+        //   '_blank'
+        // );
+        // }
+        if (i === 0) {
+          window.open(debugConfig.holdingLink, '_blank');
+        } else if (i === 1) {
+          window.open(
+            'https://www.raf.mod.uk/recruitment/apply?utm_source=virtual_event&utm_medium=referral&utm_campaign=RAF&utm_content=RAFWorld-Event-Application-84334',
+            '_blank'
+          );
+        } else {
           allowControls = false;
           const targetPanel = panels[i];
           targetPanel.style.display = 'block';
           targetPanel.style.opacity = 1;
-        } else {
-          window.open(debugHoldingLink, '_blank');
         }
       }}
     >
