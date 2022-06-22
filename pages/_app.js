@@ -7,8 +7,8 @@ import Script from 'next/script';
 import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 
-const GA_TRACKING_ID = 'G-Y0CMT322J1';
-// G-2DG7N9Y9P8
+// const GA_TRACKING_ID = 'G-Y0CMT322J1';
+const GA_TRACKING_ID = 'G-2DG7N9Y9P8';
 
 function MyApp({ Component, pageProps, router }) {
   // useEffect(() => {
