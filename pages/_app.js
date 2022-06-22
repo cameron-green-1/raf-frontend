@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <>
       <head>
-        <Script
+        {/* <Script
           strategy='lazyOnload'
           src={`https://www.googletagmanager.com/gtag/js?id=G-2DG7N9Y9P8`}
           id='my-script-1'
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps, router }) {
         gtag('config', 'G-2DG7N9Y9P8', {
         });
     `}
-        </Script>
+        </Script> */}
         <Script strategy='lazyOnload' id='my-script-3'>
           {`
           var _iub = _iub || [];
@@ -98,6 +98,20 @@ function MyApp({ Component, pageProps, router }) {
           <title>RAF World | Access All Areas</title>
           <meta name='description' content='RAF Access All Areas experience' />
           <link rel='icon' href='/favicon3.png' />
+          {/* <Script
+            strategy='lazyOnload'
+            src={`https://www.googletagmanager.com/gtag/js?id=G-2DG7N9Y9P8`}
+            id='my-script-1'
+          />
+          <Script strategy='lazyOnload' id='my-script-2'>
+            {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2DG7N9Y9P8', {
+        });
+    `}
+          </Script> */}
         </Head>
         <Component {...pageProps} key={router.route} />
         {/* <Script id='tawk' strategy='lazyOnload'>
@@ -113,6 +127,17 @@ function MyApp({ Component, pageProps, router }) {
             })();
         `}
         </Script> */}
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-Y0CMT322J1'
+        ></script>
+        <script>
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y0CMT322J1');`}
+        </script>
       </AnimatePresence>
     </>
   );
