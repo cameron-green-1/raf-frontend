@@ -374,12 +374,15 @@ a {
   transform: translate(-50%, -25%);
   z-index: 2; */
   position: relative;
+  z-index: 2;
   margin-top: 30px;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
   padding: 10px 40px;
   border: none;
-  background-color: #0097d1;
+  /* background-color: #0097d1; */
+  background-color: #ca0937;
   color: white;
   border: none;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -398,9 +401,23 @@ a {
   }
 } */
 
-@media (max-width: 475px) {
+/* @media (max-width: 475px) {
   .apply-now {
     display: none;
+  }
+} */
+
+@media (max-width: 768px) {
+  .apply-now {
+    /* display: none; */
+    font-size: 0.75rem;
+    padding: 5px 20px;
+  }
+  .apply-operations {
+    position: fixed;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

@@ -173,7 +173,7 @@ function Operations({ launch, live }) {
               target='_blank'
               rel='noopener noreferrer'
             >
-              <button className='apply-now'>APPLY NOW</button>
+              <button className='apply-now apply-operations'>APPLY NOW</button>
             </a>
           </div>
           {/* <Countdown launch={launch} live={live} /> */}

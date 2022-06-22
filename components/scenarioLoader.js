@@ -84,7 +84,14 @@ const Briefing = ({ setSecondLoading, scenario }) => {
         <div className={styles.video}>
           <div className={styles.item}>
             <h1>VIDEO BRIEFING</h1>
-            <video id='briefing-video' controls playsInline>
+            {/* <video id='briefing-video' controls playsInline> */}
+            <video
+              id='briefing-video'
+              controls
+              playsInline
+              disablePictureInPicture
+              controlslist='nodownload noplaybackrate'
+            >
               {/* <source src='/briefing1.webm' type='video/webm' muted={true} /> */}
               {/* <source
                 src={scenario.safariVideo}

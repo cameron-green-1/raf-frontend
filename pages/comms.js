@@ -114,17 +114,18 @@ const Chat = ({ chatRooms }) => {
       <div></div>
       <div className={styles.question}>
         <div className={styles.title}>ASK A QUESTION</div>
-        {/* <p>
-          If you’d prefer to ask a question via text chat, please click below:
-        </p> */}
         <p>
+          If you’d prefer to ask a question via text chat, please click below:
+        </p>
+        {/* <p>
           If you’d prefer to ask a question via text chat, please click the
           green speech bubble below.
-        </p>
-        {/* <button className={styles.buttonChat}>
+        </p> */}
+        {/* <button className={styles.buttonChat}> */}
+        <button className={styles.buttonChat} onClick={() => Tawk_API.toggle()}>
           <img src='/bubble.png' alt='' />
           <p>LIVE TEXT CHAT</p>
-        </button> */}
+        </button>
       </div>
     </>
   );
@@ -243,21 +244,21 @@ const Comms = ({ launch, live, latest, rooms }) => {
         src='https://embed.tawk.to/5f16a9eda45e787d128bd52b/default'
       /> */}
       {/* </head> */}
-      {/* <head>
-        <Script strategy='lazyOnload' id='my-script-7'>
+      <head>
+        <Script strategy='lazyOnload' id='tawk'>
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
             s1.async=true;
-            s1.src='https://embed.tawk.to/62b1de2ab0d10b6f3e789849/1g63cnm62';
+            s1.src='https://embed.tawk.to/5f16a9eda45e787d128bd52b/default';
             s1.charset='UTF-8';
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);
             })();
             `}
         </Script>
-      </head> */}
+      </head>
       <Head>
         <title>RAF World | Comms Room</title>
         <meta name='description' content='RAF Access All Areas experience' />
@@ -290,7 +291,8 @@ const Comms = ({ launch, live, latest, rooms }) => {
             {/* <div className={styles.name}>The Comms Room</div> */}
             <div className={styles.name}>THE COMMS ROOM</div>
             <div className={styles.flex}>
-              <div className={styles.title}>LATEST CONTENT</div>
+              {/* <div className={styles.title}>LATEST CONTENT</div> */}
+              <div className={styles.title}>LIVE FROM THE RAF PANEL</div>
               <div className={[styles.title, styles.video].join(' ')}>
                 {live ? 'LIVE VIDEO CHAT ROOM' : 'LIVE CHAT'}
               </div>
@@ -310,10 +312,8 @@ const Comms = ({ launch, live, latest, rooms }) => {
                   ></img>
                 </Link>
               </div>
-              {/* {live ? ( */}
-              {/* {data ? ( */}
+              {/* {true ? ( */}
               {config.live ? (
-                // <Chat rooms={rooms} />
                 <Chat chatRooms={chatRooms} />
               ) : (
                 // <div className={styles.chat} style={{ maxWidth: 500 }}>

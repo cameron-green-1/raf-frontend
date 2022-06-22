@@ -226,9 +226,11 @@
 }
 
 .title {
-  font-size: 0.75rem;
+  /* font-size: 0.75rem; */
+  font-size: 1rem;
   color: #0097d1;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .name {
