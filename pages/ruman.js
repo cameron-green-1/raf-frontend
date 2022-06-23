@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { debugHoldingSwitch } from '../utils/helpers';
 import ScenarioTemplate from '../components/scenarioTemplate';
 
 const scenario = {
@@ -498,6 +501,10 @@ const hotspots = [
 ];
 
 const Ruman = () => {
+  const router = useRouter();
+  useEffect(() => {
+    if (debugHoldingSwitch) router.push('/');
+  }, []);
   return (
     <>
       <Head>

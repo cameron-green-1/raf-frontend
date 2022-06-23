@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ProgressBarManager from './progressBarManager';
 import styles from '../styles/ScenarioLoader.module.css';
+import { debugHoldingSwitch } from '../utils/helpers';
 
 const Loading = ({ firstLoading }) => {
   return (
@@ -132,69 +133,71 @@ const ScenarioLoader = ({ scenario, duration }) => {
   const [secondLoading, setSecondLoading] = useState(true);
 
   useEffect(() => {
-    const bg = document.getElementById('bg');
-    const bgCover = document.getElementById('bgCover');
-    const crosshair = document.getElementById('crosshair');
-    const target = document.getElementById('target');
-    const vid = document.getElementById('briefing-video');
-    const btnContinue = document.getElementById('btn-continue');
-    const fakeClick = document.getElementById('fakeClick');
+    if (!debugHoldingSwitch) {
+      const bg = document.getElementById('bg');
+      const bgCover = document.getElementById('bgCover');
+      const crosshair = document.getElementById('crosshair');
+      const target = document.getElementById('target');
+      const vid = document.getElementById('briefing-video');
+      const btnContinue = document.getElementById('btn-continue');
+      const fakeClick = document.getElementById('fakeClick');
 
-    vid.src = supportsHEVCAlpha() ? scenario.safariVideo : scenario.video;
+      vid.src = supportsHEVCAlpha() ? scenario.safariVideo : scenario.video;
 
-    setTimeout(() => {
-      setFirstLoading(false);
-    }, 3000);
-
-    setTimeout(() => {
-      crosshair.style.transform = 'translate(-10vw, -10vh)';
       setTimeout(() => {
-        target.style.visibility = 'visible';
-        setTimeout(() => {
-          target.style.visibility = 'hidden';
-        }, 750);
-      }, 1250);
-    }, 3250);
-    setTimeout(() => {
-      bg.style.transform = 'translate(22.5%, 22.5%) scale(1.5)';
-    }, 5000);
-    setTimeout(() => {
-      crosshair.style.transform = 'translate(7.5vw, 7.5vh)';
+        setFirstLoading(false);
+      }, 3000);
+
       setTimeout(() => {
-        target.style.visibility = 'visible';
+        crosshair.style.transform = 'translate(-10vw, -10vh)';
         setTimeout(() => {
-          target.style.visibility = 'hidden';
-        }, 750);
-      }, 1250);
-    }, 6000);
-    setTimeout(() => {
-      bg.style.transform = 'translate(17.5%, 17.5%) scale(2)';
-      // fakeClick.click();
-    }, 7250);
-    setTimeout(() => {
-      btnContinue.style.pointerEvents = 'all';
-      const briefingMain = document.getElementById('briefing-main');
-      crosshair.style.opacity = 0;
-      bgCover.style.transform = 'translateX(120%)';
-      briefingMain.style.opacity = 1;
-      // console.log('safari');
-      // console.log(vid);
-      // vid.muted = true;
-      // vid.play();
-      vid.muted = false;
-      // vid.play();
-      if (secondLoading) {
+          target.style.visibility = 'visible';
+          setTimeout(() => {
+            target.style.visibility = 'hidden';
+          }, 750);
+        }, 1250);
+      }, 3250);
+      setTimeout(() => {
+        bg.style.transform = 'translate(22.5%, 22.5%) scale(1.5)';
+      }, 5000);
+      setTimeout(() => {
+        crosshair.style.transform = 'translate(7.5vw, 7.5vh)';
+        setTimeout(() => {
+          target.style.visibility = 'visible';
+          setTimeout(() => {
+            target.style.visibility = 'hidden';
+          }, 750);
+        }, 1250);
+      }, 6000);
+      setTimeout(() => {
+        bg.style.transform = 'translate(17.5%, 17.5%) scale(2)';
+        // fakeClick.click();
+      }, 7250);
+      setTimeout(() => {
+        btnContinue.style.pointerEvents = 'all';
+        const briefingMain = document.getElementById('briefing-main');
+        crosshair.style.opacity = 0;
+        bgCover.style.transform = 'translateX(120%)';
+        briefingMain.style.opacity = 1;
+        // console.log('safari');
+        // console.log(vid);
+        // vid.muted = true;
         // vid.play();
-        // vid.muted = false;
-        setTimeout(() => {
-          // vid.muted = true;
-          // vid.pause();
-        }, duration);
-        // }, 5000);
-        // }, vid.duration + 1);
-        // setTimeout(() => setSecondLoading(false), (vid.duration + 1) * 1000);
-      }
-    }, 8500);
+        vid.muted = false;
+        // vid.play();
+        if (secondLoading) {
+          // vid.play();
+          // vid.muted = false;
+          setTimeout(() => {
+            // vid.muted = true;
+            // vid.pause();
+          }, duration);
+          // }, 5000);
+          // }, vid.duration + 1);
+          // setTimeout(() => setSecondLoading(false), (vid.duration + 1) * 1000);
+        }
+      }, 8500);
+    }
   }, []);
   useEffect(() => {
     console.log('setSecondLoading state changed');

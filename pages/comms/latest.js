@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import useContentful from '../../utils/useContentful';
+import { useRouter } from 'next/router';
 import styles from '../../styles/Comms.module.css';
 import Link from 'next/link';
 import Logo from '../../components/logo';
@@ -9,6 +10,7 @@ import Countdown from '../../components/countdown';
 import Back from '../../components/back';
 import { motion } from 'framer-motion';
 import {
+  debugHoldingSwitch,
   debugLaunch,
   debugLive,
   debugLatest,
@@ -77,12 +79,14 @@ const Latest = ({ launch, live, latest }) => {
   // });
   // if (error) console.log(error);
   // if (!data) console.log('loading...');
+  const router = useRouter();
   const [config, setConfig] = useState(debugConfig);
   const [latestContent, setLatestContent] = useState(null);
   const [vimeoId, setVimeoId] = useState(null);
   let latestContentRetrieved;
   const { getConfig, getLatestContent } = useContentful();
   useEffect(async () => {
+    if (debugHoldingSwitch) router.push('/');
     setConfig(debugConfig);
     getConfig().then((res) => setConfig(res));
     getLatestContent().then((res) => setLatestContent(res));

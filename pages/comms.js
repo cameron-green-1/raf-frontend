@@ -4,6 +4,7 @@ import useSWR from 'swr';
 import useContentful from '../utils/useContentful';
 import Script from 'next/script';
 import {
+  debugHoldingSwitch,
   debugLaunch,
   debugLive,
   debugLatest,
@@ -12,6 +13,7 @@ import {
   getTime,
   url,
 } from '../utils/helpers';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Logo from '../components/logo';
 import styles from '../styles/Comms.module.css';
@@ -158,12 +160,14 @@ const Comms = ({ launch, live, latest, rooms }) => {
   //   <img src='/grid7.jpg' key={6} alt='' className={styles.thumbnail} />,
   //   <img src='/grid8.jpg' key={7} alt='' className={styles.thumbnail} />,
   // ];
+  const router = useRouter();
   const [config, setConfig] = useState(debugConfig);
   const [chatRooms, setChatRooms] = useState(null);
   const [latestContent, setLatestContent] = useState(null);
   const [time, setTime] = useState(null);
   const { getConfig, getChatRooms, getLatestContent } = useContentful();
   useEffect(() => {
+    if (debugHoldingSwitch) router.push('/');
     setConfig(debugConfig);
     getConfig().then((res) => setConfig(res));
     // setChatRooms(debugRooms);

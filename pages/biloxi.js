@@ -1,5 +1,8 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import ScenarioTemplate from '../components/scenarioTemplate';
+import { debugHoldingSwitch } from '../utils/helpers';
 
 const scenario = {
   satelliteImage: '/loader-biloxi-2.jpg',
@@ -555,6 +558,10 @@ const hotspots = [
 ];
 
 const Biloxi = () => {
+  const router = useRouter();
+  useEffect(() => {
+    if (debugHoldingSwitch) router.push('/');
+  }, []);
   return (
     <>
       <Head>

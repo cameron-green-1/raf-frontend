@@ -11,7 +11,9 @@ import {
   debugLive,
   url,
   debugConfig,
+  debugHoldingSwitch,
 } from '../utils/helpers';
+import { useRouter } from 'next/router';
 import Logo from '../components/logo';
 import styles from '../styles/Operations.module.css';
 import dynamic from 'next/dynamic';
@@ -101,9 +103,11 @@ function Operations({ launch, live }) {
   // });
   // // if (error) console.log(error);
   // if (!data) console.log('loading...');
+  const router = useRouter();
   const [config, setConfig] = useState(debugConfig);
   const { getConfig } = useContentful();
   useEffect(() => {
+    if (debugHoldingSwitch) router.push('/');
     // setLive(debugLive);
     handleMobileVh();
     setConfig(debugConfig);
