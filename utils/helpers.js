@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export const url = 'https://still-beach-67772.herokuapp.com';
 
-export const debugHoldingSwitch = true;
+export const debugHoldingSwitch = false;
 
 export const defaultHolding = true;
 export const defaultLive = false;
